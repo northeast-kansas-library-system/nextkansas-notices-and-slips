@@ -1,0 +1,30 @@
+AAAAA.CHECKIN.email.TEXT
+
+Name: Item Check-in
+
+-----
+
+Subject: Check-ins
+
+-----
+
+Message content: 
+
+--------------------
+
+The following items have been checked in today:
+----
+<<biblio.title>>
+----
+Thank you.
+
+
+
+
+
+
+
+
+
+
+

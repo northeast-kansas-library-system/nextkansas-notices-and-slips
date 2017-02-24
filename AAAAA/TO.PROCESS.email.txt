@@ -1,0 +1,32 @@
+AAAAA.TO_PROCESS.email.TEXT
+
+Name: Notify fund owner
+
+-----
+
+Subject: A suggestion is ready to be processed
+
+-----
+
+Message content: 
+
+--------------------
+
+Dear <<borrowers.firstname>> <<borrowers.surname>>,
+
+A new suggestion is ready to be processed: <<suggestions.title>> by <<suggestions.autho    r>>.
+
+Thank you,
+
+<<branches.branchname>>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+AAAAA.SHARE_INVITE.email.TEXT
+
+Name: Invitation for sharing a list
+
+-----
+
+Subject: Share list <<listname>>
+
+-----
+
+Message content: 
+
+--------------------
+
+Dear patron,
+
+One of our patrons, <<borrowers.firstname>> <<borrowers.surname>>, invites you to share a list <<listname>> in our library catalog.
+
+To access this shared list, please click on the following URL or copy-and-paste it into your browser address bar.
+
+<<shareurl>>
+
+In case you are not a patron in our library or do not want to accept this invitation, please ignore this mail. Note also that this invitation expires within two weeks.
+
+Thank you.
+
+Your library.
+
+
+
+
+
+
+
+
+
+
+

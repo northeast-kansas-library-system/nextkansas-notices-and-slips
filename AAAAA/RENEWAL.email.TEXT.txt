@@ -1,0 +1,30 @@
+AAAAA.RENEWAL.email.TEXT
+
+Name: Item Renewals
+
+-----
+
+Subject: Item Renewals
+
+-----
+
+Message content: 
+
+--------------------
+
+The following items have been renewed:
+----
+<<biblio.title>>
+----
+Thank you for visiting <<branches.branchname>>.
+
+
+
+
+
+
+
+
+
+
+
