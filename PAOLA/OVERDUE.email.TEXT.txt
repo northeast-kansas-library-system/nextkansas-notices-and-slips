@@ -1,0 +1,45 @@
+PAOLA.OVERDUE.email.TEXT
+
+Name: PAOLA Overdue 2nd Notice
+
+-----
+
+Subject: Library Item(s) Past Due Alert
+
+-----
+
+Message content: 
+
+--------------------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>> <<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY BELOW TO RENEW**
+
+The following item(s) are now at least 3 weeks overdue.  No renewals, further checkouts or computer use will be allowed on your account until these items are returned and the overdue fees paid.
+
+We have sent reminder emails and have tried to call you.  Please let us know if you have not received these emails or calls so that we might update the contact information on your account.
+
+If you are unable to return the item(s) because of loss or damage, please contact us at 913-259-3655.  We would be more than happy to work out a payment plan with you.
+
+<<items.content>>
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+
+
+
+
+
+
+
+
+
+
