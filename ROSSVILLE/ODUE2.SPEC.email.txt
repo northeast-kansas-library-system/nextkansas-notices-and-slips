@@ -1,0 +1,45 @@
+ROSSVILLE.ODUE2_SPEC.email.TEXT
+
+Name: NExpress Special Category Overdue Notice 2 (Rossville)
+
+-----
+
+Subject: Rossville Library Overdue Notice 2
+
+-----
+
+Message content: 
+
+--------------------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+<<borrowers.cardnumber>>
+ 
+ Second Overdue Notice - <<today>>
+ 
+Dear <<borrowers.firstname>>
+ 
+The following items are 35 days overdue as of <<today>>:
+ 
+<<items.content>>
+ 
+Your library card has now been suspended, and you will be billed for the cost of each item once they are 45 days overdue.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  
+ 
+You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
+Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
+ 
+.pgend.
+
+
+
+
+
+
+
+
+
+
+
