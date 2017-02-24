@@ -1,0 +1,44 @@
+HORTON.HORT21DAY.print.TEXT
+
+Name: Overdue 2nd Notice (Horton)
+
+-----
+
+Subject: Library Item(s) Past Due Alert
+
+-----
+
+Message content: 
+
+--------------------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+ALERT! The following materials are long overdue. Please return them to the library right away so that other borrowers can make use of them. Failure to return borrowed library material constitutes a violation of state and city statues and is a prosecutable offense. Please respond quickly to avoid additional fines and penalties. 
+
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know.
+
+<<items.content>>
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**
+
+
+
+
+
+
+
+
+
+
+

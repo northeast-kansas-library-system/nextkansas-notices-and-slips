@@ -1,0 +1,49 @@
+HORTON.HORT7DAY.email.TEXT
+
+Name: Overdue 1st Notice (Horton)
+
+-----
+
+Subject: Item(s) Overdue Notification
+
+-----
+
+Message content: 
+
+--------------------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+
+*FIRST NOTICE*
+
+Reminder! The following materials are overdue. Please return them to the library at your earliest convenience or call the library for renewal if possible. Fines are accumulating on your account for these overdue items and library privileges have been suspended until all items are returned and fines paid.
+Thank you.
+
+
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. 
+
+<<items.content>>
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**
+
+
+
+
+
+
+
+
+
+
+
