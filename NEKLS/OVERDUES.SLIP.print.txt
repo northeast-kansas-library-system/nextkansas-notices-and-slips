@@ -1,0 +1,67 @@
+NEKLS.OVERDUES_SLIP.print.HTML
+
+Name: Overdues Slip
+
+-----
+
+Subject: OVERDUES_SLIP
+
+-----
+
+Message content: 
+
+--------------------
+
+<head> 
+   <style type="text/css">
+      body {font: 14pt Georgia, "Times New Roman", Times, serif;margin: .75in }
+      p.return {text-indent: 50px;}
+      p {margin: 0;}
+      table {margin-left: auto; margin-right: auto;}
+      .alignleft {float: left;}
+      .alignright {float: right;}
+   </style> 
+</head>
+<body>
+<p class="alignright">Overdue Notice - <<today>></p>
+<p><<branches.branchname>><br />
+<<branches.branchaddress1>><br />
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>><br />
+ <br /> <br /> <br />
+     <<borrowers.firstname>> <<borrowers.surname>><br />
+     <<borrowers.address>><br />
+     <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>><br />
+ <br />
+ <br />
+ <br />
+ <br />
+Dear <<borrowers.firstname>> <<borrowers.surname>>,</p>
+        <p> </p>
+	<p>Please return the following item(s) to the library as possible.  If you are liable for late fees, remember that the fees increase the longer you keep the item.  You may also be charged the replacement cost of the item and other processing fees if items are not returned.</p>
+<p> </p>
+<p><item>
+<strong>Author: <ins><<biblio.author>></ins></strong> / <em>Title: <ins><<biblio.title>></ins></em><br />
+<strong>Call #: <ins><<items.itemcallnumber>></ins></strong> - <em>Barcode #: <ins><<items.barcode>></ins></em><br />
+<strong>Date due: <ins><<items.onloan>></ins></strong> - <em>Late fees due: </ins><<items.fine>></ins></em></p>
+<strong>Item replacement cost: <ins><<items.replacementprice>></ins></strong>
+<p> </p></item>
+<p>Please call <<branches.branchphone>> or visit <<branches.branchname>> if you have any questions.  You can access your account 24 hours a day at <ins>http://catalog.nexpresslibrary.org</ins>.</p>
+<p>This notice was printed on <<today>>.</p>
+<p> </p>
+<p>Thank you,</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><<branches.branchname>></p>
+</body>
+
+
+
+
+
+
+
+
+
+
+
