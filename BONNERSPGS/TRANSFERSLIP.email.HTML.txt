@@ -1,0 +1,40 @@
+BONNERSPGS.TRANSFERSLIP.email.HTML
+
+Name: BONNERSPGS Transfer Slip
+
+-----
+
+Subject: Transfer Slip
+
+-----
+
+Message content: 
+
+--------------------
+
+<p>Ship to:</p>
+<h1><<branches.branchname>></h1>
+<h1><<branches.branchaddress1>></h1>
+<h1><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></h1>
+<p>Courier code: <<branches.branchnotes>></p>
+<p>-----</p>
+<p><<items.itemcallnumber>></p>
+<p><<biblio.title>></p>
+<p><<biblio.author>></p>
+<p><<items.barcode>></p>
+<p>&nbsp;</p>
+<p>Shipped on: <<today>></p>
+<p>&nbsp;</p>
+<p>Shipped to: <<branches.branchcode>></p>
+<p>-----</p>
+
+
+
+
+
+
+
+
+
+
+
