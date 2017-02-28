@@ -8,47 +8,28 @@ Subject: Leavenworth Library Lost Items Notice
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
-<<branches.branchname>>
-<<branches.branchaddress1>>
-<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
 
 
 
 
-          <<borrowers.firstname>> <<borrowers.surname>>
-          <<borrowers.address>>
-          <<borrowers.address2>>
-          <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
-
-
-
-
-Lost Library Items - <<today>>
+Final notice - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following library items are going to be declared "Lost" because they have been overdue for 45 days as of <<today>>:
+The following items have been declared lost.  If you do not pay for the item(s), the library may report you to its collection agency.  This can negatively affect your credit report for up to seven years.  To avoid this, please pay for the overdue item(s) or return the item(s) you borrowed on good faith.  Your cooperation will help make our library materials available once again to our patrons.
+Thank You!
 
-<<items.content>>
-
-Your account has been suspended and you are going to be billed for the replacement of these items.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+<item>Cost: $<<items.replacementprice>> <<biblio.title>> <<biblio.author>> <<items.barcode>> Due: <<issues.date_due>></item>
 
 You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
-Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
+Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>.
 
 .pgend.
-
-
-
-
-
-
-
-
-
-
-

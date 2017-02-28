@@ -8,16 +8,9 @@ Subject: Leavenworth ILL Overdue Notice 1
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
-
-<<branches.branchname>>
-<<branches.branchaddress1>>
-<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
-
-
-
 
           <<borrowers.firstname>> <<borrowers.surname>>
           <<borrowers.address>>
@@ -27,25 +20,16 @@ Message content:
 
 
 
-First Overdue Notice - <<today>>
+Overdue reminder notice - <<today>>
 
-Dear <<borrowers.firstname>> <<borrowers.surname>>,
+Dear <<borrowers.firstname>>
 
-The following ILL items are overdue as of <<today>>:
+Please contact our circulation desk if your phone number has changed or is not accepting messages.
+
+According to our records, the following item(s) are past due. Please return them as soon as possible so other patrons may enjoy them.
 
 <<items.content>>
-
-The following ILL materials are overdue. Please contact us if your patron is having problems returning the items or if there has been a shipping problem that we need to be aware of.  We show your library's phone number as <<borrowers.phone>> and your e-mail address as <<borrowers.email>>.  If this is incorrect, please let us know at <<branches.branchphone>> or <<branches.branchemail>>.
+You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
+Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>.
 
 .pgend.
-
-
-
-
-
-
-
-
-
-
-
