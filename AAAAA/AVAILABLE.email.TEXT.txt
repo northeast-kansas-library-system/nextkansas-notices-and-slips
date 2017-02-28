@@ -8,7 +8,7 @@ Subject: Suggested purchase available
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -23,14 +23,3 @@ If you have any questions, please email us at <<branches.branchemail>>.
 Thank you,
 
 <<branches.branchname>>
-
-
-
-
-
-
-
-
-
-
-

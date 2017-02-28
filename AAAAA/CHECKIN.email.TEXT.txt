@@ -8,7 +8,7 @@ Subject: Check-ins
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -17,14 +17,3 @@ The following items have been checked in today:
 <<biblio.title>>
 ----
 Thank you.
-
-
-
-
-
-
-
-
-
-
-

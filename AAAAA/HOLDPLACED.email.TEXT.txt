@@ -8,19 +8,8 @@ Subject: Hold Placed on Item
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
 A hold has been placed on the following item : <<biblio.title>> (<<biblionumber>>) by the user <<firstname>> <<surname>> (<<cardnumber>>).
-
-
-
-
-
-
-
-
-
-
-

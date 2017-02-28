@@ -8,7 +8,7 @@ Subject: Your new Koha account details.
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -24,14 +24,3 @@ If you have any problems or questions regarding your account, please contact you
 Thank you,
 Koha Administrator
 kohaadmin@yoursite.org
-
-
-
-
-
-
-
-
-
-
-

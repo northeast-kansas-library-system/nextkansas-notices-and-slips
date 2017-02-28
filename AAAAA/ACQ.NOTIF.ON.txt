@@ -8,7 +8,7 @@ Subject: Order received
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -17,14 +17,3 @@ Dear <<borrowers.firstname>> <<borrowers.surname>>,
  The order <<aqorders.ordernumber>> (<<biblio.title>>) has been received.
 
 Your library.
-
-
-
-
-
-
-
-
-
-
-

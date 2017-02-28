@@ -8,7 +8,7 @@ Subject: ATTENTION! Overdue materials
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -29,14 +29,3 @@ We show your library's phone number is <<borrowers.phone>>. If this is incorrect
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
 <<branches.branchemail>>
-
-
-
-
-
-
-
-
-
-
-
