@@ -1,0 +1,30 @@
+AAAAA.PREDUE.email.TEXT
+
+Name: Advance Notice of Item Due
+
+-----
+
+Subject: Leavenworth Public Library Items Due Soon
+
+-----
+
+Message content:
+
+--------------------
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE "ADVANCE NOTICE OF ITEM DUE" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
+
+Hello <<borrowers.firstname>>,
+
+You have <<count>> library item due soon.
+
+<item><<items.content>></item>
+
+Please return or renew your item soon. Contact the library, or log in to your account, to renew. Some items may not be renewable.
+
+Cordially,
+<<branches.branchname>>
+<<branches.branchphone>>
+<<branches.branchurl>>
+<<branches.branchaddress1>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
