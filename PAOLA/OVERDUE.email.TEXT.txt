@@ -8,7 +8,7 @@ Subject: Library Item(s) Past Due Alert
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -32,14 +32,3 @@ If you are unable to return the item(s) because of loss or damage, please contac
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
 <<branches.branchemail>>
-
-
-
-
-
-
-
-
-
-
-

@@ -8,7 +8,7 @@ Subject: Library Item(s) Past Due Alert (print)
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -30,14 +30,3 @@ We show your contact phone number is <<borrowers.phone>>. If this is incorrect, 
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
 <<branches.branchemail>>
-
-
-
-
-
-
-
-
-
-
-

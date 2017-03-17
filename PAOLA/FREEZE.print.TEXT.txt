@@ -8,7 +8,7 @@ Subject: Library Privileges Suspended Notice (Print)
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -20,7 +20,7 @@ Message content:
 
 We regret that your account privileges have been suspended because library materials checked out on your account have not been returned in a timely way. To restore your privileges, return the materials to the library. Please contact us if you need special assistance. Thank you.
 
-We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. 
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know.
 
 <<items.content>>
 
@@ -30,14 +30,3 @@ We show your contact phone number is <<borrowers.phone>>. If this is incorrect, 
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
 <<branches.branchemail>>
-
-
-
-
-
-
-
-
-
-
-

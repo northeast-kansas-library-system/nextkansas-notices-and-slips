@@ -8,7 +8,7 @@ Subject: Reserve Slip
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -25,7 +25,7 @@ Message content:
   <script type="text/javascript">
 //<![CDATA[
 
-  $(document).ready(function(){ 
+  $(document).ready(function(){
 
   $("#loc_PAOLA").hide();
   $("#bor_PAOLA").parent().removeAttr('style')
@@ -114,15 +114,3 @@ article{display:inline-block}
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

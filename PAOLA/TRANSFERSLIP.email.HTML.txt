@@ -8,7 +8,7 @@ Subject: Transfer Slip
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -28,14 +28,3 @@ Message content:
 <p>Shipped on: <<today>></p>
 <p> </p>
 <p>Shipped to: <<branches.branchcode>></p>
-
-
-
-
-
-
-
-
-
-
-

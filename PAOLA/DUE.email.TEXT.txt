@@ -8,7 +8,7 @@ Subject: Item(s) Due Reminder
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -20,11 +20,11 @@ Dear <<borrowers.firstname>>,
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
 <<borrowers.phone>>
 
-Hello. You have library materials due today. Please renew your materials, or return them to the library. You may be able to renew these items online at catalog.nexpresslibrary.org or contact the library for assistance. Thank you. 
+Hello. You have library materials due today. Please renew your materials, or return them to the library. You may be able to renew these items online at catalog.nexpresslibrary.org or contact the library for assistance. Thank you.
 
 <<items.content>>
 
-Cordially, 
+Cordially,
 <<branches.branchname>>
 <<branches.branchaddress1>>
 <<branches.branchaddress2>>
@@ -35,14 +35,3 @@ Cordially,
 Message sent on <<today>>
 
 **PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE "ITEM DUE" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
-
-
-
-
-
-
-
-
-
-
-
