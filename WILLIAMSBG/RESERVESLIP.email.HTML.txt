@@ -8,13 +8,13 @@ Subject: Reserve Slip
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
 <style type="text/css">
 #receipt {
-font-size:1.2em;	
+font-size:1.2em;
 }
 
 #receipt ul {
@@ -97,22 +97,10 @@ document.getElementById("expiration").style.display='none';
 document.getElementById("patroncontact").style.display='none';
 }
 
-else 
+else
 
 {
-document.getElementById("expiration").innerHTML = 
+document.getElementById("expiration").innerHTML =
 document.getElementById("expiration").innerHTML + expiration;
 }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
