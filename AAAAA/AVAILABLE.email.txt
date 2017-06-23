@@ -1,18 +1,18 @@
-AAAAA.AVAILABLE.email.TEXT
+AAAAA.AVAILABLE.email.txt
 
 Name: Suggestion available
 
 -----
 
-Subject: Suggested purchase available
+Suggested purchase available
 
 -----
 
 Message content:
 
---------------------
+----------
 
-Dear <<borrowers.firstname>> <<borrowers.surname>>,
+"Dear <<borrowers.firstname>> <<borrowers.surname>>,
 
 You have suggested that the library acquire <<suggestions.title>> by <<suggestions.author>>.
 
@@ -22,4 +22,4 @@ If you have any questions, please email us at <<branches.branchemail>>.
 
 Thank you,
 
-<<branches.branchname>>
+<<branches.branchname>>"

@@ -1,18 +1,18 @@
-BASEHOR.ODUE1.email.TEXT
+BASEHOR.ODUE1.email.txt
 
 Name: NExpress Library 1 Overdue Notice ( Basehor)
 
 -----
 
-Subject: Basehor Library Overdue Notice
+Basehor Library Overdue Notice
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>>
 <<borrowers.address2>>
 <<borrowers.city>> <<borrowers.state>> <<borrowers.zipcode>>
@@ -36,15 +36,4 @@ Thank you for using the Basehor Community Library!
 
 **Please don't reply to this automated message. Contact the Basehor Library directly with any questions or concerns. Thanks!**
 
-.pgend.
-
-
-
-
-
-
-
-
-
-
-
+.pgend."

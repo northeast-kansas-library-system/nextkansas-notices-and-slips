@@ -1,0 +1,15 @@
+VALLEYFALL.ODUE3_ILL.sms.txt
+
+Name: NExpress ILL Overdue Notice 3 (Winchester)
+
+-----
+
+NExpress Library Lost Items Notice
+
+-----
+
+Message content:
+
+----------
+
+You are being billed for long overdue items checked out from <<branches.branchname>>

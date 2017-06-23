@@ -1,18 +1,18 @@
-PAOLA.TRANSFERSLIP.email.HTML
+PAOLA.TRANSFERSLIP.email.txt
 
 Name: PAOLA Transfer Slip
 
 -----
 
-Subject: Transfer Slip
+Transfer Slip
 
 -----
 
 Message content:
 
---------------------
+----------
 
-<h1 style="font-size: 48px;"><<branches.branchnotes>></h1><br /><br /><br />
+"<h1 style=""font-size: 48px;""><<branches.branchnotes>></h1><br /><br /><br />
 <p>Ship to:</p>
 <h1><<branches.branchname>></h1>
 <h1><<branches.branchaddress1>></h1>
@@ -27,4 +27,4 @@ Message content:
 <p> </p>
 <p>Shipped on: <<today>></p>
 <p> </p>
-<p>Shipped to: <<branches.branchcode>></p>
+<p>Shipped to: <<branches.branchcode>></p>"

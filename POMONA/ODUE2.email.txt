@@ -1,18 +1,18 @@
-POMONA.ODUE2.email.TEXT
+POMONA.ODUE2.email.txt
 
 Name: NExpress Library 2 Account Blocked (Pomona)
 
 -----
 
-Subject: Pomona Library Account Blocked
+Pomona Library Account Blocked
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<branches.branchname>>
+"<<branches.branchname>>
 <<branches.branchaddress1>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 
@@ -40,15 +40,4 @@ Your library card has now been suspended and you will be billed for the full rep
 You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
 
-.pgend.
-
-
-
-
-
-
-
-
-
-
-
+.pgend."

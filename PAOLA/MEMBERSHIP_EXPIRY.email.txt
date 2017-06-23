@@ -1,0 +1,27 @@
+PAOLA.MEMBERSHIP_EXPIRY.email.txt
+
+Name: Account expiration (Paola)
+
+-----
+
+Time to update your library account
+
+-----
+
+Message content:
+
+----------
+
+"Dear <<borrowers.firstname>> <<borrowers.surname>>,
+
+It's time for the library to make sure the information on your account is up to date. This is done yearly. Please visit <<branches.branchname>> or call us at <<branches.branchphone>> to renew your account. You will not be able to check out until your account is updated.
+
+Thanks,
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+
+Email: <<branches.branchemail>>
+Phone: <<branches.branchphone>>
+Website: <<branches.branchurl>>"

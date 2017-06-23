@@ -1,18 +1,18 @@
-ROSSVILLE.ROSS2.email.TEXT
+ROSSVILLE.ROSS2.email.txt
 
 Name: Overdue 2nd Notice (Rossville)
 
 -----
 
-Subject: Notice: Library Items Overdue
+Notice: Library Items Overdue
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>>
 <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
@@ -31,15 +31,4 @@ Please contact us if you need special assistance. Thank you.
 <<branches.branchemail>>
 
 
-**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**
-
-
-
-
-
-
-
-
-
-
-
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**"

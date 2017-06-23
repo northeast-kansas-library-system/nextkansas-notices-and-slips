@@ -1,18 +1,18 @@
-AAAAA.TRANSFERSLIP.email.HTML
+AAAAA.TRANSFERSLIP.email.txt
 
 Name: Transfer Slip
 
 -----
 
-Subject: Transfer Slip
+Transfer Slip
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<style type="text/css">
+"<style type=""text/css"">
 #receipt {
 font-size:1.2em;	
 }
@@ -50,7 +50,7 @@ h6 {font-size:1.1em;
 }
 </style>
 
-<p style="margin-bottom: 0; margin-top: 0;">Date: <<today>></p>
+<p style=""margin-bottom: 0; margin-top: 0;"">Date: <<today>></p>
 <h5>Transfer to <<branches.branchnotes>> <<branches.branchname>></h5>
 <br />
 <br />
@@ -64,15 +64,4 @@ h6 {font-size:1.1em;
 <ul>
    <li><<items.barcode>></li>
    <li><<items.itemcallnumber>></li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
+</ul>"

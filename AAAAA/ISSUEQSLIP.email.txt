@@ -1,18 +1,18 @@
-AAAAA.ISSUEQSLIP.email.HTML
+AAAAA.ISSUEQSLIP.email.txt
 
 Name: Issue Quick Slip
 
 -----
 
-Subject: Issue Quick Slip
+Issue Quick Slip
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<style type="text/css">
+"<style type=""text/css"">
 #receipt {
 font-size:1.2em;	
 }
@@ -69,16 +69,16 @@ Ph: <<branches.branchphone>><br />
 Barcode: <<items.barcode>><br />
 Date due: <<items.onloan>><br />
 </p>
-<span class="price" style="display: none;"><<items.replacementprice>></span>
+<span class=""price"" style=""display: none;""><<items.replacementprice>></span>
 
 </checkedout>
 <i>Cost of buying these items:</i><br/>
-<b>$<span id="price"></b></span><br/>
+<b>$<span id=""price""></b></span><br/>
 <i>Cost of using the library:</i><br/>
 <b>Priceless!</b><br/>
 
-<script type="text/javascript">
-var x = document.getElementsByClassName("price");
+<script type=""text/javascript"">
+var x = document.getElementsByClassName(""price"");
 var i;
 var total = 0;
 for (i = 0; i < x.length; i++) {
@@ -87,17 +87,6 @@ for (i = 0; i < x.length; i++) {
        total += cost;
     }
 }
-document.getElementById("price").innerHTML = total.toFixed(2);
+document.getElementById(""price"").innerHTML = total.toFixed(2);
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
+"

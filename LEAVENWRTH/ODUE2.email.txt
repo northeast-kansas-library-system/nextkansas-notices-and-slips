@@ -1,18 +1,18 @@
-LEAVENWRTH.ODUE2.email.TEXT
+LEAVENWRTH.ODUE2.email.txt
 
 Name: NExpress Library 2 Account Blocked (Leavenworth)
 
 -----
 
-Subject: Leavenworth Library Account Blocked
+Leavenworth Library Account Blocked
 
 -----
 
 Message content:
 
---------------------
+----------
 
-          <<borrowers.firstname>> <<borrowers.surname>>
+"          <<borrowers.firstname>> <<borrowers.surname>>
           <<borrowers.address>>
           <<borrowers.address2>>
           <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
@@ -32,3 +32,4 @@ You can access your account on-line at https://catalog.nexpresslibrary.org 24 ho
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>.
 
 .pgend.
+"

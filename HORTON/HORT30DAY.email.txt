@@ -1,18 +1,18 @@
-HORTON.HORT30DAY.email.TEXT
+HORTON.HORT30DAY.email.txt
 
 Name: Overdue 3rd Notice (Horton)
 
 -----
 
-Subject: Account charged for unreturned item(s)
+Account charged for unreturned item(s)
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>>
 <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
@@ -30,15 +30,4 @@ We show your contact phone number is <<borrowers.phone>>. If this is incorrect, 
 <<branches.branchaddress2>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
-<<branches.branchemail>>
-
-
-
-
-
-
-
-
-
-
-
+<<branches.branchemail>>"

@@ -1,18 +1,18 @@
-PAOLA.OVERDUE.print.TEXT
+PAOLA.OVERDUE.print.txt
 
-Name: PAOLA Overdue 2nd Notice
+Name: Overdue 2nd Notice (Wetmore)
 
 -----
 
-Subject: Library Item(s) Past Due Alert (print)
+Library Item(s) Past Due Alert (print)
 
 -----
 
 Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>> <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
 
@@ -29,4 +29,4 @@ We show your contact phone number is <<borrowers.phone>>. If this is incorrect, 
 <<branches.branchaddress2>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
-<<branches.branchemail>>
+<<branches.branchemail>>"

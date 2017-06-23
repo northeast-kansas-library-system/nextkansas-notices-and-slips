@@ -1,18 +1,18 @@
-AAAAA.HOLD.print.TEXT
+AAAAA.HOLD.print.txt
 
 Name: Hold Available for Pickup
 
 -----
 
-Subject: Hold Available for Pickup at <<branches.branchname>>
+Hold Available for Pickup at <<branches.branchname>>
 
 -----
 
 Message content:
 
---------------------
+----------
 
-Dear <<borrowers.firstname>> <<borrowers.surname>>,
+"Dear <<borrowers.firstname>> <<borrowers.surname>>,
 
 You have a hold available for pickup as of <<reserves.waitingdate>>:
 
@@ -28,4 +28,4 @@ You have 7 days to pick up your hold. If you would like to cancel this hold, ple
 
 If you would like to opt out of receiving email notification of your available holds, please login to the online catalog at http://catalog.nexpresslibrary.org and change your preferences at the My Messaging tab.  Or, you can call the library and ask a staff member to make this change for you.
 
-**THIS IS AN AUTOMATED MESSAGE. **
+**THIS IS AN AUTOMATED MESSAGE. ** "

@@ -1,18 +1,18 @@
-ROSSVILLE.ODUE1.email.TEXT
+ROSSVILLE.ODUE1.email.txt
 
 Name: NExpress Library 1 Overdue Notice (Rossville)
 
 -----
 
-Subject: Rossville Library Overdue Notice
+Rossville Library Overdue Notice
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>>
 <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
@@ -35,15 +35,4 @@ Did you know that you can renew your items online? Or that you can set up email 
  
 **PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**
 
-.pgend.
-
-
-
-
-
-
-
-
-
-
-
+.pgend."

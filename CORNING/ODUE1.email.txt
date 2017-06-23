@@ -1,18 +1,18 @@
-CORNING.ODUE1.email.TEXT
+CORNING.ODUE1.email.txt
 
 Name: NExpress Library 1 Overdue Notice (Corning)
 
 -----
 
-Subject: Corning Library Overdue Notice
+Corning Library Overdue Notice
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<branches.branchname>>
+"<<branches.branchname>>
 <<branches.branchaddress1>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 
@@ -35,15 +35,4 @@ We show your contact phone number is <<borrowers.phone>>. If this is incorrect, 
 
 <<items.content>>
 
-.pgend.
-
-
-
-
-
-
-
-
-
-
-
+.pgend."

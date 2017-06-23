@@ -1,19 +1,19 @@
-AAAAA.CHECKIN.email.TEXT
+AAAAA.CHECKIN.email.txt
 
 Name: Item Check-in
 
 -----
 
-Subject: Check-ins
+Check-ins
 
 -----
 
 Message content:
 
---------------------
+----------
 
-The following items have been checked in today:
+"The following items have been checked in today:
 ----
 <<biblio.title>>
 ----
-Thank you.
+Thank you."

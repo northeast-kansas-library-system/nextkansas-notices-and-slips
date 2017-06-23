@@ -1,0 +1,15 @@
+AAAAA.CHECKIN.sms.txt
+
+Name: Item Check-in
+
+-----
+
+Library check-ins
+
+-----
+
+Message content:
+
+----------
+
+You checked in items at <<branches.branchname>> today

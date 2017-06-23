@@ -1,24 +1,24 @@
-ATCHISON.TRANSFERSLIP.email.HTML
+ATCHISON.TRANSFERSLIP.email.txt
 
 Name: Atchison Transfer Slip
 
 -----
 
-Subject: Transfer Slip
+Transfer Slip
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<style>
+"<style>
 body {width: 280px; margin: 0;}
 article{display:inline-block}
 .right{float:right}
 </style>
 
-    <h1 style="font-size: 48px;"><<branches.branchnotes>></h1><br /><br /><br />
+    <h1 style=""font-size: 48px;""><<branches.branchnotes>></h1><br /><br /><br />
     <p>Ship to:</p>
     <h1><<branches.branchname>></h1>
     <h1><<branches.branchaddress1>></h1>
@@ -36,15 +36,4 @@ article{display:inline-block}
     <p>Shipped on: <<today>></p>
     <p> </p>
     <p>This slip generated at ATCHISON</p>
-    <p> </p>
-
-
-
-
-
-
-
-
-
-
-
+    <p> </p>"

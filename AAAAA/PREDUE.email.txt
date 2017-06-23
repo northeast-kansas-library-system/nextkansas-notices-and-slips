@@ -1,24 +1,24 @@
-AAAAA.PREDUE.email.TEXT
+AAAAA.PREDUE.email.txt
 
 Name: Advance Notice of Item Due
 
 -----
 
-Subject: Advance Notice of Item Due
+Advance Notice of Item Due
 
 -----
 
 Message content:
 
---------------------
+----------
 
-Dear <<borrowers.firstname>> <<borrowers.surname>>,
+"Dear <<borrowers.firstname>> <<borrowers.surname>>,
 
 The following item will be due soon:
 
 Due on <<issues.date_due>> : <<biblio.title>>
 
-Please return or renew this item soon, or contact us to renew for you. Some items may not be renewable.
+Please return or renew this item soon, or contact us to renew for you. Some items may not be renewable. 
 
 <<branches.branchname>>
 <<branches.branchaddress1>>
@@ -28,3 +28,4 @@ Please return or renew this item soon, or contact us to renew for you. Some item
 <<branches.branchemail>>
 
 **PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW.**
+"

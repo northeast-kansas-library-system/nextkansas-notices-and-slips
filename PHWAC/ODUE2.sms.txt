@@ -1,0 +1,15 @@
+PHWAC.ODUE2.sms.txt
+
+Name: NExpress Library 2 Account Blocked (Winchester)
+
+-----
+
+NExpress Library Account Blocked
+
+-----
+
+Message content:
+
+----------
+
+You have items that have been overdue for more than 35 days at <<branches.branchname>>

@@ -1,0 +1,31 @@
+AAAAA.AR_SLIP.print.txt
+
+Name: Article Request - Print Slip
+
+-----
+
+Test
+
+-----
+
+Message content:
+
+----------
+
+"Article Request:
+
+<<borrowers.firstname>> <<borrowers.surname>> (<<borrowers.cardnumber>>)
+
+Title: <<biblio.title>>
+Barcode: <<items.barcode>>
+
+Article requested:
+Title: <<article_requests.title>>
+Author: <<article_requests.author>>
+Volume: <<article_requests.volume>>
+Issue: <<article_requests.issue>>
+Date: <<article_requests.date>>
+Pages: <<article_requests.pages>>
+Chapters: <<article_requests.chapters>>
+Notes: <<article_requests.patron_notes>>
+"

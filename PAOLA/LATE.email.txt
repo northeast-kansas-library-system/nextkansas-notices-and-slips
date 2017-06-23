@@ -1,18 +1,18 @@
-PAOLA.LATE.email.TEXT
+PAOLA.LATE.email.txt
 
 Name: PAOLA Overdue 1st Notice
 
 -----
 
-Subject: Item(s) Overdue Reminder
+Item(s) Overdue Reminder 
 
 -----
 
 Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>>
 <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
@@ -21,7 +21,7 @@ Message content:
 
 Reminder! The following materials are 7 days overdue. Please return them to the library at your earliest convenience. Thank you.
 
-We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know.
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. 
 
 <<items.content>>
 
@@ -31,4 +31,4 @@ We show your contact phone number is <<borrowers.phone>>. If this is incorrect, 
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
 <<branches.branchemail>>
-This notice was generated on <<today>>.
+This notice was generated on <<today>>."

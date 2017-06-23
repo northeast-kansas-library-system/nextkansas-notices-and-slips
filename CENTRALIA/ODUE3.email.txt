@@ -1,18 +1,18 @@
-CENTRALIA.ODUE3.email.TEXT
+CENTRALIA.ODUE3.email.txt
 
 Name: NExpress Library 3 Lost Items Notice 3 (Centralia)
 
 -----
 
-Subject: Centralia Library Lost Items Notice
+Centralia Library Lost Items Notice
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<branches.branchname>>
+"<<branches.branchname>>
 <<branches.branchaddress1>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 
@@ -31,7 +31,7 @@ Lost Library Items - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following library items are going to be declared "Lost" because they have been overdue for 45 days as of <<today>>:
+The following library items are going to be declared ""Lost"" because they have been overdue for 45 days as of <<today>>:
 
 <<items.content>>
 
@@ -40,15 +40,4 @@ Your account has been suspended and you are going to be billed for the replaceme
 You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
 
-.pgend.
-
-
-
-
-
-
-
-
-
-
-
+.pgend."

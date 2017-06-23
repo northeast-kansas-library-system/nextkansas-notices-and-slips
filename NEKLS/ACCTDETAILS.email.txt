@@ -1,18 +1,18 @@
-NEKLS.ACCTDETAILS.email.TEXT
+NEKLS.ACCTDETAILS.email.txt
 
 Name: Account Details Template - DEFAULT
 
 -----
 
-Subject: Your new Koha account details.
+Your new Koha account details.
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-Hello <<borrowers.title>> <<borrowers.firstname>> <<borrowers.surname>>.
+"Hello <<borrowers.title>> <<borrowers.firstname>> <<borrowers.surname>>.
 
 Your new Koha account details are:
 
@@ -28,15 +28,4 @@ If you have any problems or questions regarding your account, please contact you
 
 Thank you,
 Koha Administrator
-kohaadmin@yoursite.org
-
-
-
-
-
-
-
-
-
-
-
+kohaadmin@yoursite.org"

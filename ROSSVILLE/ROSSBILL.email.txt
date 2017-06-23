@@ -1,18 +1,18 @@
-ROSSVILLE.ROSSBILL.email.TEXT
+ROSSVILLE.ROSSBILL.email.txt
 
 Name: Overdue 3rd Notice (Rossville)
 
 -----
 
-Subject: Notice: Invoice for Unreturned Items
+Notice: Invoice for Unreturned Items
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>>
 <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
@@ -29,15 +29,4 @@ We will attempt to send you a letter by mail as well, but we may not have a vali
 <<branches.branchaddress2>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
-<<branches.branchemail>>
-
-
-
-
-
-
-
-
-
-
-
+<<branches.branchemail>>"

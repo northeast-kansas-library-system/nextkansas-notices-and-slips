@@ -1,18 +1,18 @@
-PAOLA.OVERDUE.email.TEXT
+PAOLA.OVERDUE.email.txt
 
 Name: PAOLA Overdue 2nd Notice
 
 -----
 
-Subject: Library Item(s) Past Due Alert
+Library Item(s) Past Due Alert
 
 -----
 
 Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>> <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
 
@@ -31,4 +31,4 @@ If you are unable to return the item(s) because of loss or damage, please contac
 <<branches.branchaddress2>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
-<<branches.branchemail>>
+<<branches.branchemail>>"

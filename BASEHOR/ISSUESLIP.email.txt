@@ -1,18 +1,18 @@
-BASEHOR.ISSUESLIP.email.HTML
+BASEHOR.ISSUESLIP.email.txt
 
 Name: Issue Slip
 
 -----
 
-Subject: Issue Slip
+Issue Slip
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<h3><<branches.branchname>></h3>
+"<h3><<branches.branchname>></h3>
 Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>> <br />
 (<<borrowers.cardnumber>>) <br />
 
@@ -38,23 +38,12 @@ Date due: <<items.onloan>><br />
 
 <!-- <hr>
 
-<h4 style="text-align: center; font-style:italic;">News</h4>
+<h4 style=""text-align: center; font-style:italic;"">News</h4>
 <news>
-<div class="newsitem">
-<h5 style="margin-bottom: 1px; margin-top: 1px"><b><<opac_news.title>></b></h5>
-<p style="margin-bottom: 1px; margin-top: 1px"><<opac_news.new>></p>
-<p class="newsfooter" style="font-size: 8pt; font-style:italic; margin-bottom: 1px; margin-top: 1px">Posted on <<opac_news.timestamp>></p>
+<div class=""newsitem"">
+<h5 style=""margin-bottom: 1px; margin-top: 1px""><b><<opac_news.title>></b></h5>
+<p style=""margin-bottom: 1px; margin-top: 1px""><<opac_news.new>></p>
+<p class=""newsfooter"" style=""font-size: 8pt; font-style:italic; margin-bottom: 1px; margin-top: 1px"">Posted on <<opac_news.timestamp>></p>
 <hr />
 </div>
-</news> -->
-
-
-
-
-
-
-
-
-
-
-
+</news> -->"

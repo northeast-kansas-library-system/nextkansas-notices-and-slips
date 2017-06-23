@@ -1,26 +1,25 @@
-AAAAA.ACCTDETAILS.email.TEXT
+AAAAA.ACCTDETAILS.email.txt
 
 Name: Account Details Template - DEFAULT
 
 -----
 
-Subject: Your new Koha account details.
+Welcome to the library
 
 -----
 
 Message content:
 
---------------------
+----------
 
-Hello <<borrowers.title>> <<borrowers.firstname>> <<borrowers.surname>>.
+"Hello <<borrowers.firstname>>,
 
-Your new Koha account details are:
+Congratulations on getting a new library card at <<branches.branchname>>.
 
-User:  <<borrowers.userid>>
-Password: <<borrowers.password>>
+<<branches.branchname>> is a member of the NExpress library consortium and you can find our online catalog at https://catalog.nexpresslibrary.org.  From this site you can search the catalog, access your account, request materials, see what's checked out on your account, and renew materials.
 
-If you have any problems or questions regarding your account, please contact your Koha Administrator.
+You can also visit our library's website at <<branches.branchurl>>.  From there you can learn more about our library including our hours and contact information.
 
-Thank you,
-Koha Administrator
-kohaadmin@yoursite.org
+We look forward to having you as a member,
+
+<<branches.branchname>>"

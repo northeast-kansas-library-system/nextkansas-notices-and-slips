@@ -1,18 +1,18 @@
-OSAGECITY.OSAGE2.email.TEXT
+OSAGECITY.OSAGE2.email.txt
 
 Name: Overdue 2nd Notice (Osage City)
 
 -----
 
-Subject: Osage City Library Final Overdue Notice
+Osage City Library Final Overdue Notice
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>> <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
 
@@ -20,7 +20,7 @@ This is a repeated attempt to obtain the listed overdue items.  Your borrowing p
 
 <<items.content>>
 
-Library materials are purchased with tax funds and are considered public property. According to K.S.A 21-3702:"Failure to return materials within 30 days following the overdue notice will constitute intent to deprive the library of public property and constitutes grounds for prosecution of misdemeanor theft."   
+Library materials are purchased with tax funds and are considered public property. According to K.S.A 21-3702:""Failure to return materials within 30 days following the overdue notice will constitute intent to deprive the library of public property and constitutes grounds for prosecution of misdemeanor theft.""   
        
 Failure to resolve this matter within 30 days will result in notification of the proper authorities. We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. 
 
@@ -33,15 +33,4 @@ Thank you for your time in resolving this matter. If you have any questions conc
 <<branches.branchphone>>
 <<branches.branchemail>>
 
-**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**
-
-
-
-
-
-
-
-
-
-
-
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**"

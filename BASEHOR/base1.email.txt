@@ -1,18 +1,18 @@
-BASEHOR.base1.email.TEXT
+BASEHOR.base1.email.txt
 
 Name: Basehor Holds Available for Pickup
 
 -----
 
-Subject: Hold Available for Pickup at <<branches.branchname>>
+Hold Available for Pickup at <<branches.branchname>>
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-Dear <<borrowers.firstname>> <<borrowers.surname>>,
+"Dear <<borrowers.firstname>> <<borrowers.surname>>,
 
 You have a hold available for pickup as of <<reserves.waitingdate>>:
 
@@ -34,15 +34,4 @@ Fri - Sat:	9am - 5pm
 Sunday:	1pm - 5pm
 
 **THIS IS AN AUTOMATED MESSAGE. ** 
-
-
-
-
-
-
-
-
-
-
-
-
+"

@@ -1,24 +1,24 @@
-NEKLS.ISSUESLIP.email.HTML
+NEKLS.ISSUESLIP.email.txt
 
 Name: Issue Slip
 
 -----
 
-Subject: Issue Slip
+Issue Slip
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<head>
-  <style type="text/css">
+"<head>
+  <style type=""text/css"">
     .page {width: 45mm; min-height: 297mm; padding: 2mm; }
  </style> 
 </head>
 
-<div class="page">
+<div class=""page"">
 
   <h3><<branches.branchname>></h3>
   <p><<branches.branchaddress1>> <<branches.branchaddress2>><br /><<branches.branchcity>>, <<branches.branchstate>><<branches.branchzip>><br /><<branches.branchphone>> / <<branches.branchemail>></p>
@@ -26,7 +26,7 @@ Message content:
   <p>Renew and request online: <br /><b><u>catalog.nexpresslibrary.org</u></b></p>
 
   <p>Checked out to <<borrowers.cardnumber>><br /><<today>></p>
-  <p><img  height="40" width="200" src="/cgi-bin/koha/svc/barcode?barcode=*<<borrowers.cardnumber>>*&type=Code39"></img></p>
+  <p><img  height=""40"" width=""200"" src=""/cgi-bin/koha/svc/barcode?barcode=*<<borrowers.cardnumber>>*&type=Code39""></img></p>
 
   <h4>Checked Out</h4>
   <checkedout>
@@ -41,15 +41,4 @@ Message content:
   <p> </p>
   <p> </p>
   <p>.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
+</div>"

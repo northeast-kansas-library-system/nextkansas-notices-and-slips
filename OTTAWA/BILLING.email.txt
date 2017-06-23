@@ -1,18 +1,18 @@
-OTTAWA.BILLING.email.TEXT
+OTTAWA.BILLING.email.txt
 
 Name: OTTAWA Bill for unreturned items
 
 -----
 
-Subject: Replacement cost billed for unreturned item(s)
+Replacement cost billed for unreturned item(s)
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<borrowers.firstname>> <<borrowers.surname>>
+"<<borrowers.firstname>> <<borrowers.surname>>
 <<borrowers.address>> <<borrowers.address2>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
 
@@ -28,15 +28,4 @@ We show your contact phone number is <<borrowers.phone>>. If this is incorrect, 
 <<branches.branchaddress1>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 <<branches.branchphone>>
-<<branches.branchemail>>
-
-
-
-
-
-
-
-
-
-
-
+<<branches.branchemail>>"

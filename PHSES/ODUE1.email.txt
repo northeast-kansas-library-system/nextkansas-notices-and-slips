@@ -1,18 +1,18 @@
-PHSES.ODUE1.email.TEXT
+PHSES.ODUE1.email.txt
 
 Name: NExpress Library 1 Overdue Notice (Prairie Hills - Sabetha Elementary)
 
 -----
 
-Subject: Prairie Hills - Sabetha Elementary Library Overdue Notice
+Prairie Hills - Sabetha Elementary Library Overdue Notice
 
 -----
 
-Message content: 
+Message content:
 
---------------------
+----------
 
-<<branches.branchname>>
+"<<branches.branchname>>
 <<branches.branchaddress1>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 
@@ -40,15 +40,4 @@ If you are liable for late fees, remember that late fees increase the longer you
 You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
 
-.pgend.
-
-
-
-
-
-
-
-
-
-
-
+.pgend."

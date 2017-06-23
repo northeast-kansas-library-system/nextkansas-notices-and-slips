@@ -1,18 +1,18 @@
-NEKLS.PREDUEDGST.print.TEXT
+NEKLS.PREDUEDGST.print.txt
 
-Name: Advance Notice of Item Due (Digest)
-
------
-
-Subject: Advance Notice of Item Due (Digest) (print)
+Name: PAOLA Advance Notice of Item Due (Digest)
 
 -----
 
-Message content: 
+Advance Notice of Item Due (Digest) (print)
 
---------------------
+-----
 
-**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE "ADVANCE NOTICE OF ITEM DUE - DIGEST" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
+Message content:
+
+----------
+
+"**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE ""ADVANCE NOTICE OF ITEM DUE - DIGEST"" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
 
 <<borrowers.cardnumber>>
 Hello <<borrowers.firstname>> <<borrowers.surname>>
@@ -21,15 +21,4 @@ You have <<count>> items due soon.
 
 Please return or renew your item(s) soon, or contact your local library to renew for you. Some items may not be renewable. 
 
-NExpress Regional Shared Catalog
-
-
-
-
-
-
-
-
-
-
-
+NExpress Regional Shared Catalog"
