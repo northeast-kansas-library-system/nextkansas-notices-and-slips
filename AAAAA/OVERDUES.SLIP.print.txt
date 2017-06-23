@@ -8,11 +8,11 @@ Subject: OVERDUES_SLIP
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
-<head> 
+<head>
    <style type="text/css">
       body {font: 14pt Georgia, "Times New Roman", Times, serif;margin: .75in }
       p.return {text-indent: 50px;}
@@ -20,7 +20,7 @@ Message content:
       table {margin-left: auto; margin-right: auto;}
       .alignleft {float: left;}
       .alignright {float: right;}
-   </style> 
+   </style>
 </head>
 <body>
 <p class="alignright">Overdue Notice - <<today>></p>
@@ -51,14 +51,3 @@ Message content:
 <p> </p>
 <p><<branches.branchname>></p>
 </body>
-
-
-
-
-
-
-
-
-
-
-

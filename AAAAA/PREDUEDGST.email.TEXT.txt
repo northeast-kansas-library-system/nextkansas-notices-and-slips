@@ -8,7 +8,7 @@ Subject: Advance Notice of Item Due
 
 -----
 
-Message content: 
+Message content:
 
 --------------------
 
@@ -17,19 +17,8 @@ Message content:
 <<borrowers.cardnumber>>
 Hello <<borrowers.firstname>> <<borrowers.surname>>
 
-You have <<count>> items due soon. 
+You have <<count>> items due soon.
 
-Please return or renew your item(s) soon, or contact your local library to renew for you. Some items may not be renewable. 
+Please return or renew your item(s) soon, or contact your local library to renew for you. Some items may not be renewable.
 
 NExpress Regional Shared Catalog
-
-
-
-
-
-
-
-
-
-
-
