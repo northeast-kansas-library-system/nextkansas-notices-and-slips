@@ -1,0 +1,26 @@
+AAAAA.ACCTDETAILS.email.TEXT
+
+Name: Account Details Template - DEFAULT
+
+-----
+
+Subject: Your new Koha account details.
+
+-----
+
+Message content:
+
+--------------------
+
+Hello <<borrowers.title>> <<borrowers.firstname>> <<borrowers.surname>>.
+
+Your new Koha account details are:
+
+User:  <<borrowers.userid>>
+Password: <<borrowers.password>>
+
+If you have any problems or questions regarding your account, please contact your Koha Administrator.
+
+Thank you,
+Koha Administrator
+kohaadmin@yoursite.org

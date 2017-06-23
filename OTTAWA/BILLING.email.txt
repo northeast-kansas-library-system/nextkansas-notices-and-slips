@@ -1,0 +1,42 @@
+OTTAWA.BILLING.email.TEXT
+
+Name: OTTAWA Bill for unreturned items
+
+-----
+
+Subject: Replacement cost billed for unreturned item(s)
+
+-----
+
+Message content: 
+
+--------------------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>> <<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+Our records show that the library materials you borrowed have not been returned. They are now considered lost, and you are responsible for replacement costs. Please note that this account may be referred to a collections agency for unreturned library materials. 
+
+Your account privileges remain suspended until all charges are settled with the library.  Please contact us to settle your charges so we can stop collections proceedings and restore your borrowing privileges. 
+
+This is a final notice. 
+
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. The library's contact information is below.
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+
+
+
+
+
+
+
+
+
+

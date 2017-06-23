@@ -1,0 +1,47 @@
+OSAGECITY.OSAGE1.print.TEXT
+
+Name: Overdue 1st Notice (Osage City)
+
+-----
+
+Subject: Osage City Library Overdue Notice
+
+-----
+
+Message content: 
+
+--------------------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+<<borrowers.cardnumber>>
+
+OVERDUE NOTICE
+
+The following items are overdue.  Please return them as soon as possible. Please remember, we do not charge overdue fines; we would like the items returned.
+
+<<items.content>>
+
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. If you have any questions regarding this statement please feel free to contact the library. Thank you.
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**
+
+
+
+
+
+
+
+
+
+
+

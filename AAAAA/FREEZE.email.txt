@@ -1,0 +1,32 @@
+AAAAA.FREEZE.email.TEXT
+
+Name: Overdue 3rd notice
+
+-----
+
+Subject: Library Privileges Suspended Notice
+
+-----
+
+Message content:
+
+--------------------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>
+<<borrowers.city>> <<borrowers.state>> <<borrowers.zipcode>>
+
+
+We regret that your account privileges have been suspended because library materials checked out on your account have not been returned in a timely way. To restore your privileges, return the materials to the library. Please contact us if you need special assistance. Thank you.
+
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know.
+
+<<items.content>>
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
