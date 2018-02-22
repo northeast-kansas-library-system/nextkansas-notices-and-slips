@@ -1,0 +1,26 @@
+AAAAA.AVAILABLE.default.email.txt
+
+Name: Suggestion available
+
+-----
+
+Suggested purchase available
+
+-----
+
+Message content:
+
+----------
+
+Dear <<borrowers.firstname>> <<borrowers.surname>>,
+
+You have suggested that the library acquire <<suggestions.title>> by <<suggestions.author>>.
+
+We are pleased to inform you that the item you requested is now part of the collection.
+
+If you have any questions, please email us at <<branches.branchemail>>.
+
+Thank you,
+
+<<branches.branchname>>
+

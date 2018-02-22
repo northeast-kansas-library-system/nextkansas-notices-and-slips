@@ -1,0 +1,39 @@
+ROSSVILLE.OVERDUE1.default.email.txt
+
+Name: Overdue 1st Notice (Rossville)
+
+-----
+
+Notice: Library Items Overdue
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+<<borrowers.cardnumber>>
+
+*FIRST NOTICE*
+
+Reminder! The following materials are 1 week overdue. Please return them to the library right away so other borrowers can make use of them. 
+
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. 
+
+<<items.content>>
+
+Did you know that you can renew your items online? Or that you can set up Advanced Due notices that remind you before your books are due?  Ask us how to log-in to your library account next time you are in the library.
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**
+

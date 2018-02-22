@@ -1,0 +1,26 @@
+LEAVENWRTH.MEMBERSHIP_EXPIRY.default.email.txt
+
+Name: LEAVENWRTH Account expiration
+
+-----
+
+Leavenworth Library Card Expires Soon
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>,
+
+Your library card will expire soon, on:
+
+<<borrowers.dateexpiry>>.  Please visit the library or call us at (913) 682-5666 extension 201 to renew your account.
+
+Thank you,
+
+Leavenworth Public Library
+417 Spruce St
+(913) 682-5666 x 201
+

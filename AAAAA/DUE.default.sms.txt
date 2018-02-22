@@ -1,0 +1,16 @@
+AAAAA.DUE.default.sms.txt
+
+Name: Item Due Reminder
+
+-----
+
+Item(s) Due Reminder
+
+-----
+
+Message content:
+
+----------
+
+You have a library item due today at <<branches.branchname>>
+

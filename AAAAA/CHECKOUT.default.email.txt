@@ -1,0 +1,20 @@
+AAAAA.CHECKOUT.default.email.txt
+
+Name: Item Checkout
+
+-----
+
+Checkouts
+
+-----
+
+Message content:
+
+----------
+
+The following items have been checked out today:
+----
+<<biblio.title>>
+----
+Thank you for visiting <<branches.branchname>>.
+

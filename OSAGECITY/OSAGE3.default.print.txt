@@ -1,0 +1,37 @@
+OSAGECITY.OSAGE3.default.print.txt
+
+Name: Overdue 3rd Notice (Osage City)
+
+-----
+
+Osage City Library Collections Notice
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+<<borrowers.cardnumber>>
+
+Our records indicate that we have attempted to contact you on several occasions concerning your overdue materials. 
+
+<<items.content>>
+
+Library accounts are charged for the replacement costs of any items not returned.  Accounts with materials 6 months or more overdue will be charged a non-refundable service fee of $25 and will be referred to Collections. 
+
+The library is not responsible for undeliverable mail.  
+
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. If you have any questions concerning this statement contact the library. Thank you.
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>> 
+

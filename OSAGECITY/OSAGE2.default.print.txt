@@ -1,0 +1,37 @@
+OSAGECITY.OSAGE2.default.print.txt
+
+Name: Overdue 2nd Notice (Osage City)
+
+-----
+
+Osage City Library Final Overdue Notice
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>> <<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+This is a repeated attempt to obtain the listed overdue items.  Your borrowing privileges have been suspended until payment is made or all items are returned.  Please return the items immediately or pay to replace them. There is a book drop in the alley of the library and in the front of the library.  Please remember, we do not charge overdue fines; we would like the items returned.
+
+<<items.content>>
+
+Library materials are purchased with tax funds and are considered public property. According to K.S.A 21-3702:"Failure to return materials within 30 days following the overdue notice will constitute intent to deprive the library of public property and constitutes grounds for prosecution of misdemeanor theft."   
+       
+Failure to resolve this matter within 30 days will result in notification of the proper authorities. We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. 
+
+Thank you for your time in resolving this matter. If you have any questions concerning your notice please contact the library.        
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. CONTACT YOUR LOCAL LIBRARY ABOVE TO RENEW**
+

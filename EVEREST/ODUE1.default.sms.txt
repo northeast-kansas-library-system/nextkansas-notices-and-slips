@@ -1,0 +1,16 @@
+EVEREST.ODUE1.default.sms.txt
+
+Name: NExpress Library 1 Overdue Notice (Winchester)
+
+-----
+
+NExpress Library Overdue
+
+-----
+
+Message content:
+
+----------
+
+Library items overdue at <<branches.branchname>>
+

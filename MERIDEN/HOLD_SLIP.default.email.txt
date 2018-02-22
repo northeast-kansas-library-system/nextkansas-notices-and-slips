@@ -1,0 +1,121 @@
+MERIDEN.HOLD_SLIP.default.email.txt
+
+Name: Meriden-Ozawkie Hold Transfer (Reserve) Slip
+
+-----
+
+Hold Slip
+
+-----
+
+Message content:
+
+----------
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type=
+  "text/javascript">
+</script>
+  <script type="text/javascript">
+//<![CDATA[
+
+  $(document).ready(function(){ 
+
+  $("#loc_MERIDEN").hide();
+  $("#bor_MERIDEN").parent().removeAttr('style')
+  });
+  //]]>
+  </script>
+
+<style>
+body {width: 275px; margin: 0;}
+article{display:inline-block}
+.right{float:right}
+li{font-size:1.3em;}
+</style>
+
+  <title>Reserve Slip</title>
+</head>
+
+<body>
+  <div id="borrower" style="display:none">
+    <div id="bor_<<branches.branchcode>>">
+      <article class="right"><h2 id="pudate"></h2></article><script type="text/javascript">
+//<![CDATA[
+      var d = new Date();
+      (d.setDate(d.getDate() + 7));
+
+      var currdate = new Date();
+      var currdate= "Hold till:<br /> " + (d.getMonth() + 1) + '/' + (d.getDate()) + '<span style="padding-left:25px"></span>' + '<br />';
+      document.getElementById("pudate").innerHTML = currdate;
+      //]]>
+      </script>
+
+      <h2 style="text-align:left"><<borrowers.surname>>,<br />
+      <<borrowers.firstname>></h2><br />
+      <br />
+      <h2> Contact by <<borrower-attribute:HOLD>></h2>
+      <br />
+      <h2>Hold at:<br /><<branches.branchname>></h2>
+      <ul>
+        <li><<borrowers.cardnumber>></li>
+
+        <li><<borrowers.phone>></li>
+
+        <li><<borrowers.email>></li>
+
+        <li>Arrived on: <<reserves.waitingdate>></li>
+
+        <li>Expires on: <<reserves.expirationdate>></li>
+
+      </ul><br />
+
+      <h3>ITEM ON HOLD</h3>
+
+      <ul>
+        <li><<items.itemcallnumber>> // <<biblio.title>> //
+        <<biblio.author>></li>
+
+        <li><<items.barcode>></li>
+
+        <li>Available since: <<reserves.waitingdate>></li>
+      </ul>
+
+      <p>Notes:<br />
+      <<reserves.reservenotes>></p><br />
+    </div>
+  </div>
+
+  <div id="loc_<<branches.branchcode>>">
+    <h1 style="font-size: 48px;"><<branches.branchnotes>></h1><br /><br /><br />
+    <p>Ship to:</p>
+    <h1><<branches.branchname>></h1>
+    <h1><<branches.branchaddress1>></h1>
+    <h1><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></h1>
+    <p>&nbsp;</p>
+    <p><<items.itemcallnumber>></p>
+    <p><<biblio.title>></p>
+    <p><<biblio.author>></p>
+    <p><<items.barcode>></p>
+    <p>&nbsp;</p>
+    <p>Shipped on: <<today>></p>
+    <p>&nbsp;</p>
+    <p>Shipped to: <<branches.branchcode>></p>
+    <p>&nbsp;</p>
+    <p>Shipped on: <<today>></p>
+    <p>&nbsp;</p>
+    <p>This slip generated at MERIDEN</p>
+    <p>&nbsp;</p>
+</div>
+  </div>
+
+
+</body>
+</html>
+

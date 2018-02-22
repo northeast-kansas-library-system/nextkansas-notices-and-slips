@@ -1,0 +1,125 @@
+SENECA.HOLD_SLIP.default.email.txt
+
+Name: Seneca Hold Transfer (Reserve) Slip
+
+-----
+
+Hold Slip
+
+-----
+
+Message content:
+
+----------
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+    //<![CDATA[
+
+      $(document).ready(function(){ 
+
+        $("#loc_SENECA").hide();
+        $("#bor_SENECA").parent().removeAttr('style')
+
+      });
+
+    //]]>
+    </script>
+
+    <style>
+      body {width: 275px; margin: 0;}
+      article{display:inline-block}
+      .right{float:right}
+      .page {font-size: 110%;}
+      .page h1 {font-size: 200%; text-decoration: underline;}
+      .page h2 {font-size: 150%; text-decoration: underline;}
+      .page h3 {font-size: 130%; text-decoration: underline;}
+      .page h4 {font-size: 120%; text-decoration: underline;}
+    </style>
+
+    <title>Reserve Slip</title>
+  </head>
+
+  <body>
+    <div id="borrower" class="page" style="display:none">
+      <div id="bor_<<branches.branchcode>>">
+        <h3 id="pudate" style="text-align:right"></h3>
+
+        <script type="text/javascript">
+        //<![CDATA[
+          var d = new Date();
+          (d.setDate(d.getDate() + 7));
+          var currdate = new Date();
+          var currdate= "Hold till: " + (d.getMonth() + 1) + '/' + (d.getDate()) + '<span style="padding-left:25px"></span>' + '<br /><h5 style="display:none"><<borrowers.email>></h5>';
+          document.getElementById("pudate").innerHTML = currdate;
+        //]]>
+        </script>
+
+        <h2 style="text-align:left"><<borrowers.surname>>,<br />
+        <<borrowers.firstname>></h2><br />
+        <br />
+        <br />
+
+        <h3>Hold at <<branches.branchname>></h3>
+
+        <ul>
+          <li><<borrowers.cardnumber>></li>
+          <li><<borrowers.phone>></li>
+          <li><<borrowers.email>></li>
+          <li><<borrower-attribute:HOLD>></li>
+        </ul><br />
+
+        <h3>ITEM ON HOLD</h3>
+
+        <ul>
+          <li><<items.itemcallnumber>> // <<biblio.title>> //
+          <<biblio.author>></li>
+          <li><<items.barcode>></li>
+          <li>Available since: <<reserves.waitingdate>></li>
+        </ul>
+
+        <p>Notes:<br /><<reserves.reservenotes>></p>
+        <p> </p>
+        <p>.</p>
+
+      </div>
+
+    </div>
+
+    <div id="loc_<<branches.branchcode>>" class="page">
+
+      <!-- Shipped to information -->
+        <h1><<branches.branchnotes>></h1><br /><br />
+        <p>Ship to:</p>
+        <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
+        
+      <!-- Spacer -->
+        <p> </p>
+        <p> </p>
+
+      <!-- Item information -->
+        <h3><<biblio.title>></h3>
+	<p><<items.itemcallnumber>></p>
+        <p><<items.barcode>></p>
+
+      <!-- Spacer -->
+        <p> </p>
+        <p> </p>
+
+      <!-- Shipped from information -->
+        <p>Shipped from: KS207<br />Seneca Free Library<br />shipped on: <<today>></p>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
+
+

@@ -1,0 +1,16 @@
+EFFINGHAM.ODUE2_ILL.default.sms.txt
+
+Name: NExpress ILL Overdue Notice 2 (Winchester)
+
+-----
+
+NExpress Library Account Blocked
+
+-----
+
+Message content:
+
+----------
+
+You have items that have been overdue for more than 35 days at <<branches.branchname>>
+

@@ -1,0 +1,18 @@
+NEKLS.RENEWAL.default.sms.txt
+
+Name: Item Renewal (Digest)
+
+-----
+
+Library renewals
+
+-----
+
+Message content:
+
+----------
+
+You renewed items at <<branches.branchname>> today
+----
+----
+

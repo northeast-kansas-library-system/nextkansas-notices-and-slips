@@ -1,0 +1,16 @@
+PAOLA.DUE.default.sms.txt
+
+Name: PAOLA Item Due Reminder
+
+-----
+
+PAOLA Item Due Reminder
+
+-----
+
+Message content:
+
+----------
+
+You have a library item due today at <<branches.branchname>>
+

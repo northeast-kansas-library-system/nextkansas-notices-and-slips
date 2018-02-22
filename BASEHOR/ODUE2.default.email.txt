@@ -1,0 +1,47 @@
+BASEHOR.ODUE2.default.email.txt
+
+Name: NExpress Library 2 Account Blocked (Basehor)
+
+-----
+
+Basehor Library Account Blocked
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>> <<borrowers.state>> <<borrowers.zipcode>>
+
+Hello-
+
+This is a courtesy reminder that you have books that are overdue by 35 days.  The items that are currently due back are listed below. Just to let you know, if your items aren’t returned:
+
+       after 35 days your account will be automatically blocked*
+       after 45 days you’ll be charged the replacement cost of the item*
+
+Please don’t let this happen! Return the materials to the library, or contact us if you need special assistance. 
+
+Did you know that you can renew your items online? Or that you can set up Advanced Due notices that remind you before your books are due?  Instructions are on our website www.basehorlibrary.org. 
+
+<<items.content>>
+
+Thank you for using the Basehor Community Library!
+
+*See our Circulation Policy on our website www.basehorlibrary.org
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+**Please don't reply to this automated message. Contact the Basehor Library directly with any questions or concerns. Thanks!**
+
+.pgend.
+

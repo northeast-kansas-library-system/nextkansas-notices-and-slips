@@ -1,0 +1,18 @@
+NEKLS.CHECKIN.default.sms.txt
+
+Name: Check-in Receipt (Digest)
+
+-----
+
+Library check-ins
+
+-----
+
+Message content:
+
+----------
+
+You checked in items at <<branches.branchname>> today
+----
+----
+

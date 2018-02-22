@@ -1,0 +1,36 @@
+LEAVENWRTH.ODUE3_ILL.default.email.txt
+
+Name: NExpress ILL Overdue Notice 3 (Leavenworth)
+
+-----
+
+Leavenworth ILL Overdue Notice 3
+
+-----
+
+Message content:
+
+----------
+
+          <<borrowers.firstname>> <<borrowers.surname>>
+          <<borrowers.address>>
+          <<borrowers.address2>>
+          <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+
+
+
+Final notice - <<today>>
+
+Dear <<borrowers.firstname>>
+
+The following items have been declared lost.  If you do not pay for the item(s), the library may report you to its collection agency.  This can negatively affect your credit report for up to seven years.  To avoid this, please pay for the overdue item(s) or return the item(s) you borrowed on good faith.  Your cooperation will help make our library materials available once again to our patrons.
+Thank You!
+
+<item>Cost: $<<items.replacementprice>> <<biblio.title>> <<biblio.author>> <<items.barcode>> Due: <<issues.date_due>></item>
+
+You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
+Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>.
+
+.pgend.
+

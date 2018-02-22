@@ -1,0 +1,16 @@
+AAAAA.PREDUEDGST.default.sms.txt
+
+Name: PAOLA Advance Notice of Item Due (Digest)
+
+-----
+
+Advance Notice of Item Due
+
+-----
+
+Message content:
+
+----------
+
+Items due soon at <<branches.branchname>>
+

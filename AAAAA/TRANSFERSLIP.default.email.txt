@@ -1,0 +1,68 @@
+AAAAA.TRANSFERSLIP.default.email.txt
+
+Name: Transfer Slip
+
+-----
+
+Transfer Slip
+
+-----
+
+Message content:
+
+----------
+
+<style type="text/css">
+#receipt {
+font-size:1.2em;	
+}
+
+#receipt ul {
+	list-style-type:none;
+}
+
+#receipt h3, #receipt caption {
+	color : #000000;
+	font-size : 1.4em;
+	font-weight : bold;
+	margin-bottom : 3px;
+	margin-top : 3px;
+}
+
+#receipt h4 {
+	color : #000000;
+	font-size: 1.3em;
+	margin-bottom : 3px;
+	margin-top : 3px;
+}
+
+h1 {font-size:1.6em;
+	}
+h2 {font-size:1.5em;
+}
+h3 {font-size:1.4em;
+}
+h4 {font-size:1.3em;
+}
+h5 {font-size:1.2em;
+}
+h6 {font-size:1.1em;
+}
+</style>
+
+<p style="margin-bottom: 0; margin-top: 0;">Date: <<today>></p>
+<h5>Transfer to <<branches.branchnotes>> <<branches.branchname>></h5>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h3>ITEM</h3>
+<h4><<biblio.title>></h4>
+<h5><<biblio.author>></h5>
+<ul>
+   <li><<items.barcode>></li>
+   <li><<items.itemcallnumber>></li>
+</ul>
+

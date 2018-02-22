@@ -1,0 +1,29 @@
+AAAAA.ACQORDER.default.email.txt
+
+Name: Acquisition order
+
+-----
+
+Order
+
+-----
+
+Message content:
+
+----------
+
+<<aqbooksellers.name>>
+<<aqbooksellers.address1>>
+<<aqbooksellers.address2>>
+<<aqbooksellers.address3>>
+<<aqbooksellers.address4>>
+<<aqbooksellers.phone>>
+
+Please order for the library:
+
+<order>Ordernumber <<aqorders.ordernumber>> (<<biblio.title>>) (quantity: <<aqorders.quantity>>) ($<<aqorders.listprice>> each).</order>
+
+Thank you,
+
+<<branches.branchname>>
+

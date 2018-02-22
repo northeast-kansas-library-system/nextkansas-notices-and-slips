@@ -1,0 +1,108 @@
+OTTAWA.HOLD_SLIP.default.email.txt
+
+Name: Ottawa Hold Transfer (Reserve) Slip
+
+-----
+
+Hold Slip
+
+-----
+
+Message content:
+
+----------
+
+<style type="text/css">
+#receipt {
+font-size:1.2em;	
+}
+
+#receipt ul {
+	list-style-type:none;
+}
+
+#receipt h3, #receipt caption {
+	color : #000000;
+	font-size : 1.4em;
+	font-weight : bold;
+	margin-bottom : 3px;
+	margin-top : 3px;
+}
+
+#receipt h4 {
+	color : #000000;
+	font-size: 1.3em;
+	margin-bottom : 3px;
+	margin-top : 3px;
+}
+
+h1 {font-size:1.6em;
+	}
+h2 {font-size:1.5em;
+}
+h3 {font-size:1.4em;
+}
+h4 {font-size:1.3em;
+}
+h5 {font-size:1.2em;
+}
+h6 {font-size:1.1em;
+}
+</style>
+
+<h2 style="margin-top:0px"><div id="expiration">Expires: </div></h2>
+<p style="margin-bottom: 0; margin-top: 0;">Today's Date: <<today>></p>
+
+<h5> Transfer to/Hold at <<branches.branchnotes>> <<branches.branchname>></h5>
+
+<div id="patroncontact"><h6><<borrowers.surname>>, <<borrowers.firstname>></h6>
+<h6><<borrowers.othernames>></h6>
+
+<ul>
+    <li><<borrowers.cardnumber>></li>
+    <li><<borrower-attribute:HOLD>></li>
+    <li><<borrowers.phone>></li>
+    <li><<borrowers.email>></li>
+</ul></div>
+<br />
+<br />
+<p style="margin-bottom: 0; margin-top:16;">Item on Hold</p>
+<br />
+<h4><<biblio.title>></h4>
+<h5><<biblio.author>></h5>
+<ul>
+   <li><<items.barcode>></li>
+   <li><<items.itemcallnumber>></li>
+   <li><<reserves.waitingdate>></li>
+   <li><<reserves.reservenotes>></li>
+   <li><<reserves.itemnotes>></li>
+</ul>
+
+<div id="branchinfo" style="display:none"><div id="TransferToBranch"><<branches.branchname>></div></div>
+
+<script>
+var expire=new Date();
+
+var transferto=document.getElementById("TransferToBranch").innerHTML;
+
+expire.setDate(expire.getDate()+7);
+
+expiration=expire.toDateString();
+
+expiration=( '0' + (expire.getMonth()+1) ).slice( -2 ) + '/' + ( '0' + (expire.getDate()) ).slice( -2 );
+
+if (!(transferto=="Ottawa Library"))
+{
+document.getElementById("expiration").style.display='none';
+document.getElementById("patroncontact").style.display='none';
+}
+
+else 
+
+{
+document.getElementById("expiration").innerHTML = 
+document.getElementById("expiration").innerHTML + expiration;
+}
+</script>
+
+

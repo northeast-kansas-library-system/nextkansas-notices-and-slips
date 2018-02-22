@@ -1,0 +1,41 @@
+OSAWATOMIE.ODUE3_ILL.default.email.txt
+
+Name: NExpress ILL Overdue Notice 3 (Osawatomie)
+
+-----
+
+Osawatomie ILL Overdue Notice 3
+
+-----
+
+Message content:
+
+----------
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+
+
+
+
+          <<borrowers.firstname>> <<borrowers.surname>>
+          <<borrowers.address>>
+          <<borrowers.address2>>
+          <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+
+
+
+Third Overdue Notice - <<today>>
+
+Dear <<borrowers.firstname>> <<borrowers.surname>>,
+
+The following ILL items are still being listed as overdue as of <<today>>:
+
+<<items.content>>
+
+The following ILL materials are still overdue. Please contact us if your patron is having problems returning the items or if there has been a shipping problem that we need to be aware of.  We show your library's phone number as <<borrowers.phone>> and your e-mail address as <<borrowers.email>>.  If this is incorrect, please let us know at <<branches.branchphone>> or <<branches.branchemail>>.
+
+.pgend.
+

@@ -1,0 +1,18 @@
+NEKLS.CHECKOUT.default.sms.txt
+
+Name: Item Check-out (Digest)
+
+-----
+
+Library check-outs
+
+-----
+
+Message content:
+
+----------
+
+You checked out items at <<branches.branchname>> today
+----
+----
+

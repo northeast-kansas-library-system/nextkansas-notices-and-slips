@@ -1,0 +1,20 @@
+AAAAA.CHECKIN.default.email.txt
+
+Name: Item Check-in
+
+-----
+
+Check-ins
+
+-----
+
+Message content:
+
+----------
+
+The following items have been checked in today:
+----
+<<biblio.title>>
+----
+Thank you.
+

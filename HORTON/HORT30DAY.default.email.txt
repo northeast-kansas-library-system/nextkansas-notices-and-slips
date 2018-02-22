@@ -1,0 +1,34 @@
+HORTON.HORT30DAY.default.email.txt
+
+Name: Overdue 3rd Notice (Horton)
+
+-----
+
+Account charged for unreturned item(s)
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+*THIRD NOTICE*
+
+We regret to inform you that your account has been charged for these items as there has been no response from you to this matter. If you would like to restore your privileges, return the materials to the library in the same condition as borrowed and pay any overdue fines to bring your account current. Thank you. 
+
+We show your contact phone number is <<borrowers.phone>>. If this is incorrect, please let us know. 
+
+<<items.content>>
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+

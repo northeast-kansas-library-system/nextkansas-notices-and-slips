@@ -1,0 +1,32 @@
+NEKLS.ACCTDETAILS.default.email.txt
+
+Name: Account Details Template - DEFAULT
+
+-----
+
+Your new Koha account details.
+
+-----
+
+Message content:
+
+----------
+
+Hello <<borrowers.title>> <<borrowers.firstname>> <<borrowers.surname>>.
+
+Your new Koha account details are:
+
+<<borrowers.firstname>>, <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+
+User:  <<borrowers.userid>>
+E-mail: <<borrowers.email>>
+
+If you have any problems or questions regarding your account, please contact your Koha Administrator.
+
+Thank you,
+Koha Administrator
+kohaadmin@yoursite.org
+

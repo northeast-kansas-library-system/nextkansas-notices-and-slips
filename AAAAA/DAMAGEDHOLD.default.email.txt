@@ -1,0 +1,20 @@
+AAAAA.DAMAGEDHOLD.default.email.txt
+
+Name: Damaged Item Removed From Holds Queue
+
+-----
+
+Damaged Item Removed From Holds Queue
+
+-----
+
+Message content:
+
+----------
+
+The following item was returned damaged and is out of circulation; your hold has been cancelled.
+
+<<biblio.title>>
+
+
+

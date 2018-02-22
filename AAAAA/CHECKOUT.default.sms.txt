@@ -1,0 +1,16 @@
+AAAAA.CHECKOUT.default.sms.txt
+
+Name: Item Checkout
+
+-----
+
+Library check-outs
+
+-----
+
+Message content:
+
+----------
+
+You checked out items at <<branches.branchname>> today
+

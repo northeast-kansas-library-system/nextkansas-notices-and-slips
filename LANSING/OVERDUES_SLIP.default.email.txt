@@ -1,0 +1,53 @@
+LANSING.OVERDUES_SLIP.default.email.txt
+
+Name: Overdues Slip (Lansing)
+
+-----
+
+OVERDUES_SLIP
+
+-----
+
+Message content:
+
+----------
+
+<head> 
+   <style type="text/css">
+      @page {size:8.5in 11in; margin: .75in}
+      body{font: 14pt Georgia, "Times New Roman", Times, serif;}
+      .alignright {float: right;}
+   </style> 
+</head>
+<body>
+<p class="alignright">Overdue Notice - <<today>></p>
+<p><<branches.branchname>><br />
+<<branches.branchaddress1>><br />
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>><br />
+ <br /> <br /> <br />
+                    <<borrowers.firstname>>  <<borrowers.surname>><br />
+                    <<borrowers.address>><br />                    <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>></p>
+	<p style="white-space: pre">
+
+
+	</p>
+	<p>Dear <<borrowers.firstname>> <<borrowers.surname>>,</p>
+        <p> </p>
+	<p>This is a friendly reminder that the items that you checked out from Lansing Community Library are now overdue.  We request that you return them to the library as soon as you can.  If the items are more than 45 days overdue, they are now marked as "Lost."  You are responsible for the cost of replacement.  If you return them in good condition within one week of the date of this letter, your account will be cleared.  We have a drop box on the east side of the building for your convenience.  If you are unable to find them, we can work with you to make arrangements to replace the materials so our other patrons can enjoy them as well.</p>
+<p> </p>
+<p>If you wish to receive e-mail reminders in the future, please let the staff know so that we can set that up for you.<br />
+ </p>
+<p><item>
+<strong>Author: <ins><<biblio.author>></ins></strong> / <em>Title: <ins><<biblio.title>></ins></em><br />
+<strong>Call #: <ins><<items.itemcallnumber>></ins></strong> - <em>Barcode #: <ins><<items.barcode>></ins></em><br />
+<strong>Date due: <ins><<items.onloan>></ins></strong> - <em>Late fees due: </ins><<items.fine>></ins></em><br />
+<strong>Item replacement cost: <ins><<items.replacementprice>></ins></strong><br />
+ </p></item>
+<p>Please call <<branches.branchphone>> or visit <<branches.branchname>> if you have any questions.  This notice was printed on <<today>>.</p>
+<p> </p>
+<p>Thank you,<br />
+ <br />
+ </p>
+<p><<branches.branchname>><br />http://lansing.mykansaslibrary.org/<br /><<branches.branchphone>><br /><<branches.branchemail>></p>
+</body>
+

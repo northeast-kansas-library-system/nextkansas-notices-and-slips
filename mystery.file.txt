@@ -1,0 +1,89 @@
+<style type="text/css">
+
+  ul#cirxtabs { list-style-type: none; margin: 30px 0 0 0; padding: 0 0 0.3em 0; }
+    /*the above line controls the position of the tabs relative to the lines above them*/
+  ul#cirxtabs li { display: inline; }
+    /*the above line arranges the tabs horizontally across the top of the tabbed content*/
+  ul#cirxtabs li a { color: #42454a; background-color: #dedbde; border: 1px solid #c9c3ba; border-bottom: none; padding: 0.3em; text-decoration: none; }
+    /*the above line arranges controls the color of the tabs*/
+  ul#cirxtabs li a:hover { background-color: #f1f0ee; }
+    /*the above line changes the color of an unselected tab when the mouse is hovering over it*/
+  ul#cirxtabs li a.selected { color: #000; background-color: #f1f0ee; font-weight: bold; padding: 0.7em 0.3em 0.38em 0.3em; }
+    /*the above line changes the color of the selected tab and positions text on the tab*/
+  div.cirxtabsContent { border: 1px solid #c9c3ba; padding: 0.5em; background-color: #f1f0ee; }
+    /*the above line controls the way that the content is positioned on the tab as well as the color of the tab*/
+  div.cirxtabsContent.hide { display: none; }
+    /*the above line hides the contents of the non-selected tabs*/
+
+</style>
+
+<script type="text/javascript">
+  //<![CDATA[
+
+  var cirxtabsLinks = new Array();
+  var contentDivs = new Array();
+
+  function init() {
+
+    // Grab the cirxtabstab links and content divs from the page
+    var cirxtabsListItems = document.getElementById('cirxtabs').childNodes;
+    for ( var i = 0; i < cirxtabsListItems.length; i++ ) {
+      if ( cirxtabsListItems[i].nodeName == "LI" ) {
+        var cirxtabsLink = getFirstChildWithTagName( cirxtabsListItems[i], 'A' );
+        var id = getHash( cirxtabsLink.getAttribute('href') );
+        cirxtabsLinks[id] = cirxtabsLink;
+        contentDivs[id] = document.getElementById( id );
+      }
+    }
+
+    // Assign onclick events to the cirxtab links, and
+    // highlight the first cirxtab
+    var i = 0;
+    for ( var id in cirxtabsLinks ) {
+      cirxtabsLinks[id].onclick = showcirxtab;
+      cirxtabsLinks[id].onfocus = function() { this.blur() };
+      if ( i == 0 ) cirxtabsLinks[id].className = 'selected';
+      i++;
+    }
+
+    // Hide all content divs except the first
+    var i = 0;
+
+    for ( var id in contentDivs ) {
+      if ( i != 0 ) contentDivs[id].className = 'cirxtabsContent hide';
+      i++;
+    }
+  }
+
+  function showcirxtabs() {
+    var selectedId = getHash( this.getAttribute('href') );
+
+    // Highlight the selected cirxtabstab, and dim all others.
+    // Also show the selected content div, and hide all others.
+    for ( var id in contentDivs ) {
+      if ( id == selectedId ) {
+        cirxtabsLinks[id].className = 'selected';
+        contentDivs[id].className = 'cirxtabsContent';
+      } else {
+        cirxtabsLinks[id].className = '';
+        contentDivs[id].className = 'cirxtabsContent hide';
+      }
+    }
+
+    // Stop the browser following the link
+    return false;
+  }
+
+  function getFirstChildWithTagName( element, tagName ) {
+    for ( var i = 0; i < element.childNodes.length; i++ ) {
+      if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
+    }
+  }
+
+  function getHash( url ) {
+    var hashPos = url.lastIndexOf ( '#' );
+    return url.substring( hashPos + 1 );
+  }
+
+  //]]>
+</script>

@@ -1,0 +1,35 @@
+ROSSVILLE.ODUE3.default.email.txt
+
+Name: NExpress Library 3 Lost Items Notice 3 (Rossville)
+
+-----
+
+Rossville Library Lost Items Notice
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+<<borrowers.cardnumber>>
+ 
+Lost Library Items - <<today>>
+ 
+Dear <<borrowers.firstname>>
+ 
+The following library items are going to be declared "Lost" because they have been overdue for 45 days as of <<today>>:
+ 
+<<items.content>>
+ 
+Your account has been suspended and you are going to be billed for these items. We will be mailing you an invoice in a few weeks. If you have the items to return, please do so as soon as possible, and we will forgive the charges on your account. If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible. 
+ 
+You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
+Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
+ 
+.pgend.
+

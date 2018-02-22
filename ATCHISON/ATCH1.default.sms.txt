@@ -1,0 +1,16 @@
+ATCHISON.ATCH1.default.sms.txt
+
+Name: Overdue 1st Notice (Atchison)
+
+-----
+
+NExpress Library Overdue
+
+-----
+
+Message content:
+
+----------
+
+Library items overdue at <<branches.branchname>>
+

@@ -1,0 +1,16 @@
+SILVERLAKE.ODUE1_SPEC.default.sms.txt
+
+Name: NExpress Special Category Overdue Notice 1 (Winchester)
+
+-----
+
+NExpress Library Overdue
+
+-----
+
+Message content:
+
+----------
+
+Library items overdue at <<branches.branchname>>
+

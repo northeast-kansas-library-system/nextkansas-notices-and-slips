@@ -1,0 +1,40 @@
+BASEHOR.ODUE1_SPEC.default.email.txt
+
+Name: NExpress Special Category Overdue Notice 1 (Basehor)
+
+-----
+
+Basehor Library Overdue Notice 1
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>> <<borrowers.state>> <<borrowers.zipcode>>
+
+Hello-
+
+We hope you're enjoying the items you have checked out from your library. This is just a reminder to return or renew them. The items that are currently due back are listed below.
+
+Did you know that you can renew your items online? Or that you can set up Advanced Due notices that remind you before your books are due?  Instructions are on our website www.basehorlibrary.org .
+
+Thank you for using the Basehor Community Library!
+
+<<items.content>>
+
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+**Please don't reply to this automated message. Contact the Basehor Library directly with any questions or concerns. Thanks!**
+
+.pgend.
+

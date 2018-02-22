@@ -1,0 +1,16 @@
+AAAAA.HOLDPLACED.default.email.txt
+
+Name: Hold Placed on Item
+
+-----
+
+Hold Placed on Item
+
+-----
+
+Message content:
+
+----------
+
+A hold has been placed on the following item : <<biblio.title>> (<<biblionumber>>) by the user <<firstname>> <<surname>> (<<cardnumber>>).
+

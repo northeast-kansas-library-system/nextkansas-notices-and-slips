@@ -1,0 +1,28 @@
+AAAAA.MEMBERSHIP_EXPIRY.default.email.txt
+
+Name: Account expiration
+
+-----
+
+Your Library Card Expires Soon
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>,
+
+Your library card will expire on <<borrowers.dateexpiry>>. Please call us at <<branches.branchphone>> or visit us at <<branches.branchname>> to renew your account.
+
+Thank you,
+
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+
+Email: <<branches.branchemail>>
+Phone: <<branches.branchphone>>
+Website: <<branches.branchurl>>
+
