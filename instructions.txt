@@ -31,7 +31,7 @@ The VBA for the macro is:
 
 ----------
 
-Sub WriteTotxt()
+Sub WriteTotxtNotices()
 
 Const forReading = 1, forAppending = 3, fsoForWriting = 2
 Dim fs, objTextStream, sText As String
