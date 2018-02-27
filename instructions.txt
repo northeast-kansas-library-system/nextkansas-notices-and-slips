@@ -5,7 +5,7 @@ The SQL for this report is:
 ----------
 
 SELECT
-  Concat(If(letter.branchcode = " ", "AAAAA", letter.branchcode), "\", letter.code, ".", letter.lang, ".", letter.message_transport_type) AS FILE,
+  Concat(If(letter.branchcode = " ", "AAAAA", letter.branchcode), "\\", letter.code, ".", letter.lang, ".", letter.message_transport_type) AS FILE,
   Concat(Concat(If(letter.branchcode = " ", "AAAAA", letter.branchcode), ".", letter.code, ".", letter.lang, ".", letter.message_transport_type, ".txt"), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
   Concat("Name: ", letter.name), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
   Concat("-----"), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
