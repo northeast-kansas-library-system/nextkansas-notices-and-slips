@@ -1,0 +1,35 @@
+<head>
+  <title>Issue Quick Slip</title>
+  <meta charset="UTF-8" />
+  <style type="text/css">
+    * {font-family: Verdana, Arial, sans-serif;}
+    body {background-color: #fff; cursor: default; width: 280px; margin: 0; border: 2px solid black;}
+    p {font-size: 10pt;}
+    h1 {font-size: 1.6em;}
+    h2 {font-size: 1.5em;}
+    h3 {font-size: 1.4em;}
+    h4 {font-size: 1.3em;}
+    h5 {font-size: 1.2em;}
+    h6 {font-size: 1.1em;}
+  </style>
+</head>
+
+<body>
+  <h3><<branches.branchname>></h3>
+  <p>
+    <<branches.branchaddress1>> <<branches.branchaddress2>><br />
+    <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>><br /> Ph: <<branches.branchphone>><br />
+    <<branches.branchemail>>
+  </p>
+  <p>Renew materials and place holds online: <br />
+    <b><u>nextkansas.org</u></b></p>
+  <p>Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>><br />
+    (<<borrowers.cardnumber>>)<br />
+    <<today>></p>
+  <h4>Checked Out Today</h4>
+  <checkedout>
+    <p><<biblio.title>> <br /> Barcode: <<items.barcode>><br /> Date due: <<items.onloan>><br />
+	</checkedout>
+</body>
+
+</html>
