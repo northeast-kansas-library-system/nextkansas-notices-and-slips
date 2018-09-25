@@ -1,6 +1,6 @@
 NEKLS.RENEWAL.default.email.txt
 
-Name: Item Renewal (Digest)
+Name: Renewal Receipt (Digest)
 
 -----
 
@@ -12,7 +12,7 @@ Message content:
 
 ----------
 
-<h1>Digital receipt - <<branches.branchname>></h1>
+<h1>Automatic digital renewal receipt - <<branches.branchname>></h1>
 <p>The following items were renewed today on your library account.</p>
 ----
 <p><<biblio.title>><br />Barcode: <<items.barcode>><br />Date due: <<items.onloan>></p>

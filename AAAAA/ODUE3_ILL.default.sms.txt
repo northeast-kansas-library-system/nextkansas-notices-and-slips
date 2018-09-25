@@ -1,6 +1,6 @@
 AAAAA.ODUE3_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 3 (Winchester)
+Name: NExpress ILL Overdue Notice 3 (Generic)
 
 -----
 
@@ -13,4 +13,6 @@ Message content:
 ----------
 
 You are being billed for long overdue items checked out from <<branches.branchname>>
+----
+----
 

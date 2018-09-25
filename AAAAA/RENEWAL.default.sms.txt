@@ -1,4 +1,4 @@
-NEKLS.RENEWAL.default.sms.txt
+AAAAA.RENEWAL.default.sms.txt
 
 Name: Renewal Receipt (Digest)
 

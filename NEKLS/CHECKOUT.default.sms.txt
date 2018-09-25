@@ -1,6 +1,6 @@
 NEKLS.CHECKOUT.default.sms.txt
 
-Name: Item Check-out (Digest)
+Name: Check-out Receipt (Digest)
 
 -----
 

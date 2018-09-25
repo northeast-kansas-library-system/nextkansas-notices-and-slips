@@ -1,6 +1,6 @@
 AAAAA.CHECKOUT.default.sms.txt
 
-Name: Item Checkout
+Name: Check-out Receipt (Digest)
 
 -----
 
@@ -13,4 +13,6 @@ Message content:
 ----------
 
 You checked out items at <<branches.branchname>> today
+----
+----
 

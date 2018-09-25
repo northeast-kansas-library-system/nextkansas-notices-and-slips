@@ -13,4 +13,6 @@ Message content:
 ----------
 
 You have library item(s) due today at <<branches.branchname>>
+----
+----
 

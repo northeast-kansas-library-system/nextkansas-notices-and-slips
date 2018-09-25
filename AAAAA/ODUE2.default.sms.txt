@@ -1,6 +1,6 @@
 AAAAA.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: NExpress Library 2 Account Blocked (Generic)
 
 -----
 
@@ -13,4 +13,6 @@ Message content:
 ----------
 
 You have items that have been overdue for more than 35 days at <<branches.branchname>>
+----
+----
 

@@ -1,6 +1,6 @@
 AAAAA.PREDUE.default.print.txt
 
-Name: PAOLA Advance Notice of Item Due
+Name: Advance Notice of Item Due
 
 -----
 

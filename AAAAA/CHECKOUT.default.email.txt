@@ -1,10 +1,10 @@
 AAAAA.CHECKOUT.default.email.txt
 
-Name: Item Checkout
+Name: Check-out Receipt (Digest)
 
 -----
 
-Checkouts
+Library Check-out Receipt
 
 -----
 
@@ -12,9 +12,13 @@ Message content:
 
 ----------
 
-The following items have been checked out today:
+<h1>Automatic digital check-out receipt - <<branches.branchname>></h1>
+<p>The following items were checked out today on your library account.</p>
+<p>This digital receipt only includes items checked out to your library account today.</p>
 ----
-<<biblio.title>>
+<p><<biblio.title>><br />Barcode: <<items.barcode>><br />Date due: <<items.onloan>></p>
 ----
-Thank you for visiting <<branches.branchname>>.
+<p><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></p>
+<p>If you have any questions, please contact us by phone at <<branches.branchphone>> or by e-mail at <<branches.branchemail>>.</p>
+<p>Access your library account online at <a href="https://catalog.nexpresslibrary.org/cgi-bin/koha/opac-user.pl">catalog.nexpresslibrary.org</a></p>
 

@@ -13,4 +13,6 @@ Message content:
 ----------
 
 An item you requested is available to pickup at <<branches.branchname>>
+----
+----
 

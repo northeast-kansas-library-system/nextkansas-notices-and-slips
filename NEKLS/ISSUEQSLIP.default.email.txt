@@ -12,82 +12,99 @@ Message content:
 
 ----------
 
-<style type="text/css">
-#receipt {
-font-size:1.2em;	
-}
+<!DOCTYPE html>
+<html>
 
-#receipt ul {
-	list-style-type:none;
-}
+<head>
+	<title>Issue Quick Slip</title>
+	<meta charset="UTF-8" />
+	<style type="text/css">
+		* {
+			font-family: Verdana, Arial, sans-serif;
+		}
 
-#receipt h3, #receipt caption {
-	color : #000000;
-	font-size : 1.4em;
-	font-weight : bold;
-	margin-bottom : 3px;
-	margin-top : 3px;
-}
+		body {
+			background-color: #fff;
+			cursor: default;
+			width: 280px;
+			margin: 0;
+			border: 2px solid black;
+		}
 
-#receipt h4 {
-	color : #000000;
-	font-size: 1.3em;
-	margin-bottom : 3px;
-	margin-top : 3px;
-}
+		p {
+			font-size: 10pt;
+		}
 
-h1 {font-size:1.6em;
-	}
-h2 {font-size:1.5em;
-}
-h3 {font-size:1.4em;
-}
-h4 {font-size:1.3em;
-}
-h5 {font-size:1.2em;
-}
-h6 {font-size:1.1em;
-}
-</style>
+		h1 {
+			font-size: 1.6em;
+		}
 
-<h3><<branches.branchname>></h3>
-<p><<branches.branchaddress1>> <<branches.branchaddress2>><br />
-<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>><br />
-Ph: <<branches.branchphone>><br />
-<<branches.branchemail>></p>
-<p>Renew materials and place holds online: <br />
-<b><u>catalog.nexpresslibrary.org</u></b></p>
-<p>Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>> <br />
-(<<borrowers.cardnumber>>) <br />
+		h2 {
+			font-size: 1.5em;
+		}
 
-<<today>><br />
+		h3 {
+			font-size: 1.4em;
+		}
 
-<h4>Checked Out Today</h4>
-<checkedout>
-<p>
-<<biblio.title>> <br />
-Barcode: <<items.barcode>><br />
-Date due: <<items.onloan>><br />
-</p>
-<span class="price" style="display: none;"><<items.replacementprice>></span>
+		h4 {
+			font-size: 1.3em;
+		}
 
-</checkedout>
-<i>Cost of buying these items:</i><br/>
-<b>$<span id="price"></b></span><br/>
-<i>Cost of using the library:</i><br/>
-<b>Priceless!</b><br/>
+		h5 {
+			font-size: 1.2em;
+		}
 
-<script type="text/javascript">
-var x = document.getElementsByClassName("price");
-var i;
-var total = 0;
-for (i = 0; i < x.length; i++) {
-   var cost = parseFloat( x[i].innerHTML );
-   if ( ! isNaN( cost ) ) {
-       total += cost;
-    }
-}
-document.getElementById("price").innerHTML = total.toFixed(2);
-</script>
+		h6 {
+			font-size: 1.1em;
+		}
+	</style>
 
+</head>
+
+<body>
+	<h3><<branches.branchname>></h3>
+	<p>
+		<<branches.branchaddress1>>
+		<<branches.branchaddress2>><br />
+		<<branches.branchcity>>,
+		<<branches.branchstate>>
+		<<branches.branchzip>><br /> Ph:
+		<<branches.branchphone>><br />
+		<<branches.branchemail>></p>
+	<p>Renew materials and place holds online: <br /> <b><u>nextkansas.org</u></b></p>
+	<p>Checked out to
+		<<borrowers.title>>
+		<<borrowers.firstname>>
+		<<borrowers.initials>>
+		<<borrowers.surname>> <br /> (
+		<<borrowers.cardnumber>>) <br />
+		<<today>></p>
+	<h4>Checked Out Today</h4>
+	<checkedout>
+		<p>
+			<<biblio.title>> <br /> Barcode:
+			<<items.barcode>><br /> Date due:
+			<<items.onloan>><br />
+<<items.price>>
+<<items.replacementprice>></p>
+	</checkedout> <span class="price" style="display: none;"><<items.price>></span>
+	<p><i>Cost of buying these items:</i><br/><b>$<span id="price"></b></span><br/><i>Cost of using the library:</i><br/><b>Priceless!</b></p>
+
+	<script type="text/javascript">
+		var x = document.getElementsByClassName("price");
+		var i;
+		var total = 0;
+		for (i = 0; i < x.length; i++) {
+			var cost = parseFloat(x[i].innerHTML);
+			if (!isNaN(cost)) {
+				total += cost;
+			}
+		}
+		document.getElementById("price").innerHTML = total.toFixed(2);
+	</script>
+
+</body>
+
+</html>
 

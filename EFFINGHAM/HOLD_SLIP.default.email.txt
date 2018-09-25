@@ -12,97 +12,119 @@ Message content:
 
 ----------
 
-<style type="text/css">
-#receipt {
-font-size:1.2em;	
-}
+<!DOCTYPE html>
 
-#receipt ul {
-	list-style-type:none;
-}
+<html>
 
-#receipt h3, #receipt caption {
-	color : #000000;
-	font-size : 1.4em;
-	font-weight : bold;
-	margin-bottom : 3px;
-	margin-top : 3px;
-}
+  <head>
 
-#receipt h4 {
-	color : #000000;
-	font-size: 1.3em;
-	margin-bottom : 3px;
-	margin-top : 3px;
-}
+    <script type="text/javascript">
+    //<![CDATA[
 
-h1 {font-size:1.6em;
-	}
-h2 {font-size:1.5em;
-}
-h3 {font-size:1.4em;
-}
-h4 {font-size:1.3em;
-}
-h5 {font-size:1.2em;
-}
-h6 {font-size:1.1em;
-}
-</style>
+      $(document).ready(function(){ 
 
-<h2 style="margin-top:0px"><div id="expiration">Expires: </div></h2>
-<p style="margin-bottom: 0; margin-top: 0;">Today's Date: <<today>></p>
+        $("#loc_EFFINGHAM").hide();
+        $("#bor_EFFINGHAM").parent().removeAttr('style')
 
-<h5> Transfer to/Hold at <<branches.branchnotes>> <<branches.branchname>></h5>
+      });
 
-<div id="patroncontact"><h6><<borrowers.surname>>, <<borrowers.firstname>></h6>
-<h6><<borrowers.othernames>></h6>
+    //]]>
+    </script>
 
-<ul>
-    <li><<borrowers.cardnumber>></li>
-    <li><<borrower-attribute:HOLD>></li>
-    <li><<borrowers.phone>></li>
-    <li><<borrowers.email>></li>
-</ul></div>
-<br />
-<br />
-<p style="margin-bottom: 0; margin-top:16;">Item on Hold</p>
-<br />
-<h4><<biblio.title>></h4>
-<h5><<biblio.author>></h5>
-<ul>
-   <li><<items.barcode>></li>
-   <li><<items.itemcallnumber>></li>
-   <li><<reserves.waitingdate>></li>
-   <li><<reserves.reservenotes>></li>
-   <li><<reserves.itemnotes>></li>
-</ul>
+    <style>
+      body {width: 275px;}
+      body {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 5px;
+      }
+      article{display:inline-block}
+      .right{float:right}
+      .slip {font-size: 110%;}
+      .slip h1 {font-size: 200%; text-decoration: underline;}
+      .slip h2 {font-size: 150%; text-decoration: underline;}
+      .slip h3 {font-size: 130%; text-decoration: underline;}
+      .slip h4 {font-size: 120%; text-decoration: underline;}
+    </style>
 
-<div id="branchinfo" style="display:none"><div id="TransferToBranch"><<branches.branchname>></div></div>
+    <title>Reserve Slip</title>
+  </head>
 
-<script>
-var expire=new Date();
+  <body>
+    <div id="borrower" class="slip" style="display:none">
+      <div id="bor_<<branches.branchcode>>">
+        <h3 id="pudate" style="text-align:right"></h3>
 
-var transferto=document.getElementById("TransferToBranch").innerHTML;
+        <script type="text/javascript">
+        //<![CDATA[
+          var d = new Date();
+          (d.setDate(d.getDate() + 7));
+          var currdate = new Date();
+          var currdate= "Hold till: " + (d.getMonth() + 1) + '/' + (d.getDate()) + '<span style="padding-left:25px"></span>' + '<br /><h5 style="display:none"><<borrowers.email>></h5>';
+          document.getElementById("pudate").innerHTML = currdate;
+        //]]>
+        </script>
 
-expire.setDate(expire.getDate()+7);
+        <h2 style="text-align:left"><<borrowers.surname>>,<br />
+        <<borrowers.firstname>></h2>
+        <br />
 
-expiration=expire.toDateString();
+        <h3>Hold at <<branches.branchname>></h3>
 
-expiration=( '0' + (expire.getMonth()+1) ).slice( -2 ) + '/' + ( '0' + (expire.getDate()) ).slice( -2 );
+        <ul>
+          <li><<borrowers.cardnumber>></li>
+          <li><<borrowers.phone>></li>
+          <li><<borrowers.email>></li>
+          <li><<borrower-attribute:HOLD>></li>
+        </ul>
+        <br />
 
-if (!(transferto=="Effingham Community Library"))
-{
-document.getElementById("expiration").style.display='none';
-document.getElementById("patroncontact").style.display='none';
-}
+        <h3>ITEM ON HOLD</h3>
 
-else 
+        <ul>
+          <li><<items.itemcallnumber>> // <<biblio.title>> //
+          <<biblio.author>></li>
+          <li><<items.barcode>></li>
+          <li>Available since: <<reserves.waitingdate>></li>
+        </ul>
 
-{
-document.getElementById("expiration").innerHTML = 
-document.getElementById("expiration").innerHTML + expiration;
-}
-</script>
+        <p>Notes:<br /><<reserves.reservenotes>></p>
+
+      </div>
+
+    </div>
+
+    <div id="loc_<<branches.branchcode>>" class="slip">
+
+      <!-- Shipped to information -->
+        <h1><<branches.branchnotes>></h1>
+      <!-- Spacer -->
+        <p> </p>
+
+        <p>Ship to:</p>
+        <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
+        
+      <!-- Spacer -->
+        <p> </p>
+
+      <!-- Item information -->
+        <h3><<biblio.title>></h3>
+        <p><<items.itemcallnumber>></p>
+        <p><<items.barcode>></p>
+
+      <!-- Spacer -->
+        <p> </p>
+
+      <!-- Shipped from information -->
+        <p>Shipped from: KS212<br />Effingham Community Library<br />shipped on: <<today>></p>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
 
 

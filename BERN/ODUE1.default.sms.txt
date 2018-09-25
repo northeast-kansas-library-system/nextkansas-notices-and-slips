@@ -1,6 +1,6 @@
 BERN.ODUE1.default.sms.txt
 
-Name: NExpress Library 1 Overdue Notice (Winchester)
+Name: NExpress Library 1 Overdue Notice (Bern)
 
 -----
 

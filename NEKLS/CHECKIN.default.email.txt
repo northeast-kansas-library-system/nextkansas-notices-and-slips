@@ -12,12 +12,36 @@ Message content:
 
 ----------
 
-<h1>Digital receipt - <<branches.branchname>></h1>
-<p>The following items were checked in today from your library accunt:</p>
-----
-<p><<biblio.title>><br />Barcode: <<items.barcode>><br />Date checked out: <<old_issues.issuedate>><br />Date due:  <<old_issues.date_due>><br />Date returned: <<old_issues.returndate>><br />Fine: <<items.fine>></p>
-----
-<p><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></p>
-<p>If you have any questions, please contact us by phone at <<branches.branchphone>> or by e-mail at <<branches.branchemail>>.</p>
-<p>Access your library account online at <a href="https://catalog.nexpresslibrary.org/cgi-bin/koha/opac-user.pl">catalog.nexpresslibrary.org</a></p>
+<html>
+
+<head>
+
+<title>Check-in receipt</title>
+
+</head>
+
+<body>
+
+
+  <h1>Automatic digital check-in receipt - <<branches.branchname>></h1>
+
+  <p>The following items were checked in today from your library account:</p>
+
+  ----
+
+  <p><<biblio.title>><br />Barcode: <<items.barcode>><br />Date checked out: <<old_issues.issuedate>><br />Date due:  <<old_issues.date_due>><br />Date returned: <<old_issues.returndate>><br />Fine: <<items.fine>></p>
+
+  ----
+
+  <p><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></p>
+
+  <p>If you have any questions, please contact us by phone at <<branches.branchphone>> or by e-mail at <<branches.branchemail>>.</p>
+
+  <p>Access your library account online at <a href="https://catalog.nexpresslibrary.org/cgi-bin/koha/opac-user.pl">catalog.nexpresslibrary.org</a></p>
+
+  <p>Visit our library's website at: <a href="<<branches.branchurl>>"><<branches.branchurl>></a></p>
+
+</body>
+
+</html>
 

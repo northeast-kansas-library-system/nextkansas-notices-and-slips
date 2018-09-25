@@ -1,0 +1,37 @@
+AAAAA.CHECKOUT_NOTE.default.email.txt
+
+Name: Checkout note on item set by patron
+
+-----
+
+Patron reports problem with an item
+
+-----
+
+Message content:
+
+----------
+
+<!DOCTYPE html>
+<html>
+<body>
+
+  <p>A patron has created a problem note on an item they have checked out from your library.  The details are as follow:</p>
+
+  <ul>
+    <li>Borrower's card number: <<borrowers.cardnumber>></li>
+    <li>Title of item:  <<biblio.title>></li>
+    <li>Author:  <<biblio.author>></li>
+    <li>Item due: <<issues.date_due>></li>
+    <li>Note: <<issues.note>></li>
+    <li>Date of note: <<issues.notedate>></li>
+  </ul>
+
+  <p>Click on the link below to run a report that will show you all of the notes created by this patron - including the note they just placed on this title:</p>
+
+  <p><a href='https://staff.nexpresslibrary.org/cgi-bin/koha/reports/guided_reports.pl?reports=3116&phase=Run+this+report&sql_params=<<borrowers.cardnumber>>' target='_blank'>Link to patron problem notes report</a></p>
+
+</body>
+</html> 
+
+

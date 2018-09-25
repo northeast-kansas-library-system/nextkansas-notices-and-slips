@@ -1,4 +1,4 @@
-NEKLS.TRANSFERSLIP.default.email.txt
+EFFINGHAM.TRANSFERSLIP.default.email.txt
 
 Name: Transfer Slip
 
@@ -44,13 +44,13 @@ Message content:
       <!-- Shipped to information -->
         <h1><<branches.branchnotes>></h1>
       <!-- Spacer -->
-        <p>&nbsp;</p>
+        <p> </p>
 
         <p>Ship to:</p>
         <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
         
       <!-- Spacer -->
-        <p>&nbsp;</p>
+        <p> </p>
 
       <!-- Item information -->
         <h3><<biblio.title>></h3>
@@ -58,10 +58,10 @@ Message content:
         <p><<items.barcode>></p>
 
       <!-- Spacer -->
-        <p>&nbsp;</p>
+        <p> </p>
 
       <!-- Shipped from information -->
-        <p>Shipped from: KS132<br />Northeast Kansas Library System<br />shipped on: <<today>></p>
+        <p>Shipped from: KS212<br />Effingham Community Library<br />shipped on: <<today>></p>
 
       </div>
 

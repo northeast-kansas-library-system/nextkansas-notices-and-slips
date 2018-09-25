@@ -1,6 +1,6 @@
 AAAAA.CHECKIN.default.sms.txt
 
-Name: Item Check-in
+Name: Check-in Receipt (Digest)
 
 -----
 
@@ -13,4 +13,6 @@ Message content:
 ----------
 
 You checked in items at <<branches.branchname>> today
+----
+----
 

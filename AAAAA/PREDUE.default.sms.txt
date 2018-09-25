@@ -1,6 +1,6 @@
 AAAAA.PREDUE.default.sms.txt
 
-Name: PAOLA Advance Notice of Item Due
+Name: Advance Notice of Item Due
 
 -----
 
@@ -12,5 +12,7 @@ Message content:
 
 ----------
 
-Items due soon at <<branches.branchname>>
+You have items due soon at <<branches.branchname>>
+----
+----
 

@@ -1,6 +1,6 @@
 AAAAA.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Winchester)
+Name: NExpress Library 3 Lost Items Notice 3 (Generic)
 
 -----
 
@@ -13,4 +13,6 @@ Message content:
 ----------
 
 You are being billed for long overdue items checked out from <<branches.branchname>>
+----
+----
 

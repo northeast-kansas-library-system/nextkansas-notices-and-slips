@@ -1,6 +1,6 @@
 AAAAA.PREDUEDGST.default.print.txt
 
-Name: PAOLA Advance Notice of Item Due (Digest)
+Name: Advance Notice of Item Due (Digest)
 
 -----
 

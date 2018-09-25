@@ -4,7 +4,7 @@ Name: Item Due Reminder
 
 -----
 
-Item(s) Due Reminder
+Item Due Reminder
 
 -----
 
@@ -13,4 +13,6 @@ Message content:
 ----------
 
 You have a library item due today at <<branches.branchname>>
+----
+----
 

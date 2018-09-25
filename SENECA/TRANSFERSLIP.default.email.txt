@@ -35,13 +35,13 @@ Message content:
     <div class="page">
 
       <!-- Shipped to information -->
-        <h1><<branches.branchnotes>></h1><br /><br />
         <p>Ship to:</p>
         <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
+        <h2><<branches.branchnotes>></h2><br />
         
       <!-- Spacer -->
-        <p> </p>
-        <p> </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
       <!-- Item information -->
         <h3><<biblio.title>></h3>
@@ -49,11 +49,12 @@ Message content:
         <p><<items.barcode>></p>
 
       <!-- Spacer -->
-        <p> </p>
-        <p> </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
       <!-- Shipped from information -->
-        <p>Shipped from: KS131<br />Northeast Kansas Library System<br />shipped on: <<today>></p>
+        <p>Shipped from: KS207<br />Seneca Free Library<br />shipped on: <<today>></p>
 
     </div>
 
