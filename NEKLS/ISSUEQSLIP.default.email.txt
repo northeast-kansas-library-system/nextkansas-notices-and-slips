@@ -16,93 +16,56 @@ Message content:
 <html>
 
 <head>
-	<title>Issue Quick Slip</title>
-	<meta charset="UTF-8" />
-	<style type="text/css">
-		* {
-			font-family: Verdana, Arial, sans-serif;
-		}
 
-		body {
-			background-color: #fff;
-			cursor: default;
-			width: 280px;
-			margin: 0;
-			border: 2px solid black;
-		}
+  <title>Issue Quick Slip</title>
 
-		p {
-			font-size: 10pt;
-		}
+  <meta charset="UTF-8" />
 
-		h1 {
-			font-size: 1.6em;
-		}
-
-		h2 {
-			font-size: 1.5em;
-		}
-
-		h3 {
-			font-size: 1.4em;
-		}
-
-		h4 {
-			font-size: 1.3em;
-		}
-
-		h5 {
-			font-size: 1.2em;
-		}
-
-		h6 {
-			font-size: 1.1em;
-		}
-	</style>
+  <style type="text/css">
+    * {font-family: Verdana, Arial, sans-serif;}
+    body {background-color: #fff; cursor: default; width: 280px; margin: 0; border:}
+    p {font-size: 10pt;}
+    h1 {font-size: 1.6em;}
+    h2 {font-size: 1.5em;}
+    h3 {font-size: 1.4em;}
+    h4 {font-size: 1.3em;}
+    h5 {font-size: 1.2em;}
+    h6 {font-size: 1.1em;}
+  </style>
 
 </head>
 
 <body>
-	<h3><<branches.branchname>></h3>
-	<p>
-		<<branches.branchaddress1>>
-		<<branches.branchaddress2>><br />
-		<<branches.branchcity>>,
-		<<branches.branchstate>>
-		<<branches.branchzip>><br /> Ph:
-		<<branches.branchphone>><br />
-		<<branches.branchemail>></p>
-	<p>Renew materials and place holds online: <br /> <b><u>nextkansas.org</u></b></p>
-	<p>Checked out to
-		<<borrowers.title>>
-		<<borrowers.firstname>>
-		<<borrowers.initials>>
-		<<borrowers.surname>> <br /> (
-		<<borrowers.cardnumber>>) <br />
-		<<today>></p>
-	<h4>Checked Out Today</h4>
-	<checkedout>
-		<p>
-			<<biblio.title>> <br /> Barcode:
-			<<items.barcode>><br /> Date due:
-			<<items.onloan>><br />
-<<items.price>>
-<<items.replacementprice>></p>
-	</checkedout> <span class="price" style="display: none;"><<items.price>></span>
-	<p><i>Cost of buying these items:</i><br/><b>$<span id="price"></b></span><br/><i>Cost of using the library:</i><br/><b>Priceless!</b></p>
 
-	<script type="text/javascript">
-		var x = document.getElementsByClassName("price");
-		var i;
-		var total = 0;
-		for (i = 0; i < x.length; i++) {
-			var cost = parseFloat(x[i].innerHTML);
-			if (!isNaN(cost)) {
-				total += cost;
-			}
-		}
-		document.getElementById("price").innerHTML = total.toFixed(2);
-	</script>
+  <div id="qslip_contents">
+
+    <div id="qslip_library">
+    <h3><<branches.branchname>></h3>
+    <p>
+      <<branches.branchaddress1>> <<branches.branchaddress2>><br />
+      <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>><br /> Ph: <<branches.branchphone>><br />
+      <<branches.branchemail>>
+    </p>
+    <p>Renew materials and place holds online: <br />
+        <b><u>nextkansas.org</u></b>
+    </p>
+    </div>
+
+    <div id="qslip_borrower">
+      <p>Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>><br />
+        (<<borrowers.cardnumber>>)<br />
+        <<today>>
+      </p>
+    </div>
+
+    <div id="qslip_cko">
+      <h4>Checked Out Today</h4>
+      <checkedout>
+        <p><<biblio.title>> <br />Barcode: <<items.barcode>><br />Date due: <<items.onloan>><br /></p>
+      </checkedout>
+    </div>
+
+  </div>
 
 </body>
 

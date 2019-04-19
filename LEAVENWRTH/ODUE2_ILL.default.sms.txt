@@ -1,6 +1,6 @@
 LEAVENWRTH.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: NExpress ILL Overdue Notice 2 (Leavenworth)
 
 -----
 

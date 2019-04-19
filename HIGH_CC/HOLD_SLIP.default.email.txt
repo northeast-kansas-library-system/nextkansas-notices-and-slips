@@ -1,0 +1,130 @@
+HIGH_CC.HOLD_SLIP.default.email.txt
+
+Name: HIGH_CC Hold Transfer (Reserve) Slip
+
+-----
+
+Hold Slip
+
+-----
+
+Message content:
+
+----------
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type=
+  "text/javascript">
+</script>
+  <script type="text/javascript">
+//<![CDATA[
+
+  $(document).ready(function(){ 
+
+  $("#loc_HIGH_CC").hide();
+  $("#bor_HIGH_CC").parent().removeAttr('style')
+  });
+  //]]>
+  </script>
+
+<style>
+body {width: 275px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;}
+article{display:inline-block}
+.right{float:right}
+</style>
+
+  <title>Reserve Slip</title>
+</head>
+
+<body>
+  <div id="borrower" style="display:none">
+    <div id="bor_<<branches.branchcode>>">
+      <article class="right"><h2 id="pudate"></h2></article><script type="text/javascript">
+//<![CDATA[
+      var d = new Date();
+      (d.setDate(d.getDate() + 7));
+
+      var currdate = new Date();
+      var currdate= "Hold till:<br /> " + (d.getMonth() + 1) + '/' + (d.getDate()) + '<span style="padding-left:25px"></span>' + '<br />';
+      document.getElementById("pudate").innerHTML = currdate;
+      //]]>
+      </script>
+
+      <h2 style="text-align:left"><<borrowers.surname>>,<br />
+      <<borrowers.firstname>></h2><br />
+      <br />
+      <br />
+
+      <h3>Hold at <<branches.branchname>></h3>
+
+      <ul>
+        <li><<borrowers.cardnumber>></li>
+
+        <li><<borrowers.phone>></li>
+
+        <li><<borrowers.email>></li>
+
+        <li><<borrower-attribute:HOLD>></li>
+      </ul><br />
+
+      <h3>ITEM ON HOLD</h3>
+
+      <ul>
+        <li><<items.itemcallnumber>> // <<biblio.title>> //
+        <<biblio.author>></li>
+
+        <li><<items.barcode>></li>
+
+        <li>Available since: <<reserves.waitingdate>></li>
+      </ul>
+
+      <p>Notes:<br />
+      <<reserves.reservenotes>></p><br />
+    </div>
+  </div>
+
+  <div id="loc_<<branches.branchcode>>">
+    <h1 style="font-size: 36px;"><<branches.branchnotes>></h1>
+    <p>Ship to:</p>
+    <h1><<branches.branchname>></h1>
+    <h1><<branches.branchaddress1>></h1>
+    <h1><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></h1>
+    <p> </p>
+    <p><<items.itemcallnumber>></p>
+    <p><<biblio.title>></p>
+    <p><<biblio.author>></p>
+    <p><<items.barcode>></p>
+    <p> </p>
+    <p>Shipped on: <<today>></p>
+    <p> </p>
+    <p>Shipped to: <<branches.branchcode>></p>
+    <p> </p>
+    <p>Shipped on: <<today>></p>
+    <p> </p>
+    <p>This slip generated at HIGH_CC</p>
+    <p> </p>
+</div>
+  </div>
+
+<div>
+
+<br />
+<h2 style="text-align: center;">Highland Community College Library</h2>
+<h3 style="text-align: center;">606 W Main St<br />Highland, KS 66035<br />785-442-6053</h3>
+
+</div>
+
+</body>
+</html>
+
+

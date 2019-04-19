@@ -1,0 +1,23 @@
+AAAAA.CANCEL_HOLD_ON_LOST.default.email.txt
+
+Name: Hold has been cancelled
+
+-----
+
+Hold has been cancelled
+
+-----
+
+Message content:
+
+----------
+
+Dear [% borrower.firstname %] [% borrower.surname %],
+
+We regret to inform you, that the following item can not be provided due to it being missing. Your hold was cancelled.
+
+Title: [% biblio.title %]
+Author: [% biblio.author %]
+Copy: [% item.copynumber %]
+Location: [% branch.branchname %]
+

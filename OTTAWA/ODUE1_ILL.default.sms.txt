@@ -1,10 +1,10 @@
 OTTAWA.ODUE1_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 1 (Winchester)
+Name: Overdue 1 - ILL (Ottawa)
 
 -----
 
-NExpress Library Overdue
+Ottawa library ILL overdue notice
 
 -----
 

@@ -1,6 +1,6 @@
 WINCHESTER.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Winchester)
+Name: Next Kansas ILL Overdue 3 (Winchester)
 
 -----
 

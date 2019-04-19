@@ -1,6 +1,6 @@
 NEKLS.ODUE2_SPEC.default.print.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Next Special Category Overdue Notice 2 (NEKLS)
 
 -----
 

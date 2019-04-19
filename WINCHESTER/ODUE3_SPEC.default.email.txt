@@ -1,6 +1,6 @@
 WINCHESTER.ODUE3_SPEC.default.email.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Next Kansas Special Category Overdue 3 (Winchester)
 
 -----
 

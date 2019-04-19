@@ -1,10 +1,10 @@
 OTTAWA.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Ottawa)
+Name: Overdue 3 / lost - ILL (Ottawa)
 
 -----
 
-Ottawa ILL Overdue Notice 3
+Ottawa library overdue notice 3
 
 -----
 

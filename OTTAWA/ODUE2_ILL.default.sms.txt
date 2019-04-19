@@ -1,10 +1,10 @@
 OTTAWA.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Ottawa)
 
 -----
 
-NExpress Library Account Blocked
+Ottawa library overdue notice 2
 
 -----
 

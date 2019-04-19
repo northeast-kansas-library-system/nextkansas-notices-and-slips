@@ -4,7 +4,7 @@ Name: Account Details Template - DEFAULT
 
 -----
 
-Your new Koha account details.
+Your new Next Search Catalog account details.
 
 -----
 
@@ -14,7 +14,7 @@ Message content:
 
 Hello <<borrowers.title>> <<borrowers.firstname>> <<borrowers.surname>>.
 
-Your new Koha account details are:
+Your new Next Search Catalog account details are:
 
 <<borrowers.firstname>>, <<borrowers.surname>>
 <<borrowers.address>>
@@ -24,9 +24,9 @@ Your new Koha account details are:
 User:  <<borrowers.userid>>
 E-mail: <<borrowers.email>>
 
-If you have any problems or questions regarding your account, please contact your Koha Administrator.
+If you have any problems or questions regarding your account, please contact your Next Search Catalog Administrator.
 
 Thank you,
-Koha Administrator
-kohaadmin@yoursite.org
+Next Search Catalog Administrator
+nexthelp@nekls.org
 

@@ -1,6 +1,6 @@
 NEKLS.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (NEKLS)
+Name: Next ILL Overdue Notice 3 (NEKLS)
 
 -----
 

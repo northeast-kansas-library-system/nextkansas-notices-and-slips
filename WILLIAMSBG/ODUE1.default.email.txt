@@ -1,6 +1,6 @@
 WILLIAMSBG.ODUE1.default.email.txt
 
-Name: NExpress Library 1 Overdue Notice (Williamsburg)
+Name: NExpress Library Overdue Notice 1 (Williamsburg)
 
 -----
 

@@ -12,39 +12,69 @@ Message content:
 
 ----------
 
-<h3><<branches.branchname>></h3>
-Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>> <br />
-(<<borrowers.cardnumber>>) <br />
+<!DOCTYPE html>
+<html>
 
-<<today>><br />
+<head>
 
-<h4>Checked Out</h4>
-<checkedout>
-<p>
-<<biblio.title>> <br />
-Barcode: <<items.barcode>><br />
-Date due: <<items.onloan>><br />
-</p>
-</checkedout>
+  <title>Issue Slip</title>
 
-<h4>Overdues</h4>
-<overdue>
-<p>
-<<biblio.title>> <br />
-Barcode: <<items.barcode>><br />
-Date due: <<items.onloan>><br />
-</p>
-</overdue>
+  <meta charset="UTF-8" />
 
-<!-- <hr>
+  <style type="text/css">
+    * {font-family: Verdana, Arial, sans-serif;}
+    body {background-color: #fff; cursor: default; width: 280px; margin: 0;}
+    p {font-size: 10pt;}
+    h1 {font-size: 1.6em;}
+    h2 {font-size: 1.5em;}
+    h3 {font-size: 1.4em;}
+    h4 {font-size: 1.3em;}
+    h5 {font-size: 1.2em;}
+    h6 {font-size: 1.1em;}
+  </style>
 
-<h4 style="text-align: center; font-style:italic;">News</h4>
-<news>
-<div class="newsitem">
-<h5 style="margin-bottom: 1px; margin-top: 1px"><b><<opac_news.title>></b></h5>
-<p style="margin-bottom: 1px; margin-top: 1px"><<opac_news.content>></p>
-<p class="newsfooter" style="font-size: 8pt; font-style:italic; margin-bottom: 1px; margin-top: 1px">Posted on <<opac_news.timestamp>></p>
-<hr />
-</div>
-</news> -->
+</head>
+
+<body>
+
+  <div id="slip_contents">
+
+    <div id="slip_library">
+    <h3><<branches.branchname>></h3>
+    <p>
+      <<branches.branchaddress1>> <<branches.branchaddress2>><br />
+      <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>><br /> Ph: <<branches.branchphone>><br />
+      <<branches.branchemail>>
+    </p>
+    <p>Renew materials and place holds online: <br />
+        <b><u>nextkansas.org</u></b>
+    </p>
+    </div>
+
+    <div id="slip_borrower">
+      <p>Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>><br />
+        (<<borrowers.cardnumber>>)<br />
+        <<today>>
+      </p>
+    </div>
+
+    <div id="slip_cko">
+      <h4>Checked Out</h4>
+      <checkedout>
+        <p><<biblio.title>> <br />Barcode: <<items.barcode>><br />Date due: <<items.onloan>><br /></p>
+      </checkedout>
+    </div>
+
+    <div id="slip_od">
+      <h4>Overdues</h4>
+      <overdue>
+        <p><<biblio.title>> <br />Barcode: <<items.barcode>><br />Date due: <<items.onloan>><br /></p>
+      </overdue>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
 

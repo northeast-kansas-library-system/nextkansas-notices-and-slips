@@ -16,7 +16,7 @@ Hello <<borrowers.firstname>>,
 
 Congratulations on getting a new library card at <<branches.branchname>>.
 
-<<branches.branchname>> is a member of the NExpress library consortium and you can find our online catalog at https://catalog.nexpresslibrary.org.  From this site you can search the catalog, access your account, request materials, see what's checked out on your account, and renew materials.
+<<branches.branchname>> is a member of the Next Search Catalog library consortium and you can find our online catalog at https://nextkansas.org.  From this site you can search the catalog, access your account, request materials, see what's checked out on your account, and renew materials.
 
 You can also visit our library's website at <<branches.branchurl>>.  From there you can learn more about our library including our hours and contact information.
 

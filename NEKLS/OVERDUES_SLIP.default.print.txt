@@ -45,7 +45,7 @@ Dear <<borrowers.firstname>> <<borrowers.surname>>,</p>
 <strong>Date due: <ins><<items.onloan>></ins></strong> - <em>Late fees due: </ins><<items.fine>></ins></em></p>
 <strong>Item replacement cost: <ins><<items.replacementprice>></ins></strong>
 <p> </p></item>
-<p>Please call <<branches.branchphone>> or visit <<branches.branchname>> if you have any questions.  You can access your account 24 hours a day at <ins>http://catalog.nexpresslibrary.org</ins>.</p>
+<p>Please call <<branches.branchphone>> or visit <<branches.branchname>> if you have any questions.  You can access your account 24 hours a day at <ins>http://nextkansas.org</ins>.</p>
 <p>This notice was printed on <<today>>.</p>
 <p> </p>
 <p>Thank you,</p>

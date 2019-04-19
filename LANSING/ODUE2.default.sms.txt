@@ -1,6 +1,6 @@
 LANSING.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: NExpress Library 2 Account Blocked (Lansing)
 
 -----
 

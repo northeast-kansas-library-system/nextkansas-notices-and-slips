@@ -1,10 +1,10 @@
 OTTAWA.ODUE2.default.email.txt
 
-Name: NExpress Library 2 Account Blocked (Ottawa)
+Name: Overdue 2 / blocked - standard (Ottawa)
 
 -----
 
-Ottawa Library Account Blocked
+Ottawa library account blocked
 
 -----
 

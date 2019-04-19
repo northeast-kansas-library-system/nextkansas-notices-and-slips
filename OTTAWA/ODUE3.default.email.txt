@@ -1,10 +1,10 @@
 OTTAWA.ODUE3.default.email.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Ottawa)
+Name: Overdue 3 / lost - standard (Ottawa)
 
 -----
 
-Ottawa Library Lost Items Notice
+Ottawa library lost items notice
 
 -----
 

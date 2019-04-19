@@ -1,0 +1,60 @@
+HIGH_CC.TRANSFERSLIP.default.email.txt
+
+Name: Highland CC Transfer Slip
+
+-----
+
+Transfer Slip
+
+-----
+
+Message content:
+
+----------
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <style type="text/css">
+
+      .page {width: 275px; padding: 4px;}
+      .page {font-size: 110%;}
+      .page h1 {font-size: 200%; text-decoration: underline;}
+      .page h2 {font-size: 150%; text-decoration: underline;}
+      .page h3 {font-size: 130%; text-decoration: underline;}
+      .page h4 {font-size: 120%; text-decoration: underline;}
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="page">
+
+      <!-- Shipped to information -->
+        <h1><<branches.branchnotes>></h1><br />
+        <p>Ship to:</p>
+        <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
+        
+      <!-- Spacer -->
+        <p> </p>
+
+      <!-- Item information -->
+        <h3><<biblio.title>></h3>
+	<p><<items.itemcallnumber>></p>
+        <p><<items.barcode>></p>
+
+      <!-- Spacer -->
+        <p> </p>
+
+      <!-- Shipped from information -->
+        <p>Shipped from: KS112<br />Highland Community College<br />shipped on: <<today>></p>
+
+    </div>
+
+  </body>
+
+</html>
+
