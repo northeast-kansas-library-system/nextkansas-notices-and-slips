@@ -1,10 +1,10 @@
 BASEHOR.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (Basehor)
 
 -----
 
-NExpress Library Account Blocked
+Basehor Community Library account blocked
 
 -----
 

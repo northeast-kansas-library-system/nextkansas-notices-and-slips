@@ -1,10 +1,10 @@
 NEKLS.ODUE1_SPEC.default.email.txt
 
-Name: NExpress Special Category Overdue Notice 1 (NEKLS)
+Name: Overdue 1 - special (NEKLS)
 
 -----
 
-NEKLS Library Overdue Notice 1
+Northeast Kansas Library System Library overdue notice
 
 -----
 

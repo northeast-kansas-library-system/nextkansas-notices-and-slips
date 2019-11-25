@@ -1,10 +1,10 @@
 DONIWATH.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Wathena)
+Name: Overdue 3 / lost - ILL (Doniphan - Wathena)
 
 -----
 
-Doniphan Co.-Wathena ILL Overdue Notice 3
+Doniphan County Library (Wathena branch) overdue notice 3
 
 -----
 

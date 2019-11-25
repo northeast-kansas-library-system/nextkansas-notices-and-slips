@@ -1,10 +1,10 @@
 DONIHIGH.ODUE2_SPEC.default.email.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Highland)
+Name: Overdue 2 / blocked - special (Doniphan - Highland)
 
 -----
 
-Doniphan Co.-Highland Library Overdue Notice 2
+Doniphan County Library (Highland branch) overdue notice 2
 
 -----
 
@@ -37,7 +37,7 @@ The following items are 35 days overdue as of <<today>>:
 
 If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
 
-You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
+You can access your account on-line at https://nextkansas.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
 
 .pgend.

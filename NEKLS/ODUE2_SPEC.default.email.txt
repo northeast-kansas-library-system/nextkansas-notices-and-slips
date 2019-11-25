@@ -1,10 +1,10 @@
 NEKLS.ODUE2_SPEC.default.email.txt
 
-Name: Next Special Category Overdue Notice 2 (NEKLS)
+Name: Overdue 2 / blocked - special (NEKLS)
 
 -----
 
-NEKLS Library Overdue Notice 2
+Northeast Kansas Library System Library overdue notice 2
 
 -----
 

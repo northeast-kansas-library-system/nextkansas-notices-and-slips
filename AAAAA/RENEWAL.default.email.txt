@@ -19,5 +19,5 @@ Message content:
 ----
 <p><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></p>
 <p>If you have any questions, please contact us by phone at <<branches.branchphone>> or by e-mail at <<branches.branchemail>>.</p>
-<p>Access your library account online at <a href="https://catalog.nexpresslibrary.org/cgi-bin/koha/opac-user.pl">catalog.nexpresslibrary.org</a></p>
+<p>Access your library account online at <a href="https://nextkansas.org//cgi-bin/koha/opac-user.pl">https://nextkansas.org/</a></p>
 

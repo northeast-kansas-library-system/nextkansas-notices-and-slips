@@ -1,10 +1,10 @@
 SABETHA.ODUE3_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - ILL (Sabetha)
 
 -----
 
-NExpress Library Lost Items Notice
+Mary Cotton Library overdue notice 3
 
 -----
 

@@ -1,10 +1,10 @@
 EUDORA.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Eudora)
 
 -----
 
-NExpress Library Overdue
+Eudora Public Library overdue notice
 
 -----
 

@@ -1,10 +1,10 @@
 PERRY.ODUE3_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - ILL (Perry-Lecompton)
 
 -----
 
-NExpress Library Lost Items Notice
+Perry-Lecompton Community Library overdue notice 3
 
 -----
 

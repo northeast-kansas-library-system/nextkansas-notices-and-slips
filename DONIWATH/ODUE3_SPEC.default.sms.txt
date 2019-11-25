@@ -1,10 +1,10 @@
 DONIWATH.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Doniphan - Wathena)
 
 -----
 
-NExpress Library Lost Items Notice
+Doniphan County Library (Wathena branch) overdue notice 3
 
 -----
 

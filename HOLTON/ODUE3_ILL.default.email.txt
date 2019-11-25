@@ -1,10 +1,10 @@
 HOLTON.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Holton)
+Name: Overdue 3 / lost - ILL (Holton)
 
 -----
 
-Beck-Bookman Library (Holton) ILL Overdue Notice 3
+Beck-Bookman Library overdue notice 3
 
 -----
 

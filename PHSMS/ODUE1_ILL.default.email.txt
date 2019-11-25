@@ -1,10 +1,10 @@
 PHSMS.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Prairie Hills - Sabetha Middle)
+Name: Overdue 1 - ILL (PHSD - Sabetha Middle)
 
 -----
 
-Prairie Hills - Sabetha Middle School ILL Overdue Notice 1
+Sabetha Middle School Library ILL overdue notice
 
 -----
 

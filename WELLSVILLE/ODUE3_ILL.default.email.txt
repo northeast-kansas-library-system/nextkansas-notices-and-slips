@@ -1,10 +1,10 @@
 WELLSVILLE.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Wellsville)
+Name: Overdue 3 / lost - ILL (Wellsville)
 
 -----
 
-Wellsville ILL Overdue Notice 3
+Wellsville City Library overdue notice 3
 
 -----
 

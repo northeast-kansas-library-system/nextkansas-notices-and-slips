@@ -1,10 +1,10 @@
 CARBONDALE.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Carbondale)
+Name: Overdue 2 / blocked - ILL (Carbondale)
 
 -----
 
-Carbondale ILL Overdue Notice 2
+Carbondale City Library overdue notice 2
 
 -----
 

@@ -1,10 +1,10 @@
 SABETHA.ODUE1.default.sms.txt
 
-Name: NExpress Library 1 Overdue Notice (Winchester)
+Name: Overdue 1 - standard (Sabetha)
 
 -----
 
-NExpress Library Overdue
+Mary Cotton Library overdue notice
 
 -----
 

@@ -1,10 +1,10 @@
 VALLEYFALL.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Valley Falls)
+Name: Overdue 3 / lost - ILL (Valley Falls)
 
 -----
 
-Delaware Township Library (Valley Falls) ILL Overdue Notice 3
+Delaware Township Library overdue notice 3
 
 -----
 

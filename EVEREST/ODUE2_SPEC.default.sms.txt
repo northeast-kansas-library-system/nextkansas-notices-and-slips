@@ -1,10 +1,10 @@
 EVEREST.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - special (Everest)
 
 -----
 
-NExpress Library Account Blocked
+Barnes Reading Room overdue notice 2
 
 -----
 

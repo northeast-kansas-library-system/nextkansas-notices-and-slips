@@ -1,10 +1,10 @@
 CORNING.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Corning)
+Name: Overdue 2 / blocked - ILL (Corning)
 
 -----
 
-Corning ILL Overdue Notice 2
+Corning City Library overdue notice 2
 
 -----
 

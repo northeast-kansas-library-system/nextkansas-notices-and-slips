@@ -13,6 +13,4 @@ Message content:
 ----------
 
 You checked out items at [% branch.branchname %] today
-----
-----
 

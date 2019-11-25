@@ -1,10 +1,10 @@
 NORTONVLLE.ODUE1.default.sms.txt
 
-Name: NExpress Library 1 Overdue Notice (Winchester)
+Name: Overdue 1 - standard (Nortonville)
 
 -----
 
-NExpress Library Overdue
+Nortonville Public Library overdue notice
 
 -----
 

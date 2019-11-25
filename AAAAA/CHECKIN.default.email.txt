@@ -22,21 +22,21 @@ Message content:
 
 <body>
 
-  <h1>Automatic digital check-in receipt - <<branches.branchname>></h1>
+  <h1>Automatic digital check-in receipt - [% branch.branchname %]</h1>
 
   <p>The following items were checked in today from your library account:</p>
 
   ----
-  <p><<biblio.title>><br />Barcode: <<items.barcode>><br />Date checked out: <<old_issues.issuedate>><br />Date due:  <<old_issues.date_due>><br />Date returned: <<old_issues.returndate>><br />Fine: <<items.fine>></p>
+  <p>[% biblio.title %]<br />Barcode: [% item.barcode %]<br />Date checked out: [% old_checkout.issuedate %]<br />Date due:  [% old_checkout.date_due %]<br />Date returned: [% old_checkout.returndate %]<br /></p>
   ----
 
-  <p><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></p>
+  <p>[% branch.branchname %]<br />[% branch.branchaddress1 %]<br />[% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]</p>
 
-  <p>If you have any questions, please contact us by phone at <<branches.branchphone>> or by e-mail at <<branches.branchemail>>.</p>
+  <p>If you have any questions, please contact us by phone at [% branch.branchphone %] or by e-mail at [% branch.branchemail %].</p>
 
-  <p>Access your library account online at <a href="https://catalog.nexpresslibrary.org/cgi-bin/koha/opac-user.pl">catalog.nexpresslibrary.org</a></p>
+  <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
 
-  <p>Visit our library's website at: <a href="<<branches.branchurl>>"><<branches.branchurl>></a></p>
+  <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
 
 </body>
 

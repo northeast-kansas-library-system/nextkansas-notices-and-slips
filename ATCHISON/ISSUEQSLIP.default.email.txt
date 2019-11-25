@@ -49,7 +49,7 @@ Message content:
 
     <!-- Catalog address -->
       <p>Visit our catalog at </p>
-      <h4>catalog.nexpresslibrary.org</h4>
+      <h4>https://nextkansas.org</h4>
 
     </div>
 

@@ -1,10 +1,10 @@
 LEAVENWRTH.ODUE3_SPEC.default.email.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Leavenworth)
+Name: Overdue 3 / lost - special (Leavenworth)
 
 -----
 
-Leavenworth Library Overdue Notice 3
+Leavenworth Public Library overdue notice 3
 
 -----
 

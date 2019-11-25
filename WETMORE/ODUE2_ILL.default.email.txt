@@ -1,10 +1,10 @@
 WETMORE.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Wetmore)
+Name: Overdue 2 / blocked - ILL (Wetmore)
 
 -----
 
-Wetmore ILL Overdue Notice 2
+Wetmore Public Library overdue notice 2
 
 -----
 

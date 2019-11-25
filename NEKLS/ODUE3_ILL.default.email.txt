@@ -1,10 +1,10 @@
 NEKLS.ODUE3_ILL.default.email.txt
 
-Name: Next ILL Overdue Notice 3 (NEKLS)
+Name: Overdue 3 / lost - ILL (NEKLS)
 
 -----
 
-NEKLS ILL Overdue Notice 3
+Northeast Kansas Library System Library overdue notice 3
 
 -----
 

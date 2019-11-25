@@ -1,10 +1,10 @@
 BURLINGAME.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (Burlingame)
 
 -----
 
-NExpress Library Account Blocked
+Burlingame Community Library account blocked
 
 -----
 

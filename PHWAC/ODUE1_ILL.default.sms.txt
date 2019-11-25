@@ -1,10 +1,10 @@
 PHWAC.ODUE1_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 1 (Winchester)
+Name: Overdue 1 - ILL (PHSD - Wetmore)
 
 -----
 
-NExpress Library Overdue
+Wetmore Academic Center Library ILL overdue notice
 
 -----
 

@@ -1,10 +1,10 @@
 LANSING.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - special (Lansing)
 
 -----
 
-NExpress Library Account Blocked
+Lansing Community Library overdue notice 2
 
 -----
 

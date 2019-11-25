@@ -1,10 +1,10 @@
 AAAAA.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Generic)
+Name: Overdue 2 / blocked - special (Next)
 
 -----
 
-NExpress Library Account Blocked
+Next Search Catalog Library overdue notice 2
 
 -----
 

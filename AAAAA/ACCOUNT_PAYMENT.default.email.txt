@@ -1,0 +1,30 @@
+AAAAA.ACCOUNT_PAYMENT.default.email.txt
+
+Name: Account payment
+
+-----
+
+Library fee payment
+
+-----
+
+Message content:
+
+----------
+
+[%- USE Price -%] 
+A payment of [% credit.amount * -1 | $Price %] has been applied to your library account ending with [% bcn = borrower.cardnumber %] [% bcn.substr(-6) %].
+
+[% branch.branchname %]
+[% borrower.branchcode %]
+
+This payment was applied to the following fees:
+[%- FOREACH o IN offsets %]
+Description: [% o.debit.description %]
+Amount paid: [% o.amount * -1 | $Price %]
+Amount remaining on this fee: [% o.debit.amountoutstanding | $Price %]
+[% END %]
+
+Next Search Catalog receipt number: [% credit.accountlines_id %]
+[% today %]
+

@@ -1,10 +1,10 @@
 NORTONVLLE.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Nortonville)
+Name: Overdue 2 / blocked - ILL (Nortonville)
 
 -----
 
-Nortonville ILL Overdue Notice 2
+Nortonville Public Library overdue notice 2
 
 -----
 

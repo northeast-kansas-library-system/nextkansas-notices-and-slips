@@ -1,10 +1,10 @@
 PERRY.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Perry)
+Name: Overdue 1 - ILL (Perry-Lecompton)
 
 -----
 
-Perry-Lecompton ILL Overdue Notice 1
+Perry-Lecompton Community Library ILL overdue notice
 
 -----
 

@@ -1,10 +1,10 @@
 DONIHIGH.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Highland)
+Name: Overdue 2 / blocked - ILL (Doniphan - Highland)
 
 -----
 
-Doniphan Co.-Highland ILL Overdue Notice 2
+Doniphan County Library (Highland branch) overdue notice 2
 
 -----
 

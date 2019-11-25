@@ -1,10 +1,10 @@
 LANSING.ODUE2.default.email.txt
 
-Name: NExpress Library 2 Account Blocked (Lansing)
+Name: Overdue 2 / blocked - standard (Lansing)
 
 -----
 
-Lansing Library Account Blocked
+Lansing Community Library account blocked
 
 -----
 

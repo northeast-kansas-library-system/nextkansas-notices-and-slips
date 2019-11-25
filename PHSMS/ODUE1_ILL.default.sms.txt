@@ -1,10 +1,10 @@
 PHSMS.ODUE1_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 1 (Winchester)
+Name: Overdue 1 - ILL (PHSD - Sabetha Middle)
 
 -----
 
-NExpress Library Overdue
+Sabetha Middle School Library ILL overdue notice
 
 -----
 

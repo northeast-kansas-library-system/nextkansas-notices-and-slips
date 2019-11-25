@@ -1,10 +1,10 @@
 NEKLS.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (NEKLS)
+Name: Overdue 2 / blocked - standard (NEKLS)
 
 -----
 
-NExpress Library Account Blocked
+Northeast Kansas Library System Library account blocked
 
 -----
 

@@ -1,10 +1,10 @@
 MCLOUTH.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (McLouth)
+Name: Overdue 2 / blocked - ILL (McLouth)
 
 -----
 
-McLouth ILL Overdue Notice 2
+McLouth Public Library overdue notice 2
 
 -----
 

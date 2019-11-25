@@ -1,10 +1,10 @@
 TONGANOXIE.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Tonganoxie)
 
 -----
 
-NExpress Library Overdue
+Tonganoxie Public Library overdue notice
 
 -----
 

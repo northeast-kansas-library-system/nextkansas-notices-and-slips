@@ -1,10 +1,10 @@
 SABETHA.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Sabetha - Mary Cotton)
+Name: Overdue 2 / blocked - ILL (Sabetha)
 
 -----
 
-Sabetha - Mary Cotton ILL Overdue Notice 2
+Mary Cotton Library overdue notice 2
 
 -----
 

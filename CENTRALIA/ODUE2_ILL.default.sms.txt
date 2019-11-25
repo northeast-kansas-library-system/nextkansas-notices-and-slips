@@ -1,10 +1,10 @@
 CENTRALIA.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Centralia)
 
 -----
 
-NExpress Library Account Blocked
+Centralia Community Library overdue notice 2
 
 -----
 

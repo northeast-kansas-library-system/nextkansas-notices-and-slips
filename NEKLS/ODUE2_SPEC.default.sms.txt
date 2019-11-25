@@ -1,10 +1,10 @@
 NEKLS.ODUE2_SPEC.default.sms.txt
 
-Name: Next Special Category Overdue Notice 2 (NEKLS)
+Name: Overdue 2 / blocked - special (NEKLS)
 
 -----
 
-NExpress Library Account Blocked
+Northeast Kansas Library System Library overdue notice 2
 
 -----
 

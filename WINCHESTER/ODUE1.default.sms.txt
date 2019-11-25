@@ -1,10 +1,10 @@
 WINCHESTER.ODUE1.default.sms.txt
 
-Name: Next Kansas Overdue 1 (Winchester)
+Name: Overdue 1 - standard (Winchester)
 
 -----
 
-NExpress Library Overdue
+Winchester Public Library overdue notice
 
 -----
 

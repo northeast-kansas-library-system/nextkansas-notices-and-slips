@@ -1,10 +1,10 @@
 PHAXTELL.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Winchester)
+Name: Overdue 3 / lost - standard (PHSD - Axtell)
 
 -----
 
-NExpress Library Lost Items Notice
+Axtell Public School Library lost items notice
 
 -----
 

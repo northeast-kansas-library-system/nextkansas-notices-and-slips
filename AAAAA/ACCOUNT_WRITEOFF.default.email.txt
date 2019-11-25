@@ -1,0 +1,28 @@
+AAAAA.ACCOUNT_WRITEOFF.default.email.txt
+
+Name: Account writeoff
+
+-----
+
+Library fee write-off
+
+-----
+
+Message content:
+
+----------
+
+[%- USE Price -%] 
+A account write-off of [% credit.amount * -1 | $Price %] has been applied to your library account ending with [% bcn = borrower.cardnumber %] [% bcn.substr(-6) %].
+
+This write-off was applied to the following fees:
+[%- FOREACH o IN offsets %]
+Description: [% o.debit.description %]
+Amount written off: [% o.amount * -1 | $Price %]
+Amount remaining on this fee: [% o.debit.amountoutstanding | $Price %]
+[% END %]
+
+Next Search Catalog receipt number: [% credit.accountlines_id %]
+[% today %]
+
+

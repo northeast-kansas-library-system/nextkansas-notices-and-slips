@@ -1,10 +1,10 @@
 MERIDEN.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Meriden-Ozawkie)
 
 -----
 
-NExpress Library Overdue
+Meriden-Ozawkie Public Library overdue notice
 
 -----
 

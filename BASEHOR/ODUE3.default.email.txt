@@ -1,10 +1,10 @@
 BASEHOR.ODUE3.default.email.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Basehor)
+Name: Overdue 3 / lost - standard (Basehor)
 
 -----
 
-Basehor Library Lost Items Notice
+Basehor Community Library lost items notice
 
 -----
 

@@ -42,7 +42,7 @@ Message content:
 <strong>Call #: <ins><<items.itemcallnumber>></ins></strong> - <em>Barcode #: <ins><<items.barcode>></ins></em><br />
 <strong>Date due: <ins><<items.onloan>></ins></strong> - <em>Late fees due: </ins><<items.fine>></ins></em></p>
 <p> </p></item>
-<p style="white-space: pre">Please call <<branches.branchphone>> or visit <<branches.branchname>> if you have any questions.  You can access your account 24 hours a day at <ins>http://catalog.nexpresslibrary.org</ins>.</p>
+<p style="white-space: pre">Please call <<branches.branchphone>> or visit <<branches.branchname>> if you have any questions.  You can access your account 24 hours a day at <ins>https://nextkansas.org/</ins>.</p>
 <p>This notice was printed on <<today>>.</p>
 <p> </p>
 <p>Thank you,</p>

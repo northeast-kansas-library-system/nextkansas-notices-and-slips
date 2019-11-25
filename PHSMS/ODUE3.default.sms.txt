@@ -1,10 +1,10 @@
 PHSMS.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Winchester)
+Name: Overdue 3 / lost - standard (PHSD - Sabetha Middle)
 
 -----
 
-NExpress Library Lost Items Notice
+Sabetha Middle School Library lost items notice
 
 -----
 

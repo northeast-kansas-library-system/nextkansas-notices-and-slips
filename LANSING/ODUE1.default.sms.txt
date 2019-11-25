@@ -1,10 +1,10 @@
 LANSING.ODUE1.default.sms.txt
 
-Name: NExpress Library 1 Overdue Notice (Winchester)
+Name: Overdue 1 - standard (Lansing)
 
 -----
 
-NExpress Library Overdue
+Lansing Community Library overdue notice
 
 -----
 

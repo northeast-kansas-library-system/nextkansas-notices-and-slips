@@ -1,10 +1,10 @@
 ROSSVILLE.ODUE2.default.email.txt
 
-Name: NExpress Library 2 Account Blocked (Rossville)
+Name: Overdue 2 / blocked - standard (Rossville)
 
 -----
 
-Rossville Library Account Blocked
+Rossville Community Library account blocked
 
 -----
 
@@ -28,7 +28,7 @@ The following items are 35 days overdue as of <<today>>:
  
 Your library card has now been suspended, and you will be billed for the cost of each item once they are 45 days overdue.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  
  
-You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
+You can access your account on-line at https://nextkansas.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
  
 .pgend.

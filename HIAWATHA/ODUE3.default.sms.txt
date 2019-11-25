@@ -1,10 +1,10 @@
 HIAWATHA.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Winchester)
+Name: Overdue 3 / lost - standard (Hiawatha)
 
 -----
 
-NExpress Library Lost Items Notice
+Morrill Public Library lost items notice
 
 -----
 

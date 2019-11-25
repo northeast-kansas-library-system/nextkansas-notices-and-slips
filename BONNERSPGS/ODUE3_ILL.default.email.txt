@@ -1,10 +1,10 @@
 BONNERSPGS.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Bonner Springs)
+Name: Overdue 3 / lost - ILL (Bonner Springs)
 
 -----
 
-Bonner Springs ILL Overdue Notice 3
+Bonner Springs Library overdue notice 3
 
 -----
 

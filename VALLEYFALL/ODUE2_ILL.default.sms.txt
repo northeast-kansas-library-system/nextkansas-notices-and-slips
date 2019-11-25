@@ -1,10 +1,10 @@
 VALLEYFALL.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Valley Falls)
 
 -----
 
-NExpress Library Account Blocked
+Delaware Township Library overdue notice 2
 
 -----
 

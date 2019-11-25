@@ -1,10 +1,10 @@
 WILLIAMSBG.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Williamsburg)
 
 -----
 
-NExpress Library Account Blocked
+Williamsburg Community Library overdue notice 2
 
 -----
 

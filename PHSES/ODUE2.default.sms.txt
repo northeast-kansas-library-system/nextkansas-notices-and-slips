@@ -1,10 +1,10 @@
 PHSES.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (PHSD - Sabetha Elementary)
 
 -----
 
-NExpress Library Account Blocked
+Sabetha Elementary  School Library account blocked
 
 -----
 

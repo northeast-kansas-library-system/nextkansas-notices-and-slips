@@ -1,10 +1,10 @@
 DONIWATH.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Doniphan - Wathena)
 
 -----
 
-NExpress Library Overdue
+Doniphan County Library (Wathena branch) overdue notice
 
 -----
 

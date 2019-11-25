@@ -1,10 +1,10 @@
 MERIDEN.ODUE2_ILL.default.email.txt
 
-Name: Meriden-Ozawkie ILL Overdue Notice 2 (Meriden)
+Name: Overdue 2 / blocked - ILL (Meriden-Ozawkie)
 
 -----
 
-NExpress ILL Overdue Notice 2
+Meriden-Ozawkie Public Library overdue notice 2
 
 -----
 

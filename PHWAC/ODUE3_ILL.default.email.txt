@@ -1,10 +1,10 @@
 PHWAC.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Prairie Hills - Wetmore Academic)
+Name: Overdue 3 / lost - ILL (PHSD - Wetmore)
 
 -----
 
-Prairie Hills - Wetmore Academic ILL Overdue Notice 3
+Wetmore Academic Center Library overdue notice 3
 
 -----
 

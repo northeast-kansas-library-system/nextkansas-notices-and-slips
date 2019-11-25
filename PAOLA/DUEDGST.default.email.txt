@@ -20,7 +20,7 @@ Dear <<borrowers.firstname>> <<borrowers.surname>>,
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
 <<borrowers.phone>>
 
-Hello. You have one or more library materials due today. Please renew your materials, or return them to the library. You can renew online at catalog.nexpresslibrary.org or contact your library for assistance. Thank you. 
+Hello. You have one or more library materials due today. Please renew your materials, or return them to the library. You can renew online at https://nextkansas.org or contact your library for assistance. Thank you. 
 
 <<items.content>>
 

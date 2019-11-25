@@ -1,10 +1,10 @@
 PHAXTELL.ODUE1.default.sms.txt
 
-Name: NExpress Library 1 Overdue Notice (Winchester)
+Name: Overdue 1 - standard (PHSD - Axtell)
 
 -----
 
-NExpress Library Overdue
+Axtell Public School Library overdue notice
 
 -----
 

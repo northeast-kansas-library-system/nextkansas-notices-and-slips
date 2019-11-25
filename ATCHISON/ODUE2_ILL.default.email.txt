@@ -1,10 +1,10 @@
 ATCHISON.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Atchison)
+Name: Overdue 2 / blocked - ILL (Atchsion)
 
 -----
 
-Atchison ILL Overdue Notice 2
+Atchison Public Library overdue notice 2
 
 -----
 

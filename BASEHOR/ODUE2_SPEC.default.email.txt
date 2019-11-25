@@ -1,10 +1,10 @@
 BASEHOR.ODUE2_SPEC.default.email.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Basehor)
+Name: Overdue 2 / blocked - special (Basehor)
 
 -----
 
-Basehor Library Overdue Notice 2
+Basehor Community Library overdue notice 2
 
 -----
 

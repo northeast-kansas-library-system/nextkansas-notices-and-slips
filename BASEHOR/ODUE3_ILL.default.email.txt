@@ -1,10 +1,10 @@
 BASEHOR.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Basehor)
+Name: Overdue 3 / lost - ILL (Basehor)
 
 -----
 
-Basehor ILL Overdue Notice 3
+Basehor Community Library overdue notice 3
 
 -----
 

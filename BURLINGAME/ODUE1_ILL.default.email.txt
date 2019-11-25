@@ -1,10 +1,10 @@
 BURLINGAME.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Burlingame)
+Name: Overdue 1 - ILL (Burlingame)
 
 -----
 
-Burlingame ILL Overdue Notice 1
+Burlingame Community Library ILL overdue notice
 
 -----
 

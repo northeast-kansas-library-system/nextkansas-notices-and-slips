@@ -1,10 +1,10 @@
 SILVERLAKE.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Silver Lake)
+Name: Overdue 2 / blocked - ILL (Silver Lake)
 
 -----
 
-Silver Lake ILL Overdue Notice 2
+Silver Lake Library overdue notice 2
 
 -----
 

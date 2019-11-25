@@ -1,10 +1,10 @@
 LINWOOD.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Linwood)
+Name: Overdue 1 - ILL (Linwood)
 
 -----
 
-Linwood ILL Overdue Notice 1
+Linwood Community Library ILL overdue notice
 
 -----
 

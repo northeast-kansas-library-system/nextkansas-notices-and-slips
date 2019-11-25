@@ -1,10 +1,10 @@
 OSKALOOSA.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (Oskaloosa)
 
 -----
 
-NExpress Library Account Blocked
+Oskaloosa Public Library account blocked
 
 -----
 

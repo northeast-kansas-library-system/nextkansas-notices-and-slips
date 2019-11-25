@@ -1,10 +1,10 @@
 OVERBROOK.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Overbrook)
+Name: Overdue 3 / lost - ILL (Overbrook)
 
 -----
 
-Overbrook ILL Overdue Notice 3
+Overbrook Public Library overdue notice 3
 
 -----
 

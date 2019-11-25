@@ -1,10 +1,10 @@
 LYNDON.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Lyndon)
 
 -----
 
-NExpress Library Lost Items Notice
+Lyndon Carnegie Library overdue notice 3
 
 -----
 

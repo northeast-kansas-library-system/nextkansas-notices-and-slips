@@ -1,10 +1,10 @@
 HORTON.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Horton)
 
 -----
 
-NExpress Library Lost Items Notice
+Horton Public Library overdue notice 3
 
 -----
 

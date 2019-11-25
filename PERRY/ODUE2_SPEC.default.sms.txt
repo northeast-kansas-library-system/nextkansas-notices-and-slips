@@ -1,10 +1,10 @@
 PERRY.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - special (Perry-Lecompton)
 
 -----
 
-NExpress Library Account Blocked
+Perry-Lecompton Community Library overdue notice 2
 
 -----
 

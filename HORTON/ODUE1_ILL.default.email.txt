@@ -1,10 +1,10 @@
 HORTON.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Horton)
+Name: Overdue 1 - ILL (Horton)
 
 -----
 
-Horton ILL Overdue Notice 1
+Horton Public Library ILL overdue notice
 
 -----
 

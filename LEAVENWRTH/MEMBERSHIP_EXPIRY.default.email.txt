@@ -12,11 +12,11 @@ Message content:
 
 ----------
 
-<<borrowers.firstname>> <<borrowers.surname>>,
+[% borrower.firstname %] [% borrower.surname %],
 
 Your library card will expire soon, on:
 
-<<borrowers.dateexpiry>>.  Please visit the library or call us at (913) 682-5666 extension 1100 to renew your account.
+[% borrower.dateexpiry | $KohaDates %]. Please visit the library or call us at (913) 682-5666 extension 1100 to renew your account.
 
 Thank you,
 

@@ -1,10 +1,10 @@
 CORNING.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Corning)
 
 -----
 
-NExpress Library Lost Items Notice
+Corning City Library overdue notice 3
 
 -----
 

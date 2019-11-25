@@ -1,10 +1,10 @@
 HORTON.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Horton)
+Name: Overdue 3 / blocked - ILL (Horton)
 
 -----
 
-Horton ILL Overdue Notice 2
+Horton Public Library overdue notice 2
 
 -----
 

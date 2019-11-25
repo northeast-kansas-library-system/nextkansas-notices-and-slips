@@ -1,10 +1,10 @@
 BONNERSPGS.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Bonner Springs)
+Name: Overdue 2 / blocked - ILL (Bonner Springs)
 
 -----
 
-Bonner Springs ILL Overdue Notice 2
+Bonner Springs Library overdue notice 2
 
 -----
 

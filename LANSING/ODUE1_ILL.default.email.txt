@@ -1,10 +1,10 @@
 LANSING.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Lansing)
+Name: Overdue 1 - ILL (Lansing)
 
 -----
 
-Lansing ILL Overdue Notice 1
+Lansing Community Library ILL overdue notice
 
 -----
 

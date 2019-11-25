@@ -1,10 +1,10 @@
 SABETHA.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Sabetha - Mary Cotton)
+Name: Overdue 3 / lost - ILL (Sabetha)
 
 -----
 
-Sabetha - Mary Cotton ILL Overdue Notice 3
+Mary Cotton Library overdue notice 3
 
 -----
 

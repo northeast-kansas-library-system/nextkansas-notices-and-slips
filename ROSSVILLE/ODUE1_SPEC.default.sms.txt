@@ -1,10 +1,10 @@
 ROSSVILLE.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Rossville)
 
 -----
 
-NExpress Library Overdue
+Rossville Community Library overdue notice
 
 -----
 

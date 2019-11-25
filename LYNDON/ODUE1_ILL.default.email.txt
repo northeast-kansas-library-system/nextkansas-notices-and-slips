@@ -1,10 +1,10 @@
 LYNDON.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Lyndon)
+Name: Overdue 1 - ILL (Lyndon)
 
 -----
 
-Lyndon Carnegie ILL Overdue Notice 1
+Lyndon Carnegie Library ILL overdue notice
 
 -----
 

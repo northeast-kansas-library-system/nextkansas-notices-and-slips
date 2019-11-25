@@ -1,10 +1,10 @@
 OSAGECITY.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Osage)
+Name: Overdue 1 - ILL (Osage City)
 
 -----
 
-Osage CIty ILL Overdue Notice 1
+Osage City Library ILL overdue notice
 
 -----
 

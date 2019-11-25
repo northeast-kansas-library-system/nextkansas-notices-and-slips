@@ -1,10 +1,10 @@
 PHWAC.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Prairie Hills - Wetmore Academic)
+Name: Overdue 2 / blocked - ILL (PHSD - Wetmore)
 
 -----
 
-Prairie Hills - Wetmore Academic ILL Overdue Notice 2
+Wetmore Academic Center Library overdue notice 2
 
 -----
 

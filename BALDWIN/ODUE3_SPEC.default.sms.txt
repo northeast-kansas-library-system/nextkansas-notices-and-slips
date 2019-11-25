@@ -1,10 +1,10 @@
 BALDWIN.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Baldwin City) 
 
 -----
 
-NExpress Library Lost Items Notice
+Baldwin City Public Library overdue notice 3
 
 -----
 

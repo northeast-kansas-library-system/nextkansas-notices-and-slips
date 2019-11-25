@@ -1,10 +1,10 @@
 SILVERLAKE.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Silver Lake)
 
 -----
 
-NExpress Library Lost Items Notice
+Silver Lake Library overdue notice 3
 
 -----
 

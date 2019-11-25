@@ -1,10 +1,10 @@
 EVEREST.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Everest)
+Name: Overdue 2 / blocked - ILL (Everest)
 
 -----
 
-Barnes Reading Room (Everest Library) ILL Overdue Notice 2
+Barnes Reading Room overdue notice 2
 
 -----
 

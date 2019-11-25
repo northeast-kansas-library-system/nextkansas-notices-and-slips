@@ -1,10 +1,10 @@
 WILLIAMSBG.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Williamsburg)
+Name: Overdue 3 / lost - ILL (Williamsburg)
 
 -----
 
-Williamsburg ILL Overdue Notice 3
+Williamsburg Community Library overdue notice 3
 
 -----
 

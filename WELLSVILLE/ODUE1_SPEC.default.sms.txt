@@ -1,10 +1,10 @@
 WELLSVILLE.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Wellsville)
 
 -----
 
-NExpress Library Overdue
+Wellsville City Library overdue notice
 
 -----
 

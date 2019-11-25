@@ -1,10 +1,10 @@
 NEKLS.ODUE3_SPEC.default.email.txt
 
-Name: Next Special Category Overdue Notice 3 (NEKLS)
+Name: Overdue 3 / lost - special (NEKLS)
 
 -----
 
-NEKLS Library Overdue Notice 3
+Northeast Kansas Library System Library overdue notice 3
 
 -----
 

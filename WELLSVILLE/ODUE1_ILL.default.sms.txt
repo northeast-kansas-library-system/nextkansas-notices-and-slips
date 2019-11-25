@@ -1,10 +1,10 @@
 WELLSVILLE.ODUE1_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 1 (Winchester)
+Name: Overdue 1 - ILL (Wellsville)
 
 -----
 
-NExpress Library Overdue
+Wellsville City Library ILL overdue notice
 
 -----
 

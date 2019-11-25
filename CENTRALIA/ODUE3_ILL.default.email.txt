@@ -1,10 +1,10 @@
 CENTRALIA.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Centralia)
+Name: Overdue 3 / lost - ILL (Centralia)
 
 -----
 
-Centralia ILL Overdue Notice 3
+Centralia Community Library overdue notice 3
 
 -----
 

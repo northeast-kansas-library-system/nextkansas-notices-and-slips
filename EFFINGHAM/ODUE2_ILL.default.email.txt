@@ -1,10 +1,10 @@
 EFFINGHAM.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Effingham)
+Name: Overdue 2 / blocked - ILL (Effingham)
 
 -----
 
-Effingham ILL Overdue Notice 2
+Effingham Community Library overdue notice 2
 
 -----
 

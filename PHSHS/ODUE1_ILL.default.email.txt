@@ -1,10 +1,10 @@
 PHSHS.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Prairie Hills - Sabetha High)
+Name: Overdue 1 - ILL (PHSD - Sabetha High)
 
 -----
 
-Prairie Hills - Sabetha High ILL Overdue Notice 1
+Sabetha High School Library ILL overdue notice
 
 -----
 

@@ -1,10 +1,10 @@
 ROSSVILLE.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Rossville)
+Name: Overdue 2 / blocked - ILL (Rossville)
 
 -----
 
-Rossville ILL Overdue Notice 2
+Rossville Community Library overdue notice 2
 
 -----
 

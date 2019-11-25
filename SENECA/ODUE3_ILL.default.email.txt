@@ -1,10 +1,10 @@
 SENECA.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Seneca)
+Name: Overdue 3 / lost - ILL (Seneca)
 
 -----
 
-Seneca Free ILL Overdue Notice 3
+Seneca Free Library overdue notice 3
 
 -----
 

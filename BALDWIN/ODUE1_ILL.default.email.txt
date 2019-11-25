@@ -1,10 +1,10 @@
 BALDWIN.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Baldwin)
+Name: Overdue 1 - ILL (Baldwin City)
 
 -----
 
-Baldwin City ILL Overdue Notice 1
+Baldwin City Public Library ILL overdue notice
 
 -----
 

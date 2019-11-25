@@ -1,10 +1,10 @@
 TONGANOXIE.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Winchester)
+Name: Overdue 3 / lost - standard (Tonganoxie)
 
 -----
 
-NExpress Library Lost Items Notice
+Tonganoxie Public Library lost items notice
 
 -----
 

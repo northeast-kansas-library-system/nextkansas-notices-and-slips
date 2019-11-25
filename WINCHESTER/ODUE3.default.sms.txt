@@ -1,10 +1,10 @@
 WINCHESTER.ODUE3.default.sms.txt
 
-Name: Next Kansas Lost 3 (Winchester)
+Name: Overdue 3 / lost - standard (Winchester)
 
 -----
 
-NExpress Library Lost Items Notice
+Winchester Public Library lost items notice
 
 -----
 

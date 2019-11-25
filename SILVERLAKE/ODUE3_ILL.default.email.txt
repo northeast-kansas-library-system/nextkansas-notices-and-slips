@@ -1,10 +1,10 @@
 SILVERLAKE.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Silver Lake)
+Name: Overdue 3 / lost - ILL (Silver Lake)
 
 -----
 
-Silver Lake ILL Overdue Notice 3
+Silver Lake Library overdue notice 3
 
 -----
 

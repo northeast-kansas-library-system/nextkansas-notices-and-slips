@@ -1,10 +1,10 @@
 PHAXTELL.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (PHSD - Axtell)
 
 -----
 
-NExpress Library Account Blocked
+Axtell Public School Library account blocked
 
 -----
 

@@ -45,7 +45,7 @@ Message content:
 	<ins>Call #: <<items.itemcallnumber>></ins> - <strong>Library barcode #: <<items.barcode>></strong> 
 	<ins>Date due: <<items.onloan>></ins> - <strong>Late fees due: <<items.fine>></strong></item>
 	</p>
-	<p>You can access your account on-line at http://catalog.nexpresslibrary.org. Please call <<branches.branchphone>> or visit <<branches.branchname>> if you have any questions.</p>
+	<p>You can access your account on-line at https://nextkansas.org. Please call <<branches.branchphone>> or visit <<branches.branchname>> if you have any questions.</p>
 	<p style="white-space: pre">This notice was printed on <<today>>.
 	</p>
 	<p>Thank you,</p>

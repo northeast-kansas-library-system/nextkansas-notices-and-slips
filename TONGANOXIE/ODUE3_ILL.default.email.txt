@@ -1,10 +1,10 @@
 TONGANOXIE.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Tonganoxie)
+Name: Overdue 3 / lost - ILL (Tonganoxie)
 
 -----
 
-Tonganoxie ILL Overdue Notice 3
+Tonganoxie Public Library overdue notice 3
 
 -----
 

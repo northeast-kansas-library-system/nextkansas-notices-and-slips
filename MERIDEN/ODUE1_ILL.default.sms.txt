@@ -1,10 +1,10 @@
 MERIDEN.ODUE1_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 1 (Winchester)
+Name: Overdue 1 - ILL (Meriden-Ozawkie)
 
 -----
 
-NExpress Library Overdue
+Meriden-Ozawkie Public Library ILL overdue notice
 
 -----
 

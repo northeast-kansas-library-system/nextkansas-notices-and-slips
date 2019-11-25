@@ -1,10 +1,10 @@
 NEKLS.ODUE3.default.email.txt
 
-Name: Next Library 3 Lost Items Notice (NEKLS)
+Name: Overdue 3 / lost - standard (NEKLS)
 
 -----
 
-Next Search Catalog Lost Items Notice
+Northeast Kansas Library System Library lost items notice
 
 -----
 

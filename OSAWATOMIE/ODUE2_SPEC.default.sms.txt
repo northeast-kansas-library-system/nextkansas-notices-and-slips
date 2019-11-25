@@ -1,10 +1,10 @@
 OSAWATOMIE.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - special (Osawatomie)
 
 -----
 
-NExpress Library Account Blocked
+Osawatomie Public Library overdue notice 2
 
 -----
 

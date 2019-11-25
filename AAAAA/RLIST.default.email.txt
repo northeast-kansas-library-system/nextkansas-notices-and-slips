@@ -1,0 +1,20 @@
+AAAAA.RLIST.default.email.txt
+
+Name: Routing list
+
+-----
+
+New issue added
+
+-----
+
+Message content:
+
+----------
+
+<<borrowers.firstname>> <<borrowers.surname>>,
+ 
+A new issue of <<biblio.title>> is now available.
+ 
+Please pick it up at your convenience.
+

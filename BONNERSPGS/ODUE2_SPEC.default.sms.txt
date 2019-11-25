@@ -1,10 +1,10 @@
 BONNERSPGS.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - special (Bonner Springs)
 
 -----
 
-NExpress Library Account Blocked
+Bonner Springs Library overdue notice 2
 
 -----
 

@@ -1,10 +1,10 @@
 BONNERSPGS.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Bonner Springs)
 
 -----
 
-NExpress Library Overdue
+Bonner Springs Library overdue notice
 
 -----
 

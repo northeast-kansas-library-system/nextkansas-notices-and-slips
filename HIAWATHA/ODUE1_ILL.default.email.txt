@@ -1,10 +1,10 @@
 HIAWATHA.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Hiawatha)
+Name: Overdue 1 - ILL (Hiawatha)
 
 -----
 
-Morrill Public Library (Hiawatha) ILL Overdue Notice 1
+Morrill Public Library ILL overdue notice
 
 -----
 

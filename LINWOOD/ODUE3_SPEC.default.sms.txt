@@ -1,10 +1,10 @@
 LINWOOD.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Linwood)
 
 -----
 
-NExpress Library Lost Items Notice
+Linwood Community Library overdue notice 3
 
 -----
 

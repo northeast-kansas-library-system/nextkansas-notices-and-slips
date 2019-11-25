@@ -1,10 +1,10 @@
 PAOLA.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Paola)
 
 -----
 
-NExpress Library Lost Items Notice
+Paola Free Library overdue notice 3
 
 -----
 

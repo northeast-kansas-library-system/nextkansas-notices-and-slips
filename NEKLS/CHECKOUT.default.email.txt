@@ -12,36 +12,13 @@ Message content:
 
 ----------
 
-<html>
-
-<head>
-
-<title>Check-out receipt</title>
-
-</head>
-
-<body>
-
-
 <h1>Automatic digital check-out receipt - [% branch.branchname %]</h1>
-
 <p>The following items were checked out today on your library account.</p>
-
 <p>This digital receipt only includes items checked out to your library account today.</p>
-
 ----
 <p>[% biblio.title %]<br />Barcode: [% item.barcode %]<br />Date due: [% item.onloan | $KohaDates %]</p>
 ----
-
 <p>[% branch.branchname %]<br />[% branch.branchaddress1 %]<br />[% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]</p>
-
 <p>If you have any questions, please contact us by phone at [% branch.branchphone %] or by e-mail at [% branch.branchemail %].</p>
-
-<p>Access your library account online at <a href="https://catalog.nexpresslibrary.org/cgi-bin/koha/opac-user.pl">catalog.nexpresslibrary.org</a></p>
-
-<p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
-
-</body>
-
-</html>
+<p>Access your library account online at <a href="https://nextkansas.org/cgi-bin/koha/opac-user.pl">https://nextkansas.org</a></p>
 

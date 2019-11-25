@@ -1,10 +1,10 @@
 DONIELWD.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Doniphan-Elwood)
+Name: Overdue 1 - ILL (Doniphan - Elwood)
 
 -----
 
-Doniphan Co.-Elwood ILL Overdue Notice 1
+Doniphan County Library (Elwood branch) ILL overdue notice
 
 -----
 

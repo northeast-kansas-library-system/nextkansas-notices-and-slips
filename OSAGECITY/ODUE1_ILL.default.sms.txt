@@ -1,10 +1,10 @@
 OSAGECITY.ODUE1_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 1 (Winchester)
+Name: Overdue 1 - ILL (Osage City)
 
 -----
 
-NExpress Library Overdue
+Osage City Library ILL overdue notice
 
 -----
 

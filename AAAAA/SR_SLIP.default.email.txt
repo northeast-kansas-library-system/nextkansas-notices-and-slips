@@ -1,0 +1,29 @@
+AAAAA.SR_SLIP.default.email.txt
+
+Name: Stock Rotation Slip
+
+-----
+
+Stockrotation Report
+
+-----
+
+Message content:
+
+----------
+
+Stockrotation report for [% branch.name %]:
+
+[% IF branch.items.size %][% branch.items.size %] items to be processed for this branch.
+[% ELSE %]No items to be processed for this branch
+[% END %][% FOREACH item IN branch.items %][% IF item.reason != 'in-demand' %]Title: [% item.title %]
+Author: [% item.author %]
+Callnumber: [% item.callnumber %]
+Location: [% item.location %]
+Barcode: [% item.barcode %]
+On loan?: [% item.onloan %]
+Status: [% item.reason %]
+Current Library: [% item.branch.branchname %] [% item.branch.branchcode %]
+
+[% END %][% END %]
+

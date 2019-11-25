@@ -1,10 +1,10 @@
 WINCHESTER.ODUE2_SPEC.default.sms.txt
 
-Name: Next Kansas Special Category Overdue 2 (Winchester)
+Name: Overdue 2 / blocked - special (Winchester)
 
 -----
 
-NExpress Library Account Blocked
+Winchester Public Library overdue notice 2
 
 -----
 

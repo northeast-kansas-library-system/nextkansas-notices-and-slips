@@ -1,10 +1,10 @@
 PHSHS.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - special (PHSD - Sabetha High)
 
 -----
 
-NExpress Library Account Blocked
+Sabetha High School Library overdue notice 2
 
 -----
 

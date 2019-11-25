@@ -74,7 +74,7 @@ Message content:
 
 
 </p>
-<p>You can access your account on-line at http://catalog.nexpresslibrary.org. Questions? </p>
+<p>You can access your account on-line at https://nextkansas.org/. Questions? </p>
 <p>Please call <<branches.branchphone>> or visit your local local library if you have any questions.</p>
 <p style="white-space: pre">This notice was printed <<today>>.
 

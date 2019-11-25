@@ -1,10 +1,10 @@
 LANSING.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Lansing)
 
 -----
 
-NExpress Library Account Blocked
+Lansing Community Library overdue notice 2
 
 -----
 

@@ -1,10 +1,10 @@
 WELLSVILLE.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - special (Wellsville)
 
 -----
 
-NExpress Library Account Blocked
+Wellsville City Library overdue notice 2
 
 -----
 

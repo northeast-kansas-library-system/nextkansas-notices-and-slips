@@ -1,10 +1,10 @@
 BONNERSPGS.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (Bonner Springs)
 
 -----
 
-NExpress Library Account Blocked
+Bonner Springs Library account blocked
 
 -----
 

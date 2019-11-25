@@ -12,7 +12,5 @@ Message content:
 
 ----------
 
-You checked out items at <<branches.branchname>> today
-----
-----
+You checked out items at [% branch.branchname %] today
 

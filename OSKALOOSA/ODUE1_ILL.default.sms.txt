@@ -1,10 +1,10 @@
 OSKALOOSA.ODUE1_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 1 (Winchester)
+Name: Overdue 1 - ILL (Oskaloosa)
 
 -----
 
-NExpress Library Overdue
+Oskaloosa Public Library ILL overdue notice
 
 -----
 

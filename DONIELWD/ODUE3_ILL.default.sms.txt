@@ -1,10 +1,10 @@
 DONIELWD.ODUE3_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - ILL (Doniphan - Elwood)
 
 -----
 
-NExpress Library Lost Items Notice
+Doniphan County Library (Elwood branch) overdue notice 3
 
 -----
 

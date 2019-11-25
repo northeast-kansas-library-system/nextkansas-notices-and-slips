@@ -1,10 +1,10 @@
 PHSHS.ODUE3.default.email.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Prairie Hills - Sabetha High)
+Name: Overdue 3 / lost - standard (PHSD - Sabetha High)
 
 -----
 
-Prairie Hills - Sabetha High Library Lost Items Notice
+Sabetha High School Library lost items notice
 
 -----
 
@@ -37,7 +37,7 @@ The following library items are going to be declared "Lost" because they have be
 
 Your account has been suspended and you are going to be billed for the replacement of these items.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
 
-You can access your account on-line at https://catalog.nexpresslibrary.org 24 hours a day.
+You can access your account on-line at https://nextkansas.org 24 hours a day. 
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
 
 .pgend.

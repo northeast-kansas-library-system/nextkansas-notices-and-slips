@@ -1,10 +1,10 @@
 CARBONDALE.ODUE1_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 1 (Winchester)
+Name: Overdue 1 - ILL (Carbondale)
 
 -----
 
-NExpress Library Overdue
+Carbondale City Library ILL overdue notice
 
 -----
 

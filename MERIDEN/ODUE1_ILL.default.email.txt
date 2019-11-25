@@ -1,10 +1,10 @@
 MERIDEN.ODUE1_ILL.default.email.txt
 
-Name: Meriden-Ozawkie ILL Overdue Notice 1 (Meriden)
+Name: Overdue 1 - ILL (Meriden-Ozawkie)
 
 -----
 
-NExpress ILL Overdue Notice 1
+Meriden-Ozawkie Public Library ILL overdue notice
 
 -----
 

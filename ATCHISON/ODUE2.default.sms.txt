@@ -1,10 +1,10 @@
 ATCHISON.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (Atchsion)
 
 -----
 
-NExpress Library Account Blocked
+Atchison Public Library account blocked
 
 -----
 

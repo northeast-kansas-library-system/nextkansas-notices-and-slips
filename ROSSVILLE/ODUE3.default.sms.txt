@@ -1,10 +1,10 @@
 ROSSVILLE.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Winchester)
+Name: Overdue 3 / lost - standard (Rossville)
 
 -----
 
-NExpress Library Lost Items Notice
+Rossville Community Library lost items notice
 
 -----
 

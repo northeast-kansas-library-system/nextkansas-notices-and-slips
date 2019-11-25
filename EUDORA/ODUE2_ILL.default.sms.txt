@@ -1,10 +1,10 @@
 EUDORA.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Eudora)
 
 -----
 
-NExpress Library Account Blocked
+Eudora Public Library overdue notice 2
 
 -----
 

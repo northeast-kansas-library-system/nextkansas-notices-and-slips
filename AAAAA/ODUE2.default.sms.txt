@@ -1,10 +1,10 @@
 AAAAA.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Generic)
+Name: Overdue 2 / blocked - standard (Next)
 
 -----
 
-NExpress Library Account Blocked
+Next Search Catalog Library account blocked
 
 -----
 

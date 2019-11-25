@@ -1,10 +1,10 @@
 OSAGECITY.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Winchester)
+Name: Overdue 3 / lost - standard (Osage City)
 
 -----
 
-NExpress Library Lost Items Notice
+Osage City Library lost items notice
 
 -----
 

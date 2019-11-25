@@ -1,10 +1,10 @@
 RICHMOND.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Richmond)
+Name: Overdue 3 / lost - ILL (Richmond)
 
 -----
 
-Richmond ILL Overdue Notice 3
+Richmond Public Library overdue notice 3
 
 -----
 

@@ -1,10 +1,10 @@
 HOLTON.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Holton)
+Name: Overdue 2 / blocked - special (Holton)
 
 -----
 
-NExpress Library Account Blocked
+Beck-Bookman Library overdue notice 2
 
 -----
 

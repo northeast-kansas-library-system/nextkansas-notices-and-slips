@@ -1,10 +1,10 @@
 LEAVENWRTH.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Leavenworth)
+Name: Overdue 3 / lost - standard (Leavenworth)
 
 -----
 
-NExpress Library Lost Items Notice
+Leavenworth Public Library lost items notice
 
 -----
 

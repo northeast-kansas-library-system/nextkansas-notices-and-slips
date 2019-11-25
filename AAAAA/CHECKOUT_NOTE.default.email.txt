@@ -29,7 +29,7 @@ Message content:
 
   <p>Click on the link below to run a report that will show you all of the notes created by this patron - including the note they just placed on this title:</p>
 
-  <p><a href='https://staff.nexpresslibrary.org/cgi-bin/koha/reports/guided_reports.pl?reports=3116&phase=Run+this+report&sql_params=<<borrowers.cardnumber>>' target='_blank'>Link to patron problem notes report</a></p>
+  <p><a href='https://staff.nextkansas.org/cgi-bin/koha/reports/guided_reports.pl?reports=3116&phase=Run+this+report&sql_params=<<borrowers.cardnumber>>' target='_blank'>Link to patron problem notes report</a></p>
 
 </body>
 </html> 

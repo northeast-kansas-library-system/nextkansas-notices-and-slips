@@ -12,57 +12,90 @@ Message content:
 
 ----------
 
-<style type="text/css">
-#receipt {
-font-size:1.2em;	
-}
+<!DOCTYPE html>
+<html>
 
-#receipt ul {
-	list-style-type:none;
-}
+  <head>
+    <style>
+      body {
+        width: 275px;
+      }
 
-#receipt h3, #receipt caption {
-	color : #000000;
-	font-size : 1.4em;
-	font-weight : bold;
-	margin-bottom : 3px;
-	margin-top : 3px;
-}
+      body {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 5px;
+      }
 
-#receipt h4 {
-	color : #000000;
-	font-size: 1.3em;
-	margin-bottom : 3px;
-	margin-top : 3px;
-}
+      article {
+        display: inline-block
+      }
 
-h1 {font-size:1.6em;
-	}
-h2 {font-size:1.5em;
-}
-h3 {font-size:1.4em;
-}
-h4 {font-size:1.3em;
-}
-h5 {font-size:1.2em;
-}
-h6 {font-size:1.1em;
-}
-</style>
+      .right {
+        float: right
+      }
 
-<p style="margin-bottom: 0; margin-top: 0;">Date: <<today>></p>
-<h5>Transfer to <<branches.branchnotes>> <<branches.branchname>></h5>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<h3>ITEM</h3>
-<h4><<biblio.title>></h4>
-<h5><<biblio.author>></h5>
-<ul>
-   <li><<items.barcode>></li>
-   <li><<items.itemcallnumber>></li>
-</ul>
+      .slip {
+        font-size: 110%;
+      }
+
+      .slip h1 {
+        font-size: 200%;
+        text-decoration: underline;
+      }
+
+      .slip h2 {
+        font-size: 150%;
+        text-decoration: underline;
+      }
+
+      .slip h3 {
+        font-size: 130%;
+        text-decoration: underline;
+      }
+
+      .slip h4 {
+        font-size: 120%;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="slip">
+      <!-- Shipped to information -->
+      <h1>
+        <<branches.branchnotes>>
+      </h1>
+      <!-- Spacer -->
+      <p>&nbsp;</p>
+      <p>Ship to:</p>
+      <p>
+        <strong>
+        [% branch.branchname %]<br />
+        [% branch.branchaddress1 %]<br />
+        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+        </strong>
+      </p>
+      <!-- Spacer -->
+      <p>&nbsp;</p>
+      <!-- Item information -->
+      <h3>
+        [% biblio.title %]
+      </h3>
+      <p>
+        [% item.itemcallnumber %]
+      </p>
+      <p>
+        [% items.barcode %]
+      </p>
+      <!-- Spacer -->
+      <p>&nbsp;</p>
+      <!-- Shipped from information -->
+      <p>Shipped on: [% today %]</p>
+    </div>
+  </body>
+
+</html>
 

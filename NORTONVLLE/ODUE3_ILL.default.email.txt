@@ -1,10 +1,10 @@
 NORTONVLLE.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Nortonville)
+Name: Overdue 3 / lost - ILL (Nortonville)
 
 -----
 
-Nortonville ILL Overdue Notice 3
+Nortonville Public Library overdue notice 3
 
 -----
 

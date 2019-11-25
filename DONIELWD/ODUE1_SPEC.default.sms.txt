@@ -1,10 +1,10 @@
 DONIELWD.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Doniphan - Elwood)
 
 -----
 
-NExpress Library Overdue
+Doniphan County Library (Elwood branch) overdue notice
 
 -----
 

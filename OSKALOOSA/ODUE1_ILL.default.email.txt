@@ -1,10 +1,10 @@
 OSKALOOSA.ODUE1_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 1 (Oskaloosa)
+Name: Overdue 1 - ILL (Oskaloosa)
 
 -----
 
-Oskaloosa ILL Overdue Notice 1
+Oskaloosa Public Library ILL overdue notice
 
 -----
 

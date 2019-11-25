@@ -1,10 +1,10 @@
 PAOLA.ODUE3_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 3 (Paola)
+Name: Overdue 3 / lost - ILL (Paola)
 
 -----
 
-Paola ILL Overdue Notice 3
+Paola Free Library overdue notice 3
 
 -----
 

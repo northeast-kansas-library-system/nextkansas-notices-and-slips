@@ -1,10 +1,10 @@
 TONGANOXIE.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Tonganoxie)
 
 -----
 
-NExpress Library Account Blocked
+Tonganoxie Public Library overdue notice 2
 
 -----
 

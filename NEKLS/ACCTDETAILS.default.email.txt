@@ -12,17 +12,17 @@ Message content:
 
 ----------
 
-Hello <<borrowers.title>> <<borrowers.firstname>> <<borrowers.surname>>.
+Hello [% borrower.firstname %] [% borrower.surname %].
 
 Your new Next Search Catalog account details are:
 
-<<borrowers.firstname>>, <<borrowers.surname>>
-<<borrowers.address>>
-<<borrowers.address2>>
-<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+[% borrower.firstname %], [% borrower.surname %]
+[% borrower.address %]
+[% borrower.address2 %]
+[% borrower.city %], [% borrower.state %] [% borrower.zipcode %]
 
-User:  <<borrowers.userid>>
-E-mail: <<borrowers.email>>
+User:  [% borrower.userid %]
+E-mail: [% borrower.email %]
 
 If you have any problems or questions regarding your account, please contact your Next Search Catalog Administrator.
 

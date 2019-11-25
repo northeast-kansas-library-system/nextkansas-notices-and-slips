@@ -21,7 +21,7 @@ Message content:
     <script type="text/javascript">
     //<![CDATA[
 
-      $(document).ready(function(){ 
+      $(document).ready(function(){
 
         $("#loc_SENECA").hide();
         $("#bor_SENECA").parent().removeAttr('style')
@@ -97,7 +97,7 @@ Message content:
         <p>Ship to:</p>
         <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
         <h2><<branches.branchnotes>></h2>
-        
+
       <!-- Spacer -->
         <p>&nbsp;</p>
         <p>&nbsp;</p>

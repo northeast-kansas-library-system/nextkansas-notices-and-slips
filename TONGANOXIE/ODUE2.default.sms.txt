@@ -1,10 +1,10 @@
 TONGANOXIE.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (Tonganoxie)
 
 -----
 
-NExpress Library Account Blocked
+Tonganoxie Public Library account blocked
 
 -----
 

@@ -1,10 +1,10 @@
 EFFINGHAM.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Winchester)
+Name: Overdue 2 / blocked - standard (Effingham)
 
 -----
 
-NExpress Library Account Blocked
+Effingham Community Library account blocked
 
 -----
 

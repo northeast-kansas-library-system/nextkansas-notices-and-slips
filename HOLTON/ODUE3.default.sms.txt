@@ -1,10 +1,10 @@
 HOLTON.ODUE3.default.sms.txt
 
-Name: NExpress Library 3 Lost Items Notice 3 (Holton)
+Name: Overdue 3 / lost - standard (Holton)
 
 -----
 
-NExpress Library Lost Items Notice
+Beck-Bookman Library lost items notice
 
 -----
 

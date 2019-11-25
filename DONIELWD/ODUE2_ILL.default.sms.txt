@@ -1,10 +1,10 @@
 DONIELWD.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Doniphan - Elwood)
 
 -----
 
-NExpress Library Account Blocked
+Doniphan County Library (Elwood branch) overdue notice 2
 
 -----
 

@@ -1,10 +1,10 @@
 WINCHESTER.ODUE2_ILL.default.email.txt
 
-Name: Next Kansas ILL Overdue 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Winchester)
 
 -----
 
-Winchester ILL Overdue Notice 2
+Winchester Public Library overdue notice 2
 
 -----
 

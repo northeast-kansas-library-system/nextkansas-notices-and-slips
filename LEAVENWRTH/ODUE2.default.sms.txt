@@ -1,10 +1,10 @@
 LEAVENWRTH.ODUE2.default.sms.txt
 
-Name: NExpress Library 2 Account Blocked (Leavenworth)
+Name: Overdue 2 / blocked - standard (Leavenworth)
 
 -----
 
-NExpress Library Account Blocked
+Leavenworth Public Library account blocked
 
 -----
 

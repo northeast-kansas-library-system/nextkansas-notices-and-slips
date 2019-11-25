@@ -1,10 +1,10 @@
 PERRY.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Winchester)
+Name: Overdue 3 / lost - special (Perry-Lecompton)
 
 -----
 
-NExpress Library Lost Items Notice
+Perry-Lecompton Community Library overdue notice 3
 
 -----
 

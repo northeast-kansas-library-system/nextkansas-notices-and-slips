@@ -1,10 +1,10 @@
 CARBONDALE.ODUE2_ILL.default.sms.txt
 
-Name: NExpress ILL Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - ILL (Carbondale)
 
 -----
 
-NExpress Library Account Blocked
+Carbondale City Library overdue notice 2
 
 -----
 

@@ -1,10 +1,10 @@
 DIGITAL.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Digital)
+Name: Overdue 2 / blocked - ILL (Digital)
 
 -----
 
-Digital Content ILL Overdue Notice 2
+Digital Content overdue notice 2
 
 -----
 

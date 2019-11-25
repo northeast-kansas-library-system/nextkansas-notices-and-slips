@@ -1,10 +1,10 @@
 SILVERLAKE.ODUE1_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 1 (Winchester)
+Name: Overdue 1 - special (Silver Lake)
 
 -----
 
-NExpress Library Overdue
+Silver Lake Library overdue notice
 
 -----
 

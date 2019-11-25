@@ -1,10 +1,10 @@
 POMONA.ODUE2_ILL.default.email.txt
 
-Name: NExpress ILL Overdue Notice 2 (Pomona)
+Name: Overdue 2 / blocked - ILL (Pomona)
 
 -----
 
-Pomona ILL Overdue Notice 2
+Pomona Community Library overdue notice 2
 
 -----
 

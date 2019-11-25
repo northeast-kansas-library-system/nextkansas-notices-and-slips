@@ -1,10 +1,10 @@
 OSKALOOSA.ODUE2_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 2 (Winchester)
+Name: Overdue 2 / blocked - special (Oskaloosa)
 
 -----
 
-NExpress Library Account Blocked
+Oskaloosa Public Library overdue notice 2
 
 -----
 

@@ -1,10 +1,10 @@
 AAAAA.ODUE1_ILL.default.email.txt
 
-Name: Next Kansas ILL Overdue 1 (Ottawa)
+Name: Overdue 1 - ILL (Next)
 
 -----
 
-NExpress ILL Overdue Notice 1
+Next Search Catalog Library ILL overdue notice
 
 -----
 

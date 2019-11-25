@@ -1,10 +1,10 @@
 AAAAA.ODUE3_SPEC.default.sms.txt
 
-Name: NExpress Special Category Overdue Notice 3 (Generic)
+Name: Overdue 3 / lost - special (Next)
 
 -----
 
-NExpress Library Lost Items Notice
+Next Search Catalog Library overdue notice 3
 
 -----
 
@@ -13,6 +13,4 @@ Message content:
 ----------
 
 You are being billed for long overdue items checked out from <<branches.branchname>>
-----
-----
 

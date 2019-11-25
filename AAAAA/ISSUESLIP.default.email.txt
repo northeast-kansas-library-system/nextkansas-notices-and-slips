@@ -56,7 +56,7 @@ h6 {font-size:1.1em;
 Ph: <<branches.branchphone>><br />
 <<branches.branchemail>></p>
 <p>Renew materials and place holds online: <br />
-<b><u>catalog.nexpresslibrary.org</u></b></p>
+<b><u>https://nextkansas.org</u></b></p>
 Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>> <br />
 (<<borrowers.cardnumber>>) <br />
 

@@ -1,10 +1,10 @@
 BASEHOR.ODUE2.default.email.txt
 
-Name: NExpress Library 2 Account Blocked (Basehor)
+Name: Overdue 2 / blocked - standard (Basehor)
 
 -----
 
-Basehor Library Account Blocked
+Basehor Community Library account blocked
 
 -----
 
