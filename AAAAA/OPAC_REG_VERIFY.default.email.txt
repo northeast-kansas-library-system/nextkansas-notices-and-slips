@@ -14,9 +14,15 @@ Message content:
 
 <p>Hello!</p>
 
-    <p>Your library account has been created. Please verify your email address by clicking this link to complete the signup process:</p>
+    <p>Your Next Search Catalog account has been created. Please verify your email address by clicking this link to complete the signup process:</p>
 
-    <p><a href="<<OPACBaseURL>>/cgi-bin/koha/opac-registration-verify.pl?token=<<borrower_modifications.verification_token>>" target="_blank"><<OPACBaseURL>>/cgi-bin/koha/opac-registration-verify.pl?token=<<borrower_modifications.verification_token>></a></p>
+    <p><a href="<<OPACBaseURL>>cgi-bin/koha/opac-registration-verify.pl?token=<<borrower_modifications.verification_token>>" target="_blank"><<OPACBaseURL>>cgi-bin/koha/opac-registration-verify.pl?token=<<borrower_modifications.verification_token>></a></p>
 
-    <p>If you did not initiate this request, you may safely ignore this one-time message. The request will expire shortly.</p>
+    <p>This page will include your new library card number and your password.  You will need your card number and your password to log into the catalog, so be sure to make a copy of your card number and password as soon as you open this link.</p>
+
+<p>During the current health emergency, all self-registered cards have a home library of Northeast Kansas Library System.  If you use your card to sign up for Hoopla, you must choose Northeast Kansas Library System as your home library for Hoopla.</p>
+
+    <p>If you did not initiate this request, you may safely ignore this one-time message. The request will expire in 48 hours.</p>
+
+    <p>If you need further help, please contact us at <a href="mailto:nexthelp@nekls.org?subject=Self%20registration%20help">nexthelp@nekls.org</a>.</p>
 

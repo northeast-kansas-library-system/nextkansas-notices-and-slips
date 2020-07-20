@@ -1,0 +1,18 @@
+PAOLA.HOLD.default.sms.txt
+
+Name: Hold Available for Pickup
+
+-----
+
+Available for pickup
+
+-----
+
+Message content:
+
+----------
+
+A library item you requested is available to pickup at <<branches.branchname>> Please call <<branches.branchphone>> to schedule pickup
+----
+----
+

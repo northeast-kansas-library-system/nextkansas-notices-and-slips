@@ -1,0 +1,37 @@
+PAOLA.HOLD.default.email.txt
+
+Name: Hold Available for Pickup
+
+-----
+
+Hold Available for Pickup at <<branches.branchname>>
+
+-----
+
+Message content:
+
+----------
+
+**THIS IS AN AUTOMATED MESSAGE. DO NOT REPLY TO THIS MESSAGE. IF  YOU HAVE QUESTIONS ABOUT YOUR HOLD(S), CONTACT YOUR LOCAL LIBRARY. THANK YOU.** 
+
+Dear <<borrowers.firstname>> <<borrowers.surname>>,
+
+You have a hold available for pickup as of <<reserves.waitingdate>>:
+
+Title: <<biblio.title>>
+Author: <<biblio.author>>
+BC: <<items.barcode>>
+
+Your hold is available to pick up at Paola Free Library. We are currently offering curbside services. Staff will contact you to schedule a pick-up time or you can call us starting Monday, May 18th during these hours: Monday: 9 - 11 a.m., Tuesday - Friday: 10 a.m. - 7 p.m. and Saturday 10 a.m. - 4 p.m. Please visit our website, paolalibrary.org, or find us on social media for more information and for the latest updates.
+
+Location: <<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+
+You have 7 days to pick up your hold. If you would like to cancel this hold, please contact the library at <<branches.branchphone>>, or email the library at  <<branches.branchemail>>
+
+If you would like to opt out of receiving email notification of your available holds, please login to the online catalog at https://nextkansas.org and change your preferences at the My Messaging tab.  Or, you can call the library and ask a staff member to make this change for you.
+
+**THIS IS AN AUTOMATED MESSAGE. DO NOT REPLY TO THIS MESSAGE.** 
+

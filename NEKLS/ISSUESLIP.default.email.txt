@@ -38,6 +38,8 @@ Message content:
   <p><<biblio.title>> <br />Barcode: <<items.barcode>><br />Date due: <<items.onloan>><br /></p>
   </overdue>
 
+<span style="text-align: center; display: block;"><img src="https://wiki.koha-community.org/w/images/KohaILS.p" width="85%" height="auto" alt="<<branches.branchname>>"></span>
+
   <p> </p>
   <p> </p>
   <p>.</p>

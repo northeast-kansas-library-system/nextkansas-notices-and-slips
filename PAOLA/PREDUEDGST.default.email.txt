@@ -23,7 +23,9 @@ You have <<count>> items due soon.
 <<items.content>>
 <<item>>
 
-Please return or renew your item(s) soon, or contact your local library to renew for you. Some items may not be renewable. 
+Please return or renew your item(s) soon, or contact your local library to renew for you. Some items may not be renewable.
+
+If you have returned these items recently, please disregard this e-mail. Due to COVID-19, staff is currently quarantining items for 3 days before they are checked in and we have extended our grace period to seven days, so you will not be charged any late fines if you have already returned these items.
 
 Cordially,
 <<branches.branchname>>

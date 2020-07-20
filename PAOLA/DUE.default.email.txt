@@ -24,6 +24,8 @@ Hello. You have library materials due today. Please renew your materials, or ret
 
 <<items.content>>
 
+If you have returned this item recently, please disregard this e-mail. Due to COVID-19, staff is currently quarantining items for 3 days before they are checked in and we have extended our grace period to seven days, so you will not be charged any late fines if you have already returned this item.
+
 Cordially, 
 <<branches.branchname>>
 <<branches.branchaddress1>>

@@ -20,6 +20,8 @@ Due on <<issues.date_due>> : <<biblio.title>>
 
 Please return or renew this item soon, or contact us to renew for you. Some items may not be renewable. 
 
+If you have returned this item recently, please disregard this e-mail. Due to COVID-19, staff is currently quarantining items for 3 days before they are checked in and we have extended our grace period to seven days, so you will not be charged any late fines if you have already returned this item.
+
 <<branches.branchname>>
 <<branches.branchaddress1>>
 <<branches.branchaddress2>>
