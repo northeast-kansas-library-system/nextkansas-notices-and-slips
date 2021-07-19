@@ -1,4 +1,4 @@
-PAOLA.HOLD.default.email.txt
+LEAVENWRTH.HOLD.default.print.txt
 
 Name: Hold Available for Pickup
 
@@ -22,14 +22,12 @@ Title: <<biblio.title>>
 Author: <<biblio.author>>
 BC: <<items.barcode>>
 
-Your hold is available to pick up at the Paola Free Library. You may call (913) 259-3655 to schedule curbside service, or you may walk-up at your convenience during our regular operating hours: Monday-Thursday, 9:30AM-8PM; Friday, 9:30AM-5PM; and Saturday, 10AM-4PM.
-
 Location: <<branches.branchname>>
 <<branches.branchaddress1>>
 <<branches.branchaddress2>>
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 
-You have 7 days to pick up your hold. If you would like to cancel this hold, please contact the library at <<branches.branchphone>>, or email the library at  <<branches.branchemail>>
+You have 7 days to pick up your hold. If you prefer curbside pickup of this hold, call <<branches.branchphone>>.
 
 If you would like to opt out of receiving email notification of your available holds, please login to the online catalog at https://nextkansas.org and change your preferences at the My Messaging tab.  Or, you can call the library and ask a staff member to make this change for you.
 

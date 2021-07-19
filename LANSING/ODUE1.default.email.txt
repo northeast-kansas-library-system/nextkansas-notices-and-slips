@@ -31,14 +31,13 @@ First Overdue Notice - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following items are overdue as of <<today>>:
+We hope that you are enjoying the items that you have checked out from Lansing Community Library. This is just a reminder to return or renew them. The following items are overdue as of <<today>>:
 
 <<items.content>>
 
-If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+Did you know that you can renew your items online or by giving us a call? You can access your account on-line at https://nextkansas.org 24 hours a day.
 
-You can access your account on-line at https://nextkansas.org 24 hours a day.
-Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
+Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>.
 
 .pgend.
 

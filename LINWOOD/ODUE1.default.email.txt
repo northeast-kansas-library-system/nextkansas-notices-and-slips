@@ -17,14 +17,10 @@ Message content:
 <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
 
 
-
-
           <<borrowers.firstname>> <<borrowers.surname>>
           <<borrowers.address>>
           <<borrowers.address2>>
           <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
-
-
 
 
 First Overdue Notice - <<today>>
@@ -35,7 +31,9 @@ The following items are overdue as of <<today>>:
 
 <<items.content>>
 
-If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible. Our drive-up drop box, on the west side of the building, is open 24/7 for your convenience. 
+
+For more information about the library and our hours, services, and policies, please visit us online at: http://www.linwoodcommunitylibrary.org/
 
 You can access your account on-line at https://nextkansas.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 

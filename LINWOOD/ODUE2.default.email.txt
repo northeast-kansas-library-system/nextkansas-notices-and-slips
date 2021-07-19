@@ -12,33 +12,34 @@ Message content:
 
 ----------
 
-<<branches.branchname>>
-<<branches.branchaddress1>>
-<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<borrowers.firstname>> <<borrowers.surname>>
+<<borrowers.address>>
+<<borrowers.address2>>
+<<borrowers.city>> <<borrowers.state>> <<borrowers.zipcode>>
 
+Hello-
 
+This is a courtesy reminder that you have books that are overdue by 35 days. The items that are currently due back are listed below. In case you were not aware of our policy, if your items aren’t returned:
 
+       after 35 days your account will be automatically blocked*
+       after 45 days you’ll be charged the replacement cost of the item*
 
-          <<borrowers.firstname>> <<borrowers.surname>>
-          <<borrowers.address>>
-          <<borrowers.address2>>
-          <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+Please don’t let this happen! Return the materials to the library, or contact us if you need special assistance. 
 
-
-
-
-Second Overdue Notice - <<today>>
-
-Dear <<borrowers.firstname>>
-
-The following items are 35 days overdue as of <<today>>:
+For your convenience, you can renew your items online. You can also set up Advanced Due notices that remind you before your books are due. Call or visit us online for more information: http://www.linwoodcommunitylibrary.org/library_card.html
 
 <<items.content>>
 
-Your library card has now been suspended and you will be billed for the full replacement cost of each item once they are 45 days overdue.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+Thank you for using the Linwood Community Library!
 
-You can access your account on-line at https://nextkansas.org 24 hours a day.
-Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchaddress2>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
+
+**Please don't reply to this automated message. Contact the Linwood Community Library directly with any questions or concerns. Thanks!**
 
 .pgend.
 

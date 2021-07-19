@@ -32,7 +32,7 @@ Did you know that you can renew your items online? Or that you can set up Advanc
 
 Thank you for using the Basehor Community Library!
 
-*See our Circulation Policy on our website www.basehorlibrary.org
+*See our Circulation Policy on our website www.basehorlibrary.com
 
 <<branches.branchname>>
 <<branches.branchaddress1>>

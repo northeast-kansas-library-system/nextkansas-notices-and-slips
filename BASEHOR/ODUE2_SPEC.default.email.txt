@@ -26,13 +26,13 @@ This is a courtesy reminder that you have books that are overdue by 35 days.  Th
 
 Please don’t let this happen! Return the materials to the library, or contact us if you need special assistance. 
 
-Did you know that you can renew your items online? Or that you can set up Advanced Due notices that remind you before your books are due?  Instructions are on our website www.basehorlibrary.org. 
+Did you know that you can renew your items online? Or that you can set up Advanced Due notices that remind you before your books are due?  Instructions are on our website www.basehorlibrary.com. 
 
 <<items.content>>
 
 Thank you for using the Basehor Community Library!
 
-*See our Circulation Policy on our website www.basehorlibrary.org
+*See our Circulation Policy on our website www.basehorlibrary.com
 
 <<branches.branchname>>
 <<branches.branchaddress1>>

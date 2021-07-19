@@ -1,0 +1,19 @@
+AAAAA.NOTIFY_MANAGER.default.email.txt
+
+Name: Notify manager of a suggestion
+
+-----
+
+A suggestion has been assigned to you
+
+-----
+
+Message content:
+
+----------
+
+Dear [% borrower.firstname %] [% borrower.surname %],
+A suggestion has been assigned to you: [% suggestion.title %].
+Thank you,
+[% branch.branchname %]
+

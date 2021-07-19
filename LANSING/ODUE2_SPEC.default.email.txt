@@ -31,14 +31,19 @@ Second Overdue Notice - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following items are 35 days overdue as of <<today>>:
+This is a courtesy reminder that your items are overdue by  35 days. The items that are currently due back are listed below. Just to let you know, if your items are not returned:
+
+     *after 35 days your account will be automatically blocked
+     *after 45 days you'll be charged the replacement cost of the item
+
+Please don't let this happen! Return the items to the library, or contact us if you need special assistance. 
 
 <<items.content>>
 
-If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
-
-You can access your account on-line at https://nextkansas.org 24 hours a day.
+Did you know you can renew items online? Or that you can set up Advanced Due notices that remind you before your items are due through your account? You can access your account on-line at https://nextkansas.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
+
+Thank you for using Lansing Community Library!
 
 .pgend.
 

@@ -1,10 +1,10 @@
-PAOLA.PREDUE.default.email.txt
+OTTAWA.PREDUE.default.print.txt
 
-Name: PAOLA Advance Notice of Item Due
+Name: Advance Notice of Item Due
 
 -----
 
-Advance Notice of Item Due
+Advance Notice of Item Due (print)
 
 -----
 
@@ -19,8 +19,6 @@ The following item will be due soon:
 Due on <<issues.date_due>> : <<biblio.title>>
 
 Please return or renew this item soon, or contact us to renew for you. Some items may not be renewable. 
-
-If you have returned this item recently, please disregard this e-mail.
 
 <<branches.branchname>>
 <<branches.branchaddress1>>

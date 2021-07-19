@@ -60,6 +60,7 @@ h6 {font-size:1.1em;
 
 <ul>
     <li><<borrowers.cardnumber>></li>
+    <li><img src="/cgi-bin/koha/svc/barcode?barcode=*<<borrowers.cardnumber>>*&type=Code39"></img></li>
     <li><<borrower-attribute:HOLD>></li>
     <li><<borrowers.phone>></li>
     <li><<borrowers.email>></li>
@@ -72,6 +73,7 @@ h6 {font-size:1.1em;
 <h5><<biblio.author>></h5>
 <ul>
    <li><<items.barcode>></li>
+   <li><img src="/cgi-bin/koha/svc/barcode?barcode=*<<items.barcode>>*&type=Code39"></img></li>
    <li><<items.itemcallnumber>></li>
    <li><<reserves.waitingdate>></li>
    <li><<reserves.reservenotes>></li>

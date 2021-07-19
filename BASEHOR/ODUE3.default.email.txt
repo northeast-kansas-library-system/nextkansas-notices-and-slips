@@ -21,7 +21,7 @@ Hello-
 
 Our records show that items you've borrowed from the library have not been returned. Since it is 45 days past the time they were due, we must now consider them lost and ask you to pay for their replacement. If you have any questions, please let us know or contact us if you need special assistance. 
 
-You can view our Circulation Policy on our website at www.basehorlibrary.org. 
+You can view our Circulation Policy on our website at www.basehorlibrary.com. 
 
 <<items.content>>
 

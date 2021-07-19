@@ -12,20 +12,22 @@ Message content:
 
 ----------
 
-**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE "ITEM DUE-DIGEST" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
-
 Dear <<borrowers.firstname>> <<borrowers.surname>>,
 <<borrowers.cardnumber>>
 <<borrowers.address>>
 <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
 <<borrowers.phone>>
 
-Hello. You have one or more library materials due today. Please renew your materials, or return them to the library. You can renew online at https://nextkansas.org or contact your library for assistance. Thank you. 
+Hello. You have one or more library materials due today. Please renew your materials, or return them to the library. You can renew online at https://nextkansas.org or contact your library for assistance. If you have already returned these items within the last three business days, please disregard this email. Due to COVID-19 concerns, the library is currently putting returned materials into quarantine before they are checked in, but we have a seven day grace period from the time an item is due, so that late fines will not accrue. We apologize for this inconvenience, but it is necessary for the safety of our patrons and staff.
 
 <<items.content>>
 
 Cordially, 
-Next Search Catalog
+<<branches.branchname>>
+<<branches.branchaddress1>>
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+<<branches.branchphone>>
+<<branches.branchemail>>
 
 **PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE "ITEM DUE-DIGEST" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
 

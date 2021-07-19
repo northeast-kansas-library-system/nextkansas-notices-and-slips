@@ -1,0 +1,44 @@
+LEAVENWRTH.CHECKIN.default.email.txt
+
+Name: Check-in Receipt (Digest)
+
+-----
+
+Library Check-in Receipt
+
+-----
+
+Message content:
+
+----------
+
+<html>
+
+<head>
+
+<title>Check-in receipt</title>
+
+</head>
+
+<body>
+
+  <h1>Automatic digital check-in receipt - [% branch.branchname %]</h1>
+
+  <p>The following items were checked in today from your library account:</p>
+
+  ----
+  <p>[% biblio.title %]<br />Barcode: [% item.barcode %]<br />Date checked out: [% old_checkout.issuedate %]<br />Date due:  [% old_checkout.date_due %]<br />Date returned: [% old_checkout.returndate %]<br /></p>
+  ----
+
+  <p>[% branch.branchname %]<br />[% branch.branchaddress1 %]<br />[% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]</p>
+
+  <p>If you have any questions, please contact us by phone at [% branch.branchphone %].</p>
+
+  <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+
+  <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+
+</body>
+
+</html>
+

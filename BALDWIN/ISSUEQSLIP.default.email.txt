@@ -1,0 +1,92 @@
+BALDWIN.ISSUEQSLIP.default.email.txt
+
+Name: Issue Quick Slip
+
+-----
+
+Issue Quick Slip
+
+-----
+
+Message content:
+
+----------
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Issue quick slip</title>
+	<meta charset="UTF-8" />
+	
+	<style type="text/css">
+		* { font-family: Verdana, Arial, sans-serif; }
+		body { background-color: #fff; cursor: default; }
+		h1 { font-size: 15pt; }
+		p { font-size: 10pt; }
+	</style>
+</head>
+
+<body>
+<style type="text/css">
+#receipt {
+font-size:1.2em;    
+}
+
+#receipt ul {
+	list-style-type:none;
+}
+
+#receipt h3, #receipt caption {
+	color : #000000;
+	font-size : 1.4em;
+	font-weight : bold;
+	margin-bottom : 3px;
+	margin-top : 3px;
+}
+
+#receipt h4 {
+	color : #000000;
+	font-size: 1.3em;
+	margin-bottom : 3px;
+	margin-top : 3px;
+}
+
+h1 {font-size:1.6em;
+	}
+h2 {font-size:1.5em;
+}
+h3 {font-size:1.4em;
+}
+h4 {font-size:1.3em;
+}
+h5 {font-size:1.2em;
+}
+h6 {font-size:1.1em;
+}
+</style>
+
+<h3><<branches.branchname>></h3>
+<p><<branches.branchaddress1>> <<branches.branchaddress2>><br />
+<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>><br />
+Ph: <<branches.branchphone>><br />
+<<branches.branchemail>></p>
+<p>Renew materials and place holds online: <br />
+<b><u>nextkansas.org</u></b></p>
+<p>Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>> <br />
+(<<borrowers.cardnumber>>) <br />
+
+<<today>><br />
+
+<h4>Checked Out Today</h4>
+<checkedout>
+<p>
+<<biblio.title>> <br />
+Barcode: <<items.barcode>><br />
+Date due: <<items.onloan>><br />
+</p>
+
+</checkedout>
+<p>Place all returns in the exterior drop box only.</p>
+</body>
+</html>
+

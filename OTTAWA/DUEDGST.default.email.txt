@@ -1,0 +1,31 @@
+OTTAWA.DUEDGST.default.email.txt
+
+Name: Item Due Reminder (Digest)
+
+-----
+
+Item Due Reminder
+
+-----
+
+Message content:
+
+----------
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE "ITEM DUE-DIGEST" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
+
+Dear <<borrowers.firstname>> <<borrowers.surname>>,
+<<borrowers.cardnumber>>
+<<borrowers.address>>
+<<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+<<borrowers.phone>>
+
+Hello. You have one or more library items due today. Please renew your materials, or return them to the library. You can renew online at https://nextkansas.org or contact your library for assistance. Thank you. 
+
+<<items.content>>
+
+Cordially, 
+<<branches.branchcode>>
+
+**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE "ITEM DUE-DIGEST" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
+

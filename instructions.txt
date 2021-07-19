@@ -23,7 +23,7 @@ ORDER BY
 
 ----------
 
-Make sure C:\exports\ has one folder for each branch already created.
+Make sure C:\git\ has one folder for each branch already created.
 
 Open the csv file and run the macro from the XLSX macro file.
 

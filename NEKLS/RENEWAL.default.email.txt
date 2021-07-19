@@ -12,10 +12,10 @@ Message content:
 
 ----------
 
-<h1>Automatic digital renewal receipt - <<branches.branchname>></h1>
+<h1>Digital receipt - [% branch.branchname %]</h1>
 <p>The following items were renewed today on your library account.</p>
 ----
-<p><<biblio.title>><br />Barcode: <<items.barcode>><br />Date due: <<items.onloan>></p>
+<p><<biblio.title>><br />Barcode: <<items.barcode>><br />Date due: [% checkout.date_due %] </p>
 ----
 <p><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></p>
 <p>If you have any questions, please contact us by phone at <<branches.branchphone>> or by e-mail at <<branches.branchemail>>.</p>

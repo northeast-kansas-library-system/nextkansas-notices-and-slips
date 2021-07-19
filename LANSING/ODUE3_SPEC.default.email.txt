@@ -31,11 +31,14 @@ Third Overdue Notice - <<today>>
 
 Dear <<borrowers.firstname>>
 
+Our records show that the items you borrowed from Lansing Community Library have not been returned. Since it is 45 days past the time they were due, we must now consider them lost and ask you to pay for their replacement. If you have any questions, please let us know or contact us if you need special assistance. 
+
+
 The following items are 45 overdue as of <<today>>:
 
 <<items.content>>
 
-If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+You can view our circulation Policy on our website at www.lansingkslibrary.org. 
 
 You can access your account on-line at https://nextkansas.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 

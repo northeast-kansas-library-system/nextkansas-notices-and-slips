@@ -1,0 +1,18 @@
+OTTAWA.PREDUEDGST.default.sms.txt
+
+Name: Advance Notice of Item Due (Digest)
+
+-----
+
+Advance Notice of Item Due
+
+-----
+
+Message content:
+
+----------
+
+You have items due soon at <<branches.branchname>>
+----
+----
+

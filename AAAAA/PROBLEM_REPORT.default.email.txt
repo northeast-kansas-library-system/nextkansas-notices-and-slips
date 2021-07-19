@@ -1,0 +1,22 @@
+AAAAA.PROBLEM_REPORT.default.email.txt
+
+Name: OPAC Problem Report
+
+-----
+
+OPAC Problem Report
+
+-----
+
+Message content:
+
+----------
+
+Username: <<problem_reports.username>>
+
+Problem page: <<problem_reports.problempage>>
+
+Title: <<problem_reports.title>>
+
+Message: <<problem_reports.content>>
+

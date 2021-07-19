@@ -16,11 +16,11 @@ Message content:
 
 Your library card will expire soon, on:
 
-[% borrower.dateexpiry | $KohaDates %]. Please visit the library or call us at (913) 682-5666 extension 1100 to renew your account.
+[% borrower.dateexpiry | $KohaDates %]. Please visit the library or call us at <<branches.branchphone>> to renew your account.
 
 Thank you,
 
 Leavenworth Public Library
-417 Spruce St
-(913) 682-5666 ext 1100 
+<<branches.branchaddress1>>
+<<branches.branchphone>>
 

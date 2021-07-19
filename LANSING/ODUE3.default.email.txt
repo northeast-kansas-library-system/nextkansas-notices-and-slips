@@ -31,14 +31,17 @@ Lost Library Items - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following library items are going to be declared "Lost" because they have been overdue for 45 days as of <<today>>:
+Our records show that the items you borrowed from the library have not been returned on time. Since they are 45 days past due, we now consider them lost and ask you to pay for their replacement. Your account has been suspended and you are going to be billed for the cost of the items.
+
+The following items are 45 overdue as of <<today>>:
 
 <<items.content>>
 
-Your account has been suspended and you are going to be billed for the replacement of these items.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+If we do not receive the replacement cost of the items, our next step is to send this account to collections for resolution. We would prefer to reinstate your account to good standing and resolve the issue with you. If you have any questions or feel that this notice is in error, Please call <<branches.branchphone>> or visit <<branches.branchname>>as soon as possible. 
 
-You can access your account on-line at https://nextkansas.org 24 hours a day.
-Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
+
+You can access your account on-line at https://nextkansas.org 
+ 
 
 .pgend.
 
