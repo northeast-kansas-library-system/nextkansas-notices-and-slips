@@ -1,6 +1,6 @@
-PAOLA.DUE.default.print.txt
+NEKLS.DUE.default.print.txt
 
-Name: Item Due Reminder - PAOLA
+Name: Item Due Reminder
 
 -----
 

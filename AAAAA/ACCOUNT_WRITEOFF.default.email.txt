@@ -12,17 +12,50 @@ Message content:
 
 ----------
 
-[%- USE Price -%] 
-A account write-off of [% credit.amount * -1 | $Price %] has been applied to your library account ending with [% bcn = borrower.cardnumber %] [% bcn.substr(-6) %].
+<html>
 
-This write-off was applied to the following fees:
-[%- FOREACH o IN offsets %]
-Description: [% o.debit.description %]
-Amount written off: [% o.amount * -1 | $Price %]
-Amount remaining on this fee: [% o.debit.amountoutstanding | $Price %]
-[% END %]
+<head>
+  <title>[% branch.branchname %] - Fee Writeoff</title>
+  <!-- Notice code: ACCOUNT_WRITEOFF -->
+</head>
 
-Next Search Catalog receipt number: [% credit.accountlines_id %]
-[% today %]
+<body>
 
+  <div id="message_content">
+
+    [%- USE Price -%]
+    <p>[% branch.branchname %] - Fee Writeoff</p>
+    <p>An account write-off of [% credit.amount * -1 | $Price %] has been applied to your library account ending with [% bcn = borrower.cardnumber %] [% bcn.substr(-6) %].</p>
+    
+    <p>This write-off was applied to the following fees:</p>
+    <ul>
+      [%- FOREACH o IN offsets %]
+      <li>Description: [% o.debit.description %]<br />
+        Amount paid: [% o.amount * -1 | $Price %]<br />
+        Amount remaining on this fee: [% o.debit.amountoutstanding | $Price %]</li>
+      [% END %]
+    </ul>
+    
+    <p>Next Search Catalog receipt number: [% credit.accountlines_id %]<br />
+      [% today %]</p>
+
+  </div>
+
+  <footer>
+
+    <p>Thank you,</p>
+    <p>
+      [% branch.branchname %]<br />
+      [% branch.branchaddress1 %]<br />
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+  </footer>
+
+</body>
+
+</html>
 

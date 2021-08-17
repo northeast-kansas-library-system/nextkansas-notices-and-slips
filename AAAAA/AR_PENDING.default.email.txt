@@ -12,20 +12,86 @@ Message content:
 
 ----------
 
-<<borrowers.firstname>> <<borrowers.surname>> (<<borrowers.cardnumber>>)
+<html>
 
-We have received your request for an article from <<biblio.title>> (<<items.barcode>>).
+<head>
+  <title>[% branch.branchname %] - Article Request Received</title>
+  <!-- Notice code: AR_PENDING -->
+</head>
 
-Article requested:
-Title: <<article_requests.title>>
-Author: <<article_requests.author>>
-Volume: <<article_requests.volume>>
-Issue: <<article_requests.issue>>
-Date: <<article_requests.date>>
-Pages: <<article_requests.pages>>
-Chapters: <<article_requests.chapters>>
-Notes: <<article_requests.patron_notes>>
+<body>
 
+  <div id="message_content">
 
-Thank you!
+    <p>[% borrower.firstname %] [% borrower.surname %]:</p>
+
+    <p>[% branch.branchname %] - Article Request Received</p>
+
+    <p>We have received your request for an article from <span style="text-transform: uppercase;">[% biblio.title %]</span>.</p>
+
+    <p>
+      Article requested:<br />
+      <ul>
+        [% IF article_request.title %]
+        <li>
+          Title: [% article_request.title %]
+        </li>
+        [% END %]
+        [% IF article_request.author %]
+        <li>
+          Author: [% article_request.author %]
+        </li>
+        [% END %]
+        [% IF article_request.volume %]
+        <li>
+          Volume: [% article_request.volume %]
+        </li>
+        [% END %]
+        [% IF article_request.issue %]
+        <li>
+          Issue: [% article_request.issue %]
+        </li>
+        [% END %]
+        [% IF article_request.date %]
+        <li>
+          Date: [% article_request.date %]
+        </li>
+        [% END %]
+        [% IF article_request.pages %]
+        <li>
+          Pages: [% article_request.pages %]
+        </li>
+        [% END %]
+        [% IF article_request.chapters %]
+        <li>
+          Chapters: [% article_request.chapters %]
+        </li>
+        [% END %]
+        [% IF article_request.patron_notes %]
+        <li>
+          Notes: [% article_request.patron_notes %]
+        </li>
+        [% END %]
+      </ul>
+    </p>
+
+  </div>
+
+  <footer>
+
+    <p>Thank you,</p>
+    <p>
+      [% branch.branchname %]<br />
+      [% branch.branchaddress1 %]<br />
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+  </footer>
+
+</body>
+
+</html>
 

@@ -1,6 +1,6 @@
 PAOLA.DUEDGST.default.print.txt
 
-Name: PAOLA Item Due Reminder (Digest)
+Name: Item Due Reminder (Digest) - PAOLA
 
 -----
 

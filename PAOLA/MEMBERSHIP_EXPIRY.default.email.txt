@@ -12,17 +12,39 @@ Message content:
 
 ----------
 
-Dear <<borrowers.firstname>> <<borrowers.surname>>,
+<html>
 
-It's time for the library to make sure the information on your account is up to date. This is done yearly. Please visit <<branches.branchname>> or call us at <<branches.branchphone>> to renew your account. You will not be able to check out until your account is updated.
+<head>
+  <title>[% branch.branchname %] - Time to update your library account</title>
+  <!-- Notice code: MEMBERSHIP_EXPIRY; Library: PAOLA -->
+</head>
 
-Thanks,
+<body>
 
-<<branches.branchname>>
-<<branches.branchaddress1>>
-<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+  <div id="message_content">
 
-Email: <<branches.branchemail>>
-Phone: <<branches.branchphone>>
-Website: <<branches.branchurl>>
+    <p>[% borrower.firstname %] [% borrower.surname %]:</p>
+
+    <p>It's time for the library to make sure the information on your account is up to date. This is done yearly. Please visit [% branch.branchname %] or call us at [% branch.branchphone %] to renew your account. You will not be able to check out until your account is updated.
+</p>
+
+  </div>
+  
+  <footer>
+
+    <p>Thank you,</p>
+    <p>
+      [% branch.branchname %]<br />
+      [% branch.branchaddress1 %]<br />
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+  </footer>
+  
+</body>
+
+</html>
 

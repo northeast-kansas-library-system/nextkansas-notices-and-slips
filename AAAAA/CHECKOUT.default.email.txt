@@ -12,15 +12,45 @@ Message content:
 
 ----------
 
-<h1>Digital check-out receipt - [% branch.branchname %]</h1>
-<p>The following items were checked out today on your library account.</p>
-<p>This digital receipt only includes items checked out to your library account today.</p>
-----
-<p>[% biblio.title %]<br />Barcode: [% item.barcode %]<br />Date due: [% item.onloan | $KohaDates %]</p>
-----
-<p>[% branch.branchname %]<br />[% branch.branchaddress1 %]<br />[% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]</p>
-<p>If you have any questions, please contact us at [% branch.branchphone %].</p>
-<p>Access your library account online at <a href="https://nextkansas.org//cgi-bin/koha/opac-user.pl">https://nextkansas.org/</a></p>
-<h3>At the present time, if you renew any items, digital receipts will no longer be sent due to a software bug.</h3>
-<p>We apologize for this inconvenience and are working to re-enable renewal receipts.</p>
+<html>
+
+<head>
+  <title>[% branch.branchname %] - Library Check-out Receipt</title>
+  <!-- Notice code:  CHECKOUT -->
+</head>
+
+<body>
+
+  <div id="message_content">
+
+    <h2>[% branch.branchname %] - Library Check-out Receipt</h2>
+    <p>The following items were checked out today on your library account.</p>
+    <p>This digital receipt only includes items checked out to your library account today.</p>
+    ----
+    <p>
+      [% biblio.title %]<br />
+      Barcode: [% item.barcode %]<br />
+      Date due: [% item.onloan | $KohaDates %]
+    </p>
+    ---- 
+
+  </div>
+
+  <footer>
+
+    <p>Thank you,</p>
+    <p>
+      [% branch.branchname %]<br />
+      [% branch.branchaddress1 %]<br />
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+  </footer>
+
+</body>
+
+</html>
 

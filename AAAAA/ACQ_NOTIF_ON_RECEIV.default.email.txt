@@ -12,9 +12,40 @@ Message content:
 
 ----------
 
-Dear <<borrowers.firstname>> <<borrowers.surname>>,
+<html>
 
- The order <<aqorders.ordernumber>> (<<biblio.title>>) has been received.
+<head>
+  <title>[% branch.branchname %] - Order received</title>
+  <!-- Notice code: ACQ_NOTIF_ON_RECEIV -->
+</head>
 
-Your library.
+<body>
+
+  <div id="message_content">
+
+    <p><<borrowers.firstname>> <<borrowers.surname>>:</p>
+
+    <p>[% branch.branchname %] - Order received</p>
+    
+    <p>The order <<aqorders.ordernumber>> (<<biblio.title>>) has been received.</p>
+
+  </div>
+
+  <footer>
+
+    <p>Thank you,</p>
+    <p>
+      [% branch.branchname %]<br />
+      [% branch.branchaddress1 %]<br />
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+  </footer>
+
+</body>
+
+</html>
 

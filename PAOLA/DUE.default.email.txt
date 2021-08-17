@@ -1,6 +1,6 @@
 PAOLA.DUE.default.email.txt
 
-Name: PAOLA Item Due Reminder
+Name: Item Due Reminder - PAOLA
 
 -----
 

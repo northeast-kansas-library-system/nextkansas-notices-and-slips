@@ -1,10 +1,10 @@
-AAAAA.RENEWAL.default.email.txt
+NEKLS.DUE.default.email.txt
 
-Name: Renewal Receipt (Digest)
+Name: Item Due Reminder
 
 -----
 
-Library renewal receipt
+Item(s) Due Reminder
 
 -----
 
@@ -13,31 +13,19 @@ Message content:
 ----------
 
 <html>
-
 <head>
-  <title>[% branch.branchname %] - Library Renewal Receipt</title>
-  <!-- Notice code:   RENEWAL -->
+  <title>[% branch.branchname %] - Item Due Reminder</title>
+  <!-- Notice code:  DUE; Library: All; -->
 </head>
-
 <body>
-
   <div id="message_content">
-
-    <h2>[% branch.branchname %] - Library Check-out Receipt</h2>
-    <p>The following items were renewed today on your library account.</p>
-    <p>This digital receipt only includes items renewed on your library account today.</p>
-    ----
-    <p>
-      [% biblio.title %]<br />
-      Barcode: [% item.barcode %]<br />
-      Date due: [% item.onloan | $KohaDates %]
-    </p>
-    ---- 
-
+    <p>[% borrower.firstname %] [% borrower.surname %]:</p>
+    <p>[% branch.branchname %] - Item Due Reminder</p>
+    <p>You have a library item due today. The details are as follow:</p>
+    <p>[% biblios.title FILTER upper %][% IF biblios.author %] / [% biblios.author %][% END %] / [% items.itemcallnumber %] / <<items.barcode>></p>
+    <p>If you have returned this item recently, please disregard this e-mail.</p>
   </div>
-
   <footer>
-
     <p>Thank you,</p>
     <p>
       [% branch.branchname %]<br />
@@ -47,10 +35,7 @@ Message content:
     <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
     <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
     <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
-
   </footer>
-
 </body>
-
 </html>
 

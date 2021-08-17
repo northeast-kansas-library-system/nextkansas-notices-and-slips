@@ -13,6 +13,13 @@ Message content:
 ----------
 
 <style type="text/css">
+body {width: 275px;}
+body{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 5px;
+}
 #receipt {
 font-size:1.2em;	
 }
@@ -91,7 +98,7 @@ expiration=expire.toDateString();
 
 expiration=( '0' + (expire.getMonth()+1) ).slice( -2 ) + '/' + ( '0' + (expire.getDate()) ).slice( -2 );
 
-if (!(transferto=="Eudora Public Library"))
+if (!(transferto=="Eudora Community Library"))
 {
 document.getElementById("expiration").style.display='none';
 document.getElementById("patroncontact").style.display='none';

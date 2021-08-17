@@ -12,15 +12,57 @@ Message content:
 
 ----------
 
-Hello <<borrowers.firstname>>,
+<html>
 
-Congratulations on getting a new library card at <<branches.branchname>>.
+<head>
+  <title>[% branch.branchname %] - Welcome to the library</title>
+  <!-- Notice code: ACCTDETAILS -->
+</head>
 
-<<branches.branchname>> is a member of the Next Search Catalog library consortium and you can find our online catalog at https://nextkansas.org.  From this site you can search the catalog, access your account, request materials, see what's checked out on your account, and renew materials.
+<body>
 
-You can also visit our library's website at <<branches.branchurl>>.  From there you can learn more about our library including our hours and contact information.
+  <div id="message_content">
 
-We look forward to having you as a member,
+    <p>Hello [% borrower.firstname %] [% borrower.surname %].</p>
+    <p>Congratulations on getting a new library card at [% branch.branchname %].</p>
+    <p>[% branch.branchname %] is a member of the Next Search Catalog library consortium and you can find our online catalog at <a href="https://nextkansas.org">https://nextkansas.org</a>. From the catalog you can search for library materials, access
+      your account, request materials, see what's checked out on your account, and renew materials.</p>
+    <p>You can also visit your home library's website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a>. From there you can learn more about your home library including hours and contact information.</p>
+    <p>Your new Next Search Catalog account details are:</p>
+    <ul>
+      <li>Name: <strong><ins>[% borrower.firstname %][% IF borrower.othernames %] ([% borrower.othernames %])[% END %], [% borrower.surname %]</strong></ins></li>
+      <li>Address: <strong><ins>[% borrower.address %][% IF borrower.address2 %] / [% borrower.address2 %][% END %] / [% borrower.city %], [% borrower.state %] [% borrower.zipcode %]</strong></ins></li>
+      <li>Phone number: <strong><ins>[% borrower.phone %]</strong></ins></li>
+      <li>Library card number: <strong><ins>[% borrower.cardnumber %]</strong></ins></li>
+      <li>User ID: <strong><ins>[% borrower.userid %]</strong></ins></li>
+    </ul>
+    <h2>Your home library is:</h2>
+    <p>[% branch.branchname %] / [% branch.branchaddress1 %] / [% branch.branchcity %], [% branch.branchstate %]<br /> [% branch.branchphone %]<br /> [% branch.branchemail %]</p>
+    <p><span style="background-color: #FFFF00">Please contact your home library at the address, phone number, or e-mail address listed above for any of the following reasons:</span>
+      <ul>
+        <li>Your contact information as listed above is incorrect</li>
+        <li>You do not want to receive e-mails from the library at this address</li>
+        <li>If you have any other questions</li>
+      </ul>
+    </p>
 
-<<branches.branchname>>
+  </div>
+
+  <footer>
+
+    <p>Thank you,</p>
+    <p>
+      [% branch.branchname %]<br />
+      [% branch.branchaddress1 %]<br />
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+  </footer>
+
+</body>
+
+</html>
 

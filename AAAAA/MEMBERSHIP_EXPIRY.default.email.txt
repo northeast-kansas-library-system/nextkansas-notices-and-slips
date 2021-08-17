@@ -12,17 +12,37 @@ Message content:
 
 ----------
 
-<<borrowers.firstname>> <<borrowers.surname>>,
+<html>
 
-Your library card will expire on <<borrowers.dateexpiry>>. Please call us at <<branches.branchphone>> or visit us at <<branches.branchname>> to renew your account.
+<head>
+  <title>[% branch.branchname %] - Your Library Card Expires Soon</title>
+  <!-- Notice code: MEMBERSHIP_EXPIRY -->
+</head>
 
-Thank you,
+<body>
 
-<<branches.branchname>>
-<<branches.branchaddress1>>
-<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+  <div id="message_content">
 
-Email: <<branches.branchemail>>
-Phone: <<branches.branchphone>>
-Website: <<branches.branchurl>>
+    <p>[% borrower.firstname %] [% borrower.surname %]:</p>
+    <p>Your library card will expire on [% borrower.dateexpiry %]. Please call us at [% branch.branchphone %] or visit us at [% branch.branchname %] to renew your account.</p>
+
+  </div>
+
+  <footer>
+
+    <p>Thank you,</p>
+    <p>
+      [% branch.branchname %]<br />
+      [% branch.branchaddress1 %]<br />
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+  </footer>
+
+</body>
+
+</html>
 
