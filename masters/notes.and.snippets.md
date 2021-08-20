@@ -113,6 +113,8 @@
 
 This was information derived from a conversation on Slack with Lucas at Bywater Solutions and is set to produce single lines.
 
+``` html
+
 [% USE Branches %]
 
 [% FOREACH b IN Branches.all() %]
@@ -147,7 +149,11 @@ This was information derived from a conversation on Slack with Lucas at Bywater 
 
 [% END %]
 
+```
+
 ## Information about a checked out item's home branch
+
+``` HTML
 
 [% USE Branches %]
 
@@ -187,8 +193,12 @@ This was information derived from a conversation on Slack with Lucas at Bywater 
 
 [% END %]
 
+```
 
-## Information about an overdue item's home branch
+
+## I
+
+``` HTML
 
 [% USE Branches %]
 
@@ -227,3 +237,5 @@ This was information derived from a conversation on Slack with Lucas at Bywater 
   [% END %]
 
 [% END %]
+
+```
