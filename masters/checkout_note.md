@@ -1,0 +1,61 @@
+# CHECKOUT_NOTE
+
+This is the master CHECKOUT_NOTE for NEKLS.  All other CHECKOUT_NOTEs are based on this document.
+
+This notice is sent to the library where an item is checked out if a borrower uses the "Report a problem" feature on their "Your Summary" (opac-user.pl) page in the OPAC.
+
+This message uses css from noticesslips.css conveyed by the NoticeCSS system preference.
+
+```html
+
+[% USE Branches %]
+<html>
+
+<head>
+  <title>[% Branches.GetName(checkout.branchcode) %] - Patron reports problem with an item</title>
+  <!-- Notice code: CHECKOUT_NOTE; Library: master; -->
+
+  <meta charset="UTF-8" />
+
+</head>
+
+<body>
+
+  <div class="notice">
+
+    <div id="notice_content">
+
+      <p>[% Branches.GetName(checkout.branchcode) %] - Patron reports problem with an item</p>
+      <p>A borrower has created a problem note on an item they have checked out from your library. The details are as follow:</p>
+      <ul>
+        <li>Borrower's card number: [% borrower.cardnumber %]</li>
+        <li>Title of item: [% biblio.title %]</li>
+        <li>Author: [% biblio.author %]</li>
+        <li>Item due: [% checkout.date_due | $KohaDates as_due_date => 1 %]</li>
+        <li>Note: <<issues.note>></li>
+        <li>Date of note: <<issues.notedate>></li>
+      </ul>
+      <p>Click on the link below to run a report that will show you all of the notes created by this patron - including the note they just placed on this title:</p>
+      <p><a href='https://staff.nextkansas.org/cgi-bin/koha/reports/guided_reports.pl?reports=3116&phase=Run+this+report&sql_params=[% borrower.cardnumber %]' target='_blank'>Link to patron problem notes report</a></p>
+
+    </div>
+
+    <footer>
+
+      <p>Thank you,</p>
+      <p>[% FOREACH b IN Branches.all() %][% SET thischeckout_branchcode = checkout.branchcode %][% IF b.branchcode == thischeckout_branchcode %][% b.branchname %]<br />
+        [% b.branchaddress1 %]<br />
+        [% b.branchcity %], [% b.branchstate %] [% b.branchzip %][% END %][% END %]</p>
+      <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit your library's website at: <a href="[% Branches.GetURL(checkout.branchcode) %]">[% Branches.GetURL(checkout.branchcode) %]</a></p>
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% FOREACH b IN Branches.all() %][% SET thischeckout_branchcode = checkout.branchcode %][% IF b.branchcode == thischeckout_branchcode %][% b.branchphone %][% END %][% END %]</ins></strong>.</p>
+
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
+
+```
