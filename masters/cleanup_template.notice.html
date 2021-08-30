@@ -1,12 +1,24 @@
 <html>
 
 <head>
-  <title>[% branch.branchname %] - </title>
+  <title>[% branch.branchname %] - Next Search Catalog Library overdue notice</title>
   <!-- Notice code: ; Library: ; -->
 
   <meta charset="UTF-8" />
 
   <style>
+
+  @media print {
+    @page {size:8.5in 11in; margin: .75in}
+    }
+    body{font: 14pt Georgia, "Times New Roman", Times, serif;}
+    body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
+      color: #000000 !important;
+      background-color: #ffffff;
+      font-weight: bold !important;
+    }
+  }
+
     * {
       font-family: Verdana, Arial, sans-serif;
     }
@@ -63,7 +75,36 @@
 
     <div id="notice_content">
 
+      <div id="return_address">
+        <p>
+          <<branches.branchname>><br />
+          <<branches.branchaddress1>><br />
+          [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
+          <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+        </p>
+      </div>
 
+
+      <div id="borrower_address">
+        <p>
+          <<borrowers.firstname>> <<borrowers.surname>><br />
+          <<borrowers.address>><br />
+          [% IF borrower.address2 %][% borrower.address2 %]<br />[% END %]
+          <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+        </p>
+      </div>
+
+      <div id="message_body">
+        <p>First Overdue Notice - <<today>></p>
+
+        <p>Dear <<borrowers.firstname>></p>
+
+        <p>The following items are overdue as of <<today>>:</p>
+
+        <<items.content>>
+
+        If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+      </div>
 
     </div>
 
@@ -77,8 +118,11 @@
       </p>
       <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
       <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      [% IF borrower.email %]
       <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
-
+      [% ELSE %]
+      <p style="margin-top: 1in;">.pgend</p>
+      [% END %]
     </footer>
 
   </div>
