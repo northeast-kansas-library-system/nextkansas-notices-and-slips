@@ -23,6 +23,54 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
 
   <meta charset="UTF-8" />
 
+  <style>
+    @media print {
+      body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
+        width: 70mm;
+        margin: 0;
+        color: #000000 !important;
+        background-color: #ffffff;
+        font-weight: bold !important;
+      }
+    }
+
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body {
+      font-size: 10pt;
+    }
+
+    .slip p {
+      font-size: 10pt;
+    }
+
+    .slip h1 {
+      font-size: 1.6em;
+    }
+
+    .slip h2 {
+      font-size: 1.5em;
+    }
+
+    .slip h3 {
+      font-size: 1.4em !important;
+    }
+
+    .slip h4 {
+      font-size: 1.3em !important;
+    }
+
+    .slip h5 {
+      font-size: 1.2em;
+    }
+
+    .slip h6 {
+      font-size: 1.1em;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -63,7 +111,7 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
 
         <div id="slip_borrower_cardnumber">
           <p>
-            Checked out to [% borrower.cardnumber %]
+            Last 6 digits of library card number [% borrower.cardnumber.substr(-6) FILTER upper %]
           </p>
         </div>
 
@@ -90,49 +138,30 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
       </div>
 
       <div id="slip_cko">
-        <h2>Checked out:</h2>
-          [% FOREACH checkout IN borrower.checkouts %]
-            [% IF ! checkout.is_overdue %]
-              <p>
-                <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper | $Remove_MARC_punctuation %]</ins>[% IF checkout.item.effective_itemtype %] ([% ItemTypes.GetDescription(checkout.item.effective_itemtype) %])[% END %][% END %]<br />
-                Barcode: [% checkout.item.barcode %]<br />
-                Date due: [% checkout.date_due | $KohaDates %]<br />
-                -----
-              </p>
-            [% END %]
-          [% END %]
+        <h4>Checked out on [% today | $KohaDates %]:</h4>
+        [% FOREACH checkout IN checkouts %]
+        <p>
+          <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
+          Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]<br />
+          Barcode: [% checkout.item.barcode %]<br />
+          Date due: [% checkout.date_due | $KohaDates %]<br />
+          -----
+        </p>
+        [% END %]
       </div>
 
-      <div id="slip_od">
-        <h2>Overdue:</h2>
-          [% FOREACH checkout IN borrower.checkouts %]
-            [% IF checkout.is_overdue %]
-              <p>
-                <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper | $Remove_MARC_punctuation %]</ins>[% IF checkout.item.effective_itemtype %] ([% ItemTypes.GetDescription(checkout.item.effective_itemtype) %])[% END %][% END %]<br />
-                Barcode: [% checkout.item.barcode %]<br />
-                Date due: [% checkout.date_due | $KohaDates %]<br />
-                ----------
-              </p>
-            [% END %]
-          [% END %]
-      </div>
-
-      <div id="checkout_count_all">
-        <p>Total items checked out: [% borrower.checkouts.count %]</p>
+      <div id="checkout_count">
+        <p>Total items checked out on [% today | $KohaDates %]: [% checkouts.count %]</p>
       </div>
 
       <div id="cost_statement">
         [% FOREACH checkout IN checkouts %]
-          [%~ SET item = checkout.item %]
-          [% totalValue = item.price + totalValue %]
-        [% END %]
-        [% FOREACH overdue IN overdues %]
-          [%~ SET item = overdue.item %]
-          [% totalValue = item.price + totalValue %]
+        [%~ SET item = checkout.item %]
+        [% totalValue = item.replacementprice + totalValue %]
         [% END %]
 
         <p>
-          Cost of all items checked out:<br />
+          Cost of items checked out today:<br />
           $[% totalValue | $Price %]<br />
           Cost of using the library:<br />
           Priceless!
