@@ -1,3 +1,5 @@
+[% USE ItemTypes %]
+[% USE KohaDates %]
 <html>
 
 <head>
@@ -15,7 +17,6 @@
     body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
       color: #000000 !important;
       background-color: #ffffff;
-      font-weight: bold !important;
     }
   }
 
@@ -65,6 +66,9 @@
       font-size: 1.1em;
       color: #000000;
     }
+    .dblspace p {
+      margin-top: 2em;
+    }
   </style>
 
 </head>
@@ -85,36 +89,44 @@
       </div>
 
 
-      <div id="borrower_address">
-        <p>
-          <<borrowers.firstname>> <<borrowers.surname>><br />
-          <<borrowers.address>><br />
+      <div id="borrower_address" style="margin-top: .75in; padding-left: .5in">
+        <p><<borrowers.firstname>> <<borrowers.surname>><br />
+          [% borrower.address %]<br />
           [% IF borrower.address2 %][% borrower.address2 %]<br />[% END %]
           <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
         </p>
       </div>
 
-      <div id="message_body">
+      <div id="message_body"  style="margin-top: .75in;" class="dblspace">
         <p>First Overdue Notice - <<today>></p>
 
         <p>Dear <<borrowers.firstname>></p>
 
         <p>The following items are overdue as of <<today>>:</p>
 
-        <<items.content>>
+        <ul>[% FOREACH overdue IN overdues %] [%~ SET item = overdue.item %] [%~ SET biblio = overdue.item.biblio %]
+           <li>
+             [% biblio.title FILTER upper %][% IF biblio.subtitle %] : [% biblio.subtitle FILTER upper %][% END %]<br />
+             [% IF biblio.author %]Author: [% biblio.author %]<br />[% END %]
+             [% IF overdue.item.itemcallnumber %]Call number: [% overdue.item.itemcallnumber %]<br />[% END %]
+             Barcode: [% overdue.item.barcode %] / Item type: [% ItemTypes.GetDescription(overdue.item.itype) %]<br />
+             Due date: [% overdue.date_due | $KohaDates %] / Originally checked out on: [% overdue.issuedate | $KohaDates %]<br />
+             ==========
+           </li>
+        [% END %]</ul>
 
-        If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+        <p>If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement cost of the item if the item is not returned.</p>
+        <p>If you have already returned these materials or if you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.</p>
+        [% IF borrower.email %][% ELSE %]<p>If you would prefer to receive notices such as this one via e-mail, please contact your local library.[% END %]</p>
       </div>
 
     </div>
 
-    <footer>
+    <footer style="margin-top: 3em;">
 
       <p>Thank you,</p>
       <p>
-        [% branch.branchname %]<br />
-        [% branch.branchaddress1 %]<br />
-        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+        [% branch.branchname %]
       </p>
       <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
       <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
