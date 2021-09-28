@@ -1,0 +1,127 @@
+NEKLS.OVERDUES_SLIP.default.sms.txt
+
+Name: Overdues Slip
+
+-----
+
+backup
+
+-----
+
+Message content:
+
+----------
+
+[% USE date %]
+
+<head>
+  <title>[% branch.branchname %] - Overdues Slip</title>
+  <!-- Notice code:   OVERDUES_SLIP; Library: ALL; -->
+  <style type="text/css">
+    body {
+      font: 14pt Georgia, "Times New Roman", Times, serif;
+      margin: 1in
+    }
+
+    p {
+      margin: 0;
+    }
+
+    table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .alignleft {
+      float: left;
+    }
+
+    .alignright {
+      float: right;
+    }
+
+    #branch_address_information {
+      margin-bottom: 4em;
+    }
+
+    #borrower_address_information {
+      margin-bottom: 8em;
+      text-indent: 50px;
+    }
+
+    #letter_body {
+      margin-bottom: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="branch_address_information">
+    <p class="alignright">Overdue Notice - [% date.format(date.now, '%m/%d/%y') %]</p>
+    <p>
+      [% branch.branchname %]
+    </p>
+    <p>
+      [% branch.branchaddress1 %]
+    </p>
+    [% IF branch.branchaddress2 %]
+    <p>
+      [% branch.branchaddress2 %]
+    </p>
+    [% END %]
+    <p>
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+  </div>
+  <div id="borrower_address_information">
+    <p>
+      [% borrower.firstname %] [% borrower.surname %]
+    </p>
+    <p>
+      [% borrower.address %]
+    </p>
+    [% IF borrower.address2 %]
+    <p>
+      [% borrower.address2 %]
+    </p>
+    [% END %]
+    <p>
+      [% borrower.city %], [% borrower.state %] [% borrower.zipcode %]
+    </p>
+  </div>
+  <div id="letter_body">
+    <p style="margin-bottom: 2em;">Dear [% borrower.firstname %] [% borrower.surname %],</p>
+    [% IF overdues.count == 1 %]
+    <p style="margin-bottom: 2em;">Please return the following item to the library as soon as possible. If you are liable for late fees, remember that the fees increase the longer you keep the item. You may also be charged the replacement cost of the
+      item and other processing
+      fees if the item is not returned.</p>
+    [% ELSE %]
+    <p style="margin-bottom: 2em;">Please return the following items to the library as soon as possible. If you are liable for late fees, remember that the fees increase the longer you keep the items. You may also be charged the replacement cost of
+      the items and other
+      processing fees if items are not returned.</p>
+    [% END %]
+    <div id="slip_od">
+      <h4>Overdue:</h4>
+      [% FOREACH checkout IN borrower.checkouts %]
+      [% IF checkout.is_overdue %]
+      <p>
+        <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
+        Call number: [% checkout.item.itemcallnumber %] / Item barcode number: [% checkout.item.barcode %]<br />
+        Checked out on: [% checkout.issuedate | $KohaDates %]<br />
+        Date due: [% checkout.date_due | $KohaDates %]<br />
+        ----------
+      </p>[% END %][% END %]
+    </div>
+  </div>
+  <div id="footer">
+    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>Please call [% branch.branchphone %] or visit [% branch.branchname %] if you have any questions.</p>
+    <p style="margin-bottom: 2em;">This notice was printed on [% date.format(date.now, '%m/%d/%y at %H:%M') %].</p>
+    <p style="margin-bottom: 4em;">Thank you,</p>
+    <p>
+      [% branch.branchname %]
+    </p>
+  </div>
+</body>
+

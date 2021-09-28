@@ -1,10 +1,10 @@
 NEKLS.DUE.default.email.txt
 
-Name: Item Due Reminder
+Name: Item due reminder
 
 -----
 
-Item(s) Due Reminder
+Library item due today
 
 -----
 
@@ -13,29 +13,97 @@ Message content:
 ----------
 
 <html>
+
 <head>
-  <title>[% branch.branchname %] - Item Due Reminder</title>
-  <!-- Notice code:  DUE; Library: All; -->
+  <title>[% branch.branchname %] -Library item due today</title>
+  <!-- Notice code:  DUE; Library: All -->
+
+  <meta charset="UTF-8" />
+
+  <style>
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body .notice {
+      color: #000000;
+      background-color: #ffffff;
+      width: 90%;
+      margin: 0;
+      font-size: 12pt;
+    }
+
+    .notice p {
+      font-size: 12pt;
+      color: #000000;
+    }
+
+    .notice h1 {
+      font-size: 1.6em;
+      color: #000000;
+    }
+
+    .notice h2 {
+      font-size: 1.5em;
+      color: #000000;
+    }
+
+    .notice h3 {
+      font-size: 1.4em !important;
+      color: #000000;
+    }
+
+    .notice h4 {
+      font-size: 1.3em !important;
+      color: #000000;
+    }
+
+    .notice h5 {
+      font-size: 1.2em;
+      color: #000000;
+    }
+
+    .notice h6 {
+      font-size: 1.1em;
+      color: #000000;
+    }
+  </style>
+
 </head>
+
 <body>
-  <div id="message_content">
-    <p>[% borrower.firstname %] [% borrower.surname %]:</p>
-    <p>[% branch.branchname %] - Item Due Reminder</p>
-    <p>You have a library item due today. The details are as follow:</p>
-    <p>[% biblios.title FILTER upper %][% IF biblios.author %] / [% biblios.author %][% END %] / [% items.itemcallnumber %] / <<items.barcode>></p>
-    <p>If you have returned this item recently, please disregard this e-mail.</p>
+
+  <div class="notice">
+
+    <div id="notice_content">
+
+      <h2>[% branch.branchname %] - Library item due today</h2> 
+      <p>The following item is due at the library today.  This item is checked out to your library card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].</p>
+      <p>The details are as follow:</p>
+      <item>
+        <p><<items.content>></p>
+      </item>
+      <p>If you have returned this item recently, or if you believe this email was sent to you in error, please contact us at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+    </div>
+
+    <footer>
+
+      <p>Thank you,</p>
+      <p>
+        [% branch.branchname %]<br />
+        [% branch.branchaddress1 %]<br />
+        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+      </p>
+      <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+    </footer>
+
   </div>
-  <footer>
-    <p>Thank you,</p>
-    <p>
-      [% branch.branchname %]<br />
-      [% branch.branchaddress1 %]<br />
-      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
-    </p>
-    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
-    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
-    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
-  </footer>
+
 </body>
+
 </html>
 

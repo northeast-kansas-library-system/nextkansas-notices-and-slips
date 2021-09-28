@@ -1,6 +1,6 @@
 AAAAA.CHECKIN.default.sms.txt
 
-Name: Check-in Receipt email (Digest)
+Name: Check-in receipt email (digest)
 
 -----
 

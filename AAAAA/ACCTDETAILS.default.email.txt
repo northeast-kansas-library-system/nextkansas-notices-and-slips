@@ -16,51 +16,106 @@ Message content:
 
 <head>
   <title>[% branch.branchname %] - Welcome to the library</title>
-  <!-- Notice code: ACCTDETAILS -->
+  <!-- Notice code: ACCTDETAILS; Library: All; -->
+
+  <meta charset="UTF-8" />
+
+  <style>
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body .notice {
+      color: #000000;
+      background-color: #ffffff;
+      width: 90%;
+      margin: 0;
+      font-size: 12pt;
+    }
+
+    .notice p {
+      font-size: 12pt;
+      color: #000000;
+    }
+
+    .notice h1 {
+      font-size: 1.6em;
+      color: #000000;
+    }
+
+    .notice h2 {
+      font-size: 1.5em;
+      color: #000000;
+    }
+
+    .notice h3 {
+      font-size: 1.4em !important;
+      color: #000000;
+    }
+
+    .notice h4 {
+      font-size: 1.3em !important;
+      color: #000000;
+    }
+
+    .notice h5 {
+      font-size: 1.2em;
+      color: #000000;
+    }
+
+    .notice h6 {
+      font-size: 1.1em;
+      color: #000000;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <div id="message_content">
+  <div class="notice">
 
-    <p>Hello [% borrower.firstname %] [% borrower.surname %].</p>
-    <p>Congratulations on getting a new library card at [% branch.branchname %].</p>
-    <p>[% branch.branchname %] is a member of the Next Search Catalog library consortium and you can find our online catalog at <a href="https://nextkansas.org">https://nextkansas.org</a>. From the catalog you can search for library materials, access
-      your account, request materials, see what's checked out on your account, and renew materials.</p>
-    <p>You can also visit your home library's website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a>. From there you can learn more about your home library including hours and contact information.</p>
-    <p>Your new Next Search Catalog account details are:</p>
-    <ul>
-      <li>Name: <strong><ins>[% borrower.firstname %][% IF borrower.othernames %] ([% borrower.othernames %])[% END %], [% borrower.surname %]</strong></ins></li>
-      <li>Address: <strong><ins>[% borrower.address %][% IF borrower.address2 %] / [% borrower.address2 %][% END %] / [% borrower.city %], [% borrower.state %] [% borrower.zipcode %]</strong></ins></li>
-      <li>Phone number: <strong><ins>[% borrower.phone %]</strong></ins></li>
-      <li>Library card number: <strong><ins>[% borrower.cardnumber %]</strong></ins></li>
-      <li>User ID: <strong><ins>[% borrower.userid %]</strong></ins></li>
-    </ul>
-    <h2>Your home library is:</h2>
-    <p>[% branch.branchname %] / [% branch.branchaddress1 %] / [% branch.branchcity %], [% branch.branchstate %]<br /> [% branch.branchphone %]<br /> [% branch.branchemail %]</p>
-    <p><span style="background-color: #FFFF00">Please contact your home library at the address, phone number, or e-mail address listed above for any of the following reasons:</span>
+    <div id="notice_content">
+
+      <p>Hello [% borrower.firstname %] [% borrower.surname %].</p>
+      <p>Congratulations on getting a new library card at [% branch.branchname %].</p>
+      <p>[% branch.branchname %] is a member of the Next Search Catalog library consortium and you can find our online catalog at <a href="https://nextkansas.org">https://nextkansas.org</a>. From the catalog you can search for library materials, access your account, request materials, see what's checked out on your account, and renew materials.</p>
+      <p>You can also visit your home library's website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a>. From there you can learn more about your home library including hours and contact information.</p>
+      <p>Your new Next Search Catalog account details are:</p>
       <ul>
-        <li>Your contact information as listed above is incorrect</li>
-        <li>You do not want to receive e-mails from the library at this address</li>
-        <li>If you have any other questions</li>
+        <li>Name: <strong><ins>[% borrower.firstname %][% IF borrower.othernames %] ([% borrower.othernames %])[% END %], [% borrower.surname %]</strong></ins></li>
+        <li>Address: <strong><ins>[% borrower.address %][% IF borrower.address2 %] / [% borrower.address2 %][% END %] / [% borrower.city %], [% borrower.state %] [% borrower.zipcode %]</strong></ins></li>
+        <li>Phone number: <strong><ins>[% borrower.phone %]</strong></ins></li>
+        <li>Library card number: <strong><ins>[% borrower.cardnumber %]</strong></ins></li>
+        <li>User ID: <strong><ins>[% borrower.userid %]</strong></ins></li>
       </ul>
-    </p>
+      <h2>Your home library is:</h2>
+      <p>[% branch.branchname %] / [% branch.branchaddress1 %] / [% branch.branchcity %], [% branch.branchstate %]<br /> [% branch.branchphone %]<br /> [% branch.branchemail %]</p>
+      <p><span style="background-color: #FFFF00">Please contact your home library at the address, phone number, or e-mail address listed above for any of the following reasons:</span>
+        <ul>
+          <li>Your contact information as listed above is incorrect</li>
+          <li>You do not want to receive e-mails from the library at this address</li>
+          <li>If you have any other questions</li>
+        </ul>
+      </p>
+
+    </div>
+
+    <footer>
+
+      <p>Thank you,</p>
+      <p>
+        [% branch.branchname %]<br />
+        [% branch.branchaddress1 %]<br />
+        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+      </p>
+      <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+    </footer>
 
   </div>
-
-  <footer>
-
-    <p>Thank you,</p>
-    <p>
-      [% branch.branchname %]<br />
-      [% branch.branchaddress1 %]<br />
-      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
-    </p>
-    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
-    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
-    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
-
-  </footer>
 
 </body>
 

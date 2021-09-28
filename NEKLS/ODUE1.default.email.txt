@@ -12,33 +12,150 @@ Message content:
 
 ----------
 
-<<branches.branchname>>
-<<branches.branchaddress1>>
-<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+[% USE ItemTypes %]
+[% USE KohaDates %]
+<html>
+
+<head>
+  <title>[% branch.branchname %] - Next Search Catalog Library overdue notice</title>
+  <!-- Notice code: ; Library: ; -->
+
+  <meta charset="UTF-8" />
+
+  <style>
+
+  @media print {
+    @page {size:8.5in 11in; margin: .75in}
+    }
+    body{font: 14pt Georgia, "Times New Roman", Times, serif;}
+    body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
+      color: #000000 !important;
+      background-color: #ffffff;
+    }
+  }
+
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body .notice {
+      color: #000000;
+      background-color: #ffffff;
+      width: 90%;
+      margin: 0;
+      font-size: 12pt;
+    }
+
+    .notice p {
+      font-size: 12pt;
+      color: #000000;
+    }
+
+    .notice h1 {
+      font-size: 1.6em;
+      color: #000000;
+    }
+
+    .notice h2 {
+      font-size: 1.5em;
+      color: #000000;
+    }
+
+    .notice h3 {
+      font-size: 1.4em !important;
+      color: #000000;
+    }
+
+    .notice h4 {
+      font-size: 1.3em !important;
+      color: #000000;
+    }
+
+    .notice h5 {
+      font-size: 1.2em;
+      color: #000000;
+    }
+
+    .notice h6 {
+      font-size: 1.1em;
+      color: #000000;
+    }
+    .dblspace p {
+      margin-top: 2em;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="notice">
+
+    <div id="notice_content">
+
+      <div id="return_address">
+        <p>
+          <<branches.branchname>><br />
+          <<branches.branchaddress1>><br />
+          [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
+          <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+        </p>
+      </div>
 
 
-
-
-          <<borrowers.firstname>> <<borrowers.surname>>
-          <<borrowers.address>>
-          <<borrowers.address2>>
+      <div id="borrower_address" style="margin-top: .75in; padding-left: .5in">
+        <p><<borrowers.firstname>> <<borrowers.surname>><br />
+          [% borrower.address %]<br />
+          [% IF borrower.address2 %][% borrower.address2 %]<br />[% END %]
           <<borrowers.city>>, <<borrowers.state>> <<borrowers.zipcode>>
+        </p>
+      </div>
 
+      <div id="message_body"  style="margin-top: .75in;" class="dblspace">
+        <p>First Overdue Notice - <<today>></p>
 
+        <p>[% borrower.firstname %] [% borrower.surname %]:</p>
 
+        <p>The following items are overdue:</p>
 
-First Overdue Notice - <<today>>
+        <ol>[% FOREACH overdue IN overdues %] [%~ SET item = overdue.item %] [%~ SET biblio = overdue.item.biblio %]
+           <li>
+             [% biblio.title FILTER upper %][% IF biblio.subtitle %] : [% biblio.subtitle FILTER upper %][% END %]<br />
+             [% IF biblio.author %]Author: [% biblio.author %]<br />[% END %]
+             [% IF overdue.item.itemcallnumber %]Call number: [% overdue.item.itemcallnumber %]<br />[% END %]
+             Barcode: [% overdue.item.barcode %] / Item type: [% ItemTypes.GetDescription(overdue.item.itype) %]<br />
+             Due date: [% overdue.date_due | $KohaDates %] / Originally checked out on: [% overdue.issuedate | $KohaDates %]<br />
+             ==========
+           </li>
+        [% END %]</ol>
 
-Dear <<borrowers.firstname>>
+        <p>These items are checked out to your library card with the last 6 digits <strong>[% borrower.cardnumber.substr(-6) FILTER upper %]</strong></p>
+        <p>If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement cost of the item if the item is not returned.</p>
+        <p>If you have already returned these materials or if you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.</p>
+        [% IF borrower.email || borrower.emailpro || borrower.B_email %][% ELSE %]<p>If you would prefer to receive notices such as this one via e-mail, please contact your local library.[% END %]</p>
+      </div>
 
-The following items are overdue as of <<today>>:
+    </div>
 
-<<items.content>>
+    <footer style="margin-top: 3em;">
 
-If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+      <p>Thank you,</p>
+      <p>
+        [% branch.branchname %]
+      </p>
+      <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      [% IF borrower.email || borrower.emailpro || borrower.B_email %]
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+      [% ELSE %]
+      <p style="margin-top: 1in;">.pgend</p>
+      [% END %]
+    </footer>
 
-You can access your account on-line at https://nextkansas.org 24 hours a day.
-Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 
+  </div>
 
-.pgend.
+</body>
+
+</html>
+
 

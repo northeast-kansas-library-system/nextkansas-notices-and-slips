@@ -16,80 +16,136 @@ Message content:
 
 <head>
   <title>[% branch.branchname %] - Article Request Processing</title>
-  <!-- Notice code: AR_PROCESSING -->
+  <!-- Notice code: ; Library: All; -->
+
+  <meta charset="UTF-8" />
+
+  <style>
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body .notice {
+      color: #000000;
+      background-color: #ffffff;
+      width: 90%;
+      margin: 0;
+      font-size: 12pt;
+    }
+
+    .notice p {
+      font-size: 12pt;
+      color: #000000;
+    }
+
+    .notice h1 {
+      font-size: 1.6em;
+      color: #000000;
+    }
+
+    .notice h2 {
+      font-size: 1.5em;
+      color: #000000;
+    }
+
+    .notice h3 {
+      font-size: 1.4em !important;
+      color: #000000;
+    }
+
+    .notice h4 {
+      font-size: 1.3em !important;
+      color: #000000;
+    }
+
+    .notice h5 {
+      font-size: 1.2em;
+      color: #000000;
+    }
+
+    .notice h6 {
+      font-size: 1.1em;
+      color: #000000;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <div id="message_content">
+  <div class="notice">
 
-    <p>[% borrower.firstname %] [% borrower.surname %]:</p>
+    <div id="notice_content">
 
-    <p>[% branch.branchname %] - Article Request Processing</p>
+      <p>[% borrower.firstname %] [% borrower.surname %]:</p>
 
-    <p>We are now processing your request for an article from <span style="text-transform: uppercase;">[% biblio.title %]</span>.</p>
+      <p>[% branch.branchname %] - Article Request Processing</p>
 
-    <p>
-      Article requested:<br />
-      <ul>
-        [% IF article_request.title %]
-        <li>
-          Title: [% article_request.title %]
-        </li>
-        [% END %]
-        [% IF article_request.author %]
-        <li>
-          Author: [% article_request.author %]
-        </li>
-        [% END %]
-        [% IF article_request.volume %]
-        <li>
-          Volume: [% article_request.volume %]
-        </li>
-        [% END %]
-        [% IF article_request.issue %]
-        <li>
-          Issue: [% article_request.issue %]
-        </li>
-        [% END %]
-        [% IF article_request.date %]
-        <li>
-          Date: [% article_request.date %]
-        </li>
-        [% END %]
-        [% IF article_request.pages %]
-        <li>
-          Pages: [% article_request.pages %]
-        </li>
-        [% END %]
-        [% IF article_request.chapters %]
-        <li>
-          Chapters: [% article_request.chapters %]
-        </li>
-        [% END %]
-        [% IF article_request.patron_notes %]
-        <li>
-          Notes: [% article_request.patron_notes %]
-        </li>
-        [% END %]
-      </ul>
-    </p>
+      <p>We are now processing your request for an article from <span style="text-transform: uppercase;">[% biblio.title %]</span>.</p>
+
+      <p>
+        Article requested:<br />
+        <ul>
+          [% IF article_request.title %]
+          <li>
+            Title: [% article_request.title %]
+          </li>
+          [% END %]
+          [% IF article_request.author %]
+          <li>
+            Author: [% article_request.author %]
+          </li>
+          [% END %]
+          [% IF article_request.volume %]
+          <li>
+            Volume: [% article_request.volume %]
+          </li>
+          [% END %]
+          [% IF article_request.issue %]
+          <li>
+            Issue: [% article_request.issue %]
+          </li>
+          [% END %]
+          [% IF article_request.date %]
+          <li>
+            Date: [% article_request.date %]
+          </li>
+          [% END %]
+          [% IF article_request.pages %]
+          <li>
+            Pages: [% article_request.pages %]
+          </li>
+          [% END %]
+          [% IF article_request.chapters %]
+          <li>
+            Chapters: [% article_request.chapters %]
+          </li>
+          [% END %]
+          [% IF article_request.patron_notes %]
+          <li>
+            Notes: [% article_request.patron_notes %]
+          </li>
+          [% END %]
+        </ul>
+      </p>
+
+    </div>
+
+    <footer>
+
+      <p>Thank you,</p>
+      <p>
+        [% branch.branchname %]<br />
+        [% branch.branchaddress1 %]<br />
+        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+      </p>
+      <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+    </footer>
 
   </div>
-
-  <footer>
-
-    <p>Thank you,</p>
-    <p>
-      [% branch.branchname %]<br />
-      [% branch.branchaddress1 %]<br />
-      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
-    </p>
-    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
-    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
-    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
-
-  </footer>
 
 </body>
 

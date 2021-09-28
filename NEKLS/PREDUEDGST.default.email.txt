@@ -1,10 +1,10 @@
 NEKLS.PREDUEDGST.default.email.txt
 
-Name: Advance Notice of Item Due (Digest)
+Name: Advance notice of item due (digest)
 
 -----
 
-Advance Notice of Item Due
+Library items due soon
 
 -----
 
@@ -12,15 +12,98 @@ Message content:
 
 ----------
 
-**PLEASE DO NOT REPLY TO THIS AUTOMATED MESSAGE. YOU ARE RECEIVING THIS MESSAGE BECAUSE YOU SELECTED THE "ADVANCE NOTICE OF ITEM DUE - DIGEST" MESSAGING PREFERENCE IN YOUR ACCOUNT SETTINGS**
+<html>
 
-<<borrowers.cardnumber>>
-Hello <<borrowers.firstname>> <<borrowers.surname>>
+<head>
+  <title>[% branch.branchname %] - Library items due soon</title>
+  <!-- Notice code:   PREDUEDGST; Library: All -->
 
-You have <<count>> items due soon. 
-<<items.content>>
+  <meta charset="UTF-8" />
 
-Please return or renew your item(s) soon, or contact your local library to renew for you. Some items may not be renewable. 
+  <style>
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
 
-Next Search Catalog
+    body .notice {
+      color: #000000;
+      background-color: #ffffff;
+      width: 90%;
+      margin: 0;
+      font-size: 12pt;
+    }
+
+    .notice p {
+      font-size: 12pt;
+      color: #000000;
+    }
+
+    .notice h1 {
+      font-size: 1.6em;
+      color: #000000;
+    }
+
+    .notice h2 {
+      font-size: 1.5em;
+      color: #000000;
+    }
+
+    .notice h3 {
+      font-size: 1.4em !important;
+      color: #000000;
+    }
+
+    .notice h4 {
+      font-size: 1.3em !important;
+      color: #000000;
+    }
+
+    .notice h5 {
+      font-size: 1.2em;
+      color: #000000;
+    }
+
+    .notice h6 {
+      font-size: 1.1em;
+      color: #000000;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="notice">
+
+    <div id="notice_content">
+
+        <h2>[% branch.branchname %] -  Library items due soon</h2> 
+        <p>The following items are due at the library soon.  These items are checked out to your library card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].</p>
+        <p>The details are as follow:</p>
+        <item>
+          <p><<items.content>></p>
+        </item>
+        <p>If you have returned these items recently, or if you believe this email was sent to you in error, please contact us at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+      </div>
+
+  </div>
+
+    <footer>
+
+      <p>Thank you,</p>
+      <p>
+        [% branch.branchname %]<br />
+        [% branch.branchaddress1 %]<br />
+        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+      </p>
+      <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+    </footer>
+
+</body>
+
+</html>
 

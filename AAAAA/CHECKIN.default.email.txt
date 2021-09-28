@@ -1,10 +1,10 @@
 AAAAA.CHECKIN.default.email.txt
 
-Name: Check-in Receipt email (Digest)
+Name: Check-in receipt email (digest)
 
 -----
 
-Library Check-in Receipt
+Library check-in receipt
 
 -----
 
@@ -12,44 +12,107 @@ Message content:
 
 ----------
 
+[%- USE KohaDates -%]
+
 <html>
 
 <head>
-  <title>[% branch.branchname %] - Library Check-in Receipt</title>
-  <!-- Notice code:  CHECKIN -->
+  <title>[% branch.branchname %] - Library check-in receipt</title>
+  <!-- Notice code: CHECKIN; Library: All; -->
+
+  <meta charset="UTF-8" />
+
+  <style>
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body .notice {
+      color: #000000;
+      background-color: #ffffff;
+      width: 90%;
+      margin: 0;
+      font-size: 12pt;
+    }
+
+    .notice p {
+      font-size: 12pt;
+      color: #000000;
+    }
+
+    .notice h1 {
+      font-size: 1.6em;
+      color: #000000;
+    }
+
+    .notice h2 {
+      font-size: 1.5em;
+      color: #000000;
+    }
+
+    .notice h3 {
+      font-size: 1.4em !important;
+      color: #000000;
+    }
+
+    .notice h4 {
+      font-size: 1.3em !important;
+      color: #000000;
+    }
+
+    .notice h5 {
+      font-size: 1.2em;
+      color: #000000;
+    }
+
+    .notice h6 {
+      font-size: 1.1em;
+      color: #000000;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <div id="message_content">
+  <div class="notice">
 
-    <h2>[% branch.branchname %] - Library Check-in Receipt</h2>
-    <p>The following items were checked in today from your library account:</p> 
-    ---- 
-    <p>
-      [% biblio.title %]<br />
-      Barcode: [% item.barcode %]<br />
-      Date checked out: [% old_checkout.issuedate | $KohaDates with_hours => 1 %]<br />
-      Date due: [% old_checkout.date_due | $KohaDates %]<br />
-      Date returned: [% old_checkout.returndate | $KohaDates with_hours => 1 %]<br />
-    </p> 
-    ---- 
+    <div id="notice_content">
+
+      <h2>[% branch.branchname %] - Library check-in receipt</h2>
+      <p>The following items were checked in today from your library account.</p>
+      <p>
+        This digital receipt only includes items checked in on [% today | $KohaDates %] at [% SET time = today | $KohaDates with_hours => 1 %][% time.substr(-5) %].<br />
+        ==============================
+      </p>
+      ----
+      <p>
+        [% biblio.title FILTER upper %][% IF biblio.subtitle %] : [% biblio.subtitle FILTER upper %][% END %]<br />
+        Barcode: [% item.barcode %]<br />
+        Date checked out: [% old_checkout.issuedate | $KohaDates with_hours => 1 %]<br />
+        Date due: [% old_checkout.date_due | $KohaDates %]<br />
+        Date returned: [% old_checkout.returndate | $KohaDates with_hours => 1 %]<br />
+        ==============================
+      </p>
+      ----
+
+    </div>
+
+    <footer>
+
+      <p>Thank you,</p>
+      <p>
+        [% branch.branchname %]<br />
+        [% branch.branchaddress1 %]<br />
+        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+      </p>
+      <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+    </footer>
 
   </div>
-
-  <footer>
-
-    <p>Thank you,</p>
-    <p>
-      [% branch.branchname %]<br />
-      [% branch.branchaddress1 %]<br />
-      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
-    </p>
-    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
-    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
-    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
-
-  </footer>
 
 </body>
 

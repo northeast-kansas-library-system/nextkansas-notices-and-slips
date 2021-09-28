@@ -1,10 +1,10 @@
-AAAAA.MEMBERSHIP_EXPIRY.default.email.txt
+NEKLS.PREDUE.default.email.txt
 
-Name: Account expiration
+Name: Advance notice of an item due
 
 -----
 
-Your Library Card Expires Soon
+Library item due soon
 
 -----
 
@@ -15,8 +15,8 @@ Message content:
 <html>
 
 <head>
-  <title>[% branch.branchname %] - </title>
-  <!-- Notice code:  MEMBERSHIP_EXPIRY; Library: All; -->
+  <title>[% branch.branchname %] - Library item due soon</title>
+  <!-- Notice code:   PREDUE; Library: All -->
 
   <meta charset="UTF-8" />
 
@@ -77,10 +77,13 @@ Message content:
 
     <div id="notice_content">
 
-      <p>[% borrower.firstname %] [% borrower.surname %]:</p>
-      <p>
-        Your library card will expire on [% borrower.dateexpiry %]. Please call us at [% branch.branchphone %] or visit us at [% branch.branchname %] to renew your account.
-      </p>
+      <h2>[% branch.branchname %] - Library item due soon</h2> 
+      <p>The following item is due at the library soon.  This item is checked out to your library card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].</p>
+      <p>The details are as follow:</p>
+      <item>
+        <p><<items.content>></p>
+      </item>
+      <p>If you have returned this item recently, or if you believe this email was sent to you in error, please contact us at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
 
     </div>
 

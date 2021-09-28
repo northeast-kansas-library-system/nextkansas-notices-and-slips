@@ -12,93 +12,183 @@ Message content:
 
 ----------
 
+[% USE ItemTypes %]
+[% USE KohaDates %]
+[%- USE Price -%]
+[% totalValue = 0 %]
+[%- USE date -%]
+[%- manip = date.manip -%]
+
+<!DOCTYPE html>
+
 <html>
 
 <head>
 
-  <title>Issue Slip</title>
+  <title>Issue Quick Slip</title>
+  <!-- Notice code: ISSUEQSLIP; Library: master; -->
 
   <meta charset="UTF-8" />
 
-  <style type="text/css">
+  <style>
+    @media print {
+
+      body,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      a,
+      td,
+      .credit {
+        width: 70mm;
+        margin: 0;
+        color: #000000 !important;
+        background-color: #ffffff;
+        font-weight: bold !important;
+      }
+    }
+
     * {
-      font-family: Verdana, Arial, sans-serif !important;
+      font-family: Verdana, Arial, sans-serif;
     }
 
     body {
-      color: #000000;
-      background-color: #ffffff;
-      width: 70mm;
-      margin: 0;
-      font-size: 12pt;
-    }
-
-    h1 {
-      font-size: 1.7em;
-      color: #000000;
-    }
-
-    h2 {
-      font-size: 1.6em;
-      color: #000000;
-    }
-
-    * h3 {
-      font-size: 1.5em !important;
-      color: #000000 !important;
-    }
-
-    h4 {
-      font-size: 1.4em !important;
-      color: #000000 !important;
-    }
-
-    h5 {
-      font-size: 1.3em;
-      color: #000000;
-    }
-
-    h6 {
-      font-size: 1.2em;
-      color: #000000;
-    }
-
-    p {
       font-size: 10pt;
-      color: #000000;
     }
-    
+
+    .slip p {
+      font-size: 10pt;
+    }
+
+    .slip h1 {
+      font-size: 1.6em;
+    }
+
+    .slip h2 {
+      font-size: 1.5em;
+    }
+
+    .slip h3 {
+      font-size: 1.4em !important;
+    }
+
+    .slip h4 {
+      font-size: 1.3em !important;
+    }
+
+    .slip h5 {
+      font-size: 1.2em;
+    }
+
+    .slip h6 {
+      font-size: 1.1em;
+    }
   </style>
 
 </head>
 
 <body>
 
-<h1>Paragraph 1</h1>
-<h2>Paragraph 2</h2>
-<h3>Paragraph 3</h3>
-<h4>Paragraph 4</h4>
-<h5>Paragraph 5</h5>
-<h6>Paragraph 6</h6>
-<p>Paragraph</p>
+  <div class="slip">
 
-<ul>
-  <li>One</li>
-  <li>Two</li>
-  <li>Three</li>
-  <li>Four</li>
-  <li>Five</li>
-</ul>
+    <div id="slip_content">
 
-<ol>
-  <li>One</li>
-  <li>Two</li>
-  <li>Three</li>
-  <li>Four</li>
-  <li>Five</li>
-</ol>
+      <div id="slip_library_info">
 
+        <div id="slip_library_name">
+          <h3>[% branch.branchname %]</h3>
+        </div>
 
+        <div id="slip_library_address">
+          <p>
+            [% branch.branchaddress1 %]<br />
+            [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
+            [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]<br />
+            Ph: [% branch.branchphone %]<br />
+            [% branch.branchemail %]
+          </p>
+        </div>
+
+        <div id="slip_library_catalog_url">
+          <p>Renew materials and place requests online: <br />
+            <b><u>nextkansas.org</u></b>
+          </p>
+        </div>
+
+      </div>
+
+      <div id="slip_date">
+        <h3>[% today | $KohaDates %]<br /></h3>
+      </div>
+
+      <div id="slip_borrower_info">
+
+        <div id="slip_borrower_cardnumber">
+          <p>
+            Checked out to [% borrower.cardnumber %]
+          </p>
+        </div>
+
+        <div id="slip_borrower_name">
+          <p>[% borrower.firstname %] [% borrower.surname %]</p>
+        </div>
+
+        <div id="slip_borrower_address">
+          <p>
+            [% borrower.address %]<br />
+            [% IF borrower.address2 %][% borrower.address2 %]<br />[% END %]
+            [% borrower.city %], [% borrower.state %] [% borrower.zipcode %]
+          </p>
+        </div>
+
+        <div id="slip_borrower_email">
+          <p>Email: [% borrower.email %]</p>
+        </div>
+
+        <div id="slip_borrower_phone">
+          <p>Phone: [% borrower.phone %]</p>
+        </div>
+
+      </div>
+
+      <div id="slip_cko">
+        <h4>Checked out on [% today | $KohaDates %]:</h4>
+        [% FOREACH checkout IN checkouts %]
+        <p>
+          <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
+          Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]<br />
+          Barcode: [% checkout.item.barcode %]<br />
+          Date due: [% checkout.date_due | $KohaDates %]<br />
+          -----
+        </p>
+        [% END %]
+      </div>
+
+      <div id="checkout_count">
+        <p>Total items checked out on [% today | $KohaDates %]: [% checkouts.count %]</p>
+      </div>
+
+      <div id="cost_statement">
+        [% FOREACH checkout IN checkouts %]
+        [%~ SET item = checkout.item %]
+        [% totalValue = item.replacementprice + totalValue %]
+        [% END %]
+
+        <p>
+          Cost of items checked out today:<br />
+          $[% totalValue | $Price %]<br />
+          Cost of using the library:<br />
+          Priceless!
+        </p>
+      </div>
+
+    </div>
+
+  </div>
 
 </body>
 

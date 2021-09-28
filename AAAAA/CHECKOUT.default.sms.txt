@@ -1,6 +1,6 @@
 AAAAA.CHECKOUT.default.sms.txt
 
-Name: Check-out Receipt (Digest)
+Name: Check-out receipt (digest)
 
 -----
 

@@ -13,6 +13,9 @@ Message content:
 ----------
 
 <style type="text/css">
+
+
+
 #receipt {
 font-size:1.2em;	
 }

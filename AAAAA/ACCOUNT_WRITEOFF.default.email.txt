@@ -4,7 +4,7 @@ Name: Account writeoff
 
 -----
 
-Library fee write-off
+Library fee write-off receipt
 
 -----
 
@@ -15,45 +15,101 @@ Message content:
 <html>
 
 <head>
-  <title>[% branch.branchname %] - Fee Writeoff</title>
-  <!-- Notice code: ACCOUNT_WRITEOFF -->
+  <title>[% branch.branchname %] - Library fee write-off receipt</title>
+  <!-- Notice code: ACCOUNT_WRITEOFF; Library: All; -->
+
+  <meta charset="UTF-8" />
+
+  <style>
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body .notice {
+      color: #000000;
+      background-color: #ffffff;
+      width: 90%;
+      margin: 0;
+      font-size: 12pt;
+    }
+
+    .notice p {
+      font-size: 12pt;
+      color: #000000;
+    }
+
+    .notice h1 {
+      font-size: 1.6em;
+      color: #000000;
+    }
+
+    .notice h2 {
+      font-size: 1.5em;
+      color: #000000;
+    }
+
+    .notice h3 {
+      font-size: 1.4em !important;
+      color: #000000;
+    }
+
+    .notice h4 {
+      font-size: 1.3em !important;
+      color: #000000;
+    }
+
+    .notice h5 {
+      font-size: 1.2em;
+      color: #000000;
+    }
+
+    .notice h6 {
+      font-size: 1.1em;
+      color: #000000;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <div id="message_content">
+  <div class="notice">
 
-    [%- USE Price -%]
-    <p>[% branch.branchname %] - Fee Writeoff</p>
-    <p>An account write-off of [% credit.amount * -1 | $Price %] has been applied to your library account ending with [% bcn = borrower.cardnumber %] [% bcn.substr(-6) %].</p>
-    
-    <p>This write-off was applied to the following fees:</p>
-    <ul>
-      [%- FOREACH o IN offsets %]
-      <li>Description: [% o.debit.description %]<br />
-        Amount paid: [% o.amount * -1 | $Price %]<br />
-        Amount remaining on this fee: [% o.debit.amountoutstanding | $Price %]</li>
-      [% END %]
-    </ul>
-    
-    <p>Next Search Catalog receipt number: [% credit.accountlines_id %]<br />
-      [% today %]</p>
+    <div id="notice_content">
+
+      [%- USE Price -%]
+      <p>[% branch.branchname %] - Library fee write-off receipt</p>
+      <p>An account write-off of [% credit.amount * -1 | $Price %] has been applied to your library account ending with [% bcn = borrower.cardnumber %] [% bcn.substr(-6) %].</p>
+
+      <p>This write-off was applied to the following fees:</p>
+      <ul>
+        [%- FOREACH o IN offsets %]
+        <li>Description: [% o.debit.description %]<br />
+          Amount written-off: [% o.amount * -1 | $Price %]<br />
+          Amount remaining on this fee: [% o.debit.amountoutstanding | $Price %]</li>
+        [% END %]
+      </ul>
+
+      <p>Next Search Catalog receipt number: [% credit.accountlines_id %]<br />
+        [% today %]</p>
+
+    </div>
+
+    <footer>
+
+      <p>Thank you,</p>
+      <p>
+        [% branch.branchname %]<br />
+        [% branch.branchaddress1 %]<br />
+        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+      </p>
+      <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+    </footer>
 
   </div>
-
-  <footer>
-
-    <p>Thank you,</p>
-    <p>
-      [% branch.branchname %]<br />
-      [% branch.branchaddress1 %]<br />
-      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
-    </p>
-    <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
-    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
-    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
-
-  </footer>
 
 </body>
 
