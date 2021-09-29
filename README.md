@@ -98,3 +98,7 @@ End Sub
 This macro should save the contents of coulmn B in a text file in c:\git.  The title of each file should be based on column A.  Each text file should be saved in the folder for the branchcode that the notice or slip is for.  If the slip is not assigned to a specific branchcode, then it will be saved in c:\git\AAAAA
 
 Move the contents of c:\git to the local folder for your repository and then use git to sync the updated information with your repository.
+
+-----
+
+Use the duplicate receipts and notices report to identify duplicate notices and receipts as needed.
