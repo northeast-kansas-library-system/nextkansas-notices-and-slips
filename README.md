@@ -4,7 +4,7 @@
 
 Run this SQL (Next Search Catalog report 2960) and save as a spreadsheet.
 
-----------
+```sql
 
 SELECT
   Concat(If(letter.branchcode = " ", "AAAAA", letter.branchcode), "\\", letter.code, ".", letter.lang, ".", letter.message_transport_type) AS FILE,
@@ -23,13 +23,14 @@ GROUP BY
 ORDER BY
   FILE
 
-----------
+```
+
 
 Make sure C:\git\ has one folder for each branch already created and one folder called "AAAAA" for any notices that are not assigned to a specific branch.
 
 Open the csv file and run this VBA macro:
 
-----------
+```
 
 Sub WriteTotxtNotices()
 
@@ -61,7 +62,7 @@ Next lRowLoop
 
 End Sub
 
-----------
+```
 
 This should give you 1 text file for each row in the report saved in C:\git\.  Each text file represents 1 notice/slip from Koha.
 
