@@ -2,7 +2,13 @@
 
 ## Instructions:
 
-Run this SQL (Next Search Catalog report 2960) and save as a spreadsheet.
+Create a folder on your c:\ drive called "git"
+
+Add 1 folder to c:\git for each of your libraries where the folder names are the same as your branchcodes
+
+Add 1 folder to c:\git called "AAAAA"
+
+Run this SQL (Next Search Catalog report 2960), save it as a csv spreadsheet, open the file in Excel
 
 ```sql
 
@@ -51,10 +57,9 @@ FILE
 
 ```
 
+Check to make sure C:\git\ has one folder for each branch already created and one folder called "AAAAA"
 
-Make sure C:\git\ has one folder for each branch already created and one folder called "AAAAA" for any notices that are not assigned to a specific branch.
-
-Open the csv file in Excel and run this VBA macro:
+With the csv file open in Excel, run this VBA macro:
 
 ```vba
 
@@ -90,6 +95,6 @@ End Sub
 
 ```
 
-This should give you 1 text file for each row in the report saved in C:\git\.  Each text file represents 1 notice/slip from Koha.
+This macro should save the contents of coulmn B in a text file in c:\git.  The title of each file should be based on column A.  Each text file should be saved in the folder for the branchcode that the notice or slip is for.  If the slip is not assigned to a specific branchcode, then it will be saved in c:\git\AAAAA
 
-Save these in the github folder and run git to sync with the online repository.
+Move the contents of c:\git to the local folder for your repository and then use git to sync the updated information with your repository.
