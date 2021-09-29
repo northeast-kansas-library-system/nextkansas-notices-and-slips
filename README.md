@@ -7,21 +7,47 @@ Run this SQL (Next Search Catalog report 2960) and save as a spreadsheet.
 ```sql
 
 SELECT
-  Concat(If(letter.branchcode = " ", "AAAAA", letter.branchcode), "\\", letter.code, ".", letter.lang, ".", letter.message_transport_type) AS FILE,
-  Concat(Concat(If(letter.branchcode = " ", "AAAAA", letter.branchcode), ".", letter.code, ".", letter.lang, ".", letter.message_transport_type, ".txt"), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
-  Concat("Name: ", letter.name), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
-  Concat("-----"), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
-  letter.title, CHAR(13), CHAR(10), CHAR(13), CHAR(10),
-  Concat("-----"), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
-  Concat("Message content:"), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
-  Concat("----------"), CHAR(13), CHAR(10), CHAR(13), CHAR(10),
-  letter.content) AS CONTENTS
+  Concat(
+    If(letter.branchcode = " ", "AAAAA", letter.branchcode),
+    "\\",
+    letter.code,
+    ".",
+    letter.lang,
+    ".",
+    letter.message_transport_type
+  ) AS FILE,
+  Concat(
+    Concat(
+      If(letter.branchcode = " ", "AAAAA", letter.branchcode),
+      ".",
+      letter.code,
+      ".",
+      letter.lang,
+      ".",
+      letter.message_transport_type,
+      ".txt"
+    ),
+    CHAR(13), CHAR(10), CHAR(13), CHAR(10),
+    Concat("Name: ", letter.name),
+    CHAR(13), CHAR(10), CHAR(13), CHAR(10),
+    Concat("-----"),
+    CHAR(13), CHAR(10), CHAR(13), CHAR(10),
+    letter.title,
+    CHAR(13), CHAR(10), CHAR(13), CHAR(10),
+    Concat("-----"),
+    CHAR(13), CHAR(10), CHAR(13), CHAR(10),
+    Concat("Message content:"),
+    CHAR(13), CHAR(10), CHAR(13), CHAR(10),
+    Concat("----------"),
+    CHAR(13), CHAR(10), CHAR(13), CHAR(10),
+    letter.content
+  ) AS CONTENTS
 FROM
   letter
 GROUP BY
   FILE
-ORDER BY
-  FILE
+ORDER BY 
+FILE
 
 ```
 
@@ -30,7 +56,7 @@ Make sure C:\git\ has one folder for each branch already created and one folder 
 
 Open the csv file and run this VBA macro:
 
-```
+```vba
 
 Sub WriteTotxtNotices()
 
