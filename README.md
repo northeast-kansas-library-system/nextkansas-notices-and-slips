@@ -46,7 +46,7 @@ FROM
   letter
 GROUP BY
   FILE
-ORDER BY 
+ORDER BY
 FILE
 
 ```
@@ -54,7 +54,7 @@ FILE
 
 Make sure C:\git\ has one folder for each branch already created and one folder called "AAAAA" for any notices that are not assigned to a specific branch.
 
-Open the csv file and run this VBA macro:
+Open the csv file in Excel and run this VBA macro:
 
 ```vba
 
