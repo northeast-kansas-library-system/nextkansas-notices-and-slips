@@ -1,6 +1,4 @@
-Run report 2960 and save as a spreadsheet.
-
-The SQL for this report is:
+Run this SQL (Next Search Catalog report 2960) and save as a spreadsheet.
 
 ----------
 
@@ -23,11 +21,9 @@ ORDER BY
 
 ----------
 
-Make sure C:\git\ has one folder for each branch already created.
+Make sure C:\git\ has one folder for each branch already created and one folder called "AAAAA" for any notices that are not assigned to a specific branch.
 
-Open the csv file and run the macro from the XLSX macro file.
-
-The VBA for the macro is:
+Open the csv file and run this VBA macro:
 
 ----------
 
@@ -63,6 +59,6 @@ End Sub
 
 ----------
 
-This should give you 1 text file for each row in the report.  Each text file represents 1 notice/slip from Koha.
+This should give you 1 text file for each row in the report saved in C:\git\.  Each text file represents 1 notice/slip from Koha.
 
-Save these in the github folder and run github desktop to sync with the online repository.
+Save these in the github folder and run git to sync with the online repository.
