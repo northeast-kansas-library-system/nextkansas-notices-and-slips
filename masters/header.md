@@ -59,7 +59,12 @@ This file contains a master for the header for receipts.  The body ID for most r
       font-size: 10pt;
       color: #000000;
     }
-
+    .center {
+      text-align: center;
+    }
+    .buffer{
+      padding-bottom: 12px;
+    }
   </style>
 
 </head>
