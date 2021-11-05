@@ -69,6 +69,12 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
     .slip h6 {
       font-size: 1.1em;
     }
+    .center {
+      text-align: center;
+    }
+    .buffer{
+      padding-bottom: 12px;
+    }
   </style>
 
 </head>
@@ -81,11 +87,11 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
 
       <div id="slip_library_info">
 
-        <div id="slip_library_name">
+        <div id="slip_library_name" class="buffer">
           <h3>[% branch.branchname %]</h3>
         </div>
 
-        <div id="slip_library_address">
+        <div id="slip_library_address" class="buffer">
           <p>
             [% branch.branchaddress1 %]<br />
             [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
@@ -95,7 +101,7 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
           </p>
         </div>
 
-        <div id="slip_library_catalog_url">
+        <div id="slip_library_catalog_url" class="buffer">
           <p>Renew materials and place requests online: <br />
             <b><u>nextkansas.org</u></b>
           </p>
@@ -103,23 +109,13 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
 
       </div>
 
-      <div id="slip_date">
-        <h3>[% today | $KohaDates %]<br /></h3>
-      </div>
-
       <div id="slip_borrower_info">
 
-        <div id="slip_borrower_cardnumber">
-          <p>
-            Last 6 digits of library card number [% borrower.cardnumber.substr(-6) FILTER upper %]
-          </p>
-        </div>
-
-        <div id="slip_borrower_name">
+        <div id="slip_borrower_name" class="buffer">
           <p>[% borrower.firstname %] [% borrower.surname %]</p>
         </div>
 
-        <div id="slip_borrower_address">
+        <div id="slip_borrower_address" class="buffer">
           <p>
             [% borrower.address %]<br />
             [% IF borrower.address2 %][% borrower.address2 %]<br />[% END %]
@@ -127,18 +123,25 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
           </p>
         </div>
 
-        <div id="slip_borrower_email">
+        <div id="slip_borrower_email" class="buffer">
           <p>Email: [% borrower.email %]</p>
         </div>
 
-        <div id="slip_borrower_phone">
+        <div id="slip_borrower_phone" class="buffer">
           <p>Phone: [% borrower.phone %]</p>
+        </div>
+
+        <div id="slip_borrower_cardnumber" class="center buffer">
+          <p>
+            Last 6 digits of library<br />card number [% borrower.cardnumber.substr(-6) FILTER upper %]
+          </p>
         </div>
 
       </div>
 
-      <div id="slip_cko">
-        <h4>Checked out on [% today | $KohaDates %]:</h4>
+      [% IF checkouts.count %]
+      <div id="slip_cko" class="buffer">
+        <h4 class="buffer">Checked out today:</h4>
         [% FOREACH checkout IN checkouts %]
         <p>
           <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
@@ -149,10 +152,7 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
         </p>
         [% END %]
       </div>
-
-      <div id="checkout_count">
-        <p>Total items checked out on [% today | $KohaDates %]: [% checkouts.count %]</p>
-      </div>
+      [% END %]
 
       <div id="cost_statement">
         [% FOREACH checkout IN checkouts %]
@@ -166,6 +166,14 @@ Any of the sub-sections of #slip_library_info and #slip_borrower_info can be mod
           Cost of using the library:<br />
           Priceless!
         </p>
+      </div>
+
+      <div id="checkout_count" class="center buffer">
+        <p>Total items checked<br />out today: [% checkouts.count %]</p>
+      </div>
+
+      <div id="slip_datestamp" class="center">
+        <h4>This receipt printed on:<br />[% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]</h4>
       </div>
 
     </div>
