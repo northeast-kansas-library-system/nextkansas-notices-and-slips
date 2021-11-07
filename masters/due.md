@@ -5,6 +5,8 @@ This is the master DUE for Next Search Catalog.  All other DUE are based on this
 This notice is sent to a borrower if they have "Item due" "Email" checked in their messaging preferences on the day that an item is due.  A separate email will be sent to the borrower for each item they have due.
 
 ```html
+[%- USE date -%]
+
 <html>
 
 <head>
@@ -84,6 +86,7 @@ This notice is sent to a borrower if they have "Item due" "Email" checked in the
         <p><<items.content>></p>
       </item>
       <p>If you have returned this item recently, or if you believe this email was sent to you in error, please contact us at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+      <p>You may be able to renew these items online at https://nextkansas.org or you can contact us at <strong><ins>[% branch.branchphone %]</ins></strong> for assistance.</p>
 
     </div>
 
