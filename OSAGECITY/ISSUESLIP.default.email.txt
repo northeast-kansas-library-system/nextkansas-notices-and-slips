@@ -1,4 +1,4 @@
-AAAAA.ISSUESLIP.default.email.txt
+OSAGECITY.ISSUESLIP.default.email.txt
 
 Name: Issue Slip
 
@@ -92,7 +92,7 @@ Message content:
 
       <div id="slip_library_info">
 
-        <div id="slip_library_name"  class="buffer">
+        <div id="slip_library_name" class="buffer">
           <h3>[% branch.branchname %]</h3>
         </div>
 
@@ -116,6 +116,11 @@ Message content:
 
       <div id="slip_borrower_info" class="buffer">
 
+         <!-- Added name per Zendesk 12733 -->
+        <div id="slip_borrower_name" class="center buffer">
+          <h5>[% borrower.firstname %] [% borrower.surname %]</h5>
+        </div>
+
         <div id="slip_borrower_cardnumber" class="center">
           <p>
             Last 6 digits of library<br />card number [% borrower.cardnumber.substr(-6) FILTER upper %]
@@ -126,7 +131,7 @@ Message content:
 
       [% IF checkouts.count %]
       <div id="slip_cko" class="buffer">
-        <h4 class="buffer">Checked out:</h4>
+        <h4  class="buffer">Checked out:</h4>
         [% FOREACH checkout IN borrower.checkouts %]
         [% IF ! checkout.is_overdue %]
         <p>
@@ -144,7 +149,7 @@ Message content:
 
       [% IF overdues.count %]
       <div id="slip_od" class="buffer">
-        <h4 class="buffer">Overdue:</h4>
+        <h4  class="buffer">Overdue:</h4>
         [% FOREACH checkout IN borrower.checkouts %]
         [% IF checkout.is_overdue %]
         <p>
@@ -158,6 +163,25 @@ Message content:
         [% END %]
       </div>
       [% END %]
+
+      <!-- Added name per Zendesk 12733 -->
+      <div id="cost_statement" class="buffer">
+        [% FOREACH checkout IN checkouts %]
+        [%~ SET item = checkout.item %]
+        [% totalValue = item.replacementprice + totalValue %]
+        [% END %]
+        [% FOREACH overdue IN overdues %]
+        [%~ SET item = overdue.item %]
+        [% totalValue = item.replacementprice + totalValue %]
+        [% END %]
+
+        <p>
+          Cost of all items currently checked out:<br />
+          $[% totalValue | $Price %]<br />
+          Cost of using the library:<br />
+          Priceless!
+        </p>
+      </div>
 
       <div id="checkout_count_all" class="center buffer">
         <p>Total items<br />checked out: [% borrower.checkouts.count %]</p>

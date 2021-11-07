@@ -1,6 +1,6 @@
-AAAAA.ODUE3_SPEC.default.email.txt
+AAAAA.ODUE3.default.print.txt
 
-Name: Overdue 3 / lost - special (default)
+Name: Overdue 3 / lost - standard (default)
 
 -----
 
@@ -27,15 +27,15 @@ Message content:
 
 
 
-Third Overdue Notice - <<today>>
+Lost Library Items - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following items are 45 overdue as of <<today>>:
+The following library items are going to be declared "Lost" because they have been overdue for 45 days as of <<today>>:
 
 <<items.content>>
 
-If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+Your account has been suspended and you are going to be billed for the replacement of these items.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
 
 You can access your account on-line at https://nextkansas.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 

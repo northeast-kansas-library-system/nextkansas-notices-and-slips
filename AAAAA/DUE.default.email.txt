@@ -4,7 +4,7 @@ Name: Item Due Reminder
 
 -----
 
-Item(s) Due Reminder
+<<branches.branchname>> item due today
 
 -----
 

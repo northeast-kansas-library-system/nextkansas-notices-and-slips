@@ -1,10 +1,10 @@
 AAAAA.ODUE2_ILL.default.email.txt
 
-Name: Overdue 2 / blocked - ILL (Next)
+Name: Overdue 2 / blocked - ILL (default)
 
 -----
 
-Next Search Catalog Library overdue notice 2
+<<branches.branchname>> items overdue 35 days
 
 -----
 

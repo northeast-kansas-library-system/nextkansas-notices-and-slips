@@ -1,10 +1,10 @@
 AAAAA.ODUE3.default.email.txt
 
-Name: Overdue 3 / lost - standard (Next)
+Name: Overdue 3 / lost - standard (default)
 
 -----
 
-Next Search Catalog Library lost items notice
+<<branches.branchname>> lost item notice
 
 -----
 

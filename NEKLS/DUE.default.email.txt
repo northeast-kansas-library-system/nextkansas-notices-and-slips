@@ -4,7 +4,7 @@ Name: Item due reminder
 
 -----
 
-Library item due today
+<<branches.branchname>> item due today
 
 -----
 
@@ -12,6 +12,7 @@ Message content:
 
 ----------
 
+[%- USE date -%]
 <html>
 
 <head>
@@ -67,6 +68,12 @@ Message content:
       font-size: 1.1em;
       color: #000000;
     }
+    .center {
+      text-align: center;
+    }
+    .buffer{
+      padding-bottom: 12px;
+    }
   </style>
 
 </head>
@@ -77,8 +84,9 @@ Message content:
 
     <div id="notice_content">
 
-      <h2>[% branch.branchname %] - Library item due today</h2> 
-      <p>The following item is due at the library today.  This item is checked out to your library card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].</p>
+      <h3 class="buffer">*Please respond to this automated message by phoning [% branch.branchphone %]*</h3>
+      <h2>[% branch.branchname %] - Library item due today</h2>
+      <p>The following item is due at the library today ([% date.format(date.now, "%Y/%m/%d") %]).  This item is checked out to your library card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].</p>
       <p>The details are as follow:</p>
       <item>
         <p><<items.content>></p>
@@ -98,6 +106,10 @@ Message content:
       <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
       <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
       <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+      <div id="slip_datestamp" class="center">
+        <h4>This notice was generated on <br />[% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]</h4>
+      </div>
 
     </footer>
 

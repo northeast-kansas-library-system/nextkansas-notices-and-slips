@@ -4,7 +4,7 @@ Name: Hold Available for Pickup
 
 -----
 
-Available for pickup
+Available for pickup at <<branches.branchname>>
 
 -----
 
@@ -12,7 +12,10 @@ Message content:
 
 ----------
 
-An item you requested is available to pickup at <<branches.branchname>> (<<borrowers.borrowernumber>>)
+-Please phone [% branch.branchphone %] to respond to this text-
+
+A library item you requested is available to pickup at [% branch.branchname %] 
+
 ----
 ----
 

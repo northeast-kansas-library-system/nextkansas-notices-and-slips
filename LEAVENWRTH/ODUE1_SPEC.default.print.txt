@@ -1,10 +1,10 @@
-LEAVENWRTH.ODUE1_ILL.default.email.txt
+LEAVENWRTH.ODUE1_SPEC.default.print.txt
 
-Name: Overdue 1 - ILL (Leavenworth)
+Name: Overdue 1 - special (Leavenworth)
 
 -----
 
-<<branches.branchname>> ILL overdue notice
+<<branches.branchname>> overdue notice
 
 -----
 

@@ -4,7 +4,7 @@ Name: Check-out receipt (digest)
 
 -----
 
-Library check-outs
+<<branches.branchname>> check-out receipt
 
 -----
 
@@ -12,5 +12,10 @@ Message content:
 
 ----------
 
+-Please phone [% branch.branchphone %] to respond to this text-
+
 You checked out items at [% branch.branchname %] today
+
+----
+----
 

@@ -4,7 +4,7 @@ Name: Advance Notice of Item Due
 
 -----
 
-Advance Notice of Item Due
+Library item due soon at <<branches.branchname>>
 
 -----
 
@@ -12,7 +12,10 @@ Message content:
 
 ----------
 
-You have items due soon at <<branches.branchname>>
+-Please phone [% branch.branchphone %] to respond to this text-
+
+You have an item due soon at [% branch.branchname %]
+
 ----
 ----
 

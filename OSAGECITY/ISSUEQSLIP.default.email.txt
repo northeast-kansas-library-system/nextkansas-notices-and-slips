@@ -1,10 +1,10 @@
-AAAAA.ISSUESLIP.default.email.txt
+OSAGECITY.ISSUEQSLIP.default.email.txt
 
-Name: Issue Slip
+Name: Issue Quick Slip
 
 -----
 
-Issue Slip
+Issue Quick Slip
 
 -----
 
@@ -14,17 +14,19 @@ Message content:
 
 [% USE ItemTypes %]
 [% USE KohaDates %]
-[% USE date %]
 [%- USE Price -%]
 [% totalValue = 0 %]
+[%- USE date -%]
+[%- manip = date.manip -%]
 
 <!DOCTYPE html>
 
 <html>
 
 <head>
-  <title>[% branch.branchname %] - Issue slip</title>
-  <!-- Notice code:  ISSUESLIP; Library: master; -->
+
+  <title>Issue Quick Slip</title>
+  <!-- Notice code: ISSUEQSLIP; Library: master; -->
 
   <meta charset="UTF-8" />
 
@@ -92,7 +94,7 @@ Message content:
 
       <div id="slip_library_info">
 
-        <div id="slip_library_name"  class="buffer">
+        <div id="slip_library_name" class="buffer">
           <h3>[% branch.branchname %]</h3>
         </div>
 
@@ -114,9 +116,14 @@ Message content:
 
       </div>
 
-      <div id="slip_borrower_info" class="buffer">
+      <div id="slip_borrower_info">
 
-        <div id="slip_borrower_cardnumber" class="center">
+        <!-- Added name per Zendesk 12733 -->
+        <div id="slip_borrower_name" class="center buffer">
+          <h5>[% borrower.firstname %] [% borrower.surname %]</h5>
+        </div>
+
+        <div id="slip_borrower_cardnumber" class="center buffer">
           <p>
             Last 6 digits of library<br />card number [% borrower.cardnumber.substr(-6) FILTER upper %]
           </p>
@@ -126,9 +133,8 @@ Message content:
 
       [% IF checkouts.count %]
       <div id="slip_cko" class="buffer">
-        <h4 class="buffer">Checked out:</h4>
-        [% FOREACH checkout IN borrower.checkouts %]
-        [% IF ! checkout.is_overdue %]
+        <h4 class="buffer">Checked out today:</h4>
+        [% FOREACH checkout IN checkouts %]
         <p>
           <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
           Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]<br />
@@ -137,30 +143,26 @@ Message content:
           -----
         </p>
         [% END %]
-        [% END %]
-
       </div>
       [% END %]
 
-      [% IF overdues.count %]
-      <div id="slip_od" class="buffer">
-        <h4 class="buffer">Overdue:</h4>
-        [% FOREACH checkout IN borrower.checkouts %]
-        [% IF checkout.is_overdue %]
+      <!-- Added name per Zendesk 12733 -->
+      <div id="cost_statement" class="buffer">
+        [% FOREACH checkout IN checkouts %]
+        [%~ SET item = checkout.item %]
+        [% totalValue = item.replacementprice + totalValue %]
+        [% END %]
+
         <p>
-          <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
-          Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]<br />
-          Barcode: [% checkout.item.barcode %]<br />
-          Date due: [% checkout.date_due | $KohaDates %]<br />
-          ----------
+          Cost of items checked out today:<br />
+          $[% totalValue | $Price %]<br />
+          Cost of using the library:<br />
+          Priceless!
         </p>
-        [% END %]
-        [% END %]
       </div>
-      [% END %]
 
-      <div id="checkout_count_all" class="center buffer">
-        <p>Total items<br />checked out: [% borrower.checkouts.count %]</p>
+      <div id="checkout_count" class="center buffer">
+        <p>Total items checked<br />out today: [% checkouts.count %]</p>
       </div>
 
       <div id="slip_datestamp" class="center">

@@ -12,80 +12,148 @@ Message content:
 
 ----------
 
+[% USE ItemTypes %]
+[% USE KohaDates %]
+[%- USE Price -%]
+[% totalValue = 0 %]
+[%- USE date -%]
+[%- manip = date.manip -%]
+
 <!DOCTYPE html>
+
 <html>
+
 <head>
-	<title>Issue quick slip</title>
-	<meta charset="UTF-8" />
-	
-	<style type="text/css">
-		* { font-family: Verdana, Arial, sans-serif; }
-		body { background-color: #fff; cursor: default; }
-		h1 { font-size: 15pt; }
-		p { font-size: 10pt; }
-	</style>
+
+  <title>Issue Quick Slip</title>
+  <!-- Notice code: ISSUEQSLIP; Library: master; -->
+
+  <meta charset="UTF-8" />
+
+  <style>
+    @media print {
+      body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
+        width: 70mm;
+        margin: 0;
+        color: #000000 !important;
+        background-color: #ffffff;
+        font-weight: bold !important;
+      }
+    }
+
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body {
+      font-size: 10pt;
+    }
+
+    .slip p {
+      font-size: 10pt;
+    }
+
+    .slip h1 {
+      font-size: 1.6em;
+    }
+
+    .slip h2 {
+      font-size: 1.5em;
+    }
+
+    .slip h3 {
+      font-size: 1.4em !important;
+    }
+
+    .slip h4 {
+      font-size: 1.3em !important;
+    }
+
+    .slip h5 {
+      font-size: 1.2em;
+    }
+
+    .slip h6 {
+      font-size: 1.1em;
+    }
+    .center {
+      text-align: center;
+    }
+    .buffer{
+      padding-bottom: 12px;
+    }
+  </style>
+
 </head>
 
 <body>
-<style type="text/css">
-#receipt {
-font-size:1.2em;    
-}
 
-#receipt ul {
-	list-style-type:none;
-}
+  <div class="slip">
 
-#receipt h3, #receipt caption {
-	color : #000000;
-	font-size : 1.4em;
-	font-weight : bold;
-	margin-bottom : 3px;
-	margin-top : 3px;
-}
+    <div id="slip_content">
 
-#receipt h4 {
-	color : #000000;
-	font-size: 1.3em;
-	margin-bottom : 3px;
-	margin-top : 3px;
-}
+      <div id="slip_library_info">
 
-h1 {font-size:1.6em;
-	}
-h2 {font-size:1.5em;
-}
-h3 {font-size:1.4em;
-}
-h4 {font-size:1.3em;
-}
-h5 {font-size:1.2em;
-}
-h6 {font-size:1.1em;
-}
-</style>
+        <div id="slip_library_name" class="buffer">
+          <h3>[% branch.branchname %]</h3>
+        </div>
 
-<h3><<branches.branchname>></h3>
-<p><<branches.branchaddress1>> <<branches.branchaddress2>><br />
-<<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>><br />
-Ph: <<branches.branchphone>><br />
-<<branches.branchemail>></p>
-<p>Renew materials and place holds online: <br />
-<b><u>nextkansas.org</u></b></p>
-<p>Checked out to <<borrowers.title>> <<borrowers.firstname>> <<borrowers.initials>> <<borrowers.surname>> <br />
-(<<borrowers.cardnumber>>) <br />
+        <div id="slip_library_address" class="buffer">
+          <p>
+            [% branch.branchaddress1 %]<br />
+            [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
+            [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]<br />
+            Ph: [% branch.branchphone %]<br />
+            [% branch.branchemail %]
+          </p>
+        </div>
 
-<<today>><br />
+        <div id="slip_library_catalog_url" class="buffer">
+          <p>Renew materials and place requests online: <br />
+            <b><u>nextkansas.org</u></b>
+          </p>
+        </div>
 
-<h4>Checked Out Today</h4>
-<checkedout>
-<p>
-<<biblio.title>> <br />
-Barcode: <<items.barcode>><br />
-Date due: <<items.onloan>><br />
-</p>
+      </div>
 
-</checkedout>
+      <div id="slip_borrower_info">
+
+        <div id="slip_borrower_cardnumber" class="center buffer">
+          <p>
+            Last 6 digits of library<br />card number [% borrower.cardnumber.substr(-6) FILTER upper %]
+          </p>
+        </div>
+
+      </div>
+
+      [% IF checkouts.count %]
+      <div id="slip_cko" class="buffer">
+        <h4 class="buffer">Checked out today:</h4>
+        [% FOREACH checkout IN checkouts %]
+        <p>
+          <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
+          Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]<br />
+          Barcode: [% checkout.item.barcode %]<br />
+          Date due: [% checkout.date_due | $KohaDates %]<br />
+          -----
+        </p>
+        [% END %]
+      </div>
+      [% END %]
+
+      <div id="checkout_count" class="center buffer">
+        <p>Total items checked<br />out today: [% checkouts.count %]</p>
+      </div>
+
+      <div id="slip_datestamp" class="center">
+        <h4>This receipt printed on:<br />[% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]</h4>
+      </div>
+
+    </div>
+
+  </div>
+
 </body>
+
 </html>
 

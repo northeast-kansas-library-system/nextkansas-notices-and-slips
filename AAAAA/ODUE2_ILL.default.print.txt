@@ -1,10 +1,10 @@
-AAAAA.ODUE3_ILL.default.email.txt
+AAAAA.ODUE2_ILL.default.print.txt
 
-Name: Overdue 3 / lost - ILL (default)
+Name: Overdue 2 / blocked - ILL (default)
 
 -----
 
-<<branches.branchname>> lost item notice
+<<branches.branchname>> items overdue 35 days
 
 -----
 
@@ -27,7 +27,7 @@ Message content:
 
 
 
-Third Overdue Notice - <<today>>
+Second Overdue Notice - <<today>>
 
 Dear <<borrowers.firstname>> <<borrowers.surname>>,
 

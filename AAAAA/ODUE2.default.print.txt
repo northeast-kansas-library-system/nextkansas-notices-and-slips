@@ -1,6 +1,6 @@
-AAAAA.ODUE2_SPEC.default.email.txt
+AAAAA.ODUE2.default.print.txt
 
-Name: Overdue 2 / blocked - special (default)
+Name: Overdue 2 / blocked - standard (default)
 
 -----
 
@@ -35,7 +35,7 @@ The following items are 35 days overdue as of <<today>>:
 
 <<items.content>>
 
-If you are liable for late fees, remember that late fees increase the longer you keep items overdue.  You may also be charged for the replacement of the item if the item is not returned.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
+Your library card has now been suspended and you will be billed for the full replacement cost of each item once they are 45 days overdue.  If you feel that this notice is in error, please contact <<branches.branchname>> at <<branches.branchphone>> as soon as possible.  If you would prefer to receive notices such as this one via e-mail, please contact your local library.
 
 You can access your account on-line at https://nextkansas.org 24 hours a day.
 Questions?  Please call <<branches.branchphone>> or visit <<branches.branchname>>. 

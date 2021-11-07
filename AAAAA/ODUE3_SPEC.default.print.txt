@@ -1,10 +1,10 @@
-NEKLS.ODUE1_SPEC.default.email.txt
+AAAAA.ODUE3_SPEC.default.print.txt
 
-Name: Overdue 1 - special (NEKLS)
+Name: Overdue 3 / lost - special (default)
 
 -----
 
-<<branches.branchname>> overdue notice
+<<branches.branchname>> lost item notice
 
 -----
 
@@ -27,11 +27,11 @@ Message content:
 
 
 
-First Overdue Notice - <<today>>
+Third Overdue Notice - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following items are overdue as of <<today>>:
+The following items are 45 overdue as of <<today>>:
 
 <<items.content>>
 

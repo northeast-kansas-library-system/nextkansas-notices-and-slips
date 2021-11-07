@@ -1,10 +1,10 @@
 AAAAA.ODUE2.default.email.txt
 
-Name: Overdue 2 / blocked - standard (Next)
+Name: Overdue 2 / blocked - standard (default)
 
 -----
 
-Next Search Catalog Library account blocked
+<<branches.branchname>> items overdue 35 days
 
 -----
 

@@ -4,7 +4,7 @@ Name: Item Due Reminder
 
 -----
 
-Item Due Reminder
+Item Due at <<branches.branchname>>
 
 -----
 
@@ -12,7 +12,10 @@ Message content:
 
 ----------
 
-You have a library item due today at <<branches.branchname>>
+-Please phone [% branch.branchphone %] to respond to this text-
+
+You have a library item due today at [% branch.branchname %]
+
 ----
 ----
 
