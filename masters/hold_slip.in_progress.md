@@ -2,12 +2,22 @@
   <!-- Template Toolkit use statements -->
 
   [% USE Branches %]
-  [% USE KohaDates %]
-  [% USE ItemTypes %]
   [% USE date %]
+  [% USE ItemTypes %]
+  [% USE KohaDates %]
+  [% manip = date.manip %]
+  [% USE Price %]
+  [% totalValue = 0 %]
+
 
   <style>
-    body {width: 275px;}
+
+    /* set whole page to Arial Black */
+    * {
+      font-family: 'Arial Black', 'Arial', sans-serif !important;
+    }
+
+    body {width: 70mm;}
     body{
       margin-top: 0px;
       margin-bottom: 0px;
@@ -15,11 +25,18 @@
       margin-left: 5px;
     }
 
-    .dbl-space {padding-bottom: 15px;}
-    .trp-space {padding-bottom: 30px;}
-    .top-medspace {padding-top: 250px}
-    .top-big-space {padding-top: 500px;}
-    .top-super-space {padding-top: 1000px;}
+    .b-double {padding-bottom: 15px;}
+    .b-triple {padding-bottom: 30px;}
+    .b-quadruple {padding-bottom: 45px}
+    .b-quintuple {padding-bottom: 60px}
+    .b-sextuple {padding-bottom: 75px}
+    .b-septuple {padding-bottom: 90px;}
+    .top-one {padding-top: 1in;}
+    .top-two {padding-top: 2in;}
+    .top-three {padding-top: 3in;}
+    .top-four {padding-top: 4in;}
+    .top-five {padding-top: 5in;}
+    .top-six {padding-top: 6in;}
 
     article{display:inline-block}
     .right{float:right}
@@ -28,7 +45,7 @@
     .slip h2 {font-size: 150%;}
     .slip h3 {font-size: 130%;}
     .slip h4 {font-size: 120%;}
-    .slip .underline {text-decoration: underline;}
+    .underline {text-decoration: underline;}
   </style>
 
 <title>Request slip</title>
@@ -42,7 +59,7 @@
   <div id="ship-to-branch" class="slip">
 
     <!-- Shipped to information -->
-    <h1 class="dbl-space">
+    <h1 class="double">
       [% hold.branch.branchnotes %]
       <span class="right">
 
@@ -50,7 +67,7 @@
     </h1>
 
     <p>Ship to:</p>
-    <h3 class="dbl-space">
+    <h3 class="double">
       <strong>
         [% hold.branch.branchname %]<br />
         [% hold.branch.branchaddress1 %]<br />
@@ -62,7 +79,7 @@
     <h3 class="underline">[% biblio.title %]</h3>
     [% IF biblio.author %]<p>by: [% biblio.author %]</p>[% END %]
     <p>[% item.itemcallnumber %]</p>
-    <p class="dbl-space">[% item.barcode %]</p>
+    <p class="double">[% item.barcode %]</p>
 
     <!-- Shipped from information -->
     <p>
@@ -77,44 +94,25 @@
 
 <!-- If item is on hold at this library and the borrower has an e-mail address -->
 
-<div id="hold-for">
+<div id="hold-here" class="slip">
 
-  <div>
+  <div id="hold-for">
     <!-- Hold for name -->
-    <h2 style="text-align:right">Hold till: [% hold.expirationdate | $KohaDates dateformat => 'us' | truncate (6, ' ') %]</h2>
-    <h2 style="text-align:left">  [% borrower.surname %],  [% borrower.firstname  %] </h2>
-    <br />
-    <br />
-    <br />
+    <h2 style="text-align:right">Hold until: [% hold.expirationdate | $KohaDates dateformat => 'us' | truncate (6, ' ') %]</h2>
+    <h2 style="text-align:left" class="sextuple">[% borrower.surname %],  [% borrower.firstname  %]</h2>
   </div>
 
   <div id="iteminfo">
     <h3> ITEM ON HOLD </h3>
     <ul>
-    <li> [% biblio.title %]  [% IF biblio.author %] // [% biblio.author %] [% END %] // [% item.itemcallnumber %] </li>
-    <li>[% item.barcode %]</li>
-    <li>Available Since: [% hold.waitingdate | $KohaDates dateformat => 'us' %]</li>
-    <ul>
-    [% IF hold.reservenotes %]
-    <p> Notes:: <br />
-    [% hold.reservenotes %]
+      <li>[% biblio.title %]</li>
+      [% IF biblio.author %]<li>[% biblio.author %]</li>[% END %]
+      [% IF item.itemcallnumber %]<li>[% item.itemcallnumber %]</li>[% END %]
+      <li>[% item.barcode %]</li>
+      <li>Available since: [% hold.waitingdate | $KohaDates dateformat => 'us' %]</li>
+      [% IF hold.reservenotes %]<ul><li>Notes: <br />[% hold.reservenotes %]</li></ul>[% END %]
     </ul>
-    [% END %]
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <p class="top-big-space">.</p>
   </div>
 </div>
 
