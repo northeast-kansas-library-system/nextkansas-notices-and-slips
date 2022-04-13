@@ -2,11 +2,20 @@
 
   <head>
 
+    [% USE Branches %]
+    [% USE date %]
+    [% USE ItemTypes %]
+    [% USE KohaDates %]
+    [% manip = date.manip %]
+    [% USE Price %]
+    [% totalValue = 0 %]
+
     <style>
 
+      /* Slip */
       /* @media print for slip - remove comments to activate */
       @media print {
-        body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
+        .slip {
           width: 2.75in;
           margin: 0;
           color: #000000 !important;
@@ -16,90 +25,298 @@
       }
 
 
-      /* @media print for notices and e-mails - remove comments to activate */
-      /*
-      @media print {
-
-        body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
-        color: #000000 !important;
-        background-color: #ffffff;
-        font-family: 'Arial Black', 'Arial', sans-serif !important;
-
-        @page {
-          size: 8.5in 11in;
-          margin: .75in
-        }
-       */
-
-
-
       .slip {
+        width: 2.75in;
+        margin: 0;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+        font-size: 10pt;
+      }
 
+      .slip p {
+        font-size: 10pt;
+      }
 
+      .slip h1 {
+        font-size: 1.8em;
+      }
+
+      .slip h2 {
+        font-size: 1.6em;
+      }
+
+      .slip h3 {
+        font-size: 1.4em !important;
+      }
+
+      .slip h4 {
+        font-size: 1.3em !important;
+      }
+
+      .slip h5 {
+        font-size: 1.2em !important;
+      }
+
+      .slip h6 {
+        font-size: 1.1em;
+      }
+
+      .slip article {
+        display:inline-block
+      }
+
+      .slip .grp-half {
+        padding-bottom: .5in;
+      }
+
+      .slip .grp-1 {
+        padding-bottom: 1in;
+      }
+      .slip .grp-2 {
+        padding-bottom: 2in;
+      }
+      .slip .grp-3 {
+        padding-bottom: 3in;
+      }
+      .slip .grp-4 {
+        padding-bottom: 4in;
+      }
+
+      .slip .endzone-1 {
+        padding-top: 1in;
+      }
+
+      .slip .endzone-2 {
+        padding-top: 2in;
+      }
+
+      .slip .endzone-3 {
+        padding-top: 3in;
+      }
+
+      .slip .endzone-4 {
+        padding-top: 4in;
+      }
+
+      .slip .item-title {
+        text-transform: uppercase;
+      }
+
+      .slip .bcode {
+        text-transform: uppercase;
+      }
+
+      .slip .underline {
+        text-transform: underline;
+      }
+
+      .slip .right {
+        text-align: right;
+      }
+
+      /* notices */
+
+      /* notices */
+      /* @media print for notices - remove comments to activate */
+      @media print {
+        .notices {
+          width: 7in;
+          margin: 0in;
+          color: #000000 !important;
+          background-color: #ffffff;
           font-family: 'Arial Black', 'Arial', sans-serif !important;
-
-
-        body {
-          font-size: 10pt;
         }
-
-        p {
-          font-size: 10pt;
-        }
-
-        h1 {
-          font-size: 1.8em;
-        }
-
-        h2 {
-          font-size: 1.6em;
-        }
-
-        h3 {
-          font-size: 1.4em !important;
-        }
-
-        h4 {
-          font-size: 1.3em !important;
-        }
-
-        h5 {
-          font-size: 1.2em !important;
-        }
-
-        h6 {
-          font-size: 1.1em;
-        }
-
-        article {
-          display:inline-block
-        }
-
-        .grp {
-          padding-bottom: .5in;
-        }
-
-        .pgend {
-          padding-top: 4in;
-        }
-
-        .title {
-          text-transform: uppercase;
-        }
-
-        .right {
-          float:right
-        }
-
       }
 
-      .notice {
 
+      .notices {
+        width: 7in;
+        margin: .75in;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+        font-size: 10pt;
       }
 
-      .email {
-
+      .notices p {
+        font-size: 10pt;
       }
+
+      .notices h1 {
+        font-size: 1.8em;
+      }
+
+      .notices h2 {
+        font-size: 1.6em;
+      }
+
+      .notices h3 {
+        font-size: 1.4em !important;
+      }
+
+      .notices h4 {
+        font-size: 1.3em !important;
+      }
+
+      .notices h5 {
+        font-size: 1.2em !important;
+      }
+
+      .notices h6 {
+        font-size: 1.1em;
+      }
+
+      .notices article {
+        display:inline-block
+      }
+
+      .notices .grp-half {
+        padding-bottom: .5in;
+      }
+
+      .notices .grp-1 {
+        padding-bottom: 1in;
+      }
+      .notices .grp-2 {
+        padding-bottom: 2in;
+      }
+      .notices .grp-3 {
+        padding-bottom: 3in;
+      }
+      .notices .grp-4 {
+        padding-bottom: 4in;
+      }
+
+      .notices .endzone-1 {
+        padding-top: 1in;
+      }
+
+      .notices .endzone-2 {
+        padding-top: 2in;
+      }
+
+      .notices .endzone-3 {
+        padding-top: 3in;
+      }
+
+      .notices .endzone-4 {
+        padding-top: 4in;
+      }
+
+      .notices .item-title {
+        text-transform: uppercase;
+      }
+
+      .notices .bcode {
+        text-transform: uppercase;
+      }
+
+      .notices .underline {
+        text-transform: underline;
+      }
+
+      .notices .right {
+        text-align: right;
+      }
+
+      /* emails */
+      /* @media print for emails - remove comments to activate */
+      @media print {
+        .emails {
+          width: 7in;
+          margin: 0in;
+          color: #000000 !important;
+          background-color: #ffffff;
+          font-family: 'Arial Black', 'Arial', sans-serif !important;
+        }
+      }
+
+
+      .emails {
+        width: 5in;
+        margin: .5in;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+        font-size: 10pt;
+      }
+
+      .emails p {
+        font-size: 10pt;
+      }
+
+      .emails h1 {
+        font-size: 1.8em;
+      }
+
+      .emails h2 {
+        font-size: 1.6em;
+      }
+
+      .emails h3 {
+        font-size: 1.4em !important;
+      }
+
+      .emails h4 {
+        font-size: 1.3em !important;
+      }
+
+      .emails h5 {
+        font-size: 1.2em !important;
+      }
+
+      .emails h6 {
+        font-size: 1.1em;
+      }
+
+      .emails article {
+        display:inline-block
+      }
+
+      .emails .grp-half {
+        padding-bottom: .5in;
+      }
+
+      .emails .grp-1 {
+        padding-bottom: 1in;
+      }
+      .emails .grp-2 {
+        padding-bottom: 2in;
+      }
+      .emails .grp-3 {
+        padding-bottom: 3in;
+      }
+      .emails .grp-4 {
+        padding-bottom: 4in;
+      }
+
+      .emails .endzone-1 {
+        padding-top: 1in;
+      }
+
+      .emails .endzone-2 {
+        padding-top: 2in;
+      }
+
+      .emails .endzone-3 {
+        padding-top: 3in;
+      }
+
+      .emails .endzone-4 {
+        padding-top: 4in;
+      }
+
+      .emails .item-title {
+        text-transform: uppercase;
+      }
+
+      .emails .bcode {
+        text-transform: uppercase;
+      }
+
+      .emails .underline {
+        text-transform: underline;
+      }
+
+      .emails .right {
+        text-align: right;
+      }
+
 
     </style>
 
@@ -110,25 +327,27 @@
 
     <div class="slip">
       <div id="sample">
-        <h1>Heading 1</h1>
+        <h1 class="right">Heading 2<br/>right</h1>
+        <h1 class="grp-half">Heading 1</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
         <p>Paragraph text - plain.</p>
-        <p class="grp">Paragraph text - group.</p>
-        <p class="title">Paragraph text - title.</p>
-        <p class="barcode">Paragraph text - barcode.</p>
+        <p class="grp-1">Paragraph text - group 1.</p>
+        <p class="item-title">Paragraph text - title.</p>
+        <p class="bcode">Paragraph text - barcode.</p>
+        <p class="underline">Paragraph text - underline.</p>
         <ul>
           <li>A</li>
           <li>B</li>
           <li>C</li>
-          <li>
+          <li>Start nest</li>
             <ul>
-              <li>Nested</li>
+              <li>Nested list</li>
             </ul>
-          </li>
+          <li>End nest</li>
         </ul>
         <ol>
           <li>One</li>
@@ -136,14 +355,91 @@
           <li>Three</li>
           <li>Four</li>
         </ol>
-        <p class="pgend">Paragraph text - page end.</p>
+        <p class="endzone-1">Paragraph text - 1 inch endzone.</p>
+        <p class="endzone-2">Paragraph text - 2 inch endzone.</p>
+        <p class="endzone-3">Paragraph text - 3 inch endzone.</p>
+        <p class="endzone-4">Paragraph text - 4 inch endzone.</p>
       </div>
     </div>
 
-    <div class="notice">
+    <div class="notices">
+      <div id="sample">
+        <h1 class="right">Heading 2<br/>right</h1>
+        <h1 class="grp-half">Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Paragraph text - plain.</p>
+        <p class="grp-1">Paragraph text - group 1.</p>
+        <p class="item-title">Paragraph text - title.</p>
+        <p class="bcode">Paragraph text - barcode.</p>
+        <p class="underline">Paragraph text - underline.</p>
+        <ul>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>Start nest</li>
+            <ul>
+              <li>Nested list</li>
+            </ul>
+          <li>End nest</li>
+        </ul>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>Four</li>
+        </ol>
+        <p class="endzone-1">Paragraph text - 1 inch endzone.</p>
+        <p class="endzone-2">Paragraph text - 2 inch endzone.</p>
+        <p class="endzone-3">Paragraph text - 3 inch endzone.</p>
+        <p class="endzone-4">Paragraph text - 4 inch endzone.</p>
+      </div>
     </div>
 
-    <div class="email">
+    <div class="emails">
+
+      <div id="sample">
+        <h1 class="right">Heading 2<br/>right</h1>
+        <h1 class="grp-half">Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Paragraph text - plain.</p>
+        <p class="grp-1">Paragraph text - group 1.</p>
+        <p class="item-title">Paragraph text - title.</p>
+        <p class="bcode">Paragraph text - barcode.</p>
+        <p class="underline">Paragraph text - underline.</p>
+        <ul>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>Start nest</li>
+            <ul>
+              <li>Nested list</li>
+            </ul>
+          <li>End nest</li>
+        </ul>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>Four</li>
+        </ol>
+        <p class="endzone-1">Paragraph text - 1 inch endzone.</p>
+        <p class="endzone-2">Paragraph text - 2 inch endzone.</p>
+        <p class="endzone-3">Paragraph text - 3 inch endzone.</p>
+        <p class="endzone-4">Paragraph text - 4 inch endzone.</p>
+      </div>
+
     </div>
+
+
+
+
 
   </body>
