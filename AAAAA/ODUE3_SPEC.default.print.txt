@@ -1,6 +1,6 @@
 AAAAA.ODUE3_SPEC.default.print.txt
 
-Name: Overdue 3 / lost - special (default)
+Name: Overdue 3 / lost - exempt (default)
 
 -----
 

@@ -4,7 +4,7 @@ Name: Overdue 2 / blocked - ILL (default)
 
 -----
 
-<<branches.branchname>> items overdue 35 days
+<<branches.branchname>> items long overdue
 
 -----
 

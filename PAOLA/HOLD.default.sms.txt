@@ -12,10 +12,9 @@ Message content:
 
 ----------
 
--Phone [% branch.branchphone %] to respond or to schedule pickup-
+(Please phone [% branch.branchphone %] to respond or to schedule pickup)
 
 A library item you requested is available to pickup at [% branch.branchname %] 
-
 ----
 ----
 

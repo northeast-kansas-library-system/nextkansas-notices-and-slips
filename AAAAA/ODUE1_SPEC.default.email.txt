@@ -1,6 +1,6 @@
 AAAAA.ODUE1_SPEC.default.email.txt
 
-Name: Overdue 1 - special (Next)
+Name: Overdue 1 - exempt (default)
 
 -----
 

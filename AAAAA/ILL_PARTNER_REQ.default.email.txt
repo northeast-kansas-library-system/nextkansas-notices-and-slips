@@ -1,0 +1,35 @@
+AAAAA.ILL_PARTNER_REQ.default.email.txt
+
+Name: ILL request to partners
+
+-----
+
+Interlibrary loan request to partners
+
+-----
+
+Message content:
+
+----------
+
+Dear Sir/Madam,
+
+We would like to request an interlibrary loan for a title matching the following description:
+
+[% ill_full_metadata %]
+
+Please let us know if you are able to supply this to us.
+
+Kind Regards
+
+[% branch.branchname %]
+[% branch.branchaddress1 %]
+[% branch.branchaddress2 %]
+[% branch.branchaddress3 %]
+[% branch.branchcity %]
+[% branch.branchstate %]
+[% branch.branchzip %]
+[% branch.branchphone %]
+[% branch.branchillemail %]
+[% branch.branchemail %]
+

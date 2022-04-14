@@ -1,10 +1,10 @@
 AAAAA.ODUE2_SPEC.default.email.txt
 
-Name: Overdue 2 / blocked - special (default)
+Name: Overdue 2 / blocked - exempt (default)
 
 -----
 
-<<branches.branchname>> items overdue 35 days
+<<branches.branchname>> items long overdue
 
 -----
 
@@ -31,7 +31,7 @@ Second Overdue Notice - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following items are 35 days overdue as of <<today>>:
+The following items are now considered long overdue:
 
 <<items.content>>
 

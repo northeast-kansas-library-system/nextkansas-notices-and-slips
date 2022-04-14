@@ -4,7 +4,7 @@ Name: Check-out receipt (digest)
 
 -----
 
-Library check-out receipt
+<<branches.branchname>> check-out receipt
 
 -----
 

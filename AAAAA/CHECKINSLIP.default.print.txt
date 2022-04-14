@@ -1,0 +1,29 @@
+AAAAA.CHECKINSLIP.default.print.txt
+
+Name: Checkin slip
+
+-----
+
+Checkin slip
+
+-----
+
+Message content:
+
+----------
+
+<h3>[% branch.branchname %]</h3>
+Checked in items for [% borrower.title %] [% borrower.firstname %] [% borrower.initials %] [% borrower.surname %] <br />
+([% borrower.cardnumber %]) <br />
+
+[% today | $KohaDates %]<br />
+
+<h4>Checked in today</h4>
+[% FOREACH checkin IN old_checkouts %]
+[% SET item = checkin.item %]
+<p>
+[% item.biblio.title %] <br />
+Barcode: [% item.barcode %] <br />
+</p>
+[% END %]
+

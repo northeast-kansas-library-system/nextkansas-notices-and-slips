@@ -1,0 +1,35 @@
+AAAAA.ILL_REQUEST_UNAVAIL.default.email.txt
+
+Name: ILL request unavailable
+
+-----
+
+Interlibrary loan request unavailable
+
+-----
+
+Message content:
+
+----------
+
+Dear [% borrower.firstname %] [% borrower.surname %],
+
+The Interlibrary loans request number [% illrequest.illrequest_id %] you placed for
+
+- [% ill_bib_title %] - [% ill_bib_author %]
+
+is unfortunately unavailable.
+
+Kind Regards
+
+[% branch.branchname %]
+[% branch.branchaddress1 %]
+[% branch.branchaddress2 %]
+[% branch.branchaddress3 %]
+[% branch.branchcity %]
+[% branch.branchstate %]
+[% branch.branchzip %]
+[% branch.branchphone %]
+[% branch.branchillemail %]
+[% branch.branchemail %]
+

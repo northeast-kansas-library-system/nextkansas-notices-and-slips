@@ -1,6 +1,6 @@
 BURLINGAME.HOLD_SLIP.default.email.txt
 
-Name: Burlingame Hold Transfer (Reserve) Slip
+Name: Hold Transfer (Reserve) Slip
 
 -----
 
@@ -104,5 +104,4 @@ document.getElementById("expiration").innerHTML =
 document.getElementById("expiration").innerHTML + expiration;
 }
 </script>
-
 

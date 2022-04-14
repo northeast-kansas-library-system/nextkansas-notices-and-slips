@@ -12,118 +12,450 @@ Message content:
 
 ----------
 
-<!DOCTYPE html>
-
 <html>
 
   <head>
 
-    <script type="text/javascript">
-    //<![CDATA[
-
-      $(document).ready(function(){ 
-
-        $("#loc_NEKLS").hide();
-        $("#bor_NEKLS").parent().removeAttr('style')
-
-      });
-
-    //]]>
-    </script>
+    [% USE Branches %]
+    [% USE date %]
+    [% USE ItemTypes %]
+    [% USE KohaDates %]
+    [% manip = date.manip %]
+    [% USE Price %]
+    [% totalValue = 0 %]
 
     <style>
-      body {width: 275px;}
-      body{
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-left: 5px;
-}
-      article{display:inline-block}
-      .right{float:right}
-      .slip {font-size: 110%;}
-      .slip h1 {font-size: 200%; text-decoration: underline;}
-      .slip h2 {font-size: 150%; text-decoration: underline;}
-      .slip h3 {font-size: 130%; text-decoration: underline;}
-      .slip h4 {font-size: 120%; text-decoration: underline;}
+
+      /* Slip */
+      /* @media print for slip - remove comments to activate */
+      @media print {
+        .slip {
+          width: 2.75in;
+          margin: 0;
+          color: #000000 !important;
+          background-color: #ffffff;
+          font-family: 'Arial Black', 'Arial', sans-serif !important;
+        }
+      }
+
+
+      .slip {
+        width: 2.75in;
+        margin: 0;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+        font-size: 10pt;
+      }
+
+      .slip p {
+        font-size: 10pt;
+      }
+
+      .slip h1 {
+        font-size: 1.8em;
+      }
+
+      .slip h2 {
+        font-size: 1.6em;
+      }
+
+      .slip h3 {
+        font-size: 1.4em !important;
+      }
+
+      .slip h4 {
+        font-size: 1.3em !important;
+      }
+
+      .slip h5 {
+        font-size: 1.2em !important;
+      }
+
+      .slip h6 {
+        font-size: 1.1em;
+      }
+
+      .slip article {
+        display:inline-block
+      }
+
+      .slip .grp-half {
+        padding-bottom: .5in;
+      }
+
+      .slip .grp-1 {
+        padding-bottom: 1in;
+      }
+      .slip .grp-2 {
+        padding-bottom: 2in;
+      }
+      .slip .grp-3 {
+        padding-bottom: 3in;
+      }
+      .slip .grp-4 {
+        padding-bottom: 4in;
+      }
+
+      .slip .endzone-1 {
+        padding-top: 1in;
+      }
+
+      .slip .endzone-2 {
+        padding-top: 2in;
+      }
+
+      .slip .endzone-3 {
+        padding-top: 3in;
+      }
+
+      .slip .endzone-4 {
+        padding-top: 4in;
+      }
+
+      .slip .item-title {
+        text-transform: uppercase;
+      }
+
+      .slip .bcode {
+        text-transform: uppercase;
+      }
+
+      .slip .underline {
+        text-transform: underline;
+      }
+
+      .slip .right {
+        text-align: right;
+      }
+
+      /* notices */
+
+      /* notices */
+      /* @media print for notices - remove comments to activate */
+      @media print {
+        .notices {
+          width: 7in;
+          margin: 0in;
+          color: #000000 !important;
+          background-color: #ffffff;
+          font-family: 'Arial Black', 'Arial', sans-serif !important;
+        }
+      }
+
+
+      .notices {
+        width: 7in;
+        margin: .75in;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+        font-size: 10pt;
+      }
+
+      .notices p {
+        font-size: 10pt;
+      }
+
+      .notices h1 {
+        font-size: 1.8em;
+      }
+
+      .notices h2 {
+        font-size: 1.6em;
+      }
+
+      .notices h3 {
+        font-size: 1.4em !important;
+      }
+
+      .notices h4 {
+        font-size: 1.3em !important;
+      }
+
+      .notices h5 {
+        font-size: 1.2em !important;
+      }
+
+      .notices h6 {
+        font-size: 1.1em;
+      }
+
+      .notices article {
+        display:inline-block
+      }
+
+      .notices .grp-half {
+        padding-bottom: .5in;
+      }
+
+      .notices .grp-1 {
+        padding-bottom: 1in;
+      }
+      .notices .grp-2 {
+        padding-bottom: 2in;
+      }
+      .notices .grp-3 {
+        padding-bottom: 3in;
+      }
+      .notices .grp-4 {
+        padding-bottom: 4in;
+      }
+
+      .notices .endzone-1 {
+        padding-top: 1in;
+      }
+
+      .notices .endzone-2 {
+        padding-top: 2in;
+      }
+
+      .notices .endzone-3 {
+        padding-top: 3in;
+      }
+
+      .notices .endzone-4 {
+        padding-top: 4in;
+      }
+
+      .notices .item-title {
+        text-transform: uppercase;
+      }
+
+      .notices .bcode {
+        text-transform: uppercase;
+      }
+
+      .notices .underline {
+        text-transform: underline;
+      }
+
+      .notices .right {
+        text-align: right;
+      }
+
+      /* emails */
+      /* @media print for emails - remove comments to activate */
+      @media print {
+        .emails {
+          width: 7in;
+          margin: 0in;
+          color: #000000 !important;
+          background-color: #ffffff;
+          font-family: 'Arial Black', 'Arial', sans-serif !important;
+        }
+      }
+      
+      
+      .emails {
+        width: 5in;
+        margin: .5in;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+        font-size: 10pt;
+      }
+      
+      .emails p {
+        font-size: 10pt;
+      }
+      
+      .emails h1 {
+        font-size: 1.8em;
+      }
+      
+      .emails h2 {
+        font-size: 1.6em;
+      }
+      
+      .emails h3 {
+        font-size: 1.4em !important;
+      }
+      
+      .emails h4 {
+        font-size: 1.3em !important;
+      }
+      
+      .emails h5 {
+        font-size: 1.2em !important;
+      }
+      
+      .emails h6 {
+        font-size: 1.1em;
+      }
+      
+      .emails article {
+        display:inline-block
+      }
+      
+      .emails .grp-half {
+        padding-bottom: .5in;
+      }
+      
+      .emails .grp-1 {
+        padding-bottom: 1in;
+      }
+      .emails .grp-2 {
+        padding-bottom: 2in;
+      }
+      .emails .grp-3 {
+        padding-bottom: 3in;
+      }
+      .emails .grp-4 {
+        padding-bottom: 4in;
+      }
+      
+      .emails .endzone-1 {
+        padding-top: 1in;
+      }
+      
+      .emails .endzone-2 {
+        padding-top: 2in;
+      }
+      
+      .emails .endzone-3 {
+        padding-top: 3in;
+      }
+      
+      .emails .endzone-4 {
+        padding-top: 4in;
+      }
+      
+      .emails .item-title {
+        text-transform: uppercase;
+      }
+      
+      .emails .bcode {
+        text-transform: uppercase;
+      }
+      
+      .emails .underline {
+        text-transform: underline;
+      }
+      
+      .emails .right {
+        text-align: right;
+      }
+
+
     </style>
 
-    <title>Reserve Slip</title>
+    <title>Title</title>
   </head>
 
   <body>
-    <div id="borrower" class="slip" style="display:none">
-      <div id="bor_<<branches.branchcode>>">
-        <h3 id="pudate" style="text-align:right"></h3>
 
-        <script type="text/javascript">
-        //<![CDATA[
-          var d = new Date();
-          (d.setDate(d.getDate() + 7));
-          var currdate = new Date();
-          var currdate= "Hold till: " + (d.getMonth() + 1) + '/' + (d.getDate()) + '<span style="padding-left:25px"></span>' + '<br /><h5 style="display:none"><<borrowers.email>></h5>';
-          document.getElementById("pudate").innerHTML = currdate;
-        //]]>
-        </script>
-
-        <h2 style="text-align:left"><<borrowers.surname>>,<br />
-        <<borrowers.firstname>></h2>
-        <br />
-
-        <h3>Hold at <<branches.branchname>></h3>
-
+    <div class="slip">
+      <div id="sample">
+        <h1 class="right">Heading 2<br/>right</h1>
+        <h1 class="grp-half">Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Paragraph text - plain.</p>
+        <p class="grp-1">Paragraph text - group 1.</p>
+        <p class="item-title">Paragraph text - title.</p>
+        <p class="bcode">Paragraph text - barcode.</p>
+        <p class="underline">Paragraph text - underline.</p>
         <ul>
-          <li><<borrowers.cardnumber>></li>
-          <li><<borrowers.phone>></li>
-          <li><<borrowers.email>></li>
-          <li><<borrower-attribute:HOLD>></li>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>Start nest</li>
+            <ul>
+              <li>Nested list</li>
+            </ul>
+          <li>End nest</li>
         </ul>
-        <br />
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>Four</li>
+        </ol>
+        <p class="endzone-1">Paragraph text - 1 inch endzone.</p>
+        <p class="endzone-2">Paragraph text - 2 inch endzone.</p>
+        <p class="endzone-3">Paragraph text - 3 inch endzone.</p>
+        <p class="endzone-4">Paragraph text - 4 inch endzone.</p>
+      </div>
+    </div>
 
-        <h3>ITEM ON HOLD</h3>
-
+    <div class="notices">
+      <div id="sample">
+        <h1 class="right">Heading 2<br/>right</h1>
+        <h1 class="grp-half">Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Paragraph text - plain.</p>
+        <p class="grp-1">Paragraph text - group 1.</p>
+        <p class="item-title">Paragraph text - title.</p>
+        <p class="bcode">Paragraph text - barcode.</p>
+        <p class="underline">Paragraph text - underline.</p>
         <ul>
-          <li><<items.itemcallnumber>> // <<biblio.title>> //
-          <<biblio.author>></li>
-          <li><<items.barcode>></li>
-          <li>Available since: <<reserves.waitingdate>></li>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>Start nest</li>
+            <ul>
+              <li>Nested list</li>
+            </ul>
+          <li>End nest</li>
         </ul>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>Four</li>
+        </ol>
+        <p class="endzone-1">Paragraph text - 1 inch endzone.</p>
+        <p class="endzone-2">Paragraph text - 2 inch endzone.</p>
+        <p class="endzone-3">Paragraph text - 3 inch endzone.</p>
+        <p class="endzone-4">Paragraph text - 4 inch endzone.</p>
+      </div>
+    </div>
 
-        <p>Notes:<br /><<reserves.reservenotes>></p>
+    <div class="emails">
 
+      <div id="sample">
+        <h1 class="right">Heading 2<br/>right</h1>
+        <h1 class="grp-half">Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Paragraph text - plain.</p>
+        <p class="grp-1">Paragraph text - group 1.</p>
+        <p class="item-title">Paragraph text - title.</p>
+        <p class="bcode">Paragraph text - barcode.</p>
+        <p class="underline">Paragraph text - underline.</p>
+        <ul>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+          <li>Start nest</li>
+            <ul>
+              <li>Nested list</li>
+            </ul>
+          <li>End nest</li>
+        </ul>
+        <ol>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>Four</li>
+        </ol>
+        <p class="endzone-1">Paragraph text - 1 inch endzone.</p>
+        <p class="endzone-2">Paragraph text - 2 inch endzone.</p>
+        <p class="endzone-3">Paragraph text - 3 inch endzone.</p>
+        <p class="endzone-4">Paragraph text - 4 inch endzone.</p>
       </div>
 
     </div>
 
-    <div id="loc_<<branches.branchcode>>" class="slip">
 
-      <!-- Shipped to information -->
-        <h2><<branches.branchnotes>></h2>
-      <!-- Spacer -->
-        <p>&nbsp;</p>
 
-        <p>Ship to:</p>
-        <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
-        
-      <!-- Spacer -->
-        <p>&nbsp;</p>
-
-      <!-- Item information -->
-        <h3><<biblio.title>></h3>
-	<p><<items.itemcallnumber>></p>
-        <p><<items.barcode>></p>
-
-      <!-- Spacer -->
-        <p>&nbsp;</p>
-
-      <!-- Shipped from information -->
-        <p>Shipped from: KS131<br />Northeast Kansas Library System<br />shipped on: <<today>></p>
-
-      </div>
-
-    </div>
+    
 
   </body>
 
-</html>
 

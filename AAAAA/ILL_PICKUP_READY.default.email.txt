@@ -1,0 +1,35 @@
+AAAAA.ILL_PICKUP_READY.default.email.txt
+
+Name: ILL request ready for pickup
+
+-----
+
+Interlibrary loan request ready for pickup
+
+-----
+
+Message content:
+
+----------
+
+Dear [% borrower.firstname %] [% borrower.surname %],
+
+The Interlibrary loans request number [% illrequest.illrequest_id %] you placed for:
+
+- [% ill_bib_title %] - [% ill_bib_author %]
+
+is ready for pick up from [% branch.branchname %].
+
+Kind Regards
+
+[% branch.branchname %]
+[% branch.branchaddress1 %]
+[% branch.branchaddress2 %]
+[% branch.branchaddress3 %]
+[% branch.branchcity %]
+[% branch.branchstate %]
+[% branch.branchzip %]
+[% branch.branchphone %]
+[% branch.branchillemail %]
+[% branch.branchemail %]
+

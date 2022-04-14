@@ -12,6 +12,9 @@ Message content:
 
 ----------
 
+
+[% USE Price %]
+[% PROCESS 'accounts.inc' %]
 <table>
   [% IF ( LibraryName ) %]
     <tr>
@@ -28,13 +31,13 @@ Message content:
   </tr>
   <tr>
     <th colspan="5" class="centerednames">
-      <h2>[% Branches.GetName( patron.branchcode ) | html %]</h2>
+      <h2>[% Branches.GetName( debit.patron.branchcode ) | html %]</h2>
     </th>
   </tr>
   <tr>
     <th colspan="5" >
-      Bill to: [% patron.firstname | html %] [% patron.surname | html %] <br />
-      Card number: [% patron.cardnumber | html %]<br />
+      Bill to: [% debit.patron.firstname | html %] [% debit.patron.surname | html %] <br />
+      Card number: [% debit.patron.cardnumber | html %]<br />
     </th>
   </tr>
   <tr>
@@ -45,24 +48,34 @@ Message content:
     <th style="text-align:right;">Amount outstanding</th>
   </tr>
 
-  [% FOREACH account IN accounts %]
-    <tr class="highlight">
-      <td>[% account.date | $KohaDates%]</td>
-      <td>
-        [% PROCESS account_type_description account=account %]
-        [%- IF account.description %], [% account.description | html %][% END %]
-      </td>
-      <td>[% account.note | html %]</td>
-      [% IF ( account.amountcredit ) %]<td class="credit">[% ELSE %]<td class="debit">[% END %][% account.amount | $Price %]</td>
-      [% IF ( account.amountoutstandingcredit ) %]<td class="credit">[% ELSE %]<td class="debit">[% END %][% account.amountoutstanding | $Price %]</td>
+  <tr class="highlight">
+    <td>[% debit.date | $KohaDates%]</td>
+    <td>
+      [% PROCESS account_type_description account=debit %]
+      [%- IF debit.description %], [% debit.description | html %][% END %]
+    </td>
+    <td>[% debit.note | html %]</td>
+    <td class="debit">[% debit.amount | $Price %]</td>
+    <td class="debit">[% debit.amountoutstanding | $Price %]</td>
+  </tr>
+
+  [% IF ( tendered ) %]
+    <tr>
+      <td colspan="3">Amount tendered: </td>
+      <td>[% tendered | $Price %]</td>
+    </tr>
+    <tr>
+      <td colspan="3">Change given: </td>
+      <td>[% change | $Price %]</td>
     </tr>
   [% END %]
 
   <tfoot>
     <tr>
       <td colspan="4">Total outstanding dues as on date: </td>
-      [% IF ( totalcredit ) %]<td class="credit">[% ELSE %]<td class="debit">[% END %][% total | $Price %]</td>
+      [% IF ( debit.patron.account.balance <= 0 ) %]<td class="credit">[% ELSE %]<td class="debit">[% END %][% debit.patron.account.balance | $Price %]</td>
     </tr>
   </tfoot>
 </table>
+    
 

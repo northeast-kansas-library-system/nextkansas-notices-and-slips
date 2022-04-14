@@ -4,7 +4,7 @@ Name: Overdue 2 / blocked - standard (Ottawa)
 
 -----
 
-Ottawa Library account blocked
+<<branches.branchname>> long overdue items
 
 -----
 
@@ -31,7 +31,7 @@ Second Overdue Notice - <<today>>
 
 Dear <<borrowers.firstname>>
 
-The following items are 35 days overdue as of <<today>>:
+The following items are 21 days overdue as of <<today>>:
 
 <<items.content>>
 

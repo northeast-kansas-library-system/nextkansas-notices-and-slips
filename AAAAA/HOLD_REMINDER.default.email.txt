@@ -1,0 +1,22 @@
+AAAAA.HOLD_REMINDER.default.email.txt
+
+Name: Waiting hold reminder
+
+-----
+
+ Item being held reminder
+
+-----
+
+Message content:
+
+----------
+
+ Dear [% borrower.firstname %] [% borrower.surname %],
+
+The following holds are waiting at [% branch.branchname %]:
+
+[% FOREACH hold IN holds %]
+    [% hold.biblio.title %] : waiting since [% hold.waitingdate | $KohaDates %]
+[% END %]
+
