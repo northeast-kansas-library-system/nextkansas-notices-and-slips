@@ -1,6 +1,6 @@
 LEAVENWRTH.ODUE2_SPEC.default.email.txt
 
-Name: Overdue 2 / blocked - special (Leavenworth)
+Name: Overdue 2 / blocked - exempt (Leavenworth)
 
 -----
 

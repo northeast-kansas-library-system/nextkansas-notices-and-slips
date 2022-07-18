@@ -1,6 +1,6 @@
 LEAVENWRTH.ODUE1_SPEC.default.email.txt
 
-Name: Overdue 1 - special (Leavenworth)
+Name: Overdue 1 - exempt (Leavenworth)
 
 -----
 

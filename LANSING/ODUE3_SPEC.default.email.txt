@@ -1,6 +1,6 @@
 LANSING.ODUE3_SPEC.default.email.txt
 
-Name: Overdue 3 / lost - special (Lansing)
+Name: Overdue 3 / lost - exempt (Lansing)
 
 -----
 

@@ -1,6 +1,6 @@
 BASEHOR.ODUE2_SPEC.default.email.txt
 
-Name: Overdue 2 / blocked - special (Basehor)
+Name: Overdue 2 / blocked - exempt (Basehor)
 
 -----
 

@@ -1,6 +1,6 @@
 BASEHOR.ODUE3_SPEC.default.email.txt
 
-Name: Overdue 3 / lost - special (Basehor)
+Name: Overdue 3 / lost - exempt (Basehor)
 
 -----
 

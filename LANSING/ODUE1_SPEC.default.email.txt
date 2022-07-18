@@ -1,6 +1,6 @@
 LANSING.ODUE1_SPEC.default.email.txt
 
-Name: Overdue 1 - special (Lansing)
+Name: Overdue 1 - exempt (Lansing)
 
 -----
 

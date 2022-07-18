@@ -1,10 +1,10 @@
-AAAAA.HOLD.default.sms.txt
+NEKLS.HOLD_REMINDER.default.sms.txt
 
-Name: Hold Available for Pickup (default)
+Name: Waiting hold reminder
 
 -----
 
-Available for pickup at <<branches.branchname>>
+Items waiting reminder
 
 -----
 

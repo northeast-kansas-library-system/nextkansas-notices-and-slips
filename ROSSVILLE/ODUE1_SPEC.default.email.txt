@@ -1,6 +1,6 @@
 ROSSVILLE.ODUE1_SPEC.default.email.txt
 
-Name: Overdue 1 - special (Rossville)
+Name: Overdue 1 - exempt (Rossville)
 
 -----
 

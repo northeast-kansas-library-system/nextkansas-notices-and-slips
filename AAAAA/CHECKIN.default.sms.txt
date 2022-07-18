@@ -4,7 +4,7 @@ Name: Check-in receipt email (digest)
 
 -----
 
-<<branches.branchname>> check-ins
+<<branches.branchname>> check-in receipt
 
 -----
 

@@ -1,10 +1,10 @@
-AAAAA.ODUE2.default.email.txt
+NEKLS.OVERDUES_SLIP.default.print.txt
 
-Name: Overdue 2 / blocked - standard (default)
+Name: Overdues Slip
 
 -----
 
-<<branches.branchname>> items long overdue
+OVERDUES_SLIP
 
 -----
 
@@ -19,8 +19,8 @@ Message content:
 <html>
 
 <head>
-  <title>[% branch.branchname %] - overdue notice</title>
-  <!-- Notice code:  ODUE2; Library: All libraries; -->
+  <title>[% branch.branchname %] - lost items notice</title>
+  <!-- Notice code:  ODUE3; Library: All libraries; -->
 
   <meta charset="UTF-8" />
 
@@ -116,11 +116,11 @@ Message content:
       </div>
 
       <div id="message_body" style="margin-top: .75in;" class="dblspace">
-        <p>Second Overdue Notice - <<today>></p>
+        <p>Lost Items Notice - <<today>></p>
 
         <p style="margin-top: 2em;">[% borrower.firstname %] [% borrower.surname %]:</p>
 
-        <p style="margin-top: 2em;">The following items are now considered long overdue:</p>
+        <p style="margin-top: 2em;">The following items have been declared "Lost:"</p>
 
         <ol>[% FOREACH overdue IN overdues %] [%~ SET item = overdue.item %] [%~ SET biblio = overdue.item.biblio %]
           <li>
@@ -133,8 +133,8 @@ Message content:
           </li>
           [% END %]</ol>
 
-        <p>Your library card with the last 6 digits <strong>[% borrower.cardnumber.substr(-6) FILTER upper %]</strong> has now been suspended.</p>
-        <p>If you are liable for late fees, remember that late fees increase the longer you keep items overdue. You will be charged for the replacement cost of the item if the item is not returned within 10 days.</p>
+        <p>These library items have been declared "Lost" because they have been overdue for more than 45 days.  These items were checked out to your library card with the last 6 digits <strong>[% borrower.cardnumber.substr(-6) FILTER upper %]</strong> at the time they were declared "Lost."</p>
+        <p>Your account has been suspended and you are being billed for the replacement of these items. </p>
         <p>If you have already returned these materials or if you feel that this notice is in error, please contact [% branch.branchname %] at [% branch.branchphone %] as soon as possible.</p>
         <p>[% IF borrower.email || borrower.emailpro || borrower.B_email %][% ELSE %]<p>If you would prefer to receive notices such as this one via e-mail, please contact your local library.[% END %]</p>
       </div>

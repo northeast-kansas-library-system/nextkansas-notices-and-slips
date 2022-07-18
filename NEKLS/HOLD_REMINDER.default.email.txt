@@ -1,10 +1,10 @@
-AAAAA.HOLD.default.email.txt
+NEKLS.HOLD_REMINDER.default.email.txt
 
-Name: Hold Available for Pickup (default)
+Name: Waiting hold reminder
 
 -----
 
-Requested item available for pickup at <<branches.branchname>>
+Requested items available at <<branches.branchname>>
 
 -----
 
@@ -12,7 +12,7 @@ Message content:
 
 ----------
 
-<head> 
+<head>
 
   [% USE Branches %] 
   [% USE date %] 
@@ -356,19 +356,19 @@ Message content:
   <title>Title</title>
 </head>
 <div id="logo" style="font-family: 'Tahoma', 'Arial', sans-serif !important; text-align: left;">
-  <h1 style="color: #1f9bde; font-weight: 1000; padding-top: 5px; line-height: .25em; font-size: 3em;">NE<span style="color: #0157b9">X</span>T</h1>
-  <h5 style="color: #838689; text-decoration: underline;font-style: italic;">SEARCH CATALOG</h5>
+  <h1 style="color: #1f9bde; font-weight: 1000; padding-top: 5px; line-height: .25em; font-size: 5em;">NE<span style="color: #0157b9">X</span>T</h1>
+  <h3 style="color: #838689; text-decoration: underline; padding-left: 5px; font-style: italic;">SEARCH CATALOG</h3>
 </div>
 <div class="emails" style="color: #000000">
   <div id="greeting" class="grp-half">
-    <h2>[% branch.branchname %] - Requested item available to pick up</h2>
+    <h2>[% branch.branchname %] - Items waiting reminder</h2>
   </div>
   <div id="content" class="grp-half">
-    <p>The following requested item is available to pickup at [% branch.branchname %] today ([% date.format(date.now, "%Y-%m-%d") %]).<br />This item was requested for the library member with the card number ending in [%
-      borrower.cardnumber.substr(-6) FILTER upper %].<br /></p>
+    <p>The following requested items are still available for pickup at [% branch.branchname %].<br />These items were requested for the library member with the card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].<br /></p>
     <p>The details are:</p>
-    <p> Title: [% biblio.title %]<br /> [% IF biblio.author %]Author: [% biblio.author %]<br />[% END %] [% IF item.itemcallnumber %]Call number: [% item.itemcallnumber %]<br />[% END %] BC: [% item.barcode %] </p>
-    <p>The item will be available until [% hold.expirationdate %].</p>
+    [% FOREACH hold IN holds %]
+      <p> Title: [% hold.biblio.title %]<br /> [% IF hold.biblio.author %]Author: [% hold.biblio.author %]<br />[% END %] [% IF hold.item.itemcallnumber %]Call number: [% hold.item.itemcallnumber %]<br />[% END %] BC: [% hold.item.barcode %]<br />Waiting since [% hold.waitingdate | $KohaDates %]<br /><ins>Available until [% hold.expirationdate %]</ins></p>
+    [% END %]
   </div>
   <footer>
     <p>Thank you,</p>

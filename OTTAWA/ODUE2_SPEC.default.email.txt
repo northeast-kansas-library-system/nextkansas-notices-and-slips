@@ -1,6 +1,6 @@
 OTTAWA.ODUE2_SPEC.default.email.txt
 
-Name: Overdue 2 / blocked - special (Ottawa)
+Name: Overdue 2 / blocked - exempt (Ottawa)
 
 -----
 

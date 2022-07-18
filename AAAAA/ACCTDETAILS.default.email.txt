@@ -74,6 +74,10 @@ Message content:
 <body>
 
   <div class="notice">
+    <div id="logo" style="font-family: 'Tahoma', 'Arial', sans-serif !important; text-align: left;">
+      <h1 style="color: #1f9bde; font-weight: 1000; padding-top: 5px; line-height: .25em; font-size: 5em;">NE<span style="color: #0157b9">X</span>T</h1>
+      <h3 style="color: #838689; text-decoration: underline; padding-left: 5px; font-style: italic;">SEARCH CATALOG</h3>
+    <div>
 
     <div id="notice_content">
 
@@ -83,7 +87,7 @@ Message content:
       <p>You can also visit your home library's website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a>. From there you can learn more about your home library including hours and contact information.</p>
       <p>Your new Next Search Catalog account details are:</p>
       <ul>
-        <li>Name: <strong><ins>[% borrower.firstname %][% IF borrower.othernames %] ([% borrower.othernames %])[% END %], [% borrower.surname %]</strong></ins></li>
+        <li>Name: <strong><ins>[% borrower.firstname %][% IF borrower.othernames %] ([% borrower.othernames %])[% END %] [% borrower.surname %]</strong></ins></li>
         <li>Address: <strong><ins>[% borrower.address %][% IF borrower.address2 %] / [% borrower.address2 %][% END %] / [% borrower.city %], [% borrower.state %] [% borrower.zipcode %]</strong></ins></li>
         <li>Phone number: <strong><ins>[% borrower.phone %]</strong></ins></li>
         <li>Library card number: <strong><ins>[% borrower.cardnumber %]</strong></ins></li>
