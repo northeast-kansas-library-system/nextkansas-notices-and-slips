@@ -1,0 +1,407 @@
+<head>
+
+  <!-- Notice code:  **MESSAGE_CODE**; Library: All; -->
+  <title>**MESSAGETITLE**</title>
+
+  [% USE Branches %]
+  [% USE date %]
+  [% USE ItemTypes %]
+  [% USE KohaDates %]
+  [% manip=date.manip %]
+  [% USE Price %]
+  [% totalValue=0 %]
+
+  <!-- Use .slip_t for notices and slips that are printed on a receipt printer -->
+  <!-- Use .notice_t for notices and slips that are printed on a standard 8.5 x 11 sheet of paper -->
+  <!-- Use .email_t for notices and slips that are normally e-mailed to borrowers -->
+  <!-- "!important" commands in this css override some default mischeif that the Koha CSS tries to inflict on notices and slips -->
+  <!-- The different sections of the css are almost duplicates of each other which will allow fine-tuning in the future - my goal is to someday move all of this css into an external style sheet -->
+
+  <style>
+
+    /* Slip - things that print on a reciept printer */
+    /* @media print for slip_t */
+    @media print {
+      .slip_t {
+        width: 2.75in;
+        margin: 0;
+        color: #000000 !important;
+        background-color: #ffffff;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+      }
+    }
+
+    .slip_t {
+      width: 2.75in;
+      margin: 0;
+      font-family: 'Arial Black', 'Arial', sans-serif !important;
+      font-size: 10pt;
+    }
+
+    .slip_t footer {
+      display: none;
+    }
+
+    .slip_t p {
+      font-size: 10pt;
+    }
+
+    .slip_t h1 {
+      font-size: 1.8em;
+    }
+
+    .slip_t h2 {
+      font-size: 1.6em;
+    }
+
+    .slip_t h3 {
+      font-size: 1.4em !important;
+    }
+
+    .slip_t h4 {
+      font-size: 1.3em !important;
+    }
+
+    .slip_t h5 {
+      font-size: 1.2em !important;
+    }
+
+    .slip_t h6 {
+      font-size: 1.1em;
+    }
+
+    .slip_t article {
+      display: inline-block
+    }
+
+    .slip_t .grp-half {
+      padding-bottom: .5in;
+    }
+
+    .slip_t .grp-1 {
+      padding-bottom: 1in;
+    }
+
+    .slip_t .grp-2 {
+      padding-bottom: 2in;
+    }
+
+    .slip_t .grp-3 {
+      padding-bottom: 3in;
+    }
+
+    .slip_t .grp-4 {
+      padding-bottom: 4in;
+    }
+
+    .slip_t .endzone-1 {
+      padding-top: 1in;
+    }
+
+    .slip_t .endzone-2 {
+      padding-top: 2in;
+    }
+
+    .slip_t .endzone-3 {
+      padding-top: 3in;
+    }
+
+    .slip_t .endzone-4 {
+      padding-top: 4in;
+    }
+
+    .slip_t .item-title {
+      text-transform: uppercase;
+    }
+
+    .slip_t .bcode {
+      text-transform: uppercase;
+    }
+
+    .slip_t .underline {
+      text-transform: underline;
+    }
+
+    .slip_t .right {
+      text-align: right;
+    }
+
+    /* notices - things that print on a 8.5 x 11 sheet of paper */
+    /* @media print for notice_t */
+    @media print {
+      .notice_t {
+        width: 7in;
+        margin: 0in;
+        color: #000000 !important;
+        background-color: #ffffff;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+      }
+    }
+
+    .notice_t {
+      width: 7in;
+      margin: .75in;
+      font-family: 'Arial Black', 'Arial', sans-serif !important;
+      font-size: 10pt;
+    }
+
+    .notice_t p {
+      font-size: 10pt;
+    }
+
+    .notice_t h1 {
+      font-size: 1.8em;
+    }
+
+    .notice_t h2 {
+      font-size: 1.6em;
+    }
+
+    .notice_t h3 {
+      font-size: 1.4em !important;
+    }
+
+    .notice_t h4 {
+      font-size: 1.3em !important;
+    }
+
+    .notice_t h5 {
+      font-size: 1.2em !important;
+    }
+
+    .notice_t h6 {
+      font-size: 1.1em;
+    }
+
+    .notice_t article {
+      display: inline-block
+    }
+
+    .notice_t .grp-half {
+      padding-bottom: .5in;
+    }
+
+    .notice_t .grp-1 {
+      padding-bottom: 1in;
+    }
+
+    .notice_t .grp-2 {
+      padding-bottom: 2in;
+    }
+
+    .notice_t .grp-3 {
+      padding-bottom: 3in;
+    }
+
+    .notice_t .grp-4 {
+      padding-bottom: 4in;
+    }
+
+    .notice_t .endzone-1 {
+      padding-top: 1in;
+    }
+
+    .notice_t .endzone-2 {
+      padding-top: 2in;
+    }
+
+    .notice_t .endzone-3 {
+      padding-top: 3in;
+    }
+
+    .notice_t .endzone-4 {
+      padding-top: 4in;
+    }
+
+    .notice_t .item-title {
+      text-transform: uppercase;
+    }
+
+    .notice_t .bcode {
+      text-transform: uppercase;
+    }
+
+    .notice_t .underline {
+      text-transform: underline;
+    }
+
+    .notice_t .right {
+      text-align: right;
+    }
+
+    /* emails - things that are almost exclusively sent via e-mail */
+    /* @media print for email_t */
+    @media print {
+      .email_t {
+        width: 7in;
+        margin: .75in;
+        color: #000000;
+        background-color: #ffffff;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+      }
+
+      img {
+        display: none;
+      }
+    }
+
+    .email_t {
+      font-family: 'Tahoma', 'Arial', sans-serif !important;
+      font-size: 12pt;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .email_t p {
+      font-size: 12pt;
+    }
+
+    .email_t h1 {
+      font-size: 1.8em;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .email_t h2 {
+      font-size: 1.6em;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .email_t h3 {
+      font-size: 1.4em;
+      color: #000000 !important;
+      background-color: #ffffff;
+    }
+
+    .email_t h4 {
+      font-size: 1.3em;
+      color: #000000 !important;
+      background-color: #ffffff;
+    }
+
+    .email_t h5 {
+      font-size: 1.2em;
+      color: #000000 !important;
+      background-color: #ffffff;
+    }
+
+    .email_t h6 {
+      font-size: 1.1em;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .email_t article {
+      display: inline-block;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .email_t .grp-half {
+      padding-bottom: .5in;
+    }
+
+    .email_t .grp-1 {
+      padding-bottom: 1in;
+    }
+
+    .email_t .grp-2 {
+      padding-bottom: 2in;
+    }
+
+    .email_t .grp-3 {
+      padding-bottom: 3in;
+    }
+
+    .email_t .grp-4 {
+      padding-bottom: 4in;
+    }
+
+    .email_t .endzone-1 {
+      padding-top: 1in;
+    }
+
+    .email_t .endzone-2 {
+      padding-top: 2in;
+    }
+
+    .email_t .endzone-3 {
+      padding-top: 3in;
+    }
+
+    .email_t .endzone-4 {
+      padding-top: 4in;
+    }
+
+    .email_t .item-title {
+      text-transform: uppercase;
+    }
+
+    .email_t .bcode {
+      text-transform: uppercase;
+    }
+
+    .email_t .underline {
+      text-transform: underline;
+    }
+
+    .email_t .right {
+      text-align: right;
+    }
+  </style>
+  <title>Title</title>
+</head>
+
+<!-- Make the class for this div .slip_t .notice_t or .email_t -->
+<div class="" style="color: #000000">
+
+  <div id="notice_logo" style="font-family: 'Tahoma', 'Arial', sans-serif !important; text-align: left;">
+    <p style="color: #1f9bde; font-weight: 1000; font-size: 3em; line-height: 0;">
+      NE<span style="color: #0157b9">X</span>T
+    </p>
+    <p style="color: #838689; text-decoration: underline; font-style: italic;">
+      SEARCH CATALOG
+    </p>
+  </div>
+
+  <div id="greeting" class="grp-half">
+    <h2>
+      [% branch.branchname %] - **MESSAGETITLE**
+    </h2>
+  </div>
+
+  <div id="content" class="grp-half">
+    <p>
+      MESSAGE CONTENT
+    </p>
+  </div>
+
+  <!-- The footer will not print on .slip_t -->
+  <footer>
+
+    <p>Thank you,</p>
+    <p style="margin-top: 1.5em; text-decoration: underline;">
+      [% branch.branchname %]
+    </p>
+    <p style="margin-top: 1.5em;">
+      You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.
+    </p>
+    <p>
+      Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a>
+    </p>
+    [% IF borrower.email || borrower.emailpro || borrower.B_email %]
+    <p>
+      If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.
+    </p>
+    [% ELSE %]
+    <p>
+      If you wish to receive notices like this via e-mail, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.
+    </p>
+    <p>
+      .pgend.
+    </p>
+    [% END %]
+
+  </footer>
+</div>
