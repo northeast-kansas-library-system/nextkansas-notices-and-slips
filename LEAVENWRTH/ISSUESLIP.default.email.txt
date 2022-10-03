@@ -1,0 +1,186 @@
+LEAVENWRTH.ISSUESLIP.default.email.txt
+
+Name: Issue Slip
+
+-----
+
+Issue Slip
+
+-----
+
+Message content:
+
+----------
+
+[% USE ItemTypes %]
+[% USE KohaDates %]
+[% USE date %]
+[%- USE Price -%]
+[% totalValue = 0 %]
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>[% branch.branchname %] - Issue slip</title>
+  <!-- Notice code:  ISSUESLIP; Library: master; -->
+
+  <meta charset="UTF-8" />
+
+  <style>
+    @media print {
+      body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
+        width: 70mm;
+        margin: 0;
+        color: #000000 !important;
+        background-color: #ffffff;
+        font-weight: bold !important;
+      }
+    }
+
+    * {
+      font-family: Verdana, Arial, sans-serif;
+    }
+
+    body {
+      font-size: 10pt;
+    }
+
+    .slip p {
+      font-size: 10pt;
+    }
+
+    .slip h1 {
+      font-size: 1.6em;
+    }
+
+    .slip h2 {
+      font-size: 1.5em;
+    }
+
+    .slip h3 {
+      font-size: 1.4em !important;
+    }
+
+    .slip h4 {
+      font-size: 1.3em !important;
+    }
+
+    .slip h5 {
+      font-size: 1.2em;
+    }
+
+    .slip h6 {
+      font-size: 1.1em;
+    }
+    .center {
+      text-align: center;
+    }
+    .buffer{
+      padding-bottom: 12px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="slip">
+
+    <div id="slip_content">
+
+      <div id="slip_library_info">
+
+        <div id="slip_library_name"  class="buffer">
+          <h3>[% branch.branchname %]</h3>
+        </div>
+
+        <div id="slip_library_address" class="buffer">
+          <p>
+            [% branch.branchaddress1 %]<br />
+            [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
+            [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]<br />
+            Ph: [% branch.branchphone %]<br />
+            [% branch.branchemail %]
+          </p>
+        </div>
+
+        <div id="slip_library_catalog_url" class="buffer">
+          <p>Renew materials and place requests online: <br />
+            <b><u>nextkansas.org</u></b>
+          </p>
+        </div>
+
+      </div>
+
+      <div id="slip_borrower_info" class="buffer">
+
+        <div id="slip_borrower_cardnumber" class="center">
+          <p>
+            Last 6 digits of library<br />card number [% borrower.cardnumber.substr(-6) FILTER upper %]
+          </p>
+        </div>
+
+      </div>
+
+      [% IF checkouts.count %]
+      <div id="slip_cko" class="buffer">
+        <h4 class="buffer">Checked out:</h4>
+        [% FOREACH checkout IN borrower.checkouts %]
+        [% IF ! checkout.is_overdue %]
+        <p>
+          <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
+          Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]<br />
+          Barcode: [% checkout.item.barcode %]<br />
+          Date due: [% checkout.date_due | $KohaDates %]<br />
+          -----
+        </p>
+        [% END %]
+        [% END %]
+
+      </div>
+      [% END %]
+
+      [% IF overdues.count %]
+      <div id="slip_od" class="buffer">
+        <h4 class="buffer">Overdue:</h4>
+        [% FOREACH checkout IN borrower.checkouts %]
+        [% IF checkout.is_overdue %]
+        <p>
+          <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
+          Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]<br />
+          Barcode: [% checkout.item.barcode %]<br />
+          Date due: [% checkout.date_due | $KohaDates %]<br />
+          ----------
+        </p>
+        [% END %]
+        [% END %]
+      </div>
+      [% END %]
+
+      <div>
+        <p>
+          The City will begin repair of the Library’s main parking lot on Monday, August 22. The main entrance to the Library will be closed during parts of the project. The door near the corner of 4th and Spruce will be open when the main entrance is inaccessible.<br /><br />
+        </p>
+        <p>
+          Please call the Library <strong><ins>([% branch.branchphone %])</ins></strong> or check our website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a> in advance of your visit to confirm which entrance is open.<br /><br />
+        </p>
+      </div>
+
+      <div id="checkout_count_all" class="center buffer">
+        <p>Total items<br />checked out: [% borrower.checkouts.count %]</p>
+      </div>
+
+      <div id="slip_datestamp" class="center">
+        <h4>This receipt printed on:<br />[% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]</h4>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+

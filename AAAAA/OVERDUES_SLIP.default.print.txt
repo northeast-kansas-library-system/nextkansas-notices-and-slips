@@ -12,153 +12,155 @@ Message content:
 
 ----------
 
+[% USE ItemTypes %]
+[% USE KohaDates %]
+[% USE date %]
+
 <html>
 
-  <head>
+<head>
+  <title>[% branch.branchname %] - Overdues slip</title>
+  <!-- Notice code:  OVERDUES_SLIP; Library: All libraries; -->
 
-    <style>
+  <meta charset="UTF-8" />
 
-      /* @media print for slip - remove comments to activate */
-      @media print {
-        body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
-          width: 2.75in;
-          margin: 0;
-          color: #000000 !important;
-          background-color: #ffffff;
-          font-family: 'Arial Black', 'Arial', sans-serif !important;
-        }
+  <style>
+    @media print {
+      @page {
+        size: 8.5in 11in;
       }
 
-
-      /* @media print for notices and e-mails - remove comments to activate */
-      /*
-      @media print {
-
-        body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
-        color: #000000 !important;
-        background-color: #ffffff;
-        font-family: 'Arial Black', 'Arial', sans-serif !important;
-
-        @page {
-          size: 8.5in 11in;
-          margin: .75in
-        }
-       */
-
-
-
-      .slip {
-
-        * {
-          font-family: 'Arial Black', 'Arial', sans-serif !important;
-        }
-
-        body {
-          font-size: 10pt;
-        }
-
-        p {
-          font-size: 10pt;
-        }
-
-        h1 {
-          font-size: 1.8em;
-        }
-
-        h2 {
-          font-size: 1.6em;
-        }
-
-        h3 {
-          font-size: 1.4em !important;
-        }
-
-        h4 {
-          font-size: 1.3em !important;
-        }
-
-        h5 {
-          font-size: 1.2em;
-        }
-
-        h6 {
-          font-size: 1.1em;
-        }
-
-        .grp {
-          padding-bottom: .5in;
-        }
-
-        .pgend {
-          padding-top: 4in;
-        }
-
-        .title, .barcode {
-          text-transform: uppercase;
-        }
-
-        article {
-          display:inline-block
-        }
-
-        .right {
-          float:right
-        }
-
+      .notprint {
+        display: none;
       }
+    }
 
-      .notice {
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      margin: .75in;
+    }
 
-      }
+    body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
+      color: #000000 !important;
+      background-color: #ffffff;
+    }
 
-      .email {
+    .notice p {
+      font-size: 12pt;
+      color: #000000;
+    }
 
-      }
+    .notice h1 {
+      font-size: 1.6em;
+      color: #000000;
+    }
 
-    </style>
+    .notice h2 {
+      font-size: 1.5em;
+      color: #000000;
+    }
 
-    <title>Title</title>
-  </head>
+    .notice h3 {
+      font-size: 1.4em !important;
+      color: #000000;
+    }
 
-  <body>
+    .notice h4 {
+      font-size: 1.3em !important;
+      color: #000000;
+    }
 
-    <div class="slip">
-      <div id="sample">
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
-        <p>Paragraph text - plain.</p>
-        <p class="grp">Paragraph text - group.</p>
-        <p class="">Paragraph text - </p>
-        <ul>
-          <li>A</li>
-          <li>B</li>
-          <li>C</li>
-          <li>
-            <ul>
-              <li>Nested</li>
-            </ul>
-          </li>
-        </ul>
-        <ol>
-          <li>One</li>
-          <li>Two</li>
-          <li>Three</li>
-          <li>Four</li>
-        </ol>
-        <p class="pgend">Paragraph text - page end.</p>
+    .notice h5 {
+      font-size: 1.2em;
+      color: #000000;
+    }
+
+    .notice h6 {
+      font-size: 1.1em;
+      color: #000000;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .buffer {
+      padding-bottom: 12px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="notice">
+
+    <div id="notice_content">
+
+      <div id="return_address">
+        <p>
+          [% branch.branchname %]<br />
+          [% branch.branchaddress1 %]<br />
+          [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
+          [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+        </p>
       </div>
+
+
+      <div id="borrower_address" style="margin-top: .75in; padding-left: .5in">
+        <p>[% borrower.firstname %] [% borrower.surname %]<br />
+          [% borrower.address %]<br />
+          [% IF borrower.address2 %][% borrower.address2 %]<br />[% END %]
+          [% borrower.city %], [% borrower.state %] [% borrower.zipcode %]
+        </p>
+      </div>
+
+      <div id="message_body" style="margin-top: .75in;" class="dblspace">
+        <p>Overdues notice - <<today>></p>
+
+        <p style="margin-top: 2em;">[% borrower.firstname %] [% borrower.surname %]:</p>
+
+        <p style="margin-top: 2em;">The following items are overdue:</p>
+
+        <ol>[% FOREACH overdue IN overdues %] [%~ SET item = overdue.item %] [%~ SET biblio = overdue.item.biblio %]
+          <li>
+            Title: [% biblio.title FILTER upper %][% IF biblio.subtitle %] : [% biblio.subtitle FILTER upper %][% END %]
+            [% IF biblio.author %] / Author: [% biblio.author %]<br />[% END %]
+            [% IF overdue.item.itemcallnumber %]Call number: [% overdue.item.itemcallnumber %] / [% END %]
+            Item type: [% ItemTypes.GetDescription(overdue.item.itype) %] / Barcode: [% overdue.item.barcode %]<br />
+            Due date: [% overdue.date_due | $KohaDates %] / Originally checked out on: [% overdue.issuedate | $KohaDates %]<br />
+            ==========
+          </li>
+          [% END %]</ol>
+
+        <p>This is a friendly reminder that the item(s) that you checked out are now overdue.  We request that you return them to the library as soon as you are able.  Just to let you know, if your items are not returned:</p>
+        <ul>
+          <li>After 35 days, your account will be automatically blocked</li>
+          <li>After 45 days, you will be charged the replacement cost of the item</li>
+        </ul> 
+        <p>If you have already returned these materials or if you feel that this notice is in error, please contact [% branch.branchname %] at [% branch.branchphone %] as soon as possible.</p>
+        <p>[% IF borrower.email || borrower.emailpro || borrower.B_email %][% ELSE %]<p>If you would prefer to receive notices such as this one via e-mail, please contact your local library.[% END %]</p>
+      </div>
+
     </div>
 
-    <div class="notice">
-    </div>
+    <footer style="margin-top: 3em;">
 
-    <div class="email">
-    </div>
+      <p>Thank you,</p>
+      <p style="margin-top: 1.5em; text-decoration: underline;">
+        [% branch.branchname %]
+      </p>
+      <p style="margin-top: 1.5em;">You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
+      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+      [% IF borrower.email || borrower.emailpro || borrower.B_email %]
+      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+      [% ELSE %]
+      [% END %]
+    </footer>
 
-  </body>
+  </div>
 
+</body>
+
+</html>
 

@@ -12,153 +12,421 @@ Message content:
 
 ----------
 
-[% USE ItemTypes %]
-[% USE KohaDates %]
-[% USE date %]
-
-<html>
-
 <head>
-  <title>[% branch.branchname %] - lost items notice</title>
-  <!-- Notice code:  ODUE3; Library: All libraries; -->
 
-  <meta charset="UTF-8" />
+  <!-- Notice code:  ACCEPTED; Library: All; -->
+  <title>Purchase suggestion accepted</title>
+
+  [% USE Branches %]
+  [% USE date %]
+  [% USE ItemTypes %]
+  [% USE KohaDates %]
+  [% manip=date.manip %]
+  [% USE Price %]
+  [% totalValue=0 %]
 
   <style>
+
+    /* Slip */
+    /* @media print for slip */
     @media print {
-      @page {
-        size: 8.5in 11in;
-        margin: .75in
+      .slip {
+        width: 2.75in;
+        margin: 0;
+        color: #000000 !important;
+        background-color: #ffffff;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+      }
+    }
+
+    .slip {
+      width: 2.75in;
+      margin: 0;
+      font-family: 'Arial Black', 'Arial', sans-serif !important;
+      font-size: 10pt;
+    }
+
+    .slip footer {
+      display: none;
+    }
+
+    .slip p {
+      font-size: 10pt;
+    }
+
+    .slip h1 {
+      font-size: 1.8em;
+    }
+
+    .slip h2 {
+      font-size: 1.6em;
+    }
+
+    .slip h3 {
+      font-size: 1.4em !important;
+    }
+
+    .slip h4 {
+      font-size: 1.3em !important;
+    }
+
+    .slip h5 {
+      font-size: 1.2em !important;
+    }
+
+    .slip h6 {
+      font-size: 1.1em;
+    }
+
+    .slip article {
+      display: inline-block
+    }
+
+    .slip .grp-half {
+      padding-bottom: .5in;
+    }
+
+    .slip .grp-1 {
+      padding-bottom: 1in;
+    }
+
+    .slip .grp-2 {
+      padding-bottom: 2in;
+    }
+
+    .slip .grp-3 {
+      padding-bottom: 3in;
+    }
+
+    .slip .grp-4 {
+      padding-bottom: 4in;
+    }
+
+    .slip .endzone-1 {
+      padding-top: 1in;
+    }
+
+    .slip .endzone-2 {
+      padding-top: 2in;
+    }
+
+    .slip .endzone-3 {
+      padding-top: 3in;
+    }
+
+    .slip .endzone-4 {
+      padding-top: 4in;
+    }
+
+    .slip .item-title {
+      text-transform: uppercase;
+    }
+
+    .slip .bcode {
+      text-transform: uppercase;
+    }
+
+    .slip .underline {
+      text-transform: underline;
+    }
+
+    .slip .right {
+      text-align: right;
+    }
+
+    /* notices */
+    /* notices */
+    /* @media print for notices */
+    @media print {
+      .notices {
+        width: 7in;
+        margin: 0in;
+        color: #000000 !important;
+        background-color: #ffffff;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
+      }
+    }
+
+    .notices {
+      width: 7in;
+      margin: .75in;
+      font-family: 'Arial Black', 'Arial', sans-serif !important;
+      font-size: 10pt;
+    }
+
+    .notices p {
+      font-size: 10pt;
+    }
+
+    .notices h1 {
+      font-size: 1.8em;
+    }
+
+    .notices h2 {
+      font-size: 1.6em;
+    }
+
+    .notices h3 {
+      font-size: 1.4em !important;
+    }
+
+    .notices h4 {
+      font-size: 1.3em !important;
+    }
+
+    .notices h5 {
+      font-size: 1.2em !important;
+    }
+
+    .notices h6 {
+      font-size: 1.1em;
+    }
+
+    .notices article {
+      display: inline-block
+    }
+
+    .notices .grp-half {
+      padding-bottom: .5in;
+    }
+
+    .notices .grp-1 {
+      padding-bottom: 1in;
+    }
+
+    .notices .grp-2 {
+      padding-bottom: 2in;
+    }
+
+    .notices .grp-3 {
+      padding-bottom: 3in;
+    }
+
+    .notices .grp-4 {
+      padding-bottom: 4in;
+    }
+
+    .notices .endzone-1 {
+      padding-top: 1in;
+    }
+
+    .notices .endzone-2 {
+      padding-top: 2in;
+    }
+
+    .notices .endzone-3 {
+      padding-top: 3in;
+    }
+
+    .notices .endzone-4 {
+      padding-top: 4in;
+    }
+
+    .notices .item-title {
+      text-transform: uppercase;
+    }
+
+    .notices .bcode {
+      text-transform: uppercase;
+    }
+
+    .notices .underline {
+      text-transform: underline;
+    }
+
+    .notices .right {
+      text-align: right;
+    }
+
+    /* emails */
+    /* @media print for emails */
+    @media print {
+      .emails {
+        width: 7in;
+        margin: .75in;
+        color: #000000;
+        background-color: #ffffff;
+        font-family: 'Arial Black', 'Arial', sans-serif !important;
       }
 
-      .notprint {
+      img {
         display: none;
       }
     }
 
-    body {
-      font: 12pt Georgia, "Times New Roman", Times, serif;
+    .emails {
+      font-family: 'Tahoma', 'Arial', sans-serif !important;
+      font-size: 12pt;
+      color: #000000;
+      background-color: #ffffff;
     }
 
-    body, p, h1, h2, h3, h4, h5, h6, a, td, .credit {
+    .emails p {
+      font-size: 12pt;
+    }
+
+    .emails h1 {
+      font-size: 1.8em;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .emails h2 {
+      font-size: 1.6em;
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    .emails h3 {
+      font-size: 1.4em;
       color: #000000 !important;
       background-color: #ffffff;
     }
 
-    .notice p {
-      font-size: 12pt;
-      color: #000000;
+    .emails h4 {
+      font-size: 1.3em;
+      color: #000000 !important;
+      background-color: #ffffff;
     }
 
-    .notice h1 {
-      font-size: 1.6em;
-      color: #000000;
-    }
-
-    .notice h2 {
-      font-size: 1.5em;
-      color: #000000;
-    }
-
-    .notice h3 {
-      font-size: 1.4em !important;
-      color: #000000;
-    }
-
-    .notice h4 {
-      font-size: 1.3em !important;
-      color: #000000;
-    }
-
-    .notice h5 {
+    .emails h5 {
       font-size: 1.2em;
-      color: #000000;
+      color: #000000 !important;
+      background-color: #ffffff;
     }
 
-    .notice h6 {
+    .emails h6 {
       font-size: 1.1em;
       color: #000000;
+      background-color: #ffffff;
     }
 
-    .center {
-      text-align: center;
+    .emails article {
+      display: inline-block;
+      color: #000000;
+      background-color: #ffffff;
     }
 
-    .buffer {
-      padding-bottom: 12px;
+    .emails .grp-half {
+      padding-bottom: .5in;
+    }
+
+    .emails .grp-1 {
+      padding-bottom: 1in;
+    }
+
+    .emails .grp-2 {
+      padding-bottom: 2in;
+    }
+
+    .emails .grp-3 {
+      padding-bottom: 3in;
+    }
+
+    .emails .grp-4 {
+      padding-bottom: 4in;
+    }
+
+    .emails .endzone-1 {
+      padding-top: 1in;
+    }
+
+    .emails .endzone-2 {
+      padding-top: 2in;
+    }
+
+    .emails .endzone-3 {
+      padding-top: 3in;
+    }
+
+    .emails .endzone-4 {
+      padding-top: 4in;
+    }
+
+    .emails .item-title {
+      text-transform: uppercase;
+    }
+
+    .emails .bcode {
+      text-transform: uppercase;
+    }
+
+    .emails .underline {
+      text-transform: underline;
+    }
+
+    .emails .right {
+      text-align: right;
     }
   </style>
-
+  <title>Title</title>
 </head>
 
-<body>
+<!-- Make the class for this div .slips .notices or .emails -->
+<div class="emails" style="color: #000000">
 
-  <div class="notice">
-
-    <div id="notice_content">
-
-      <div id="return_address">
-        <p>
-          [% branch.branchname %]<br />
-          [% branch.branchaddress1 %]<br />
-          [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
-          [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
-        </p>
-      </div>
-
-
-      <div id="borrower_address" style="margin-top: .75in; padding-left: .5in">
-        <p>[% borrower.firstname %] [% borrower.surname %]<br />
-          [% borrower.address %]<br />
-          [% IF borrower.address2 %][% borrower.address2 %]<br />[% END %]
-          [% borrower.city %], [% borrower.state %] [% borrower.zipcode %]
-        </p>
-      </div>
-
-      <div id="message_body" style="margin-top: .75in;" class="dblspace">
-        <p>Lost Items Notice - <<today>></p>
-
-        <p style="margin-top: 2em;">[% borrower.firstname %] [% borrower.surname %]:</p>
-
-        <p style="margin-top: 2em;">The following items have been declared "Lost:"</p>
-
-        <ol>[% FOREACH overdue IN overdues %] [%~ SET item = overdue.item %] [%~ SET biblio = overdue.item.biblio %]
-          <li>
-            [% biblio.title FILTER upper %][% IF biblio.subtitle %] : [% biblio.subtitle FILTER upper %][% END %]<br />
-            [% IF biblio.author %]Author: [% biblio.author %]<br />[% END %]
-            [% IF overdue.item.itemcallnumber %]Call number: [% overdue.item.itemcallnumber %]<br />[% END %]
-            Barcode: [% overdue.item.barcode %] / Item type: [% ItemTypes.GetDescription(overdue.item.itype) %]<br />
-            Due date: [% overdue.date_due | $KohaDates %] / Originally checked out on: [% overdue.issuedate | $KohaDates %]<br />
-            ==========
-          </li>
-          [% END %]</ol>
-
-        <p>These library items have been declared "Lost" because they have been overdue for more than 45 days.  These items were checked out to your library card with the last 6 digits <strong>[% borrower.cardnumber.substr(-6) FILTER upper %]</strong> at the time they were declared "Lost."</p>
-        <p>Your account has been suspended and you are being billed for the replacement of these items. </p>
-        <p>If you have already returned these materials or if you feel that this notice is in error, please contact [% branch.branchname %] at [% branch.branchphone %] as soon as possible.</p>
-        <p>[% IF borrower.email || borrower.emailpro || borrower.B_email %][% ELSE %]<p>If you would prefer to receive notices such as this one via e-mail, please contact your local library.[% END %]</p>
-      </div>
-
-    </div>
-
-    <footer style="margin-top: 3em;">
-
-      <p>Thank you,</p>
-      <p style="margin-top: 1.5em; text-decoration: underline;">
-        [% branch.branchname %]
-      </p>
-      <p style="margin-top: 1.5em;">You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
-      <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
-      [% IF borrower.email || borrower.emailpro || borrower.B_email %]
-      <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
-      [% ELSE %]
-      <p style="margin-top: 1in;">.pgend</p>
-      [% END %]
-    </footer>
-
+  <div id="notice_logo" style="font-family: 'Tahoma', 'Arial', sans-serif !important; text-align: left;">
+    
+    <p style="color: #1f9bde; font-weight: 1000; font-size: 3em; line-height: 0;">
+      NE<span style="color: #0157b9">X</span>T
+    </p>
+    <p style="color: #838689; text-decoration: underline; font-style: italic;">
+      SEARCH CATALOG
+    </p>
+    
   </div>
 
-</body>
+  <div id="greeting" class="grp-half">
+    
+    <h2>
+      [% branch.branchname %] - Purchase suggestion accepted
+    </h2>
+    
+  </div>
 
-</html>
+  <div id="content" class="grp-half">
+    <p>
+      You have suggested that the library acquire [% suggestions.title %][% IF suggestions.author %] by [% suggestions.author %][% ELSE %][% END %].
+    </p>
+    <p>
+      This item was requested for the library member with the card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].<br /> 
+    </p>
+    <p>
+      The library has reviewed your suggestion. The item will be ordered as soon as possible. You will be contacted by the library when the item is available.
+    </p>
+    <p>
+      If you have any questions about this suggestion, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.
+    </p>
+    
+  </div>
+
+  <!-- The footer will not display on .slip -->
+  <footer>
+
+    <p>Thank you,</p>
+    <p style="margin-top: 1.5em; text-decoration: underline;">
+      [% branch.branchname %]
+    </p>
+    <p style="margin-top: 1.5em;">
+      You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.
+    </p>
+    <p>
+      Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a>
+    </p>
+    [% IF borrower.email || borrower.emailpro || borrower.B_email %]
+    <p>
+      If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.
+    </p>
+    [% ELSE %]
+    <p>
+      If you wish to receive notices like this via e-mail, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.
+    </p>
+    <p>
+      .pgend.
+    </p>
+    [% END %]
+
+  </footer>
+</div>
+
 

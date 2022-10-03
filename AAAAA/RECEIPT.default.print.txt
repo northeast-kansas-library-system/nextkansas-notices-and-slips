@@ -12,7 +12,7 @@ Message content:
 
 ----------
 
-[% PROCESS "accounts.inc" %]
+[% USE KohaDates %][% USE Branches %][% USE Price %][% PROCESS "accounts.inc" %]
 <table>
 [% IF ( LibraryName ) %]
  <tr>
@@ -23,24 +23,24 @@ Message content:
 [% END %]
  <tr>
     <th colspan="2" class="centerednames">
-        <h2>[% Branches.GetName( payment.branchcode ) | html %]</h2>
+        <h2>[% Branches.GetName( credit.branchcode ) | html %]</h2>
     </th>
  </tr>
 <tr>
     <th colspan="2" class="centerednames">
-        <h3>[% payment.date | $KohaDates %]</h3>
+        <h3>[% credit.date | $KohaDates %]</h3>
 </tr>
 <tr>
   <td>Transaction ID: </td>
-  <td>[% payment.accountlines_id %]</td>
+  <td>[% credit.accountlines_id %]</td>
 </tr>
 <tr>
   <td>Operator ID: </td>
-  <td>[% payment.manager_id %]</td>
+  <td>[% credit.manager_id %]</td>
 </tr>
 <tr>
   <td>Payment type: </td>
-  <td>[% payment.payment_type %]</td>
+  <td>[% credit.payment_type %]</td>
 </tr>
  <tr></tr>
  <tr>
@@ -54,17 +54,17 @@ Message content:
     <th>Amount</th>
   </tr>
 
-  [% FOREACH offset IN offsets %]
+  [% FOREACH debit IN credit.debits %]
     <tr>
-        <td>[% PROCESS account_type_description account=offset.debit %]</td>
-        <td>[% offset.amount * -1 | $Price %]</td>
+        <td>[% PROCESS account_type_description account=debit %]</td>
+        <td>[% debit.amount * -1 | $Price %]</td>
     </tr>
   [% END %]
 
 <tfoot>
   <tr class="highlight">
     <td>Total: </td>
-    <td>[% payment.amount * -1| $Price %]</td>
+    <td>[% credit.amount * -1| $Price %]</td>
   </tr>
   <tr>
     <td>Tendered: </td>

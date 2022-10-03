@@ -23,7 +23,6 @@ Message content:
   [% totalValue=0 %] 
 
   <style>
-    /* Styles the Next Search Catalog logo */
 
     /* Slip */
     /* @media print for slip */
@@ -355,9 +354,9 @@ Message content:
   </style>
   <title>Title</title>
 </head>
-<div id="logo" style="font-family: 'Tahoma', 'Arial', sans-serif !important; text-align: left;">
-  <h1 style="color: #1f9bde; font-weight: 1000; padding-top: 5px; line-height: .25em; font-size: 5em;">NE<span style="color: #0157b9">X</span>T</h1>
-  <h3 style="color: #838689; text-decoration: underline; padding-left: 5px; font-style: italic;">SEARCH CATALOG</h3>
+<div id="notice_logo" style="font-family: 'Tahoma', 'Arial', sans-serif !important; text-align: left;">
+  <h1 style="color: #1f9bde; font-weight: 1000; padding-top: 5px; line-height: .25em; font-size: 3em;">NE<span style="color: #0157b9">X</span>T</h1>
+  <h5 style="color: #838689; text-decoration: underline;font-style: italic;">SEARCH CATALOG</h5>
 </div>
 <div class="emails" style="color: #000000">
   <div id="greeting" class="grp-half">

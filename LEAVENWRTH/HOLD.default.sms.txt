@@ -1,0 +1,20 @@
+LEAVENWRTH.HOLD.default.sms.txt
+
+Name: Hold Available for Pickup (default)
+
+-----
+
+Available for pickup at <<branches.branchname>>
+
+-----
+
+Message content:
+
+----------
+
+(Please phone [% branch.branchphone %] if you need to respond to this text)
+
+A library item you requested is available to pickup at [% branch.branchname %]
+----
+----
+

@@ -12,7 +12,6 @@ Message content:
 
 ----------
 
-
 [% USE Price %]
 [% PROCESS 'accounts.inc' %]
 <table>

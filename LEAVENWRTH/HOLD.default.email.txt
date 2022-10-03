@@ -1,4 +1,4 @@
-AAAAA.HOLD.default.email.txt
+LEAVENWRTH.HOLD.default.email.txt
 
 Name: Hold Available for Pickup (default)
 
@@ -368,6 +368,14 @@ Message content:
     <p>The details are:</p>
     <p> Title: [% biblio.title %]<br /> [% IF biblio.author %]Author: [% biblio.author %]<br />[% END %] [% IF item.itemcallnumber %]Call number: [% item.itemcallnumber %]<br />[% END %] BC: [% item.barcode %] </p>
     <p>The item will be available until [% hold.expirationdate %].</p>
+  </div>
+  <div>
+    <p>
+      The City will begin repair of the Library’s main parking lot on Monday, August 22. The main entrance to the Library will be closed during parts of the project. The door near the corner of 4th and Spruce will be open when the main entrance is inaccessible.
+    </p>
+    <p>
+      Please call the Library <strong><ins>([% branch.branchphone %])</ins></strong> or check our website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a> in advance of your visit to confirm which entrance is open.
+    </p>
   </div>
   <footer>
     <p>Thank you,</p>

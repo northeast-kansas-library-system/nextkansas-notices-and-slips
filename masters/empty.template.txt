@@ -74,6 +74,10 @@
       display: inline-block
     }
 
+    .slip_t .grp-quarter {
+      padding-bottom: .25in;
+    }
+
     .slip_t .grp-half {
       padding-bottom: .5in;
     }
@@ -177,6 +181,9 @@
       display: inline-block
     }
 
+    .notice_t .grp-quarter {
+      padding-bottom: .25in;
+    }
     .notice_t .grp-half {
       padding-bottom: .5in;
     }
@@ -298,6 +305,10 @@
       background-color: #ffffff;
     }
 
+    .email_t .grp-quarter {
+      padding-bottom: .25in;
+    }
+
     .email_t .grp-half {
       padding-bottom: .5in;
     }
@@ -350,7 +361,7 @@
       text-align: right;
     }
   </style>
-  <title>Title</title>
+
 </head>
 
 <!-- Make the class for this div .slip_t .notice_t or .email_t -->
