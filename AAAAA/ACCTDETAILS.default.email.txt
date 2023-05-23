@@ -1,4 +1,4 @@
-AAAAA.ACCTDETAILS.default.email.txt
+
 
 Name: Account Details Template - DEFAULT
 

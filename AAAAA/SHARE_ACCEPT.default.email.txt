@@ -1,4 +1,4 @@
-AAAAA.SHARE_ACCEPT.default.email.txt
+
 
 Name: Notification about an accepted share
 

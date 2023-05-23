@@ -1,0 +1,22 @@
+
+
+Name: Recalled item awaiting pickup
+
+-----
+
+Recalled item awaiting pickup
+
+-----
+
+Message content:
+
+----------
+
+Date: <<today>>
+
+<<borrowers.firstname>> <<borrowers.surname>>,
+
+A recall that you requested on the following item: <<biblio.title>> / <<biblio.author>> (<<items.barcode>>) is now ready for you to pick up at <<recalls.branchcode>>. Please pick up your item by <<recalls.expirationdate>>.
+
+Thank you!
+

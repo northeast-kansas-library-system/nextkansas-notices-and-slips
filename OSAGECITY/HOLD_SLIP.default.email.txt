@@ -1,4 +1,4 @@
-OSAGECITY.HOLD_SLIP.default.email.txt
+
 
 Name: OsageCity Hold Transfer (Reserve) Slip
 

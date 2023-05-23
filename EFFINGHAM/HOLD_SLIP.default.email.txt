@@ -1,4 +1,4 @@
-EFFINGHAM.HOLD_SLIP.default.email.txt
+
 
 Name: Effingham Hold Transfer (Reserve) Slip
 

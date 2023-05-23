@@ -1,4 +1,4 @@
-EUDORA.HOLD_SLIP.default.email.txt
+
 
 Name: Eudora Hold Transfer (Reserve) Slip
 

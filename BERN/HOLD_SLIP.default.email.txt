@@ -1,4 +1,4 @@
-BERN.HOLD_SLIP.default.email.txt
+
 
 Name: Bern Hold Transfer (Reserve) Slip
 

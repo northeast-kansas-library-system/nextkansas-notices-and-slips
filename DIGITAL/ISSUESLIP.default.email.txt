@@ -1,0 +1,173 @@
+
+
+Name: Issue Slip
+
+-----
+
+Issue Slip
+
+-----
+
+Message content:
+
+----------
+
+<!-- Issue slip - default for all libraries -->
+
+<!-- This template relys on the Koha system preference "SlipCSS" retrieving a .css file from https://northeast-kansas-library-system.github.io/nextimages/css/n_s_template.css -->
+
+<!-- All IDs and classes used in this document are defined in n_s_template.css -->
+
+<!-- n_s_template.css is also used for the system preference "NoticeCSS" -->
+
+<!-- The following batch of "[%  %]" directives set up template toolkit controls for Koha notices and slips -->
+
+[% USE ItemTypes %]
+
+[% USE KohaDates %]
+
+[% USE date %]
+
+[%- USE Price -%]
+
+[% totalValue=0 %]
+
+<div title="[% branch.branchname %] - Issue slip">
+
+  <div class="n_s_receipt">
+
+    <div id="content">
+
+      <div id="library_info" class="n_s_receipt_section">
+
+        <div id="library_name">
+          <h3>
+            [% branch.branchname %]
+          </h3>
+        </div>
+
+        <div id="library_address">
+          <p> 
+            [% branch.branchaddress1 %]
+            <br /> 
+            [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
+            [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+            <br /> 
+            Ph: [% branch.branchphone %]
+            <br /> 
+            [% branch.branchemail %] 
+          </p>
+        </div>
+
+        <div id="library_catalog_url">
+          <p>
+            Renew or request materials online: 
+            <br /> 
+            <b>
+              <u>
+                nextkansas.org
+              </u>
+            </b> 
+          </p>
+        </div>
+
+      </div>
+
+      <div id="borrower_info" class="n_s_receipt_section">
+        
+        <div id="borrower_cardnumber">
+          <p>
+            <br />
+            Last 6 digits of library
+            <br />
+            card number [% borrower.cardnumber.substr(-6) FILTER upper %]
+          </p>
+        </div>
+
+      </div>
+      
+      [% IF checkouts.count %] 
+      
+        <div id="cko" class="n_s_receipt_section">
+          <h4>Checked out ([% checkouts.count %]):</h4> 
+          
+          [% FOREACH checkout IN borrower.checkouts %] 
+          
+          [% IF ! checkout.is_overdue %]
+
+          <p> 
+            <ins>
+              [% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]
+            </ins>
+            <br /> 
+            Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]
+            <br /> 
+            Barcode: [% checkout.item.barcode %]
+            <br />
+            Date due: [% checkout.date_due | $KohaDates %]
+            <br />
+            -------------------- 
+          </p>
+            
+          [% END %] 
+          
+          [% END %]
+
+        </div>
+      
+      [% END %] 
+      
+      [% IF overdues.count %] 
+      
+      <div id="od" class="n_s_receipt_section">
+        <h4>Overdue ([% overdues.count %]):</h4> 
+
+        [% FOREACH checkout IN borrower.checkouts %] 
+
+          [% IF checkout.is_overdue %] 
+
+          <p>
+            <ins>
+              [% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]
+            </ins>
+            <br /> 
+            Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]
+            <br /> 
+            Barcode: [% checkout.item.barcode %]
+            <br />
+            Date due: [% checkout.date_due | $KohaDates %]
+            <br /> 
+            --------------------
+          </p>
+
+          [% END %] 
+        
+        [% END %]
+
+      </div>
+      
+      [% END %] 
+
+      <div id="checkout_count_all" class="n_s_receipt_section">
+        <h3>
+          Total items: [% borrower.checkouts.count %]
+        </h3>
+        <p>
+          --------------------
+        </p>
+      </div>
+
+      <div id="datestamp" class="n_s_receipt_section">
+        <h6>
+          This receipt printed on:
+          <br />
+          [% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]
+        </h6>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+

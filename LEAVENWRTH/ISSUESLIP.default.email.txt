@@ -1,4 +1,4 @@
-LEAVENWRTH.ISSUESLIP.default.email.txt
+
 
 Name: Issue Slip
 
@@ -24,7 +24,7 @@ Message content:
 
 <head>
   <title>[% branch.branchname %] - Issue slip</title>
-  <!-- Notice code:  ISSUESLIP; Library: master; -->
+  <!-- Notice code:  ISSUESLIP; Library: LEAVENWRTH; -->
 
   <meta charset="UTF-8" />
 
@@ -159,13 +159,8 @@ Message content:
       </div>
       [% END %]
 
-      <div>
-        <p>
-          The City will begin repair of the Library’s main parking lot on Monday, August 22. The main entrance to the Library will be closed during parts of the project. The door near the corner of 4th and Spruce will be open when the main entrance is inaccessible.<br /><br />
-        </p>
-        <p>
-          Please call the Library <strong><ins>([% branch.branchphone %])</ins></strong> or check our website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a> in advance of your visit to confirm which entrance is open.<br /><br />
-        </p>
+      <div id="news">
+        <!-- Put news content here in HTML format -->
       </div>
 
       <div id="checkout_count_all" class="center buffer">

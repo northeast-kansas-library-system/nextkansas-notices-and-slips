@@ -1,4 +1,4 @@
-CORNING.HOLD_SLIP.default.email.txt
+
 
 Name: Corning Hold Transfer (Reserve) Slip
 

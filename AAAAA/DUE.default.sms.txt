@@ -1,10 +1,10 @@
-AAAAA.DUE.default.sms.txt
+
 
 Name: Item Due Reminder
 
 -----
 
-<<branches.branchname>> item due
+[% branch.branchname %]
 
 -----
 
@@ -12,7 +12,7 @@ Message content:
 
 ----------
 
-(Please phone [% branch.branchphone %] if you need to respond to this text)
+(Please phone [% branch.branchphone %] to respond)
 
 You have a library item due today at [% branch.branchname %]
 ----

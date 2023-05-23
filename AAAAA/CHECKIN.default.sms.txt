@@ -1,10 +1,10 @@
-AAAAA.CHECKIN.default.sms.txt
+
 
 Name: Check-in receipt email (digest)
 
 -----
 
-<<branches.branchname>> check-in receipt
+[% branch.branchname %]
 
 -----
 
@@ -12,9 +12,9 @@ Message content:
 
 ----------
 
-(Please phone [% branch.branchphone %] if you need to respond to this text)
+(Please phone [% branch.branchphone %] if you need to respond)
 
-You checked in items at [% branch.branchname %] today
+You checked in items at [% branch.branchname %] 
 ----
 ----
 

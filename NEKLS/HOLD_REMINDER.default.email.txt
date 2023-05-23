@@ -1,4 +1,4 @@
-NEKLS.HOLD_REMINDER.default.email.txt
+
 
 Name: Waiting hold reminder
 

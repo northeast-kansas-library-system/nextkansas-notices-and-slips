@@ -1,4 +1,4 @@
-AAAAA.CHECKOUT.default.email.txt
+
 
 Name: Check-out receipt (digest)
 

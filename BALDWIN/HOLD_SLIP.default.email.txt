@@ -1,4 +1,4 @@
-BALDWIN.HOLD_SLIP.default.email.txt
+
 
 Name: Baldwin Hold Transfer (Reserve) Slip
 

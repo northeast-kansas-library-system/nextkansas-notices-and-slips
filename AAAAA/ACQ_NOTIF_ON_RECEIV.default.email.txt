@@ -1,4 +1,4 @@
-AAAAA.ACQ_NOTIF_ON_RECEIV.default.email.txt
+
 
 Name: Notification on receiving
 

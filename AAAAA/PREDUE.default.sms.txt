@@ -1,10 +1,10 @@
-AAAAA.PREDUE.default.sms.txt
+
 
 Name: Advance Notice of Item Due
 
 -----
 
-<<branches.branchname>> item due soon
+[% branch.branchname %]
 
 -----
 
@@ -12,7 +12,7 @@ Message content:
 
 ----------
 
-(Please phone [% branch.branchphone %] if you need to respond to this text)
+(Please phone [% branch.branchphone %] to respond)
 
 You have an item due soon at [% branch.branchname %]
 ----

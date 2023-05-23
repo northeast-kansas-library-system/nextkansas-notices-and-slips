@@ -1,4 +1,4 @@
-AAAAA.TRANSFERSLIP.default.email.txt
+
 
 Name: Transfer Slip
 
@@ -15,7 +15,7 @@ Message content:
 <head>
 
   <!-- Notice code:  **MESSAGE_CODE**; Library: All; -->
-  <title>**MESSAGETITLE**</title>
+  <title>Transfer slip</title>
 
   [% USE Branches %]
   [% USE date %]
@@ -32,7 +32,6 @@ Message content:
   <!-- The different sections of the css are almost duplicates of each other which will allow fine-tuning in the future - my goal is to someday move all of this css into an external style sheet -->
 
   <style>
-
     /* Slip - things that print on a reciept printer */
     /* @media print for slip_t */
     @media print {
@@ -371,40 +370,39 @@ Message content:
 <div class="slip_t" style="color: #000000">
 
   <!-- Shipped to information -->
-    <div classs="grp-4">
-      <h1>
-        [% branch.branchnotes %]
-      </h1>
-    </div>
-    
-    <p>&nbsp;</p>
-    
-    <div classs="grp-2">
-      <p>Ship to:</p>
-      <p classs="grp-1">
-        <strong>
+  <div classs="grp-4">
+    <h1>
+      [% branch.branchnotes %]
+    </h1>
+  </div>
+
+  <p>&nbsp;</p>
+
+  <div classs="grp-2">
+    <p>Ship to:</p>
+    <p classs="grp-1">
+      <strong>
         [% branch.branchname %]<br />
         [% branch.branchaddress1 %]<br />
         [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
-        </strong>
-      </p>
-    </div>
-      
+      </strong>
+    </p>
+  </div>
 
-    <div classs="grp-2">
-      <h3>
-        [% biblio.title %]
-      </h3>
-      <p>
-        [% item.itemcallnumber %]
-      </p>
-      <p>
-        [% items.barcode %]
-      </p>
-      <!-- Shipped from information -->
-      <p>Shipped on: [% today %]</p>
-    </div>
 
+  <div classs="grp-2">
+    <h3>
+      [% biblio.title %]
+    </h3>
+    <p>
+      [% item.itemcallnumber %]
+    </p>
+    <p>
+      [% items.barcode %]
+    </p>
+    <!-- Shipped from information -->
+    <p>Shipped on: [% today %]</p>
+  </div>
 
 </div>
 

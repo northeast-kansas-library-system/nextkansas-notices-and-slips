@@ -1,4 +1,4 @@
-PHSMS.HOLD_SLIP.default.email.txt
+
 
 Name: PHSMS Hold Transfer (Reserve) Slip
 

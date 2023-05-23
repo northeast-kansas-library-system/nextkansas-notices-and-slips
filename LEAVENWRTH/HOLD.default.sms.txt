@@ -1,4 +1,4 @@
-LEAVENWRTH.HOLD.default.sms.txt
+
 
 Name: Hold Available for Pickup (default)
 

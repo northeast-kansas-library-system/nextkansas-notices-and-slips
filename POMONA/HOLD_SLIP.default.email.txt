@@ -1,4 +1,4 @@
-POMONA.HOLD_SLIP.default.email.txt
+
 
 Name: Pomona Hold Transfer (Reserve) Slip
 

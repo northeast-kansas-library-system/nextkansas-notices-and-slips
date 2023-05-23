@@ -1,0 +1,29 @@
+
+
+Name: Details of patron who recalled item
+
+-----
+
+Details of patron who recalled item
+
+-----
+
+Message content:
+
+----------
+
+Date: <<today>>
+
+Recall for pickup at <<branches.branchname>>
+<<borrowers.surname>>, <<borrowers.firstname>> (<<borrowers.cardnumber>>)
+<<borrowers.phone>>
+<<borrowers.streetnumber>> <<borrowers.address>>, <<borrowers.address2>>, <<borrowers.city>> <<borrowers.zipcode>>
+<<borrowers.email>>
+
+ITEM RECALLED
+<<biblio.title>> by <<biblio.author>>
+Barcode: <<items.barcode>>
+Callnumber: <<items.itemcallnumber>>
+Waiting since: <<recalls.waitingdate>>
+Notes: <<recalls.recallnotes>>
+

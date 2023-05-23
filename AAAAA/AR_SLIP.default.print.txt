@@ -1,4 +1,4 @@
-AAAAA.AR_SLIP.default.print.txt
+
 
 Name: Article Request - Print Slip
 
@@ -25,6 +25,7 @@ Author: <<article_requests.author>>
 Volume: <<article_requests.volume>>
 Issue: <<article_requests.issue>>
 Date: <<article_requests.date>>
+TOC: [% IF article_request.toc_request %]Yes[% ELSE %]No[% END %]
 Pages: <<article_requests.pages>>
 Chapters: <<article_requests.chapters>>
 Notes: <<article_requests.patron_notes>>

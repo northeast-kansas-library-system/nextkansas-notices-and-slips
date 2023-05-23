@@ -1,4 +1,4 @@
-AAAAA.CHECKIN.default.email.txt
+
 
 Name: Check-in receipt email (digest)
 

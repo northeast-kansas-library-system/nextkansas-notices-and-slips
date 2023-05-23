@@ -1,4 +1,4 @@
-AAAAA.PREDUEDGST.default.sms.txt
+
 
 Name: Advance Notice of Item Due (Digest)
 
@@ -12,7 +12,7 @@ Message content:
 
 ----------
 
-(Please phone [% branch.branchphone %] if you need to respond to this text)
+(Please phone [% branch.branchphone %] to respond)
 
 You have items due soon at [% branch.branchname %]
 ----

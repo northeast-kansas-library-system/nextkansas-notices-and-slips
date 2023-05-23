@@ -1,4 +1,4 @@
-AAAAA.RENEWAL.default.sms.txt
+
 
 Name: Renewal receipt (digest)
 

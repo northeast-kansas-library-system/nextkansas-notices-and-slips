@@ -1,4 +1,4 @@
-NEKLS.HOLD_SLIP.default.email.txt
+
 
 Name: NEKLS Hold Transfer (Reserve) Slip
 
@@ -12,119 +12,110 @@ Message content:
 
 ----------
 
-<!DOCTYPE html>
+<!-- Hold slip - default for all libraries -->
 
-<html>
+<!-- This template relys on the Koha system preference "SlipCSS" retrieving a .css file from https://northeast-kansas-library-system.github.io/nextimages/css/n_s_template.css -->
 
-  <head>
+<!-- All IDs and classes used in this document are defined in n_s_template.css -->
 
-    <script type="text/javascript">
-    //<![CDATA[
+<!-- n_s_template.css is also used for the system preference "NoticeCSS" -->
 
-      $(document).ready(function(){ 
+<!-- The following batch of "[%  %]" directives set up template toolkit controls for Koha notices and slips -->
 
-        $("#loc_NEKLS").hide();
-        $("#bor_NEKLS").parent().removeAttr('style')
+[%- USE Branches -%]
 
-      });
+[% USE ItemTypes %]
 
-    //]]>
-    </script>
+[% USE KohaDates %]
 
-    <style>
-      body {width: 275px;}
-      body{
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-left: 5px;
-}
-      article{display:inline-block}
-      .right{float:right}
-      .slip {font-size: 110%;}
-      .slip h1 {font-size: 200%; text-decoration: underline;}
-      .slip h2 {font-size: 150%; text-decoration: underline;}
-      .slip h3 {font-size: 130%; text-decoration: underline;}
-      .slip h4 {font-size: 120%; text-decoration: underline;}
-    </style>
+[% USE date %]
 
-    <title>Reserve Slip</title>
-  </head>
+[%- USE Price -%]
 
-  <body>
-    <div id="borrower" class="slip" style="display:none">
-      <div id="bor_<<branches.branchcode>>">
-        <h3 id="pudate" style="text-align:right"></h3>
+[% totalValue=0 %]
 
-        <script type="text/javascript">
-        //<![CDATA[
-          var d = new Date();
-          (d.setDate(d.getDate() + 7));
-          var currdate = new Date();
-          var currdate= "Hold till: " + (d.getMonth() + 1) + '/' + (d.getDate()) + '<span style="padding-left:25px"></span>' + '<br /><h5 style="display:none"><<borrowers.email>></h5>';
-          document.getElementById("pudate").innerHTML = currdate;
-        //]]>
-        </script>
+[% USE String %]
 
-        <h2 style="text-align:left"><<borrowers.surname>>,<br />
-        <<borrowers.firstname>></h2>
-        <br />
+<div title="[% branch.branchname %] - Hold slip" class="n_s_receipt">
 
-        <h3>Hold at <<branches.branchname>></h3>
+  <!-- If shipping elsewhere -->
+  [% IF hold.branchcode != Branches.GetLoggedInBranchcode() %]
 
-        <ul>
-          <li><<borrowers.cardnumber>></li>
-          <li><<borrowers.phone>></li>
-          <li><<borrowers.email>></li>
-          <li><<borrower-attribute:HOLD>></li>
-        </ul>
-        <br />
+  <div id="ship_to" class="n_s_receipt_section">
 
-        <h3>ITEM ON HOLD</h3>
+    <h2>
+      <<branches.branchnotes>>
+    </h2>
 
-        <ul>
-          <li><<items.itemcallnumber>> // <<biblio.title>> //
-          <<biblio.author>></li>
-          <li><<items.barcode>></li>
-          <li>Available since: <<reserves.waitingdate>></li>
-        </ul>
+    <p>Ship to:</p>
+    <p>
+      <strong>
+        <<branches.branchname>><br />
+        <<branches.branchaddress1>><br />
+        <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
+      </strong>
+    </p>
 
-        <p>Notes:<br /><<reserves.reservenotes>></p>
+  </div>
 
-      </div>
+  <!-- If holding here -->
+  [% ELSIF hold.branchcode == Branches.GetLoggedInBranchcode() %]
 
-    </div>
+  <div id="borrower" class="n_s_receipt_section">
 
-    <div id="loc_<<branches.branchcode>>" class="slip">
+    <h4 style="float: right;">
+      Hold until:
+      <br />
+      <<reserves.expirationdate>>
+    </h4>
 
-      <!-- Shipped to information -->
-        <h2><<branches.branchnotes>></h2>
-      <!-- Spacer -->
-        <p>&nbsp;</p>
+    <h4 style="text-align: left">
+      [% borrower.surname %],
+      <br />
+      [% borrower.firstname %] [% IF borrower.othernames %]<br />([% borrower.othernames %])[% END %]
+    </h4>
 
-        <p>Ship to:</p>
-        <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
-        
-      <!-- Spacer -->
-        <p>&nbsp;</p>
+    <h4>
+      Hold at [% branch.branchname %]
+    </h4>
 
-      <!-- Item information -->
-        <h3><<biblio.title>></h3>
-	<p><<items.itemcallnumber>></p>
-        <p><<items.barcode>></p>
+    <ul>
+      <li>Last 6 digits of card number:<br />[% borrower.cardnumber.substr(-6) FILTER upper %]</li>
+      [% IF borrower.phone %]<li>[% borrower.phone %]</li>[% ELSIF borrower.phonepro %]<li>[% borrower.phonepro %]</li>[% ELSE %]<li>No phone</li>[% END %]
+      [% contact_method = String.new('<<borrower-attribute:HOLD>>') %]
+        [% IF contact_method.length != 27 %]<li>Hold contact method: [% contact_method %]</li>[% END %]
+        [% IF ((borrower.has_messaging_preference({ message_name => 'Hold_filled', message_transport_type => 'email' }))) == 1 && borrower.email %]<li>Patron should receive an automatic e-mail at <br />[% borrower.email %]</li>[% ELSIF ((borrower.has_messaging_preference({ message_name => 'Hold_filled', message_transport_type => 'email' }))) == 1 && borrower.emailpro %]<li>Patron should receive an automatic e-mail at <br />[% borrower.emailpro %]</li>[% END %]
+        [% IF ((borrower.has_messaging_preference({ message_name => 'Hold_filled', message_transport_type => 'sms' }))) == 1 && borrower.smsalertnumber %]<li>Patron should receive an automatic text message at<br />[% borrower.smsalertnumber %]</li>[% END %]
+    </ul>
 
-      <!-- Spacer -->
-        <p>&nbsp;</p>
+  </div>
 
-      <!-- Shipped from information -->
-        <p>Shipped from: KS131<br />Northeast Kansas Library System<br />shipped on: <<today>></p>
+  [% END %]
 
-      </div>
+  <div id="item_info" class="n_s_receipt_section">
 
-    </div>
+    <h4>ITEM ON HOLD</h4>
 
-  </body>
+    <ul>
+      <li>[% IF item.itemcallnumber %][% item.itemcallnumber %]<br />[% END %][% IF biblio.title %][% biblio.title FILTER upper %]<br />[% END %][% IF biblio.author %][% biblio.author %]<br />[% END %][% IF item.barcode %][% item.barcode %][% END %]</li>
+      <li>Available since: [% hold.waitingdate | $KohaDates dateformat => 'us' %]</li>
+      <li>Hold until: [% hold.expirationdate | $KohaDates dateformat => 'us' %]</li>
+    </ul>
 
-</html>
+    <p>
+      Notes:<br />
+      <<reserves.reservenotes>>
+    </p>
 
+  </div>
+
+  <div id="datestamp" class="n_s_receipt_section">
+    <h6>
+      This receipt printed on:
+      <br />
+      [% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]
+    </h6>
+  </div>
+
+</div>
 

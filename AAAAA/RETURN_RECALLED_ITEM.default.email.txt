@@ -1,0 +1,22 @@
+
+
+Name: Notification to return a recalled item
+
+-----
+
+Notification to return a recalled item
+
+-----
+
+Message content:
+
+----------
+
+Date: <<today>>
+
+<<borrowers.firstname>> <<borrowers.surname>>,
+
+A recall has been placed on the following item: <<biblio.title>> / <<biblio.author>> (<<items.barcode>>). The due date has been updated, and is now <<issues.date_due>>. Please return the item before the due date.
+
+Thank you!
+

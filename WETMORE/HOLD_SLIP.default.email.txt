@@ -1,4 +1,4 @@
-WETMORE.HOLD_SLIP.default.email.txt
+
 
 Name: Wetmore Hold Transfer (Reserve) Slip
 

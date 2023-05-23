@@ -1,4 +1,4 @@
-LEAVENWRTH.ISSUEQSLIP.default.email.txt
+
 
 Name: Issue Quick Slip
 
@@ -145,13 +145,11 @@ Message content:
         <p>Total items checked<br />out today: [% checkouts.count %]</p>
       </div>
 
-      <div class="buffer">
-        <p>
-          The City will begin repair of the Library’s main parking lot on Monday, August 22. The main entrance to the Library will be closed during parts of the project. The door near the corner of 4th and Spruce will be open when the main entrance is inaccessible.<br /><br />
-        </p>
-        <p>
-          Please call the Library <strong><ins>([% branch.branchphone %])</ins></strong> or check our website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a> in advance of your visit to confirm which entrance is open.
-        </p>
+      <div id="news" class="buffer">
+        <!-- Put news content here in HTML format -->
+        <p style="text-align:center;"><b>Thursday, May 4</b></p>
+        <p style="text-align:center;"><b>Library Will Close at Noon</b></p>
+        <p style="text-align:center;"><b>for staff in-service</b></p>
       </div>
 
       <div id="slip_datestamp" class="center">

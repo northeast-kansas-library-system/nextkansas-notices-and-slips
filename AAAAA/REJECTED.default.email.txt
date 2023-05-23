@@ -1,4 +1,4 @@
-AAAAA.REJECTED.default.email.txt
+
 
 Name: Suggestion rejected
 

@@ -1,4 +1,4 @@
-AAAAA.RECEIPT.default.print.txt
+
 
 Name: Point of sale receipt
 

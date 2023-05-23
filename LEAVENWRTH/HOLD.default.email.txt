@@ -1,4 +1,4 @@
-LEAVENWRTH.HOLD.default.email.txt
+
 
 Name: Hold Available for Pickup (default)
 
@@ -370,14 +370,19 @@ Message content:
     <p>The item will be available until [% hold.expirationdate %].</p>
   </div>
   <div>
-    <p>
-      The City will begin repair of the Library’s main parking lot on Monday, August 22. The main entrance to the Library will be closed during parts of the project. The door near the corner of 4th and Spruce will be open when the main entrance is inaccessible.
-    </p>
-    <p>
-      Please call the Library <strong><ins>([% branch.branchphone %])</ins></strong> or check our website at <a href="[% branch.branchurl %]">[% branch.branchurl %]</a> in advance of your visit to confirm which entrance is open.
-    </p>
-  </div>
-  <footer>
+    <!-- News goes here -->
+    <p><h3><b>April Programs at the Library</b></h3><p>
+   <p>Creation Station for Elementary Age Kids.  Every Wednesday at 4 pm<p>
+    <p><i>Library Closed on Sunday, April 9</i><p>
+    <p>Hollywood vs History.  Thursday, April 13, 7:00 pm<p>
+    <p>Anime Club for Teens, Age 12-18.  Saturday, April 15, 10:00 am<p>
+    <p>Master Gardeners: Vegetable Gardens in Small Spaces.  Thursday, April 20, 6:30 pm<p>
+    <p>Chocolate Olympics for Teens, Age 12-18.  Saturday, April 22, 2:00 pm<p>
+    <p>Saturday Crafternoon for Adults.  Saturday, April 29, 1:00 pm - Registration Required<p>
+   <p><a href="https://leavenworth.librarycalendar.com/events/month">Full Calendar of Events</a></p>
+   <br>
+  </div>  
+    <footer>
     <p>Thank you,</p>
     <p> [% branch.branchname %]<br /> [% branch.branchaddress1 %]<br /> [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %] </p>
     <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>

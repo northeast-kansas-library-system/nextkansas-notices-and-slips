@@ -1,10 +1,10 @@
-AAAAA.CHECKOUT.default.sms.txt
+
 
 Name: Check-out receipt (digest)
 
 -----
 
-<<branches.branchname>> check-out receipt
+[% branch.branchname %]
 
 -----
 
@@ -12,9 +12,9 @@ Message content:
 
 ----------
 
-(Please phone [% branch.branchphone %] if you need to respond to this text)
+(Please phone [% branch.branchphone %] if you need to respond)
 
-You checked out items at [% branch.branchname %] today
+You checked out items at [% branch.branchname %]
 ----
 ----
 

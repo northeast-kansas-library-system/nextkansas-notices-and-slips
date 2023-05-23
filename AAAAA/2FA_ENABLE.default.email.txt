@@ -1,0 +1,19 @@
+
+
+Name: Confirmation of enabling two factor authentication
+
+-----
+
+Confirmation of enabling two factor authentication
+
+-----
+
+Message content:
+
+----------
+
+<p>Dear [% borrower.firstname %] [% borrower.surname %],</p>
+<p>This is to confirm that someone enabled two factor authentication on your account.</p>
+<p>If you did not do this, someone else may be using your account. Please contact technical support.</p>
+<p>Your library</p>
+

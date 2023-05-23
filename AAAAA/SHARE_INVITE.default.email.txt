@@ -1,4 +1,4 @@
-AAAAA.SHARE_INVITE.default.email.txt
+
 
 Name: Invitation for sharing a list
 

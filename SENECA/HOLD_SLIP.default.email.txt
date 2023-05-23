@@ -1,4 +1,4 @@
-SENECA.HOLD_SLIP.default.email.txt
+
 
 Name: Seneca Hold Transfer (Reserve) Slip
 
@@ -12,115 +12,93 @@ Message content:
 
 ----------
 
-<!DOCTYPE html>
+<!-- Issue slip - default for all libraries -->
 
-<html>
+<!-- This template relys on the Koha system preference "SlipCSS" retrieving a .css file from https://northeast-kansas-library-system.github.io/nextimages/css/n_s_template.css -->
 
-  <head>
+<!-- All IDs and classes used in this document are defined in n_s_template.css -->
 
-    <script type="text/javascript">
-    //<![CDATA[
+<!-- n_s_template.css is also used for the system preference "NoticeCSS" -->
 
-      $(document).ready(function(){
+<!-- The following batch of "[%  %]" directives set up template toolkit controls for Koha notices and slips -->
 
-        $("#loc_SENECA").hide();
-        $("#bor_SENECA").parent().removeAttr('style')
+[%- USE Branches -%]
 
-      });
+[% USE ItemTypes %]
 
-    //]]>
-    </script>
+[% USE KohaDates %]
 
-    <style>
-      body {width: 275px; margin: 0;}
-      article{display:inline-block}
-      .right{float:right}
-      .page {font-size: 110%;}
-      .page h1 {font-size: 200%; text-decoration: underline;}
-      .page h2 {font-size: 150%; text-decoration: underline;}
-      .page h3 {font-size: 130%; text-decoration: underline;}
-      .page h4 {font-size: 120%; text-decoration: underline;}
-    </style>
+[% USE date %]
 
-    <title>Reserve Slip</title>
-  </head>
+[%- USE Price -%]
 
-  <body>
-    <div id="borrower" class="page" style="display:none">
-      <div id="bor_<<branches.branchcode>>">
-        <h3 id="pudate" style="text-align:right"></h3>
+[% totalValue=0 %]
 
-        <script type="text/javascript">
-        //<![CDATA[
-          var d = new Date();
-          (d.setDate(d.getDate() + 7));
-          var currdate = new Date();
-          var currdate= "Hold till: " + (d.getMonth() + 1) + '/' + (d.getDate()) + '<span style="padding-left:25px"></span>' + '<br /><h5 style="display:none"><<borrowers.email>></h5>';
-          document.getElementById("pudate").innerHTML = currdate;
-        //]]>
-        </script>
+<div title="[% branch.branchname %] - Hold slip" class="n_s_slip" >
 
-        <h2 style="text-align:left"><<borrowers.surname>>,<br />
-        <<borrowers.firstname>></h2><br />
-        <br />
-        <br />
+<!-- If shipping elsewhere -->
+[% IF hold.branchcode != Branches.GetLoggedInBranchcode() %]
 
-        <h3>Hold at <<branches.branchname>></h3>
+  <div id="ship_to">
 
-        <ul>
-          <li><<borrowers.cardnumber>></li>
-          <li><<borrowers.phone>></li>
-          <li><<borrowers.email>></li>
-          <li><<borrower-attribute:HOLD>></li>
-        </ul><br />
+    <h2><<branches.branchnotes>></h2>
 
-        <h3>ITEM ON HOLD</h3>
+    <p>Ship to:</p>
+    <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
+  
+  </div>
 
-        <ul>
-          <li><<items.itemcallnumber>> // <<biblio.title>> //
-          <<biblio.author>></li>
-          <li><<items.barcode>></li>
-          <li>Available since: <<reserves.waitingdate>></li>
-        </ul>
+<!-- If holding here -->
+[% ELSIF hold.branchcode == Branches.GetLoggedInBranchcode() %]
 
-        <p>Notes:<br /><<reserves.reservenotes>></p>
-        <p>&nbsp;</p>
-        <p>.</p>
+  <div id="borrower">
 
-      </div>
+    <h2 style="text-align:left">
+      <<borrowers.surname>>,
+      <br />
+      <<borrowers.firstname>>
+    </h2>
+    <br />
 
-    </div>
+    <h3>
+      Hold at <<branches.branchname>>
+    </h3>
 
-    <div id="loc_<<branches.branchcode>>" class="page">
+    <ul>
+      <li><<borrowers.cardnumber>></li>
+      <li><<borrowers.phone>></li>
+      <li><<borrowers.email>></li>
+      <li><<borrower-attribute:HOLD>></li>
+    </ul>
+    <br />
+  
+  </div>
 
-      <!-- Shipped to information -->
-        <p>Ship to:</p>
-        <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
-        <h2><<branches.branchnotes>></h2>
+[% END %]
 
-      <!-- Spacer -->
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+  <div id="item_info">
 
-      <!-- Item information -->
-        <h3><<biblio.title>></h3>
-	<p><<items.itemcallnumber>></p>
-        <p><<items.barcode>></p>
+    <h3>ITEM ON HOLD</h3>
 
-      <!-- Spacer -->
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
+    <ul>
+      <li><<items.itemcallnumber>> // <<biblio.title>> //
+      <<biblio.author>></li>
+      <li><<items.barcode>></li>
+      <li>Available since: <<reserves.waitingdate>></li>
+      <li>Hold until: <<reserves.expirationdate>></li>
+    </ul>
 
-      <!-- Shipped from information -->
-        <p>Shipped from: KS207<br />Seneca Free Library<br />shipped on: <<today>></p>
+    <p>Notes:<br /><<reserves.reservenotes>></p>
+  
+  </div>
 
-      </div>
+  <div id="datestamp" class="n_s_slip_section">
+    <h6>
+      This receipt printed on:
+      <br />
+      [% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]
+    </h6>
+  </div>
 
-    </div>
-
-  </body>
-
-</html>
-
+</div>
 

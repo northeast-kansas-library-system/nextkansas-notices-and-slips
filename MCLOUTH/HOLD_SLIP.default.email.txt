@@ -1,4 +1,4 @@
-MCLOUTH.HOLD_SLIP.default.email.txt
+
 
 Name: McLouth Hold Transfer (Reserve) Slip
 

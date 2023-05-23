@@ -1,0 +1,52 @@
+
+
+Name: Welcome notice
+
+-----
+
+[% USE Koha %]Welcome to [% IF Koha.Preference('LibraryName') %][% Koha.Preference('LibraryName') %][% ELSE %]the library[% END %]
+
+-----
+
+Message content:
+
+----------
+
+<html>
+
+<head>
+  <title>[% branch.branchname %] - Welcome to the library</title>
+  <!-- Notice code: ACCTDETAILS; Library: LOUISBURG; -->
+</head>
+
+<body>
+
+  <div id="message_content">
+
+    <p>Hello [% borrower.firstname %] [% borrower.surname %].</p>
+    <p>Congratulations on getting a Hoopla account at [% branch.branchname %].</p>
+    <p>This account allows you to access e-books, e-audiobooks, streaming music, and streaming movies and TV shows at <a href="https://www.hoopladigital.com/">https://www.hoopladigital.com/</a></p>
+    <p>Click on Get Started Today and put in your email and password, which is Library1. Once you are logged in, please go to Settings to change your password.</p>
+    <p>There is a very good video to help you with the final few steps of setting up your Hoopla account at <a href="https://youtu.be/rbs0g-z1Frk">https://youtu.be/rbs0g-z1Frk</a></p>
+    <p>Once you have your account set up, Hoopla also has a video introduction to their website at <a href="https://youtu.be/eHGo0Yk07W8">https://youtu.be/eHGo0Yk07W8</a></p>
+    <p>If you have any questions or need any help, please contact us at [% branch.branchphone %].</p>
+
+  </div>
+
+  <footer>
+
+    <p>Thank you for using your library,</p>
+    <p>
+      [% branch.branchname %]<br />
+      [% branch.branchaddress1 %]<br />
+      [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+    </p>
+    <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
+    <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
+
+  </footer>
+
+</body>
+
+</html>
+

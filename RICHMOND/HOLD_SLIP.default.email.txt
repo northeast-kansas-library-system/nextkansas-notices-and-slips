@@ -1,4 +1,4 @@
-RICHMOND.HOLD_SLIP.default.email.txt
+
 
 Name: Richmond Hold Transfer (Reserve) Slip
 

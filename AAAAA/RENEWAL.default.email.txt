@@ -1,4 +1,4 @@
-AAAAA.RENEWAL.default.email.txt
+
 
 Name: Renewal receipt (digest)
 

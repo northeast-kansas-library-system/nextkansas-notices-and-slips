@@ -1,4 +1,4 @@
-PHAXTELL.HOLD_SLIP.default.email.txt
+
 
 Name: PHAXT Hold Transfer (Reserve) Slip
 

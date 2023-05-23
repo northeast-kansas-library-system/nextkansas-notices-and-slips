@@ -1,4 +1,4 @@
-AAAAA.OPAC_REG_VERIFY.default.email.txt
+
 
 Name: Opac Self-Registration Verification Email
 

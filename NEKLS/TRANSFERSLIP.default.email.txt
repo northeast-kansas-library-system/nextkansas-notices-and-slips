@@ -1,4 +1,4 @@
-NEKLS.TRANSFERSLIP.default.email.txt
+
 
 Name: Transfer slip
 
@@ -14,8 +14,8 @@ Message content:
 
 <head>
 
-  <!-- Notice code:  Transfer slip; Library: All; -->
-  <title>TRANSFERSLIP</title>
+  <!-- Notice code:  **MESSAGE_CODE**; Library: All; -->
+  <title>Transfer slip</title>
 
   [% USE Branches %]
   [% USE date %]
@@ -32,7 +32,6 @@ Message content:
   <!-- The different sections of the css are almost duplicates of each other which will allow fine-tuning in the future - my goal is to someday move all of this css into an external style sheet -->
 
   <style>
-
     /* Slip - things that print on a reciept printer */
     /* @media print for slip_t */
     @media print {
@@ -88,10 +87,6 @@ Message content:
       display: inline-block
     }
 
-    .slip_t .grp-quarter {
-      padding-bottom: .25in;
-    }
-    
     .slip_t .grp-half {
       padding-bottom: .5in;
     }
@@ -110,14 +105,6 @@ Message content:
 
     .slip_t .grp-4 {
       padding-bottom: 4in;
-    }
-
-    .slip_t .endzone-quarter {
-      padding-top: .25in;
-    }
-
-    .slip_t .endzone-half {
-      padding-top: .5in;
     }
 
     .slip_t .endzone-1 {
@@ -203,9 +190,6 @@ Message content:
       display: inline-block
     }
 
-    .notice_t .grp-quarter {
-      padding-bottom: .25in;
-    }
     .notice_t .grp-half {
       padding-bottom: .5in;
     }
@@ -224,14 +208,6 @@ Message content:
 
     .notice_t .grp-4 {
       padding-bottom: 4in;
-    }
-
-    .notice_t .endzone-quarter {
-      padding-top: .25in;
-    }
-
-    .notice_t .endzone-half {
-      padding-top: .5in;
     }
 
     .notice_t .endzone-1 {
@@ -335,10 +311,6 @@ Message content:
       background-color: #ffffff;
     }
 
-    .email_t .grp-quarter {
-      padding-bottom: .25in;
-    }
-
     .email_t .grp-half {
       padding-bottom: .5in;
     }
@@ -357,14 +329,6 @@ Message content:
 
     .email_t .grp-4 {
       padding-bottom: 4in;
-    }
-
-    .email_t .endzone-quarter {
-      padding-top: .25in;
-    }
-
-    .email_t .endzone-half {
-      padding-top: .5in;
     }
 
     .email_t .endzone-1 {
@@ -399,48 +363,46 @@ Message content:
       text-align: right;
     }
   </style>
-
+  <title>Title</title>
 </head>
 
 <!-- Make the class for this div .slip_t .notice_t or .email_t -->
 <div class="slip_t" style="color: #000000">
 
-  <div id="content">
+  <!-- Shipped to information -->
+  <div classs="grp-4">
+    <h1>
+      [% branch.branchnotes %]
+    </h1>
+  </div>
 
-    <!-- Shipped to information -->
-      <div id="courier_code" style="float: left">
-        <h1 style="font-size: 2.5em">
-          [% branch.branchnotes %]
-        </h1>
-      </div>
+  <p>&nbsp;</p>
 
-      <div id="branch_info" class="endzone-half grp-half">
-        <h3>
-          <strong>
-          [% branch.branchname %]<br />
-          [% branch.branchaddress1 %]<br />
-          [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
-          [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip.substr(0, 5) %]
-          </strong>
-        </h3>
-      </div>
+  <div classs="grp-2">
+    <p>Ship to:</p>
+    <p classs="grp-1">
+      <strong>
+        [% branch.branchname %]<br />
+        [% branch.branchaddress1 %]<br />
+        [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]
+      </strong>
+    </p>
+  </div>
 
-      <div id="item_info">
-        <p>
-          [% biblio.title %]
-        </p>
-        <p>
-          [% item.itemcallnumber %]
-        </p>
-        <p>
-          [% items.barcode %]
-        </p>
-        <!-- Shipped from information -->
-        <p>Shipped on: [% today %]</p>
-      </div>
 
+  <div classs="grp-2">
+    <h3>
+      [% biblio.title %]
+    </h3>
+    <p>
+      [% item.itemcallnumber %]
+    </p>
+    <p>
+      [% items.barcode %]
+    </p>
+    <!-- Shipped from information -->
+    <p>Shipped on: [% today %]</p>
   </div>
 
 </div>
-
 

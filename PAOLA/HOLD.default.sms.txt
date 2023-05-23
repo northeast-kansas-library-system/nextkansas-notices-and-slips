@@ -1,4 +1,4 @@
-PAOLA.HOLD.default.sms.txt
+
 
 Name: Hold Available for Pickup
 

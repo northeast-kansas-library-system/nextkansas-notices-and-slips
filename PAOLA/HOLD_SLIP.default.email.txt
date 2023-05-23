@@ -1,4 +1,4 @@
-PAOLA.HOLD_SLIP.default.email.txt
+
 
 Name: PAOLA Hold Transfer (Reserve) Slip
 
@@ -12,139 +12,92 @@ Message content:
 
 ----------
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Issue slip - default for all libraries -->
 
-  <head>
-    <script type="text/javascript">
-      //<![CDATA[
-      $(document).ready(function() {
-        $("#loc_PAOLA").hide();
-        $("#bor_PAOLA").parent().removeAttr('style')
-      });
-      //]]>
-    </script>
-    <style> body {width: 275px;
-        margin-top: 5px;
-        margin-bottom: 0px;
-        margin-right: 0px;
-        margin-left: 0px;}
-      article {display:inline-block}
-      .right {float:right}
-    </style>
-    <title>Reserve Slip</title>
-  </head>
+<!-- This template relys on the Koha system preference "SlipCSS" retrieving a .css file from https://northeast-kansas-library-system.github.io/nextimages/css/n_s_template.css -->
 
-  <body>
-    <div id="borrower" style="display:none">
-      <div id="bor_<<branches.branchcode>>">
-        <article class="right">
-          <h2 id="pudate"></h2>
-        </article>
-        <script type="text/javascript">
-          //<![CDATA[
-          var d = new Date();
-          (d.setDate(d.getDate() + 7));
-          var currdate = new Date();
-          var currdate = "Hold till:<br /> " + (d.getMonth() + 1) + '/' + (d.getDate()) + '<span style="padding-left:25px"></span>' + '<br />';
-          document.getElementById("pudate").innerHTML = currdate;
-          //]]>
-        </script>
-        <h2 style="text-align:left">
-          <<borrowers.surname>>,<br />
-            <<borrowers.firstname>><div id="nickname"></div>
+<!-- All IDs and classes used in this document are defined in n_s_template.css -->
 
-              <script type="text/javascript">
-                //<![CDATA[
-                var nick = "<<borrowers.othernames>>"
-                var nname = "(" + nick + ")"
-                document.getElementById("nickname").innerHTML = nname ;
+<!-- n_s_template.css is also used for the system preference "NoticeCSS" -->
 
-                $('#nickname').each(function() {
-                  if ($(this).text().length < 3)
-                    $(this).hide();
-                });
+<!-- The following batch of "[%  %]" directives set up template toolkit controls for Koha notices and slips -->
 
-                //]]>
-              </script>
-              
-        </h2><br />
-        <br />
-        <br />
-        <h3>Hold at <<branches.branchname>></h3>
-        <ul>
-          <li>
-            <<borrowers.cardnumber>>
-          </li>
-          <li>
-            <<borrowers.phone>>
-          </li>
-          <li>
-            <<borrowers.email>>
-          </li>
-          <li>
-            <<borrower-attribute:HOLD>>
-          </li>
-        </ul><br />
-        <h3>ITEM ON HOLD</h3>
-        <ul>
-          <li>
-            <<items.itemcallnumber>> // <<biblio.title>> // <<biblio.author>>
-          </li>
-          <li>
-            <<items.barcode>>
-          </li>
-          <li>Available since: <<reserves.waitingdate>></li>
-        </ul>
-        <p>Notes:<br />
-          <<reserves.reservenotes>>
-        </p><br />
-      </div>
-    </div>
-    <div id="loc_<<branches.branchcode>>">
-      <h1 style="font-size: 36px;">
-        <<branches.branchnotes>>
-      </h1>
-      <p>Ship to:</p>
-      <h1>
-        <<branches.branchname>>
-      </h1>
-      <h1>
-        <<branches.branchaddress1>>
-      </h1>
-      <h1>
-        <<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>>
-      </h1>
-      <p>&nbsp;</p>
-      <p>
-        <<items.itemcallnumber>>
-      </p>
-      <p>
-        <<biblio.title>>
-      </p>
-      <p>
-        <<biblio.author>>
-      </p>
-      <p>
-        <<items.barcode>>
-      </p>
-      <p> </p>
-      <p>Shipped on: <<today>></p>
-      <p>&nbsp;</p>
-      <p>Shipped to: <<branches.branchcode>></p>
-      <p>&nbsp;</p>
-      <p>Shipped on: <<today>></p>
-      <p>&nbsp;</p>
-      <p>This slip generated at PAOLA</p>
-      <p>&nbsp;</p>
-    </div>
-    <div>
+[%- USE Branches -%]
+
+[% USE ItemTypes %]
+
+[% USE KohaDates %]
+
+[% USE date %]
+
+[%- USE Price -%]
+
+[% totalValue=0 %]
+
+<div title="[% branch.branchname %] - Hold slip" class="n_s_slip" >
+
+<!-- If shipping elsewhere -->
+[% IF hold.branchcode != Branches.GetLoggedInBranchcode() %]
+
+  <div id="ship_to">
+
+    <h2><<branches.branchnotes>></h2>
+
+    <p>Ship to:</p>
+    <p><strong><<branches.branchname>><br /><<branches.branchaddress1>><br /><<branches.branchcity>>, <<branches.branchstate>> <<branches.branchzip>></strong></p>
+  
+  </div>
+
+<!-- If holding here -->
+[% ELSIF hold.branchcode == Branches.GetLoggedInBranchcode() %]
+
+  <div id="borrower">
+
+    <h2 style="text-align:left">
+      <<borrowers.surname>>,
       <br />
-      <h2 style="text-align: center;">Paola Free Library</h2>
-      <h3 style="text-align: center;">101 E Peoria St <br />Paola, KS 66071<br />913-259-3655</h3>
-    </div>
-  </body>
+      <<borrowers.firstname>>
+    </h2>
+    <br />
 
-</html>
+    <h3>
+      Hold at <<branches.branchname>>
+    </h3>
+
+    <ul>
+      <li><<borrowers.cardnumber>></li>
+      <li><<borrowers.phone>></li>
+      <li><<borrowers.email>></li>
+      <li><<borrower-attribute:HOLD>></li>
+    </ul>
+    <br />
+  
+  </div>
+
+[% END %]
+
+  <div id="item_info">
+
+    <h3>ITEM ON HOLD</h3>
+
+    <ul>
+      <li><<items.itemcallnumber>> // <<biblio.title>> //
+      <<biblio.author>></li>
+      <li><<items.barcode>></li>
+      <li>Available since: <<reserves.waitingdate>></li>
+    </ul>
+
+    <p>Notes:<br /><<reserves.reservenotes>></p>
+  
+  </div>
+
+  <div id="datestamp" class="n_s_slip_section">
+    <h6>
+      This receipt printed on:
+      <br />
+      [% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]
+    </h6>
+  </div>
+
+</div>
 

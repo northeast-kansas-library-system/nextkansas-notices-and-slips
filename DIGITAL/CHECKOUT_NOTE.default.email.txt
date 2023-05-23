@@ -1,4 +1,4 @@
-DIGITAL.CHECKOUT_NOTE.default.email.txt
+
 
 Name: Checkout note on item set by patron
 

@@ -1,4 +1,4 @@
-BURLINGAME.HOLD_SLIP.default.email.txt
+
 
 Name: Hold Transfer (Reserve) Slip
 
