@@ -56,6 +56,15 @@ Message content:
       </strong>
     </p>
 
+    <h4>ITEM INFO</h4>
+
+    <ul>
+      [% IF item.itemcallnumber %]<li>[% item.itemcallnumber %]</li>[% END %]
+      [% IF biblio.title %]<li>[% biblio.title FILTER upper %]</li>[% END %]
+      [% IF biblio.author %]<li>[% biblio.author %]</li>[% END %]
+      [% IF item.barcode %]<li>[% item.barcode %]</li>[% END %]
+    </ul>
+
   </div>
 
   <!-- If holding here -->
@@ -88,12 +97,6 @@ Message content:
         [% IF ((borrower.has_messaging_preference({ message_name => 'Hold_filled', message_transport_type => 'sms' }))) == 1 && borrower.smsalertnumber %]<li>Patron should receive an automatic text message at<br />[% borrower.smsalertnumber %]</li>[% END %]
     </ul>
 
-  </div>
-
-  [% END %]
-
-  <div id="item_info" class="n_s_receipt_section">
-
     <h4>ITEM ON HOLD</h4>
 
     <ul>
@@ -108,6 +111,8 @@ Message content:
     </p>
 
   </div>
+
+  [% END %]
 
   <div id="datestamp" class="n_s_receipt_section">
     <h6>
