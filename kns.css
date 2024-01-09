@@ -1,0 +1,12 @@
+/* .kns_slip = div for printouts on Epson reciept printer */
+
+/* .kns_print = div for printouts on 8.5 inch x 11 inch paper (USA standard size "Letter" paper) */
+
+/* .kns_slip = div for messages delivered by email */
+
+kns_slip {}
+
+kns_print {}
+
+kns_email {}
+
