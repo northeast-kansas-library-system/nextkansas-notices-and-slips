@@ -4,9 +4,21 @@
 
 /* .kns_slip = div for messages delivered by email */
 
-kns_slip {}
+kns_slip {
 
-kns_print {}
 
-kns_email {}
+  
+}
+
+kns_print {
+
+
+
+}
+
+kns_email {
+
+
+
+}
 
