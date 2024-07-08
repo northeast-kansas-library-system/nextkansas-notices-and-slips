@@ -1,0 +1,19 @@
+
+
+Name: two-authentication step token
+
+-----
+
+Two-authentication step token
+
+-----
+
+Message content:
+
+----------
+
+Dear [% borrower.firstname %] [% borrower.surname %] ([% borrower.cardnumber %])
+
+Your authentication token is [% otp_token %]. 
+It is valid one minute.
+

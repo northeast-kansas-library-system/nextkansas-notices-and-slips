@@ -1,0 +1,23 @@
+
+
+Name: Canceled hold available for different patron
+
+-----
+
+Canceled hold available for different patron
+
+-----
+
+Message content:
+
+----------
+
+The patron picking up <<biblio.title>> (<<items.barcode>>) has changed to <<borrowers.firstname>> <<borrowers.surname>> (<<borrowers.cardnumber>>).
+
+Please update the hold information for this item.
+
+Title: <<biblio.title>>
+Author: <<biblio.author>>
+Item: <<items.itemcallnumber>>
+Pickup location: <<branches.branchname>>
+

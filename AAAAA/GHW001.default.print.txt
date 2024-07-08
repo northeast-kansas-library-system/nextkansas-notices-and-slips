@@ -1,0 +1,26 @@
+
+
+Name: GHW report template test
+
+-----
+
+GHW report template test
+
+-----
+
+Message content:
+
+----------
+
+[% FOREACH d IN data%]
+
+<div>[% d.address_info %]</div>
+
+<div>[% d.current_checkouts %]</div>
+
+<div>[% d.current_requests %]</div>
+
+<div>[% d.unpaid_fees %]</div>
+
+[% END %]
+

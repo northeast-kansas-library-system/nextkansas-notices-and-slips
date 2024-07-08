@@ -1,6 +1,6 @@
 
 
-Name: Hold Available for Pickup (default)
+Name: Hold available for pickup (digest)
 
 -----
 

@@ -1,0 +1,39 @@
+
+
+Name: ILL request update
+
+-----
+
+Interlibrary loan request update
+
+-----
+
+Message content:
+
+----------
+
+Dear [% borrower.firstname %] [% borrower.surname %],
+
+The Interlibrary loans request number [% illrequest.illrequest_id %] you placed for
+
+- [% ill_bib_title %] - [% ill_bib_author %]
+
+has been updated
+
+Details of the update are below:
+
+[% additional_text %]
+
+Kind regards
+
+[% branch.branchname %]
+[% branch.branchaddress1 %]
+[% branch.branchaddress2 %]
+[% branch.branchaddress3 %]
+[% branch.branchcity %]
+[% branch.branchstate %]
+[% branch.branchzip %]
+[% branch.branchphone %]
+[% branch.branchillemail %]
+[% branch.branchemail %]
+

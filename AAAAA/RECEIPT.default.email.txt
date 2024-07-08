@@ -12,22 +12,25 @@ Message content:
 
 ----------
 
-[% USE KohaDates %][% USE Branches %][% USE Price %][% PROCESS "accounts.inc" %]
+[% USE KohaDates %]
+[% USE Branches %]
+[% USE Price %]
+[% PROCESS 'accounts.inc' %]
 <table>
 [% IF ( LibraryName ) %]
  <tr>
-    <th colspan="2" class="centerednames">
+    <th colspan='2' class='centerednames'>
         <h3>[% LibraryName | html %]</h3>
     </th>
  </tr>
 [% END %]
  <tr>
-    <th colspan="2" class="centerednames">
+    <th colspan='2' class='centerednames'>
         <h2>[% Branches.GetName( credit.branchcode ) | html %]</h2>
     </th>
  </tr>
 <tr>
-    <th colspan="2" class="centerednames">
+    <th colspan='2' class='centerednames'>
         <h3>[% credit.date | $KohaDates %]</h3>
 </tr>
 <tr>
@@ -44,7 +47,7 @@ Message content:
 </tr>
  <tr></tr>
  <tr>
-    <th colspan="2" class="centerednames">
+    <th colspan='2' class='centerednames'>
         <h2><u>Fee receipt</u></h2>
     </th>
  </tr>
@@ -62,7 +65,7 @@ Message content:
   [% END %]
 
 <tfoot>
-  <tr class="highlight">
+  <tr class='highlight'>
     <td>Total: </td>
     <td>[% credit.amount * -1| $Price %]</td>
   </tr>
@@ -76,4 +79,5 @@ Message content:
     </tr>
 </tfoot>
 </table>
+
 

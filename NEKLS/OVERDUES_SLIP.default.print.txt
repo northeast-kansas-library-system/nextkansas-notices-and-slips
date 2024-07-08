@@ -12,421 +12,56 @@ Message content:
 
 ----------
 
-<head>
+[% USE ItemTypes %]
+[% USE Branches %]
+[% USE KohaDates %]
+[%- USE Price -%]
+[% totalValue = 0 %]
+[%- USE date -%]
+[%- manip = date.manip -%]
+[% USE Dumper (Indent=0, Pad="<br>") %]
+
+<div style="display: none;">
+
+
+<h2>additional_text:</h2> <p><br />[% Dumper.dump(additional_text.unblessed) %]<br /><br /></p>
+<h2>article_request:</h2> <p><br />[% Dumper.dump(article_request.unblessed) %]<br /><br /></p>
+<h2>biblio:</h2> <p><br />[% Dumper.dump(biblio.unblessed) %]<br /><br /></p>
+<h2>biblioitem:</h2> <p><br />[% Dumper.dump(biblioitem.unblessed) %]<br /><br /></p>
+<h2>borrower:</h2> <p><br />[% Dumper.dump(borrower.unblessed) %]<br /><br /></p>
+<h2>borrower_modification:</h2> <p><br />[% Dumper.dump(borrower_modification.unblessed) %]<br /><br /></p>
+<h2>borrowers:</h2> <p><br />[% Dumper.dump(borrowers.unblessed) %]<br /><br /></p>
+<h2>branch:</h2> <p><br />[% Dumper.dump(branch.unblessed) %]<br /><br /></p>
+<h2>change :</h2> <p><br />[% Dumper.dump(change .unblessed) %]<br /><br /></p>
+<h2>checkout:</h2> <p><br />[% Dumper.dump(checkout.unblessed) %]<br /><br /></p>
+<h2>checkouts:</h2> <p><br />[% Dumper.dump(checkouts.unblessed) %]<br /><br /></p>
+<h2>count:</h2> <p><br />[% Dumper.dump(count.unblessed) %]<br /><br /></p>
+<h2>credit:</h2> <p><br />[% Dumper.dump(credit.unblessed) %]<br /><br /></p>
+<h2>debit:</h2> <p><br />[% Dumper.dump(debit.unblessed) %]<br /><br /></p>
+<h2>hold:</h2> <p><br />[% Dumper.dump(hold.unblessed) %]<br /><br /></p>
+<h2>ill_bib_author:</h2> <p><br />[% Dumper.dump(ill_bib_author.unblessed) %]<br /><br /></p>
+<h2>ill_bib_title:</h2> <p><br />[% Dumper.dump(ill_bib_title.unblessed) %]<br /><br /></p>
+<h2>ill_full_metadata:</h2> <p><br />[% Dumper.dump(ill_full_metadata.unblessed) %]<br /><br /></p>
+<h2>illrequest:</h2> <p><br />[% Dumper.dump(illrequest.unblessed) %]<br /><br /></p>
+<h2>illrequestattributes:</h2> <p><br />[% Dumper.dump(illrequestattributes.unblessed) %]<br /><br /></p>
+<h2>item:</h2> <p><br />[% Dumper.dump(item.unblessed) %]<br /><br /></p>
+<h2>items.content:</h2> <p><br />[% Dumper.dump(items.content.unblessed) %]<br /><br /></p>
+<h2>listname:</h2> <p><br />[% Dumper.dump(listname.unblessed) %]<br /><br /></p>
+<h2>offsets :</h2> <p><br />[% Dumper.dump(offsets .unblessed) %]<br /><br /></p>
+<h2>old_checkout:</h2> <p><br />[% Dumper.dump(old_checkout.unblessed) %]<br /><br /></p>
+<h2>order:</h2> <p><br />[% Dumper.dump(order.unblessed) %]<br /><br /></p>
+<h2>overdue:</h2> <p><br />[% Dumper.dump(overdue.unblessed) %]<br /><br /></p>
+<h2>overdues:</h2> <p><br />[% Dumper.dump(overdues.unblessed) %]<br /><br /></p>
+<h2>passwordreseturl:</h2> <p><br />[% Dumper.dump(passwordreseturl.unblessed) %]<br /><br /></p>
+<h2>serial:</h2> <p><br />[% Dumper.dump(serial.unblessed) %]<br /><br /></p>
+<h2>shareurl:</h2> <p><br />[% Dumper.dump(shareurl.unblessed) %]<br /><br /></p>
+<h2>subscription:</h2> <p><br />[% Dumper.dump(subscription.unblessed) %]<br /><br /></p>
+<h2>suggestion:</h2> <p><br />[% Dumper.dump(suggestion.unblessed) %]<br /><br /></p>
+<h2>tendered:</h2> <p><br />[% Dumper.dump(tendered.unblessed) %]<br /><br /></p>
+<h2>user:</h2> <p><br />[% Dumper.dump(user.unblessed) %]<br /><br /></p>
 
-  <!-- Notice code:  ACCEPTED; Library: All; -->
-  <title>Purchase suggestion accepted</title>
 
-  [% USE Branches %]
-  [% USE date %]
-  [% USE ItemTypes %]
-  [% USE KohaDates %]
-  [% manip=date.manip %]
-  [% USE Price %]
-  [% totalValue=0 %]
 
-  <style>
 
-    /* Slip */
-    /* @media print for slip */
-    @media print {
-      .slip {
-        width: 2.75in;
-        margin: 0;
-        color: #000000 !important;
-        background-color: #ffffff;
-        font-family: 'Arial Black', 'Arial', sans-serif !important;
-      }
-    }
-
-    .slip {
-      width: 2.75in;
-      margin: 0;
-      font-family: 'Arial Black', 'Arial', sans-serif !important;
-      font-size: 10pt;
-    }
-
-    .slip footer {
-      display: none;
-    }
-
-    .slip p {
-      font-size: 10pt;
-    }
-
-    .slip h1 {
-      font-size: 1.8em;
-    }
-
-    .slip h2 {
-      font-size: 1.6em;
-    }
-
-    .slip h3 {
-      font-size: 1.4em !important;
-    }
-
-    .slip h4 {
-      font-size: 1.3em !important;
-    }
-
-    .slip h5 {
-      font-size: 1.2em !important;
-    }
-
-    .slip h6 {
-      font-size: 1.1em;
-    }
-
-    .slip article {
-      display: inline-block
-    }
-
-    .slip .grp-half {
-      padding-bottom: .5in;
-    }
-
-    .slip .grp-1 {
-      padding-bottom: 1in;
-    }
-
-    .slip .grp-2 {
-      padding-bottom: 2in;
-    }
-
-    .slip .grp-3 {
-      padding-bottom: 3in;
-    }
-
-    .slip .grp-4 {
-      padding-bottom: 4in;
-    }
-
-    .slip .endzone-1 {
-      padding-top: 1in;
-    }
-
-    .slip .endzone-2 {
-      padding-top: 2in;
-    }
-
-    .slip .endzone-3 {
-      padding-top: 3in;
-    }
-
-    .slip .endzone-4 {
-      padding-top: 4in;
-    }
-
-    .slip .item-title {
-      text-transform: uppercase;
-    }
-
-    .slip .bcode {
-      text-transform: uppercase;
-    }
-
-    .slip .underline {
-      text-transform: underline;
-    }
-
-    .slip .right {
-      text-align: right;
-    }
-
-    /* notices */
-    /* notices */
-    /* @media print for notices */
-    @media print {
-      .notices {
-        width: 7in;
-        margin: 0in;
-        color: #000000 !important;
-        background-color: #ffffff;
-        font-family: 'Arial Black', 'Arial', sans-serif !important;
-      }
-    }
-
-    .notices {
-      width: 7in;
-      margin: .75in;
-      font-family: 'Arial Black', 'Arial', sans-serif !important;
-      font-size: 10pt;
-    }
-
-    .notices p {
-      font-size: 10pt;
-    }
-
-    .notices h1 {
-      font-size: 1.8em;
-    }
-
-    .notices h2 {
-      font-size: 1.6em;
-    }
-
-    .notices h3 {
-      font-size: 1.4em !important;
-    }
-
-    .notices h4 {
-      font-size: 1.3em !important;
-    }
-
-    .notices h5 {
-      font-size: 1.2em !important;
-    }
-
-    .notices h6 {
-      font-size: 1.1em;
-    }
-
-    .notices article {
-      display: inline-block
-    }
-
-    .notices .grp-half {
-      padding-bottom: .5in;
-    }
-
-    .notices .grp-1 {
-      padding-bottom: 1in;
-    }
-
-    .notices .grp-2 {
-      padding-bottom: 2in;
-    }
-
-    .notices .grp-3 {
-      padding-bottom: 3in;
-    }
-
-    .notices .grp-4 {
-      padding-bottom: 4in;
-    }
-
-    .notices .endzone-1 {
-      padding-top: 1in;
-    }
-
-    .notices .endzone-2 {
-      padding-top: 2in;
-    }
-
-    .notices .endzone-3 {
-      padding-top: 3in;
-    }
-
-    .notices .endzone-4 {
-      padding-top: 4in;
-    }
-
-    .notices .item-title {
-      text-transform: uppercase;
-    }
-
-    .notices .bcode {
-      text-transform: uppercase;
-    }
-
-    .notices .underline {
-      text-transform: underline;
-    }
-
-    .notices .right {
-      text-align: right;
-    }
-
-    /* emails */
-    /* @media print for emails */
-    @media print {
-      .emails {
-        width: 7in;
-        margin: .75in;
-        color: #000000;
-        background-color: #ffffff;
-        font-family: 'Arial Black', 'Arial', sans-serif !important;
-      }
-
-      img {
-        display: none;
-      }
-    }
-
-    .emails {
-      font-family: 'Tahoma', 'Arial', sans-serif !important;
-      font-size: 12pt;
-      color: #000000;
-      background-color: #ffffff;
-    }
-
-    .emails p {
-      font-size: 12pt;
-    }
-
-    .emails h1 {
-      font-size: 1.8em;
-      color: #000000;
-      background-color: #ffffff;
-    }
-
-    .emails h2 {
-      font-size: 1.6em;
-      color: #000000;
-      background-color: #ffffff;
-    }
-
-    .emails h3 {
-      font-size: 1.4em;
-      color: #000000 !important;
-      background-color: #ffffff;
-    }
-
-    .emails h4 {
-      font-size: 1.3em;
-      color: #000000 !important;
-      background-color: #ffffff;
-    }
-
-    .emails h5 {
-      font-size: 1.2em;
-      color: #000000 !important;
-      background-color: #ffffff;
-    }
-
-    .emails h6 {
-      font-size: 1.1em;
-      color: #000000;
-      background-color: #ffffff;
-    }
-
-    .emails article {
-      display: inline-block;
-      color: #000000;
-      background-color: #ffffff;
-    }
-
-    .emails .grp-half {
-      padding-bottom: .5in;
-    }
-
-    .emails .grp-1 {
-      padding-bottom: 1in;
-    }
-
-    .emails .grp-2 {
-      padding-bottom: 2in;
-    }
-
-    .emails .grp-3 {
-      padding-bottom: 3in;
-    }
-
-    .emails .grp-4 {
-      padding-bottom: 4in;
-    }
-
-    .emails .endzone-1 {
-      padding-top: 1in;
-    }
-
-    .emails .endzone-2 {
-      padding-top: 2in;
-    }
-
-    .emails .endzone-3 {
-      padding-top: 3in;
-    }
-
-    .emails .endzone-4 {
-      padding-top: 4in;
-    }
-
-    .emails .item-title {
-      text-transform: uppercase;
-    }
-
-    .emails .bcode {
-      text-transform: uppercase;
-    }
-
-    .emails .underline {
-      text-transform: underline;
-    }
-
-    .emails .right {
-      text-align: right;
-    }
-  </style>
-  <title>Title</title>
-</head>
-
-<!-- Make the class for this div .slips .notices or .emails -->
-<div class="emails" style="color: #000000">
-
-  <div id="notice_logo" style="font-family: 'Tahoma', 'Arial', sans-serif !important; text-align: left;">
-    
-    <p style="color: #1f9bde; font-weight: 1000; font-size: 3em; line-height: 0;">
-      NE<span style="color: #0157b9">X</span>T
-    </p>
-    <p style="color: #838689; text-decoration: underline; font-style: italic;">
-      SEARCH CATALOG
-    </p>
-    
-  </div>
-
-  <div id="greeting" class="grp-half">
-    
-    <h2>
-      [% branch.branchname %] - Purchase suggestion accepted
-    </h2>
-    
-  </div>
-
-  <div id="content" class="grp-half">
-    <p>
-      You have suggested that the library acquire [% suggestions.title %][% IF suggestions.author %] by [% suggestions.author %][% ELSE %][% END %].
-    </p>
-    <p>
-      This item was requested for the library member with the card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].<br /> 
-    </p>
-    <p>
-      The library has reviewed your suggestion. The item will be ordered as soon as possible. You will be contacted by the library when the item is available.
-    </p>
-    <p>
-      If you have any questions about this suggestion, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.
-    </p>
-    
-  </div>
-
-  <!-- The footer will not display on .slip -->
-  <footer>
-
-    <p>Thank you,</p>
-    <p style="margin-top: 1.5em; text-decoration: underline;">
-      [% branch.branchname %]
-    </p>
-    <p style="margin-top: 1.5em;">
-      You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.
-    </p>
-    <p>
-      Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a>
-    </p>
-    [% IF borrower.email || borrower.emailpro || borrower.B_email %]
-    <p>
-      If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.
-    </p>
-    [% ELSE %]
-    <p>
-      If you wish to receive notices like this via e-mail, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.
-    </p>
-    <p>
-      .pgend.
-    </p>
-    [% END %]
-
-  </footer>
 </div>
-
 

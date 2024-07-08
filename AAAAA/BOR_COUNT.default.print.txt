@@ -1,0 +1,30 @@
+
+
+Name: GHW - Borrower count by borrower category Report ID: 3704
+
+-----
+
+GHW - Borrower count by borrower category
+
+-----
+
+Message content:
+
+----------
+
+[% FOREACH d IN data%]
+
+<div>
+
+  <ul>
+
+    [% IF d.TOTAL != 0 %]    
+
+    <li>[% d.CATEGORY %]</li>
+
+
+
+  </ul>
+
+</div>
+

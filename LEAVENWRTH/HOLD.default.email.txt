@@ -371,17 +371,11 @@ Message content:
   </div>
   <div>
     <!-- News goes here -->
-    <p><h3><b>April Programs at the Library</b></h3><p>
-   <p>Creation Station for Elementary Age Kids.  Every Wednesday at 4 pm<p>
-    <p><i>Library Closed on Sunday, April 9</i><p>
-    <p>Hollywood vs History.  Thursday, April 13, 7:00 pm<p>
-    <p>Anime Club for Teens, Age 12-18.  Saturday, April 15, 10:00 am<p>
-    <p>Master Gardeners: Vegetable Gardens in Small Spaces.  Thursday, April 20, 6:30 pm<p>
-    <p>Chocolate Olympics for Teens, Age 12-18.  Saturday, April 22, 2:00 pm<p>
-    <p>Saturday Crafternoon for Adults.  Saturday, April 29, 1:00 pm - Registration Required<p>
-   <p><a href="https://leavenworth.librarycalendar.com/events/month">Full Calendar of Events</a></p>
-   <br>
-  </div>  
+    <p><h3><b></b></h3><p>
+    <p style="text-align:center;"><i>View Upcoming Events and Programs at the Library</i></p>
+        <p style="text-align:center;">leavenworth.librarycalendar.com/events/month</p>
+   <br> 
+  </div>
     <footer>
     <p>Thank you,</p>
     <p> [% branch.branchname %]<br /> [% branch.branchaddress1 %]<br /> [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %] </p>

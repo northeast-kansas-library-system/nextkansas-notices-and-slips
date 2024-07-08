@@ -1,0 +1,159 @@
+
+
+Name: Issue Quick Slip
+
+-----
+
+backup
+
+-----
+
+Message content:
+
+----------
+
+[% USE ItemTypes %]
+[% USE Branches %]
+[% USE KohaDates %]
+[%- USE Price -%]
+[% totalValue = 0 %]
+[%- USE date -%]
+[%- manip = date.manip -%]
+
+<head>
+
+  <!-- Notice code: ISSUEQSLIP; Library: master; -->
+
+  <style>
+
+    .slip {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 10pt;
+      width: 70mm;
+      margin: 0;
+      color: #000000 !important;
+      background-color: #ffffff;
+      font-weight: bold !important;
+    }
+
+    div {
+      padding-bottom: 2px;
+    }
+    
+    .slip p {
+      font-size: 10pt;
+    }
+
+    .slip h1 {
+      font-size: 1.6em;
+    }
+
+    .slip h2 {
+      font-size: 1.5em;
+    }
+
+    .slip h3 {
+      font-size: 1.4em !important;
+    }
+
+    .slip h4 {
+      font-size: 1.3em !important;
+    }
+
+    .slip h5 {
+      font-size: 1.2em;
+    }
+
+    .slip h6 {
+      font-size: 1.1em;
+    }
+
+    .ta_left {
+      text-align: left;
+    }
+
+    .ta_center {
+      text-align: center;
+    }
+
+    .ta_right {
+      text-align: right;
+    }
+
+  </style>
+
+</head>
+
+<div class="slip">
+
+  <div id="slip_content">
+
+    <div id="slip_library_info">
+
+      <div id="slip_library_name">
+        <h3>
+          [% branch.branchname %]
+        </h3>
+      </div>
+
+      <div id="slip_library_address">
+        <p>
+          [% branch.branchaddress1 %]<br />
+          [% IF branch.branchaddress2 %][% branch.branchaddress2 %]<br />[% END %]
+          [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %]<br />
+          Ph: [% branch.branchphone %]<br />
+          [% branch.branchemail %]
+        </p>
+      </div>
+
+      <div id="slip_library_catalog_url">
+        <p>
+          Renew materials & place<br />
+          requests online:<br />
+          <u>https://nextkansas.org</u>
+        </p>
+      </div>
+
+    </div>
+
+    <div id="slip_borrower_info">
+
+      <div id="slip_borrower_cardnumber" class="ta_center">
+        <p>
+          Last 6 digits of library<br />card number [% borrower.cardnumber.substr(-6) FILTER upper %]
+        </p>
+      </div>
+
+    </div>
+
+    [% IF checkouts.count %]
+
+      <div id="slip_cko">
+        <h4>Checked out today<br />at this library:</h4>
+        [% FOREACH checkout IN checkouts %]
+          [% IF checkout.branchcode == Branches.GetLoggedInBranchcode() %]
+          <p>
+            <ins>[% checkout.item.biblio.title FILTER upper %][% IF checkout.item.biblio.subtitle %] [% checkout.item.biblio.subtitle FILTER upper %][% END %]</ins><br />
+            [% IF checkout.item.biblio.author %]Author: [% checkout.item.biblio.author %]<br />[% END %]
+            Item type: [% ItemTypes.GetDescription(checkout.item.effective_itemtype) %]<br />
+            Barcode: [% checkout.item.barcode %]<br />
+            Date due: [% checkout.date_due | $KohaDates %]<br />
+            -----
+          </p>
+          [% END %]
+        [% END %]
+      </div>
+
+    [% END %]
+
+    <div id="slip_datestamp" class="ta_center">
+      <h4>
+        This receipt printed on:<br />
+        [% date.format(date.now, "%Y/%m/%d at %I:%M %p") %]
+      </h4>
+    </div>
+
+  </div>
+
+</div>
+

@@ -12,17 +12,29 @@ Message content:
 
 ----------
 
+[% USE Branches %] 
+[% USE date %] 
+[% USE ItemTypes %] 
+[% USE KohaDates %] 
+[% manip=date.manip %] 
+[% USE Price %] 
+[% totalValue=0 %] 
+
 **THIS IS AN AUTOMATED MESSAGE. DO NOT REPLY TO THIS MESSAGE. IF  YOU HAVE QUESTIONS ABOUT YOUR HOLD(S), CONTACT YOUR LOCAL LIBRARY. THANK YOU.** 
 
 Dear <<borrowers.firstname>> <<borrowers.surname>>,
 
-You have a hold available for pickup as of <<reserves.waitingdate>>:
+You have a holds available for pickup as of <<reserves.waitingdate>>:
 
-Title: <<biblio.title>>
-Author: <<biblio.author>>
-BC: <<items.barcode>>
+  ---- 
+  Title: [% hold.biblio.title %]
+  Author: [% hold.biblio.author %]
+  Waiting since: [% hold.waitingdate %]
+  Waiting at: [%hold.branch.branchname%]
 
-Your hold is available to pick up at the Paola Free Library. You may call (913) 259-3655 to schedule curbside service, or you may walk-up at your convenience during our regular operating hours: Monday-Thursday, 9:30AM-8PM; Friday, 9:30AM-5PM; and Saturday, 10AM-4PM.
+  ----
+
+Your holds are available to pick up at the Paola Free Library. You may call (913) 259-3655 to schedule curbside service, or you may walk-up at your convenience during our regular operating hours: Monday-Thursday, 9:30AM-8PM; Friday, 9:30AM-5PM; and Saturday, 10AM-4PM.
 
 Location: <<branches.branchname>>
 <<branches.branchaddress1>>

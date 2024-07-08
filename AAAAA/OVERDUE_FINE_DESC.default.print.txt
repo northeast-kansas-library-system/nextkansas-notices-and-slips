@@ -1,0 +1,16 @@
+
+
+Name: Overdue item fine description
+
+-----
+
+Overdue item fine description
+
+-----
+
+Message content:
+
+----------
+
+[% item.biblio.title %] [% checkout.date_due | $KohaDates %]
+

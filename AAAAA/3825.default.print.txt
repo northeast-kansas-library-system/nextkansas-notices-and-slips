@@ -1,0 +1,92 @@
+
+
+Name: GHW - Borrower category cleanup
+
+-----
+
+Borrower category cleanup
+
+-----
+
+Message content:
+
+----------
+
+[% FOREACH d IN data%]
+
+<h2>[% d.branchname %] borrower category report</h2>
+
+<h3>Available borrower categories</h3>
+
+<p>Staff a [% d.branchname %] currently have the ability to create new accounts in these borrower categories:</p>
+
+<ul>[% d.AVAILABLE %]</ul>
+
+<h3>Borrower category count at [% d.branchname %]</h3>
+
+<p>And currently you have accounts with a [% d.branchname %] home library that are using these categories:</p>
+
+<ul>[% d.ACTUAL %]</ul>
+
+<p>Notes on actual borrowers:</p>
+<p>The first thing you're going to notice when you compare the categories of accounts your staff can create and the categories that are actually in use at your library is that you have some accounts in categories that you are not able to create.  This can happen for two reasons:</p>
+
+<ul>
+  <li>
+    Some categories are controlled by NEKLS - specifically:
+    <ul>
+        <li>Adult - self registered during the pandemic</li>
+        <li>Staff - Permissions template</li>
+        <li>Staff - SIP user</li>
+        <li>Staff - system login (exempt)</li>
+    </ul>
+  </li>
+  <li>
+    If an account was created at a different library in a category that [% d.branchname %] doesn't have access to, you'll see borrowers with categories that shouldn't exist at your library.
+  </li>
+</ul>
+
+
+<h3>"Exempt" categories</h3>
+
+<p>There are six "exempt" borrower categories.  They are:</p>
+
+<ol>
+  <li>Organization - interlibrary loan (exempt-ILL)</li>
+  <li>Staff - in house use (exempt)</li>
+  <li>Staff - library associate (exempt)</li>
+  <li>Staff - system login (exempt)</li>
+  <li>Student (exempt)</li>
+  <li>Teacher/Faculty/Administrator (exempt)</li>
+</ol>
+
+<p>These borrowers will not be automatically billed for lost items.  A borrower in one of these categories can keep an item overdue for 10 years and Next Search Catalog will never automatically bill them for the cost of that item.  In this case "exempt" means that these categories are exempt from the automated lost items process.</p>
+
+<p>When Prairie Hills School District became a member of Next Search Catalog, "Teacher/Faculty/Administrator" and "Student" were established as exempt categories to meet the school district's needs.  Additionally "Staff - library associate" was also established as an exempt category around that time.  The problem is that many public libraries were already using those categories for public library borrowers and they do want those borrowers to be billed for lost items.</p>
+
+<p>To meet the needs of public libraries, Student (public library); Teacher/Faculty/Administrator (public library); and Adult - library associate were established so that public libraries could still offer accounts in those categories and still have them automatically bill borrowers for lost item.</p>
+
+[% IF d.EXEMPT == ""  %]
+
+[% ELSE %]
+
+<p>Currently your library uses these "exempt" borrower categories:</p>
+
+<ul>
+
+  [% d.EXEMPT %]
+
+</ul>
+
+<p>My recommendation for these categories depends on a couple of things.</p>
+
+<p>If you are not using these categories to set different circulation rules for these borrowers, then I recommend that we change the existing borrowers to "Adult" or "Minor" and eliminate the use of these categories at your library.</p>
+
+<p>If you are using these categories to set different circulation rules for these borrowers, then </p>
+
+[% END %]
+
+
+
+[% END %]
+

@@ -1,0 +1,16 @@
+
+
+Name: Concern resolved
+
+-----
+
+Catalog concern resolved
+
+-----
+
+Message content:
+
+----------
+
+[%- PROCESS 'html_helpers.inc' -%]Dear [%- INCLUDE 'patron-title.inc' patron => ticket_update.ticket.reporter -%],<br><br>The library has now marked your concern with [%- INCLUDE 'biblio-title.inc' biblio=ticket_update.ticket.biblio link = 0 -%]as resolved.<br><br>The following comment was left:   <br>[%- ticket_update.message -%]<br><br>Thankyou
+

@@ -4,7 +4,7 @@ Name: Welcome notice
 
 -----
 
-[% USE Koha %]Welcome to [% IF Koha.Preference('LibraryName') %][% Koha.Preference('LibraryName') %][% ELSE %]the library[% END %]
+[% USE Koha %]Welcome to [% branch.branchname %]
 
 -----
 

@@ -1,0 +1,16 @@
+
+
+Name: Concern updated
+
+-----
+
+Catalog concern updated
+
+-----
+
+Message content:
+
+----------
+
+[%- PROCESS 'html_helpers.inc' -%]Dear [%- INCLUDE 'patron-title.inc' patron => ticket_update.ticket.reporter -%],<br><br>The library has added an update to the concern you reported against [%- INCLUDE 'biblio-title.inc' biblio=ticket_update.ticket.biblio link = 0 -%].<br><br>The following comment was left: <br>[%- ticket_update.message -%]<br><br>Thankyou
+

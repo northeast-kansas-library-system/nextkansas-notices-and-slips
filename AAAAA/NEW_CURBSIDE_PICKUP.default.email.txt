@@ -1,0 +1,28 @@
+
+
+Name: New curbside pickup
+
+-----
+
+You have scheduled a curbside pickup for [% branch.branchname %]
+
+-----
+
+Message content:
+
+----------
+
+[%- USE KohaDates -%]
+[%- SET cp = curbside_pickup -%]
+
+You have a curbside pickup scheduled for [% cp.scheduled_pickup_datetime | $KohaDates with_hours => 1 %] at [% cp.library.branchname %].
+
+Any holds waiting for you at the pickup time will be included in this pickup. At this time, that list includes:
+[%- FOREACH h IN cp.patron.holds %]
+    [%- IF h.branchcode == cp.branchcode && h.found == 'W' %]
+* [% h.biblio.title %], [% h.biblio.author %] ([% h.item.barcode %])
+    [%- END %]
+[%- END %]
+
+Once you have arrived, please call your library or log into your account and click the "Alert staff of your arrival" button to let them know you are there.
+

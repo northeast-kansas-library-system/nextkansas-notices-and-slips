@@ -24,6 +24,6 @@ ITEM RECALLED
 <<biblio.title>> by <<biblio.author>>
 Barcode: <<items.barcode>>
 Callnumber: <<items.itemcallnumber>>
-Waiting since: <<recalls.waitingdate>>
-Notes: <<recalls.recallnotes>>
+Waiting since: <<recalls.waiting_date>>
+Notes: <<recalls.notes>>
 

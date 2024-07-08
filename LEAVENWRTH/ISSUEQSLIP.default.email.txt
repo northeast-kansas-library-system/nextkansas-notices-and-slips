@@ -146,10 +146,15 @@ Message content:
       </div>
 
       <div id="news" class="buffer">
-        <!-- Put news content here in HTML format -->
-        <p style="text-align:center;"><b>Thursday, May 4</b></p>
-        <p style="text-align:center;"><b>Library Will Close at Noon</b></p>
-        <p style="text-align:center;"><b>for staff in-service</b></p>
+        <p style="text-align:center;"><b>Find your next book or movie</b></p>
+      <p style="text-align:center;">at leavenworthpubliclibrary.org</p>
+      <p style="text-align:center;">see new adult material featured on the home page </p>
+      <p style="text-align:center;">or select Library Collections</p>
+      <p style="text-align:center;">and Find Your Next to browse featured collections</p>
+      
+        <p style="text-align:center;"><b>Find your next activity</b></p>
+       <p style="text-align:center;">go to leavenworthpubliclibrary.org</p>
+        <p style="text-align:center;">click on Event Calendar</p>
       </div>
 
       <div id="slip_datestamp" class="center">

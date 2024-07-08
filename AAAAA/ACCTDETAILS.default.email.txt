@@ -4,7 +4,7 @@ Name: Account Details Template - DEFAULT
 
 -----
 
-Welcome to the library
+[% USE Koha %]Welcome to [% branch.branchname %]
 
 -----
 

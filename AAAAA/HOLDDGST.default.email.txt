@@ -1,10 +1,10 @@
 
 
-Name: Waiting hold reminder
+Name: Hold available for pickup (digest)
 
 -----
 
-Requested items available at <<branches.branchname>>
+Library items available for pickup
 
 -----
 
@@ -12,22 +12,18 @@ Message content:
 
 ----------
 
-<head>
+<head> 
 
-  [% USE Branches %] 
   [% USE date %] 
-  [% USE ItemTypes %] 
   [% USE KohaDates %] 
   [% manip=date.manip %] 
-  [% USE Price %] 
-  [% totalValue=0 %] 
 
   <style>
 
     /* Slip */
     /* @media print for slip */
     @media print {
-      .nsc_slip {
+      .slip {
         width: 2.75in;
         margin: 0;
         color: #000000 !important;
@@ -36,94 +32,94 @@ Message content:
       }
     }
 
-    .nsc_slip {
+    .slip {
       width: 2.75in;
       margin: 0;
       font-family: 'Arial Black', 'Arial', sans-serif !important;
       font-size: 10pt;
     }
 
-    .nsc_slip p {
+    .slip p {
       font-size: 10pt;
     }
 
-    .nsc_slip h1 {
+    .slip h1 {
       font-size: 1.8em;
     }
 
-    .nsc_slip h2 {
+    .slip h2 {
       font-size: 1.6em;
     }
 
-    .nsc_slip h3 {
+    .slip h3 {
       font-size: 1.4em !important;
     }
 
-    .nsc_slip h4 {
+    .slip h4 {
       font-size: 1.3em !important;
     }
 
-    .nsc_slip h5 {
+    .slip h5 {
       font-size: 1.2em !important;
     }
 
-    .nsc_slip h6 {
+    .slip h6 {
       font-size: 1.1em;
     }
 
-    .nsc_slip article {
+    .slip article {
       display: inline-block
     }
 
-    .nsc_slip .grp-half {
+    .slip .grp-half {
       padding-bottom: .5in;
     }
 
-    .nsc_slip .grp-1 {
+    .slip .grp-1 {
       padding-bottom: 1in;
     }
 
-    .nsc_slip .grp-2 {
+    .slip .grp-2 {
       padding-bottom: 2in;
     }
 
-    .nsc_slip .grp-3 {
+    .slip .grp-3 {
       padding-bottom: 3in;
     }
 
-    .nsc_slip .grp-4 {
+    .slip .grp-4 {
       padding-bottom: 4in;
     }
 
-    .nsc_slip .endzone-1 {
+    .slip .endzone-1 {
       padding-top: 1in;
     }
 
-    .nsc_slip .endzone-2 {
+    .slip .endzone-2 {
       padding-top: 2in;
     }
 
-    .nsc_slip .endzone-3 {
+    .slip .endzone-3 {
       padding-top: 3in;
     }
 
-    .nsc_slip .endzone-4 {
+    .slip .endzone-4 {
       padding-top: 4in;
     }
 
-    .nsc_slip .item-title {
+    .slip .item-title {
       text-transform: uppercase;
     }
 
-    .nsc_slip .bcode {
+    .slip .bcode {
       text-transform: uppercase;
     }
 
-    .nsc_slip .underline {
+    .slip .underline {
       text-transform: underline;
     }
 
-    .nsc_slip .right {
+    .slip .right {
       text-align: right;
     }
 
@@ -131,7 +127,7 @@ Message content:
     /* notices */
     /* @media print for notices */
     @media print {
-      .nsc_notices {
+      .notices {
         width: 7in;
         margin: 0in;
         color: #000000 !important;
@@ -140,101 +136,101 @@ Message content:
       }
     }
 
-    .nsc_notices {
+    .notices {
       width: 7in;
       margin: .75in;
       font-family: 'Arial Black', 'Arial', sans-serif !important;
       font-size: 10pt;
     }
 
-    .nsc_notices p {
+    .notices p {
       font-size: 10pt;
     }
 
-    .nsc_notices h1 {
+    .notices h1 {
       font-size: 1.8em;
     }
 
-    .nsc_notices h2 {
+    .notices h2 {
       font-size: 1.6em;
     }
 
-    .nsc_notices h3 {
+    .notices h3 {
       font-size: 1.4em !important;
     }
 
-    .nsc_notices h4 {
+    .notices h4 {
       font-size: 1.3em !important;
     }
 
-    .nsc_notices h5 {
+    .notices h5 {
       font-size: 1.2em !important;
     }
 
-    .nsc_notices h6 {
+    .notices h6 {
       font-size: 1.1em;
     }
 
-    .nsc_notices article {
+    .notices article {
       display: inline-block
     }
 
-    .nsc_notices .grp-half {
+    .notices .grp-half {
       padding-bottom: .5in;
     }
 
-    .nsc_notices .grp-1 {
+    .notices .grp-1 {
       padding-bottom: 1in;
     }
 
-    .nsc_notices .grp-2 {
+    .notices .grp-2 {
       padding-bottom: 2in;
     }
 
-    .nsc_notices .grp-3 {
+    .notices .grp-3 {
       padding-bottom: 3in;
     }
 
-    .nsc_notices .grp-4 {
+    .notices .grp-4 {
       padding-bottom: 4in;
     }
 
-    .nsc_notices .endzone-1 {
+    .notices .endzone-1 {
       padding-top: 1in;
     }
 
-    .nsc_notices .endzone-2 {
+    .notices .endzone-2 {
       padding-top: 2in;
     }
 
-    .nsc_notices .endzone-3 {
+    .notices .endzone-3 {
       padding-top: 3in;
     }
 
-    .nsc_notices .endzone-4 {
+    .notices .endzone-4 {
       padding-top: 4in;
     }
 
-    .nsc_notices .item-title {
+    .notices .item-title {
       text-transform: uppercase;
     }
 
-    .nsc_notices .bcode {
+    .notices .bcode {
       text-transform: uppercase;
     }
 
-    .nsc_notices .underline {
+    .notices .underline {
       text-transform: underline;
     }
 
-    .nsc_notices .right {
+    .notices .right {
       text-align: right;
     }
 
     /* emails */
     /* @media print for emails */
     @media print {
-      .nsc_email {
+      .emails {
         width: 7in;
         margin: 0in;
         color: #000000;
@@ -247,131 +243,145 @@ Message content:
       }
     }
 
-    .nsc_email {
+    .emails {
       font-family: 'Tahoma', 'Arial', sans-serif !important;
       font-size: 12pt;
       color: #000000;
       background-color: #ffffff;
     }
 
-    .nsc_email p {
+    .emails p {
       font-size: 12pt;
     }
 
-    .nsc_email h1 {
+    .emails h1 {
       font-size: 1.8em;
       color: #000000;
       background-color: #ffffff;
     }
 
-    .nsc_email h2 {
+    .emails h2 {
       font-size: 1.6em;
       color: #000000;
       background-color: #ffffff;
     }
 
-    .nsc_email h3 {
+    .emails h3 {
       font-size: 1.4em;
       color: #000000 !important;
       background-color: #ffffff;
     }
 
-    .nsc_email h4 {
+    .emails h4 {
       font-size: 1.3em;
       color: #000000 !important;
       background-color: #ffffff;
     }
 
-    .nsc_email h5 {
+    .emails h5 {
       font-size: 1.2em;
       color: #000000 !important;
       background-color: #ffffff;
     }
 
-    .nsc_email h6 {
+    .emails h6 {
       font-size: 1.1em;
       color: #000000;
       background-color: #ffffff;
     }
 
-    .nsc_email article {
+    .emails article {
       display: inline-block;
       color: #000000;
       background-color: #ffffff;
     }
 
-    .nsc_email .grp-half {
+    .emails .grp-half {
       padding-bottom: .5in;
     }
 
-    .nsc_email .grp-1 {
+    .emails .grp-1 {
       padding-bottom: 1in;
     }
 
-    .nsc_email .grp-2 {
+    .emails .grp-2 {
       padding-bottom: 2in;
     }
 
-    .nsc_email .grp-3 {
+    .emails .grp-3 {
       padding-bottom: 3in;
     }
 
-    .nsc_email .grp-4 {
+    .emails .grp-4 {
       padding-bottom: 4in;
     }
 
-    .nsc_email .endzone-1 {
+    .emails .endzone-1 {
       padding-top: 1in;
     }
 
-    .nsc_email .endzone-2 {
+    .emails .endzone-2 {
       padding-top: 2in;
     }
 
-    .nsc_email .endzone-3 {
+    .emails .endzone-3 {
       padding-top: 3in;
     }
 
-    .nsc_email .endzone-4 {
+    .emails .endzone-4 {
       padding-top: 4in;
     }
 
-    .nsc_email .item-title {
+    .emails .item-title {
       text-transform: uppercase;
     }
 
-    .nsc_email .bcode {
+    .emails .bcode {
       text-transform: uppercase;
     }
 
-    .nsc_email .underline {
+    .emails .underline {
       text-transform: underline;
     }
 
-    .nsc_email .right {
+    .emails .right {
       text-align: right;
     }
   </style>
-  <title>Title</title>
+  <title>Requested items available</title>
 </head>
 <div id="notice_logo" style="font-family: 'Tahoma', 'Arial', sans-serif !important; text-align: left;">
   <h1 style="color: #1f9bde; font-weight: 1000; padding-top: 5px; line-height: .25em; font-size: 3em;">NE<span style="color: #0157b9">X</span>T</h1>
   <h5 style="color: #838689; text-decoration: underline;font-style: italic;">SEARCH CATALOG</h5>
 </div>
-<div class="nsc_email" style="color: #000000">
+<div class="emails" style="color: #000000">
   <div id="greeting" class="grp-half">
-    <h2>[% branch.branchname %] - Items waiting reminder</h2>
+    <h2>Requested library items available to pick up</h2>
   </div>
   <div id="content" class="grp-half">
-    <p>The following requested items are still available for pickup at [% branch.branchname %].<br />These items were requested for the library member with the card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].<br /></p>
+    <p>The following requested items are available to pickup at the library indicated ([% date.format(date.now, "%Y-%m-%d") %]).<br />These requests are for the library member with the card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].<br /></p>
     <p>The details are:</p>
-    [% FOREACH hold IN holds %]
-      <p> Title: [% hold.biblio.title %]<br /> [% IF hold.biblio.author %]Author: [% hold.biblio.author %]<br />[% END %] [% IF hold.item.itemcallnumber %]Call number: [% hold.item.itemcallnumber %]<br />[% END %] BC: [% hold.item.barcode %]<br />Waiting since [% hold.waitingdate | $KohaDates %]<br /><ins>Available until [% hold.expirationdate %]</ins></p>
-    [% END %]
+    <ul style="list-style-position: inside;">
+    ---- 
+      <br /><br />
+      <div style="border: 2px solid; padding: 10px;">
+        <li style="display: none">[% hold.reserve_id %]</li>
+        <li><strong>Waiting at: [% hold.branch.branchname %]</strong></li>
+        <ul>
+          <li>Title: [% hold.biblio.title %]</li>
+          <li>Author: [% hold.biblio.author %]</li>
+          <li>Item has been waiting since: [% hold.waitingdate %]</li>
+          <li>Item will be held until: [% hold.expirationdate %]</li>
+        </ul>
+      </div>
+      <br />
+    ----
+    </ul>
   </div>
   <footer>
     <p>Thank you,</p>
-    <p> [% branch.branchname %]<br /> [% branch.branchaddress1 %]<br /> [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %] </p>
+    <p>This message was sent by:<p>
+    <p>[% branch.branchname %]<br /> [% branch.branchaddress1 %]<br /> [% branch.branchcity %], [% branch.branchstate %] [% branch.branchzip %] </p>
     <p>You can access your account on-line at <a href="https://nextkansas.org">https://nextkansas.org</a> 24 hours a day.</p>
     <p>Visit our library's website at: <a href="[% branch.branchurl %]">[% branch.branchurl %]</a></p>
     <p>If you no longer wish to receive these e-mails or if you have any questions, please contact us by phone at <strong><ins>[% branch.branchphone %]</ins></strong>.</p>
