@@ -1,0 +1,81 @@
+<!-- Template toolkit plugins go first if needed - see the list of template toolkit plugins below -->
+
+[% USE Branches %]
+[%- USE date -%]
+[%- manip = date.manip -%]
+[% USE ItemTypes %]
+[% USE KohaDates %]
+[%- USE Price -%]
+[% totalValue = 0 %]
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title></title>
+  <!-- Notice code: ; Library: ; --> 
+
+  <meta charset="UTF-8" />
+
+  <style>
+
+
+    
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="nsc_slip"> <!-- First div under body specifies nsc_slip, ncs_print, ncs_email -->
+
+    <div id="notice_logo" class="section">
+      <h1 class="nsc_logo_net">NE<span class="nsc_logo_x">X</span>T</h1>
+      <h5 class="nsc_logo_sc">Search catalog</h5>
+    </div>
+
+    <div id="notice_logo" class="section">
+      <h1 class="nsc_logo_net">NE<span class="nsc_logo_x">X</span>T</h1>
+      <h5 class="nsc_logo_sc">Search catalog</h5>
+    </div>
+    
+  </div>
+
+  <div class="nsc_print"> <!-- First div under body specifies nsc_slip, ncs_print, ncs_email -->
+
+    <div id="notice_logo" class="section">
+      <h1 class="nsc_logo_net">NE<span class="nsc_logo_x">X</span>T</h1>
+      <h5 class="nsc_logo_sc">Search catalog</h5>
+    </div>
+
+    <div id="notice_logo" class="section">
+      <h1 class="nsc_logo_net">NE<span class="nsc_logo_x">X</span>T</h1>
+      <h5 class="nsc_logo_sc">Search catalog</h5>
+    </div>
+  </div>
+
+  <div class="nsc_email"> <!-- First div under body specifies nsc_slip, ncs_print, ncs_email -->
+
+    <div id="notice_logo" class="section">
+      <h1 class="nsc_logo_net">NE<span class="nsc_logo_x">X</span>T</h1>
+      <h5 class="nsc_logo_sc">Search catalog</h5>
+    </div>
+
+    <div id="notice_logo" class="section">
+      <h1 class="nsc_logo_net">NE<span class="nsc_logo_x">X</span>T</h1>
+      <h5 class="nsc_logo_sc">Search catalog</h5>
+    </div>
+    
+  </div>
+
+
+
+    
+
+</body>
+
+
+</html>

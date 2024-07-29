@@ -1,0 +1,78 @@
+<!-- Template toolkit plugins go first if needed - see the list of template toolkit plugins below -->
+
+[% USE Branches %]
+[%- USE date -%]
+[%- manip = date.manip -%]
+[% USE ItemTypes %]
+[% USE KohaDates %]
+[%- USE Price -%]
+[% totalValue = 0 %]
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title></title>
+  <!-- Notice code: ; Library: ; --> 
+
+  <meta charset="UTF-8" />
+
+  <style>
+
+    /* CSS goes here - create default CSS for all NEKLS notices and slips - Slips/Print/Email - nsc_slips = receipt print only | nsc_print = prints on 8.5 x 11 inch paper | nsc_email = intended to be sent as an e-mail */
+
+    .nsc_slip {
+      width: 2.75in;
+      margin: 0;
+      font-family: 'Arial Black', 'Arial', sans-serif !important;
+      font-size: 10pt;
+    }
+
+    .nsc_slip p {
+      font-size: 10pt;
+    }
+
+    .nsc_slip h1 {
+      font-size: 1.8em;
+    }
+
+    .nsc_slip h2 {
+      font-size: 1.6em;
+    }
+
+    .nsc_slip h3 {
+      font-size: 1.4em !important;
+    }
+
+    .nsc_slip h4 {
+      font-size: 1.3em !important;
+    }
+
+    .nsc_slip h5 {
+      font-size: 1.2em !important;
+    }
+
+    .nsc_slip h6 {
+      font-size: 1.1em;
+    }
+
+    
+
+  </style>
+
+</head>
+
+<body>
+
+  <div> <!-- First div under body specifies nsc_slip, ncs_print, ncs_email -->
+
+    <!-- Insert page components here -->
+    
+  </div>
+
+</body>
+
+
+</html>

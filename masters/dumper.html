@@ -1,0 +1,52 @@
+[% USE ItemTypes %]
+[% USE Branches %]
+[% USE KohaDates %]
+[%- USE Price -%]
+[% totalValue = 0 %]
+[%- USE date -%]
+[%- manip = date.manip -%]
+[% USE Dumper (Indent=0, Pad="<br>") %]
+
+<div>
+
+
+<h2>additional_text:</h2> <p><br />[% Dumper.dump(additional_text.unblessed) %]<br /><br /></p>
+<h2>article_request:</h2> <p><br />[% Dumper.dump(article_request.unblessed) %]<br /><br /></p>
+<h2>biblio:</h2> <p><br />[% Dumper.dump(biblio.unblessed) %]<br /><br /></p>
+<h2>biblioitem:</h2> <p><br />[% Dumper.dump(biblioitem.unblessed) %]<br /><br /></p>
+<h2>borrower:</h2> <p><br />[% Dumper.dump(borrower.unblessed) %]<br /><br /></p>
+<h2>borrower_modification:</h2> <p><br />[% Dumper.dump(borrower_modification.unblessed) %]<br /><br /></p>
+<h2>borrowers:</h2> <p><br />[% Dumper.dump(borrowers.unblessed) %]<br /><br /></p>
+<h2>branch:</h2> <p><br />[% Dumper.dump(branch.unblessed) %]<br /><br /></p>
+<h2>change :</h2> <p><br />[% Dumper.dump(change .unblessed) %]<br /><br /></p>
+<h2>checkout:</h2> <p><br />[% Dumper.dump(checkout.unblessed) %]<br /><br /></p>
+<h2>checkouts:</h2> <p><br />[% Dumper.dump(checkouts.unblessed) %]<br /><br /></p>
+<h2>count:</h2> <p><br />[% Dumper.dump(count.unblessed) %]<br /><br /></p>
+<h2>credit:</h2> <p><br />[% Dumper.dump(credit.unblessed) %]<br /><br /></p>
+<h2>debit:</h2> <p><br />[% Dumper.dump(debit.unblessed) %]<br /><br /></p>
+<h2>hold:</h2> <p><br />[% Dumper.dump(hold.unblessed) %]<br /><br /></p>
+<h2>ill_bib_author:</h2> <p><br />[% Dumper.dump(ill_bib_author.unblessed) %]<br /><br /></p>
+<h2>ill_bib_title:</h2> <p><br />[% Dumper.dump(ill_bib_title.unblessed) %]<br /><br /></p>
+<h2>ill_full_metadata:</h2> <p><br />[% Dumper.dump(ill_full_metadata.unblessed) %]<br /><br /></p>
+<h2>illrequest:</h2> <p><br />[% Dumper.dump(illrequest.unblessed) %]<br /><br /></p>
+<h2>illrequestattributes:</h2> <p><br />[% Dumper.dump(illrequestattributes.unblessed) %]<br /><br /></p>
+<h2>item:</h2> <p><br />[% Dumper.dump(item.unblessed) %]<br /><br /></p>
+<h2>items.content:</h2> <p><br />[% Dumper.dump(items.content.unblessed) %]<br /><br /></p>
+<h2>listname:</h2> <p><br />[% Dumper.dump(listname.unblessed) %]<br /><br /></p>
+<h2>offsets :</h2> <p><br />[% Dumper.dump(offsets .unblessed) %]<br /><br /></p>
+<h2>old_checkout:</h2> <p><br />[% Dumper.dump(old_checkout.unblessed) %]<br /><br /></p>
+<h2>order:</h2> <p><br />[% Dumper.dump(order.unblessed) %]<br /><br /></p>
+<h2>overdue:</h2> <p><br />[% Dumper.dump(overdue.unblessed) %]<br /><br /></p>
+<h2>overdues:</h2> <p><br />[% Dumper.dump(overdues.unblessed) %]<br /><br /></p>
+<h2>passwordreseturl:</h2> <p><br />[% Dumper.dump(passwordreseturl.unblessed) %]<br /><br /></p>
+<h2>serial:</h2> <p><br />[% Dumper.dump(serial.unblessed) %]<br /><br /></p>
+<h2>shareurl:</h2> <p><br />[% Dumper.dump(shareurl.unblessed) %]<br /><br /></p>
+<h2>subscription:</h2> <p><br />[% Dumper.dump(subscription.unblessed) %]<br /><br /></p>
+<h2>suggestion:</h2> <p><br />[% Dumper.dump(suggestion.unblessed) %]<br /><br /></p>
+<h2>tendered:</h2> <p><br />[% Dumper.dump(tendered.unblessed) %]<br /><br /></p>
+<h2>user:</h2> <p><br />[% Dumper.dump(user.unblessed) %]<br /><br /></p>
+
+
+
+
+</div>
