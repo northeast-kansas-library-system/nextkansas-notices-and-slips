@@ -1,0 +1,6 @@
+<div id="nsc_request_available" class="section">
+  <p>The following requested item is available to pickup at [% branch.branchname %] today ([% date.format(date.now, "%Y-%m-%d") %]).<br />This item was requested for the library member with the card number ending in [% borrower.cardnumber.substr(-6) FILTER upper %].<br /></p>
+  <p>The details are:</p>
+  <p> Title: [% biblio.title %]<br /> [% IF biblio.author %]Author: [% biblio.author %]<br />[% END %] [% IF item.itemcallnumber %]Call number: [% item.itemcallnumber %]<br />[% END %] BC: [% item.barcode %] </p>
+  <p>The item will be available until [% hold.expirationdate %].</p>
+</div>
