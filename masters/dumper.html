@@ -1,5 +1,6 @@
 [% USE AuthorisedValues %]
 [% USE Branches %]
+[% USE Categories %]
 [% USE ItemTypes %]
 [% USE KohaDates %]
 [%- USE Price -%]
@@ -9,33 +10,44 @@
 [%- manip = date.manip -%]
 [% USE Dumper Indent=1 %]
 
+
+
 <div>
 
-  <h2>raw:</h2><br /><br /><pre>[% Dumper.dump(raw) %]</pre><br /><br />
+  <h2>additional_contents:</h2><br /><br /><pre>[% Dumper.dump(additional_contents.unblessed) %]</pre><br /><br />
   <h2>additional_text:</h2><br /><br /><pre>[% Dumper.dump(additional_text.unblessed) %]</pre><br /><br />
   <h2>article_request:</h2><br /><br /><pre>[% Dumper.dump(article_request.unblessed) %]</pre><br /><br />
   <h2>AuthorisedValues:</h2><br /><br /><pre>[% Dumper.dump(AuthorisedValues.unblessed) %]</pre><br /><br />
   <h2>biblio:</h2><br /><br /><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br /><br />
+  <h2>biblios:</h2><br /><br /><pre>[% Dumper.dump(biblios.unblessed) %]</pre><br /><br />
   <h2>biblioitem:</h2><br /><br /><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br /><br />
   <h2>borrower:</h2><br /><br /><pre>[% Dumper.dump(borrower.unblessed) %]</pre><br /><br />
+  <h2>Categories.GetName( borrower.categorycode )</h2><br /><br /><pre>[% Categories.GetName( borrower.categorycode ) %]</pre><br /><br />
   <h2>borrower_modification:</h2><br /><br /><pre>[% Dumper.dump(borrower_modification.unblessed) %]</pre><br /><br />
   <h2>borrowers:</h2><br /><br /><pre>[% Dumper.dump(borrowers.unblessed) %]</pre><br /><br />
   <h2>branch:</h2><br /><br /><pre>[% Dumper.dump(branch.unblessed) %]</pre><br /><br />
-  <h2>change :</h2><br /><br /><pre>[% Dumper.dump(change .unblessed) %]</pre><br /><br />
+  <h2>change :</h2><br /><br /><pre>[% Dumper.dump(change.unblessed) %]</pre><br /><br />
   <h2>checkout:</h2><br /><br /><pre>[% Dumper.dump(checkout.unblessed) %]</pre><br /><br />
   <h2>checkouts:</h2><br /><br /><pre>[% Dumper.dump(checkouts.unblessed) %]</pre><br /><br />
+  <h2>comment:</h2><br /><br /><pre>[% Dumper.dump(comment.unblessed) %]</pre><br /><br />
+  <h2>component:</h2><br /><br /><pre>[% Dumper.dump(component.unblessed) %]</pre><br /><br />
   <h2>count:</h2><br /><br /><pre>[% Dumper.dump(count.unblessed) %]</pre><br /><br />
   <h2>credit:</h2><br /><br /><pre>[% Dumper.dump(credit.unblessed) %]</pre><br /><br />
   <h2>debit:</h2><br /><br /><pre>[% Dumper.dump(debit.unblessed) %]</pre><br /><br />
+  <h2>dec:</h2><br /><br /><pre>[% Dumper.dump(dec.unblessed) %]</pre><br /><br />
   <h2>hold:</h2><br /><br /><pre>[% Dumper.dump(hold.unblessed) %]</pre><br /><br />
   <h2>ill_bib_author:</h2><br /><br /><pre>[% Dumper.dump(ill_bib_author.unblessed) %]</pre><br /><br />
   <h2>ill_bib_title:</h2><br /><br /><pre>[% Dumper.dump(ill_bib_title.unblessed) %]</pre><br /><br />
   <h2>ill_full_metadata:</h2><br /><br /><pre>[% Dumper.dump(ill_full_metadata.unblessed) %]</pre><br /><br />
   <h2>illrequest:</h2><br /><br /><pre>[% Dumper.dump(illrequest.unblessed) %]</pre><br /><br />
   <h2>illrequestattributes:</h2><br /><br /><pre>[% Dumper.dump(illrequestattributes.unblessed) %]</pre><br /><br />
+  <h2>Issue:</h2><br /><br /><pre>[% Dumper.dump(Issue.unblessed) %]</pre><br /><br />
   <h2>item:</h2><br /><br /><pre>[% Dumper.dump(item.unblessed) %]</pre><br /><br />
   <h2>items.content:</h2><br /><br /><pre>[% Dumper.dump(items.content.unblessed) %]</pre><br /><br />
+  <h2>KohaDates:</h2><br /><br /><pre>[% Dumper.dump(KohaDates.unblessed) %]</pre><br /><br />
+  <h2>LEXTABLE:</h2><br /><br /><pre>[% Dumper.dump(LEXTABLE.unblessed) %]</pre><br /><br />
   <h2>listname:</h2><br /><br /><pre>[% Dumper.dump(listname.unblessed) %]</pre><br /><br />
+  <h2>news:</h2><br /><br /><pre>[% Dumper.dump(news.unblessed) %]</pre><br /><br />
   <h2>offsets :</h2><br /><br /><pre>[% Dumper.dump(offsets .unblessed) %]</pre><br /><br />
   <h2>old_checkout:</h2><br /><br /><pre>[% Dumper.dump(old_checkout.unblessed) %]</pre><br /><br />
   <h2>order:</h2><br /><br /><pre>[% Dumper.dump(order.unblessed) %]</pre><br /><br />
@@ -48,5 +60,32 @@
   <h2>suggestion:</h2><br /><br /><pre>[% Dumper.dump(suggestion.unblessed) %]</pre><br /><br />
   <h2>tendered:</h2><br /><br /><pre>[% Dumper.dump(tendered.unblessed) %]</pre><br /><br />
   <h2>user:</h2><br /><br /><pre>[% Dumper.dump(user.unblessed) %]</pre><br /><br />
+
+</div>
+
+<div>
+
+  [% FOREACH biblio IN biblios %]
+    [% SET biblioitem = biblio.biblioitem %]
+    <h2>FOREACH biblio IN biblios - SET biblioitem = biblio.biblioitem:</h2><br /><br /><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetDescriptionByKohaField( kohafield => 'biblioitems.agerestriction', authorised_value => biblioitem.agerestriction )</h2><br /><br /><pre>[% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'biblioitems.agerestriction', authorised_value => biblioitem.agerestriction ) %]</pre><br /><br />
+
+    <h2>ItemTypes.GetDescription(biblio.itemtype):</h2><br /><br /><pre>[% ItemTypes.GetDescription(biblio.itemtype) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetDescriptionByKohaField( kohafield => 'biblioitems.cn_sort', authorised_value => biblioitem.cn_sort )</h2><br /><br /><pre>[% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'biblioitems.cn_sort', authorised_value => biblioitem.cn_sort ) %]</pre><br /><br />
+
+  [% END %]
+
+  [% FOREACH item IN biblio.items %]
+    <h2>FOREACH item IN biblio.items - item:</h2><br /><br /><pre>[% Dumper.dump(item.unblessed) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.location', authorised_value => item.location )</h2><br /><br /><pre>[% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.location', authorised_value => item.location ) %]</pre><br /><br />
+
+    <h2>ItemTypes.GetDescription(item.itype):</h2><br /><br /><pre>[% ItemTypes.GetDescription(item.itype) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.ccode', authorised_value => item.ccode )</h2><br /><br /><pre>[% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.ccode', authorised_value => item.ccode ) %]</pre><br /><br />
+
+  [% END %]
 
 </div>

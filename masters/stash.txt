@@ -1,0 +1,3 @@
+[% USE Stash %]
+[% USE Dumper Indent = 1%]
+<pre>[% Dumper.dump_html( Stash.stash() ) %]</pre>

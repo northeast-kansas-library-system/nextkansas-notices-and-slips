@@ -1,0 +1,433 @@
+----------
+Acquisition
+
+  ACQ_NOTIF_ON_RECEIV
+
+----------
+Catalog
+
+  CART
+
+    biblios
+
+    [% FOREACH biblio IN biblios %]
+      biblio.abstract
+      biblio.author
+      biblio.biblionumber
+      biblio.copyrightdate
+      biblio.datecreated
+      biblio.frameworkcode
+      biblio.medium
+      biblio.notes
+      biblio.part_name
+      biblio.part_number
+      biblio.serial
+      biblio.seriestitle
+      biblio.subtitle
+      biblio.timestamp
+      biblio.title
+      biblio.unititle
+
+      [% SET biblioitem = biblio.biblioitem %]
+        biblioitem.agerestriction
+        biblioitem.biblioitemnumber
+        biblioitem.biblionumber
+        biblioitem.cn_class
+        biblioitem.cn_item
+        biblioitem.cn_sort
+        biblioitem.cn_source
+        biblioitem.cn_suffix
+        biblioitem.collectionissn
+        biblioitem.collectiontitle
+        biblioitem.collectionvolume
+        biblioitem.ean
+        biblioitem.editionresponsibility
+        biblioitem.editionstatement
+        biblioitem.illus
+        biblioitem.isbn
+        biblioitem.issn
+        biblioitem.itemtype
+        biblioitem.lccn
+        biblioitem.notes
+        biblioitem.number
+        biblioitem.pages
+        biblioitem.place
+        biblioitem.publicationyear
+        biblioitem.publishercode
+        biblioitem.size
+        biblioitem.timestamp
+        biblioitem.totalissues
+        biblioitem.url
+        biblioitem.volume
+        biblioitem.volumedate
+        biblioitem.volumedesc
+
+        
+        [% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'biblioitems.agerestriction', authorised_value => biblioitem.agerestriction ) %]
+
+        [% ItemTypes.GetDescription(biblio.itemtype) %]
+
+        [% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'biblioitems.cn_sort', authorised_value => biblioitem.cn_sort ) %]
+
+    [% END %]
+
+    [% FOREACH item IN biblio.items %]
+      
+      item.barcode
+      item.biblioitemnumber
+      item.biblionumber
+      item.booksellerid
+      item.ccode
+      item.cn_sort
+      item.cn_source
+      item.coded_location_qualifier
+      item.copynumber
+      item.damaged
+      item.damaged_on
+      item.dateaccessioned
+      item.datelastborrowed
+      item.datelastseen
+      item.deleted_on
+      item.enumchron
+      item.exclude_from_local_holds_priority
+      item.holdingbranch
+      item.homebranch
+      item.issues
+      item.itemcallnumber
+      item.itemlost
+      item.itemlost_on
+      item.itemnotes
+      item.itemnotes_nonpublic
+      item.itemnumber
+      item.itype
+      item.location
+      item.materials
+      item.more_subfields_xml
+      item.new_status
+      item.notforloan
+      item.onloan
+      item.permanent_location
+      item.price
+      item.renewals
+      item.replacementprice
+      item.replacementpricedate
+      item.reserves
+      item.restricted
+      item.stack
+      item.stocknumber
+      item.timestamp
+      item.uri
+      item.withdrawn
+      item.withdrawn_on
+
+      [% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.location', authorised_value => item.location ) %]
+
+      [% ItemTypes.GetDescription(item.itype) %]
+
+      [% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.ccode', authorised_value => item.ccode ) %]
+
+    [% END %]
+
+    borrower
+
+      borrower.address
+      borrower.address2
+      borrower.altcontactaddress1
+      borrower.altcontactaddress2
+      borrower.altcontactaddress3
+      borrower.altcontactcountry
+      borrower.altcontactfirstname
+      borrower.altcontactphone
+      borrower.altcontactstate
+      borrower.altcontactsurname
+      borrower.altcontactzipcode
+      borrower.anonymized
+      borrower.auth_method
+      borrower.autorenew_checkouts
+      borrower.B_address
+      borrower.B_address2
+      borrower.B_city
+      borrower.B_country
+      borrower.B_email
+      borrower.B_phone
+      borrower.B_state
+      borrower.B_streetnumber
+      borrower.B_streettype
+      borrower.B_zipcode
+      borrower.borrowernotes
+      borrower.borrowernumber
+      borrower.branchcode
+      borrower.cardnumber
+      borrower.categorycode
+      borrower.checkprevcheckout
+      borrower.city
+      borrower.contactfirstname
+      borrower.contactname
+      borrower.contactnote
+      borrower.contacttitle
+      borrower.country
+      borrower.date_renewed
+      borrower.dateenrolled
+      borrower.dateexpiry
+      borrower.dateofbirth
+      borrower.debarred
+      borrower.debarredcomment
+      borrower.email
+      borrower.emailpro
+      borrower.fax
+      borrower.firstname
+      borrower.flags
+      borrower.gonenoaddress
+      borrower.initials
+      borrower.lang
+      borrower.lastseen
+      borrower.login_attempts
+      borrower.lost
+      borrower.middle_name
+      borrower.mobile
+      borrower.opacnote
+      borrower.othernames
+      borrower.overdrive_auth_token
+      borrower.password
+      borrower.password_expiration_date
+      borrower.phone
+      borrower.phonepro
+      borrower.primary_contact_method
+      borrower.privacy
+      borrower.privacy_guarantor_checkouts
+      borrower.privacy_guarantor_fines
+      borrower.pronouns
+      borrower.relationship
+      borrower.secret
+      borrower.sex
+      borrower.sms_provider_id
+      borrower.smsalertnumber
+      borrower.sort1
+      borrower.sort2
+      borrower.state
+      borrower.streetnumber
+      borrower.streettype
+      borrower.surname
+      borrower.title
+      borrower.updated_on
+      borrower.userid
+      borrower.zipcode
+
+      [% Categories.GetName( borrower.categorycode ) %]
+    
+  LIST
+
+  TICKET_ACKNOWLEDGE
+
+  TICKET_NOTIFY
+
+  TICKET_RESOLVE
+
+  TICKET_UPDATE
+
+----------
+Circulation
+
+  ACCOUNT_CREDIT
+
+  ACCOUNT_DEBIT
+
+  ACCOUNT_PAYMENT
+
+  ACCOUNT_WRITEOFF
+
+  AR_CANCELED
+
+  AR_COMPLETED
+
+  AR_PENDING
+
+  AR_PROCESSING
+
+  AR_REQUESTED
+
+  AR_SLIP
+
+  AUTO_RENEWALS
+
+  AUTO_RENEWALS_DGST
+
+  CHECKIN
+
+    biblio
+    biblioitem
+    borrower
+    branch
+    item
+    old_checkout
+
+  CHECKINSLIP
+
+  CHECKOUT 
+
+    biblio
+    biblioitem
+    borrower
+    branch
+    checkout
+    item
+
+  CHECKOUT_NOTE
+  
+  DUE
+  
+  DUEDGST
+
+  HOLD_SLIP
+
+  ISSUEQSLIP
+
+    borrower
+    branch
+    checkouts
+    
+  ISSUESLIP
+
+    additional_contents
+    borrower
+    branch
+    checkouts
+    news
+    overdues
+
+  ODUE
+
+  OVERDUE_FINE_DESC
+
+  OVERDUES_SLIP
+
+  PICKUP_RECALLED_ITEM
+
+  PREDUE
+
+  PREDUEDGST
+
+  RECALL_REQUESTER_DET
+
+  RENEWAL
+
+  RETURN_RECALLED_ITEM
+
+  SR_SLIP
+
+  TRANSFERSLIP
+
+    biblio
+    item
+    branch
+
+----------
+Claim acquisition
+
+  ACQCLAIM
+
+----------
+Interlibrary loans
+
+  ILL_PARTNER_REQ
+
+  ILL_PICKUP_READY
+
+  ILL_REQUEST_CANCEL
+
+  ILL_REQUEST_MODIFIED
+
+  ILL_REQUEST_UNAVAIL
+
+  ILL_REQUEST_UPDATE
+
+----------
+Patrons
+
+  2FA_DISABLE
+
+  2FA_ENABLE
+
+  2FA_OTP_TOKEN
+
+  ACCOUNTS_SUMMARY
+
+  DISCHARGE
+
+  MEMBERSHIP_EXPIRY
+
+  MEMBERSHIP_RENEWED
+
+  OPAC_REG
+
+  OPAC_REG_VERIFY
+
+  PASSWORD_CHANGE
+
+  PASSWORD_RESET
+
+  PROBLEM_REPORT
+
+  SHARE_ACCEPT
+
+  SHARE_INVITE
+
+  STAFF_PASSWORD_RESET
+
+  WELCOME
+
+----------
+Order acquisition
+
+  ACQORDER
+
+----------
+Point of sale
+
+  RECEIPT
+
+----------
+Preservation
+
+  PRES_TRAIN_ITEM
+
+----------
+Holds
+
+  CANCEL_HOLD_ON_LOST
+
+  HOLD
+
+  HOLD_CHANGED
+
+  HOLD_REMINDER
+
+  HOLDDGST
+
+  HOLDPLACED
+
+  HOLDPLACED_PATRON
+
+  NEW_CURBSIDE_PICKUP
+
+----------
+Serials (new issue)
+
+  SERIAL_ALERT
+
+----------
+Suggestions
+
+  ACCEPTED
+
+  AVAILABLE
+
+  NEW_SUGGESTION
+
+  NOTIFY_MANAGER
+
+  ORDERED
+
+  REJECTED
+
+  TO_PROCESS
