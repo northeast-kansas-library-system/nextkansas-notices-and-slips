@@ -88,4 +88,29 @@
 
   [% END %]
 
+  [% FOREACH overdue IN overdues %] 
+
+    [%~ SET item = overdue.item %] 
+
+      <h2>SET item = overdue.item:</h2><br /><br /><pre>[% Dumper.dump(item.unblessed) %]</pre><br /><br />
+
+      [% FOREACH item IN biblio.items %]
+        <h2>FOREACH item IN biblio.items - item:</h2><br /><br /><pre>[% Dumper.dump(item.unblessed) %]</pre><br /><br />
+
+        <h2>AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.location', authorised_value => item.location )</h2><br /><br /><pre>[% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.location', authorised_value => item.location ) %]</pre><br /><br />
+
+        <h2>ItemTypes.GetDescription(item.itype):</h2><br /><br /><pre>[% ItemTypes.GetDescription(item.itype) FILTER trim  %]</pre><br /><br />
+
+        <h2>AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.ccode', authorised_value => item.ccode )</h2><br /><br /><pre>[% AuthorisedValues.GetDescriptionByKohaField( kohafield => 'items.ccode', authorised_value => item.ccode ) %]</pre><br /><br />
+
+      [% END %]
+
+      [%~ SET biblioitem = overdue.item.biblio %]
+
+      [%~ SET biblio = overdue.item.biblio %]
+
+      <h2>SET biblio = overdue.item.biblio:</h2><br /><br /><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br /><br />
+
+  [% END %]
+
 </div>
