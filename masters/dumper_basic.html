@@ -1,3 +1,7 @@
+[% USE AuthorisedValues %]
+[% USE Branches %]
+[% USE Categories %]
+[% USE ItemTypes %]
 [% USE Dumper Indent=1 %]
 
 <div>
@@ -9,7 +13,6 @@
   <h2>basket:</h2><br /><br /><pre>[% Dumper.dump(basket.unblessed) %]</pre><br /><br />
   <h2>biblio:</h2><br /><br /><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br /><br />
   <h2>biblioitem:</h2><br /><br /><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br /><br />
-  <h2>borrower:</h2><br /><br /><pre>[% Dumper.dump(borrower.unblessed) %]</pre><br /><br />
   <h2>borrower_modification:</h2><br /><br /><pre>[% Dumper.dump(borrower_modification.unblessed) %]</pre><br /><br />
   <h2>borrowers:</h2><br /><br /><pre>[% Dumper.dump(borrowers.unblessed) %]</pre><br /><br />
   <h2>branch:</h2><br /><br /><pre>[% Dumper.dump(branch.unblessed) %]</pre><br /><br />
@@ -51,5 +54,410 @@
   <h2>old_checkouts:</h2><br /><br /><pre>[% Dumper.dump(old_checkouts.unblessed) %]</pre><br /><br />
   <h2>overdues:</h2><br /><br /><pre>[% Dumper.dump(overdues.unblessed) %]</pre><br /><br />
   <h2>tendered:</h2><br /><br /><pre>[% Dumper.dump(tendered.unblessed) %]</pre><br /><br />
+
+</div>
+
+<div>
+
+  <h1>! Borrower data !</h1>
+
+  <pre>
+
+    &#91;% borrower.address %]
+    &#91;% borrower.address2 %]
+    &#91;% borrower.altcontactaddress1 %]
+    &#91;% borrower.altcontactaddress2 %]
+    &#91;% borrower.altcontactaddress3 %]
+    &#91;% borrower.altcontactcountry %]
+    &#91;% borrower.altcontactfirstname %]
+    &#91;% borrower.altcontactphone %]
+    &#91;% borrower.altcontactstate %]
+    &#91;% borrower.altcontactsurname %]
+    &#91;% borrower.altcontactzipcode %]
+    &#91;% borrower.anonymized %]
+    &#91;% borrower.auth_method %]
+    &#91;% borrower.autorenew_checkouts %]
+    &#91;% borrower.B_address %]
+    &#91;% borrower.B_address2 %]
+    &#91;% borrower.B_city %]
+    &#91;% borrower.B_country %]
+    &#91;% borrower.B_email %]
+    &#91;% borrower.B_phone %]
+    &#91;% borrower.B_state %]
+    &#91;% borrower.B_streetnumber %]
+    &#91;% borrower.B_streettype %]
+    &#91;% borrower.B_zipcode %]
+    &#91;% borrower.borrowernotes %]
+    &#91;% borrower.borrowernumber %]
+    &#91;% borrower.branchcode %]
+    &#91;% borrower.cardnumber %]
+    &#91;% borrower.categorycode %]
+    &#91;% borrower.checkprevcheckout %]
+    &#91;% borrower.city %]
+    &#91;% borrower.contactfirstname %]
+    &#91;% borrower.contactname %]
+    &#91;% borrower.contactnote %]
+    &#91;% borrower.contacttitle %]
+    &#91;% borrower.country %]
+    &#91;% borrower.date_renewed %]
+    &#91;% borrower.dateenrolled %]
+    &#91;% borrower.dateexpiry %]
+    &#91;% borrower.dateofbirth %]
+    &#91;% borrower.debarred %]
+    &#91;% borrower.debarredcomment %]
+    &#91;% borrower.email %]
+    &#91;% borrower.emailpro %]
+    &#91;% borrower.fax %]
+    &#91;% borrower.firstname %]
+    &#91;% borrower.flags %]
+    &#91;% borrower.gonenoaddress %]
+    &#91;% borrower.initials %]
+    &#91;% borrower.lang %]
+    &#91;% borrower.lastseen %]
+    &#91;% borrower.login_attempts %]
+    &#91;% borrower.lost %]
+    &#91;% borrower.middle_name %]
+    &#91;% borrower.mobile %]
+    &#91;% borrower.opacnote %]
+    &#91;% borrower.othernames %]
+    &#91;% borrower.overdrive_auth_token %]
+    &#91;% borrower.password %]
+    &#91;% borrower.password_expiration_date %]
+    &#91;% borrower.phone %]
+    &#91;% borrower.phonepro %]
+    &#91;% borrower.primary_contact_method %]
+    &#91;% borrower.privacy %]
+    &#91;% borrower.privacy_guarantor_checkouts %]
+    &#91;% borrower.privacy_guarantor_fines %]
+    &#91;% borrower.pronouns %]
+    &#91;% borrower.relationship %]
+    &#91;% borrower.secret %]
+    &#91;% borrower.sex %]
+    &#91;% borrower.sms_provider_id %]
+    &#91;% borrower.smsalertnumber %]
+    &#91;% borrower.sort1 %]
+    &#91;% borrower.sort2 %]
+    &#91;% borrower.state %]
+    &#91;% borrower.streetnumber %]
+    &#91;% borrower.streettype %]
+    &#91;% borrower.surname %]
+    &#91;% borrower.title %]
+    &#91;% borrower.updated_on %]
+    &#91;% borrower.userid %]
+    &#91;% borrower.zipcode %]
+
+    &#91;%# 
+      Gets the name for borrower.categorycode instead of just the code. 
+      Requires &#91;% USE Categories %].
+    %]
+    &#91;% Categories.GetName( borrower.categorycode ) %]
+
+    &#91;%# 
+      Gets the name for borrower.branchcode instead of just the code. 
+      Requires &#91;% USE Branches %].
+    %]
+    &#91;% Categories.GetName( borrower.categorycode ) %]
+
+    &#91;%# 
+      Datetime example: 
+      Datetime fields (such as borrower.lastseen) will display in YYYY-MM-DD HH:MM:SS format by default.
+    %]
+    &#91;% borrower.lastseen %]
+
+    &#91;%# 
+      Datetime example 1: 
+      Datetime fields (such as borrower.lastseen) will display in YYYY-MM-DD HH:MM:SS format by default.
+    %]
+    &#91;% borrower.lastseen %]
+
+    &#91;%# 
+      Datetime example 2: 
+      If you add "| $KohaDates" after a Datetime variable, 
+      Koha will render the date without the time in the format specified in system preference _dateformat_.
+    %]
+    &#91;% borrower.lastseen | $KohaDates %]
+
+    &#91;%# 
+      Datetime example 3: 
+      If you add "| $KohaDates with_hours => 1" after a Datetime variable, 
+      Koha will render the date with hours:minutes:seconds in the format specified in system preference _dateformat_.
+    %]
+    &#91;% borrower.lastseen | $KohaDates with_hours => 1 %]
+
+    &#91;%# 
+      Date example 1: 
+      Date fields (such as borrower.dateexpiry) will display in YYYY-MM-DD format by default.
+    %]
+    &#91;% borrower.dateexpiry %]
+
+    &#91;%# 
+      Date example 2: 
+      If you add "| $KohaDates" after a Datetime variable, 
+      Koha will render the date in the format specified in system preference _dateformat_.
+    %]
+    &#91;% borrower.dateexpiry | $KohaDates %]
+
+    &#91;%# 
+      Date example 2: 
+      If you add "| $KohaDates" after a Datetime variable, 
+      Koha will render the date in the format specified in system preference _dateformat_ and 
+      it will add "00:00:00" (i.e. midnight) because date fields don't specify a time.
+    %]
+    &#91;% borrower.dateexpiry | $KohaDates %]
+
+  </pre>
+
+  <h2>borrower:</h2><br /><br /><pre>[% Dumper.dump(borrower.unblessed) %]</pre><br /><br />
+
+  <h2>Categories.GetName( borrower.categorycode )</h2><br /><br /><pre>[% Categories.GetName( borrower.categorycode ) %]</pre><br /><br />
+
+  <h2>Branches.GetName( borrower.branchcode )</h2><br /><br /><pre>[% Branches.GetName( borrower.branchcode ) %]</pre><br /><br />
+
+  <h2>borrower.lastseen: </h2><br /><br /><pre>[% borrower.lastseen %]</pre><br /><br />
+
+  <h2>borrower.lastseen | $KohaDates: </h2><br /><br /><pre>[% borrower.lastseen | $KohaDates %]</pre><br /><br />
+
+  <h2>borrower.lastseen | $KohaDates with_hours => 1: </h2><br /><br /><pre>[% borrower.lastseen | $KohaDates with_hours => 1 %]</pre><br /><br />
+
+  <h2>borrower.dateexpiry: </h2><br /><br /><pre>[% borrower.dateexpiry %]</pre><br /><br />
+
+  <h2>borrower.dateexpiry | $KohaDates: </h2><br /><br /><pre>[% borrower.dateexpiry | $KohaDates %]</pre><br /><br />
+
+  <h2>borrower.dateexpiry | $KohaDates: </h2><br /><br /><pre>[% borrower.dateexpiry | $KohaDates with_hours => 1 %]</pre><br /><br />
+
+</div>
+
+<div>
+
+  <h1>! Get biblio data from &#91;% overdues %] !</h1><br /><br />
+
+  <pre>
+    
+    &#91;% FOREACH overdue IN overdues %]
+
+      &#91;% SET biblio = overdue.item.biblio %]
+
+        &#91;% biblio.abstract %]
+        &#91;% biblio.author %]
+        &#91;% biblio.biblionumber %]
+        &#91;% biblio.copyrightdate %]
+        &#91;% biblio.datecreated %]
+        &#91;% biblio.frameworkcode %]
+        &#91;% biblio.medium %]
+        &#91;% biblio.notes %]
+        &#91;% biblio.part_name %]
+        &#91;% biblio.part_number %]
+        &#91;% biblio.serial %]
+        &#91;% biblio.seriestitle %]
+        &#91;% biblio.subtitle %]
+        &#91;% biblio.timestamp %]
+        &#91;% biblio.title %]
+        &#91;% biblio.unititle %]
+
+    &#91;% END %]
+    
+  </pre>
+
+  [% FOREACH overdue IN overdues %]
+
+    [% SET biblio = overdue.item.biblio %]
+
+    <h2>SET biblio = overdue.item.biblio:</h2><br /><br /><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br /><br />
+
+  [% END %]
+
+</div>
+
+<div>
+
+  <h1>! Get item data from &#91;% overdues %] !</h1><br /><br />
+
+  <pre>
+
+    &#91;% USE AuthorisedValues %]
+    &#91;% USE ItemTypes %]
+    
+    &#91;% FOREACH overdue IN overdues %]
+
+      &#91;% SET item = overdue.item %]
+
+        &#91;% item.barcode %]
+        &#91;% item.biblioitemnumber %]
+        &#91;% item.biblionumber %]
+        &#91;% item.booksellerid %]
+        &#91;% item.ccode %]
+        &#91;% item.cn_sort %]
+        &#91;% item.cn_source %]
+        &#91;% item.coded_location_qualifier %]
+        &#91;% item.copynumber %]
+        &#91;% item.damaged %]
+        &#91;% item.damaged_on %]
+        &#91;% item.dateaccessioned %]
+        &#91;% item.datelastborrowed %]
+        &#91;% item.datelastseen %]
+        &#91;% item.deleted_on %]
+        &#91;% item.enumchron %]
+        &#91;% item.exclude_from_local_holds_priority %]
+        &#91;% item.holdingbranch %]
+        &#91;% item.homebranch %]
+        &#91;% item.issues %]
+        &#91;% item.itemcallnumber %]
+        &#91;% item.itemlost %]
+        &#91;% item.itemlost_on %]
+        &#91;% item.itemnotes %]
+        &#91;% item.itemnotes_nonpublic %]
+        &#91;% item.itemnumber %]
+        &#91;% item.itype %]
+        &#91;% item.location %]
+        &#91;% item.materials %]
+        &#91;% item.more_subfields_xml %]
+        &#91;% item.new_status %]
+        &#91;% item.notforloan %]
+        &#91;% item.onloan %]
+        &#91;% item.permanent_location %]
+        &#91;% item.price %]
+        &#91;% item.renewals %]
+        &#91;% item.replacementprice %]
+        &#91;% item.replacementpricedate %]
+        &#91;% item.reserves %]
+        &#91;% item.restricted %]
+        &#91;% item.stack %]
+        &#91;% item.stocknumber %]
+        &#91;% item.timestamp %]
+        &#91;% item.uri %]
+        &#91;% item.withdrawn %]
+        &#91;% item.withdrawn_on %]
+
+        &#91;%# 
+          Gets the description for the item level location code from authorised_values.lib.
+          Requires &#91;% USE AuthorisedValues %].
+        %]
+        &#91;% AuthorisedValues.GetByCode( 'LOC', item.location ) %]
+
+        &#91;%# 
+          Gets the description for the item level permanent location code from authorised_values.lib.
+          Requires &#91;% USE AuthorisedValues %].
+        %]
+        &#91;% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %]
+        
+        &#91;%# Gets the description for the item level item type from itemtypes.description %]
+        &#91;% ItemTypes.GetDescription(item.itype) %]
+
+        &#91;%# 
+          Gets the description for the item level collection code from authorised_values.lib. 
+          Requires &#91;% USE AuthorisedValues %].
+        %]
+        &#91;% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]
+        
+
+    &#91;% END %]
+
+  </pre>
+
+  [% FOREACH overdue IN overdues %]
+
+    [% SET item = overdue.item %]
+
+    <h2>SET item = overdue.item:</h2><br /><br /><pre>[% Dumper.dump(item.unblessed) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetByCode( 'LOC', item.location ): </h2><br /><br /><pre>[% AuthorisedValues.GetByCode( 'LOC', item.location ) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetByCode( 'LOC', item.permanent_location ): </h2><br /><br /><pre>[% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %]</pre><br /><br />
+
+    <h2>ItemTypes.GetDescription(item.itype): </h2><br /><br /><pre>[% ItemTypes.GetDescription(item.itype) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetByCode( 'CCODE', item.ccode ): </h2><br /><br /><pre>[% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]</pre><br /><br />
+
+  [% END %]
+
+</div>
+
+<div>
+
+  <h1>! Get biblioitem data from &#91;% overdues %] !</h1><br /><br />
+
+  <pre>
+
+    &#91;% USE AuthorisedValues %]
+    &#91;% USE ItemTypes %]
+
+    &#91;% FOREACH overdue IN overdues %]
+
+      &#91;% SET biblioitem = overdue.item.biblio.biblioitem %]
+
+        &#91;% biblioitem.agerestriction %]
+        &#91;% biblioitem.biblioitemnumber %]
+        &#91;% biblioitem.biblionumber %]
+        &#91;% biblioitem.cn_class %]
+        &#91;% biblioitem.cn_item %]
+        &#91;% biblioitem.cn_sort %]
+        &#91;% biblioitem.cn_source %]
+        &#91;% biblioitem.cn_suffix %]
+        &#91;% biblioitem.collectionissn %]
+        &#91;% biblioitem.collectiontitle %]
+        &#91;% biblioitem.collectionvolume %]
+        &#91;% biblioitem.ean %]
+        &#91;% biblioitem.editionresponsibility %]
+        &#91;% biblioitem.editionstatement %]
+        &#91;% biblioitem.illus %]
+        &#91;% biblioitem.isbn %]
+        &#91;% biblioitem.issn %]
+        &#91;% biblioitem.itemtype %]
+        &#91;% biblioitem.lccn %]
+        &#91;% biblioitem.notes %]
+        &#91;% biblioitem.number %]
+        &#91;% biblioitem.pages %]
+        &#91;% biblioitem.place %]
+        &#91;% biblioitem.publicationyear %]
+        &#91;% biblioitem.publishercode %]
+        &#91;% biblioitem.size %]
+        &#91;% biblioitem.timestamp %]
+        &#91;% biblioitem.totalissues %]
+        &#91;% biblioitem.url %]
+        &#91;% biblioitem.volume %]
+        &#91;% biblioitem.volumedate %]
+        &#91;% biblioitem.volumedesc %]
+
+        &#91;%# 
+          Gets the description for the biblio level location code from authorised_values.lib. 
+          This assumes your Koha to MARC mapping is set to map your bib-level shelving location to biblioitems.agerestriction.  
+          If your library uses a different mapping, you'll need to adjust this code for your library. 
+          Requires &#91;% USE AuthorisedValues %].
+        %]
+        &#91;% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]
+        
+        &#91;%# 
+          Gets the description for the biblio level item type from itemtypes.description. 
+          This is assuming you have your Koha to MARC mapping set up to map your record-level item type to biblioitems.itemtype.  
+          If your library uses a different mapping, you'll need to adjust this code for your library.
+          Requires &#91;% USE ItemTypes %].
+        %]
+        &#91;% ItemTypes.GetDescription(biblioitem.itemtype) %]
+
+        &#91;%# 
+          Gets the description for the biblio level collection code from authorised_values.lib. 
+          This is assuming you have your Koha to MARC mapping set up to map your bib-level collection code to biblioitems.cn_sort.  
+          If your library uses a different mapping, you'll need to adjust this code for your library. 
+          Requires &#91;% USE AuthorisedValues %].
+        %]
+        &#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_sort ) %]
+
+      &#91;% END %]
+
+  </pre>
+
+  [% FOREACH overdue IN overdues %]
+
+    [% SET biblioitem = overdue.item.biblio.biblioitem %]
+
+    <h2>SET biblioitem = overdue.item.biblio.biblioitem:</h2><br /><br /><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ): </h2><br /><br /><pre>[% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]</pre><br /><br />
+
+    <h2>ItemTypes.GetDescription(biblioitem.itemtype):</h2><br /><br /><pre>[% ItemTypes.GetDescription(biblioitem.itemtype) %]</pre><br /><br />
+
+    <h2>AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_sort ): </h2><br /><br /><pre>[% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_sort ) %]</pre><br /><br />
+
+  [% END %]
 
 </div>
