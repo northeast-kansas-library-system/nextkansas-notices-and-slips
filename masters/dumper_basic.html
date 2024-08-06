@@ -4,42 +4,48 @@
 [% USE ItemTypes %]
 [% USE Dumper Indent=1 %]
 
+<style>
+
+  div {margin: .5in}
+
+</style>
+
 <div>
 
   <h1>! Dump variables !</h1><br /><br />
 
-  <h2>additional_text:</h2><br /><br /><pre>[% Dumper.dump(additional_text.unblessed) %]</pre><br /><br />
-  <h2>article_request:</h2><br /><br /><pre>[% Dumper.dump(article_request.unblessed) %]</pre><br /><br />
-  <h2>basket:</h2><br /><br /><pre>[% Dumper.dump(basket.unblessed) %]</pre><br /><br />
-  <h2>biblio:</h2><br /><br /><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br /><br />
-  <h2>biblioitem:</h2><br /><br /><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br /><br />
-  <h2>borrower_modification:</h2><br /><br /><pre>[% Dumper.dump(borrower_modification.unblessed) %]</pre><br /><br />
-  <h2>borrowers:</h2><br /><br /><pre>[% Dumper.dump(borrowers.unblessed) %]</pre><br /><br />
-  <h2>branch:</h2><br /><br /><pre>[% Dumper.dump(branch.unblessed) %]</pre><br /><br />
-  <h2>branches:</h2><br /><br /><pre>[% Dumper.dump(branches.unblessed) %]</pre><br /><br />
-  <h2>checkout:</h2><br /><br /><pre>[% Dumper.dump(checkout.unblessed) %]</pre><br /><br />
-  <h2>count:</h2><br /><br /><pre>[% Dumper.dump(count.unblessed) %]</pre><br /><br />
-  <h2>credit:</h2><br /><br /><pre>[% Dumper.dump(credit.unblessed) %]</pre><br /><br />
-  <h2>debit:</h2><br /><br /><pre>[% Dumper.dump(debit.unblessed) %]</pre><br /><br />
-  <h2>format:</h2><br /><br /><pre>[% Dumper.dump(format.unblessed) %]</pre><br /><br />
-  <h2>hold:</h2><br /><br /><pre>[% Dumper.dump(hold.unblessed) %]</pre><br /><br />
-  <h2>ill_bib_author:</h2><br /><br /><pre>[% Dumper.dump(ill_bib_author.unblessed) %]</pre><br /><br />
-  <h2>ill_bib_title:</h2><br /><br /><pre>[% Dumper.dump(ill_bib_title.unblessed) %]</pre><br /><br />
-  <h2>ill_full_metadata:</h2><br /><br /><pre>[% Dumper.dump(ill_full_metadata.unblessed) %]</pre><br /><br />
-  <h2>illrequest:</h2><br /><br /><pre>[% Dumper.dump(illrequest.unblessed) %]</pre><br /><br />
-  <h2>illrequestattributes:</h2><br /><br /><pre>[% Dumper.dump(illrequestattributes.unblessed) %]</pre><br /><br />
-  <h2>item:</h2><br /><br /><pre>[% Dumper.dump(item.unblessed) %]</pre><br /><br />
-  <h2>items:</h2><br /><br /><pre>[% Dumper.dump(items.unblessed) %]</pre><br /><br />
-  <h2>listname:</h2><br /><br /><pre>[% Dumper.dump(listname.unblessed) %]</pre><br /><br />
-  <h2>old_checkout:</h2><br /><br /><pre>[% Dumper.dump(old_checkout.unblessed) %]</pre><br /><br />
-  <h2>order:</h2><br /><br /><pre>[% Dumper.dump(order.unblessed) %]</pre><br /><br />
-  <h2>order loop:</h2><br /><br /><pre>[% Dumper.dump(order loop.unblessed) %]</pre><br /><br />
-  <h2>passwordreseturl:</h2><br /><br /><pre>[% Dumper.dump(passwordreseturl.unblessed) %]</pre><br /><br />
-  <h2>serial:</h2><br /><br /><pre>[% Dumper.dump(serial.unblessed) %]</pre><br /><br />
-  <h2>shareurl:</h2><br /><br /><pre>[% Dumper.dump(shareurl.unblessed) %]</pre><br /><br />
-  <h2>subscription:</h2><br /><br /><pre>[% Dumper.dump(subscription.unblessed) %]</pre><br /><br />
-  <h2>suggestion:</h2><br /><br /><pre>[% Dumper.dump(suggestion.unblessed) %]</pre><br /><br />
-  <h2>user:</h2><br /><br /><pre>[% Dumper.dump(user.unblessed) %]</pre><br /><br />
+  <p>additional_text:</h2><br /><br /><pre>[% Dumper.dump(additional_text.unblessed) %]</pre><br /><br />
+  <p>article_request:</h2><br /><br /><pre>[% Dumper.dump(article_request.unblessed) %]</pre><br /><br />
+  <p>basket:</h2><br /><br /><pre>[% Dumper.dump(basket.unblessed) %]</pre><br /><br />
+  <p>biblio:</h2><br /><br /><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br /><br />
+  <p>biblioitem:</h2><br /><br /><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br /><br />
+  <p>borrower_modification:</h2><br /><br /><pre>[% Dumper.dump(borrower_modification.unblessed) %]</pre><br /><br />
+  <p>borrowers:</h2><br /><br /><pre>[% Dumper.dump(borrowers.unblessed) %]</pre><br /><br />
+  <p>branch:</h2><br /><br /><pre>[% Dumper.dump(branch.unblessed) %]</pre><br /><br />
+  <p>branches:</h2><br /><br /><pre>[% Dumper.dump(branches.unblessed) %]</pre><br /><br />
+  <p>checkout:</h2><br /><br /><pre>[% Dumper.dump(checkout.unblessed) %]</pre><br /><br />
+  <p>count:</h2><br /><br /><pre>[% Dumper.dump(count.unblessed) %]</pre><br /><br />
+  <p>credit:</h2><br /><br /><pre>[% Dumper.dump(credit.unblessed) %]</pre><br /><br />
+  <p>debit:</h2><br /><br /><pre>[% Dumper.dump(debit.unblessed) %]</pre><br /><br />
+  <p>format:</h2><br /><br /><pre>[% Dumper.dump(format.unblessed) %]</pre><br /><br />
+  <p>hold:</h2><br /><br /><pre>[% Dumper.dump(hold.unblessed) %]</pre><br /><br />
+  <p>ill_bib_author:</h2><br /><br /><pre>[% Dumper.dump(ill_bib_author.unblessed) %]</pre><br /><br />
+  <p>ill_bib_title:</h2><br /><br /><pre>[% Dumper.dump(ill_bib_title.unblessed) %]</pre><br /><br />
+  <p>ill_full_metadata:</h2><br /><br /><pre>[% Dumper.dump(ill_full_metadata.unblessed) %]</pre><br /><br />
+  <p>illrequest:</h2><br /><br /><pre>[% Dumper.dump(illrequest.unblessed) %]</pre><br /><br />
+  <p>illrequestattributes:</h2><br /><br /><pre>[% Dumper.dump(illrequestattributes.unblessed) %]</pre><br /><br />
+  <p>item:</h2><br /><br /><pre>[% Dumper.dump(item.unblessed) %]</pre><br /><br />
+  <p>items:</h2><br /><br /><pre>[% Dumper.dump(items.unblessed) %]</pre><br /><br />
+  <p>listname:</h2><br /><br /><pre>[% Dumper.dump(listname.unblessed) %]</pre><br /><br />
+  <p>old_checkout:</h2><br /><br /><pre>[% Dumper.dump(old_checkout.unblessed) %]</pre><br /><br />
+  <p>order:</h2><br /><br /><pre>[% Dumper.dump(order.unblessed) %]</pre><br /><br />
+  <p>order loop:</h2><br /><br /><pre>[% Dumper.dump(order loop.unblessed) %]</pre><br /><br />
+  <p>passwordreseturl:</h2><br /><br /><pre>[% Dumper.dump(passwordreseturl.unblessed) %]</pre><br /><br />
+  <p>serial:</h2><br /><br /><pre>[% Dumper.dump(serial.unblessed) %]</pre><br /><br />
+  <p>shareurl:</h2><br /><br /><pre>[% Dumper.dump(shareurl.unblessed) %]</pre><br /><br />
+  <p>subscription:</h2><br /><br /><pre>[% Dumper.dump(subscription.unblessed) %]</pre><br /><br />
+  <p>suggestion:</h2><br /><br /><pre>[% Dumper.dump(suggestion.unblessed) %]</pre><br /><br />
+  <p>user:</h2><br /><br /><pre>[% Dumper.dump(user.unblessed) %]</pre><br /><br />
 
 </div>
 
@@ -56,6 +62,16 @@
   <h2>tendered:</h2><br /><br /><pre>[% Dumper.dump(tendered.unblessed) %]</pre><br /><br />
 
 </div>
+
+<!-- commented out temporarily
+<div>
+
+  <h1>! Dump Branches data !</h1><br /><br />
+  
+  <h2>Branches.all():</h2><br /><br /><pre>[% Dumper.dump(Branches.all()) %]</pre><br /><br />
+
+</div>
+-->
 
 <div>
 
@@ -156,7 +172,7 @@
       Gets the name for borrower.branchcode instead of just the code. 
       Requires &#91;% USE Branches %].
     %]
-    &#91;% Categories.GetName( borrower.categorycode ) %]
+    &#91;% Branches.GetName( borrower.branchcode ) %]
 
     &#91;%# 
       Datetime example: 
@@ -224,6 +240,42 @@
   <h2>borrower.dateexpiry | $KohaDates: </h2><br /><br /><pre>[% borrower.dateexpiry | $KohaDates %]</pre><br /><br />
 
   <h2>borrower.dateexpiry | $KohaDates: </h2><br /><br /><pre>[% borrower.dateexpiry | $KohaDates with_hours => 1 %]</pre><br /><br />
+
+  [% FOREACH borrower_branch IN Branches.all() %]
+
+    [% SET thisborrower_branchcode = borrower.branchcode %]
+
+    [% IF borrower_branch.branchcode == thisborrower_branchcode %]
+
+      <ul>
+        <li><span style="font-weight: 1000"> borrower_branch.branchaddress1:</span> [% borrower_branch.branchaddress1 %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchaddress2:</span> [% borrower_branch.branchaddress2 %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchaddress3:</span> [% borrower_branch.branchaddress3 %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchcity:</span> [% borrower_branch.branchcity %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchcode:</span> [% borrower_branch.branchcode %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchcountry:</span> [% borrower_branch.branchcountry %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchemail:</span> [% borrower_branch.branchemail %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchfax:</span> [% borrower_branch.branchfax %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchillemail:</span> [% borrower_branch.branchillemail %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchip:</span> [% borrower_branch.branchip %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchname:</span> [% borrower_branch.branchname %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchnotes:</span> [% borrower_branch.branchnotes %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchphone:</span> [% borrower_branch.branchphone %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchreplyto:</span> [% borrower_branch.branchreplyto %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchreturnpath:</span> [% borrower_branch.branchreturnpath %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchstate:</span> [% borrower_branch.branchstate %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchurl:</span> [% borrower_branch.branchurl %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.branchzip:</span> [% borrower_branch.branchzip %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.geolocation:</span> [% borrower_branch.geolocation %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.issuing:</span> [% borrower_branch.issuing %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.marcorgcode:</span> [% borrower_branch.marcorgcode %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.pickup_location:</span> [% borrower_branch.pickup_location %]</li>
+        <li><span style="font-weight: 1000"> borrower_branch.public:</span> [% borrower_branch.public %]</li>
+      </ul>
+
+    [% END %]
+
+  [% END %]
 
 </div>
 
@@ -368,7 +420,82 @@
 
     <h2>AuthorisedValues.GetByCode( 'CCODE', item.ccode ): </h2><br /><br /><pre>[% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]</pre><br /><br />
 
+
+    [% FOREACH checked_out_at IN Branches.all() %]
+
+      [% SET thisoverdue_branchcode = overdue.branchcode %]
+
+      [% IF checked_out_at.branchcode == thisoverdue_branchcode %]
+
+        <ul>
+          <li><span style="font-weight: 1000"> checked_out_at.branchaddress1:</span> [% checked_out_at.branchaddress1 %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchaddress2:</span> [% checked_out_at.branchaddress2 %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchaddress3:</span> [% checked_out_at.branchaddress3 %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchcity:</span> [% checked_out_at.branchcity %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchcode:</span> [% checked_out_at.branchcode %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchcountry:</span> [% checked_out_at.branchcountry %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchemail:</span> [% checked_out_at.branchemail %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchfax:</span> [% checked_out_at.branchfax %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchillemail:</span> [% checked_out_at.branchillemail %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchip:</span> [% checked_out_at.branchip %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchname:</span> [% checked_out_at.branchname %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchnotes:</span> [% checked_out_at.branchnotes %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchphone:</span> [% checked_out_at.branchphone %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchreplyto:</span> [% checked_out_at.branchreplyto %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchreturnpath:</span> [% checked_out_at.branchreturnpath %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchstate:</span> [% checked_out_at.branchstate %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchurl:</span> [% checked_out_at.branchurl %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.branchzip:</span> [% checked_out_at.branchzip %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.geolocation:</span> [% checked_out_at.geolocation %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.issuing:</span> [% checked_out_at.issuing %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.marcorgcode:</span> [% checked_out_at.marcorgcode %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.pickup_location:</span> [% checked_out_at.pickup_location %]</li>
+          <li><span style="font-weight: 1000"> checked_out_at.public:</span> [% checked_out_at.public %]</li>
+        </ul>
+
+      [% END %]
+
+    [% END %]
+
+    [% FOREACH overdue_item_owned_by IN Branches.all() %]
+
+    [% SET item_owning_branch = item.homebranch %]
+
+    [% IF overdue_item_owned_by.branchcode == item_owning_branch %]
+
+      <ul>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchaddress1:</span> [% overdue_item_owned_by.branchaddress1 %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchaddress2:</span> [% overdue_item_owned_by.branchaddress2 %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchaddress3:</span> [% overdue_item_owned_by.branchaddress3 %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchcity:</span> [% overdue_item_owned_by.branchcity %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchcode:</span> [% overdue_item_owned_by.branchcode %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchcountry:</span> [% overdue_item_owned_by.branchcountry %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchemail:</span> [% overdue_item_owned_by.branchemail %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchfax:</span> [% overdue_item_owned_by.branchfax %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchillemail:</span> [% overdue_item_owned_by.branchillemail %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchip:</span> [% overdue_item_owned_by.branchip %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchname:</span> [% overdue_item_owned_by.branchname %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchnotes:</span> [% overdue_item_owned_by.branchnotes %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchphone:</span> [% overdue_item_owned_by.branchphone %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchreplyto:</span> [% overdue_item_owned_by.branchreplyto %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchreturnpath:</span> [% overdue_item_owned_by.branchreturnpath %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchstate:</span> [% overdue_item_owned_by.branchstate %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchurl:</span> [% overdue_item_owned_by.branchurl %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.branchzip:</span> [% overdue_item_owned_by.branchzip %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.geolocation:</span> [% overdue_item_owned_by.geolocation %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.issuing:</span> [% overdue_item_owned_by.issuing %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.marcorgcode:</span> [% overdue_item_owned_by.marcorgcode %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.pickup_location:</span> [% overdue_item_owned_by.pickup_location %]</li>
+        <li><span style="font-weight: 1000"> overdue_item_owned_by.public:</span> [% overdue_item_owned_by.public %]</li>
+      </ul>
+
+    [% END %]
+
+  [% END %] 
+
   [% END %]
+
+  
 
 </div>
 
