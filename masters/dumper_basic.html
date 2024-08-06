@@ -257,6 +257,19 @@
       &#91;% END %]
 
     &#91;% END %]
+    
+    &#91;%# 
+      Gets borrower extended attribute data. 
+      See community bug 30657 for possible future changes/simplification.
+    %]
+    &#91;% FOREACH borrower_attribute IN borrower.extended_attributes %]
+    
+      &#91;% borrower_attribute.attribute %]
+      &#91;% borrower_attribute.borrowernumber %]
+      &#91;% borrower_attribute.code %]
+      &#91;% borrower_attribute.id %]
+
+    &#91;% END %]
 
   </pre>
 
@@ -311,6 +324,12 @@
       </ul>
 
     [% END %]
+
+  [% END %]
+
+  [% FOREACH borrower_attribute IN borrower.extended_attributes %]
+    
+    <p>borrower_attribute:</h2><br /><br /><pre>[% Dumper.dump(borrower_attribute.unblessed) %]</pre><br /><br />
 
   [% END %]
 
@@ -686,5 +705,11 @@
     <h2>AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_sort ): </h2><br /><br /><pre>[% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_sort ) %]</pre><br /><br />
 
   [% END %]
+
+</div>
+
+<div>
+
+
 
 </div>
