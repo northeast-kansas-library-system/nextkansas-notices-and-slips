@@ -1,0 +1,491 @@
+{| class="wikitable sortable"
+|+ Variables available in OVERDUES_SLIP
+|-
+! Direct access
+! Indicrect access
+|-
+|
+  {| class="wikitable mw-collapsible mw-collapsed" style="width:100%; margin:0;"
+  !  borrower
+  |-
+  | 
+  [% borrower.address %]
+  |-
+  | 
+  [% borrower.address2 %]
+  |-
+  | 
+  [% borrower.altcontactaddress1 %]
+  |-
+  | 
+  [% borrower.altcontactaddress2 %]
+  |-
+  | 
+  [% borrower.altcontactaddress3 %]
+  |-
+  | 
+  [% borrower.altcontactcountry %]
+  |-
+  | 
+  [% borrower.altcontactfirstname %]
+  |-
+  | 
+  [% borrower.altcontactphone %]
+  |-
+  | 
+  [% borrower.altcontactstate %]
+  |-
+  | 
+  [% borrower.altcontactsurname %]
+  |-
+  | 
+  [% borrower.altcontactzipcode %]
+  |-
+  | 
+  [% borrower.anonymized %]
+  |-
+  | 
+  [% borrower.auth_method %]
+  |-
+  | 
+  [% borrower.autorenew_checkouts %]
+  |-
+  | 
+  [% borrower.B_address %]
+  |-
+  | 
+  [% borrower.B_address2 %]
+  |-
+  | 
+  [% borrower.B_city %]
+  |-
+  | 
+  [% borrower.B_country %]
+  |-
+  | 
+  [% borrower.B_email %]
+  |-
+  | 
+  [% borrower.B_phone %]
+  |-
+  | 
+  [% borrower.B_state %]
+  |-
+  | 
+  [% borrower.B_streetnumber %]
+  |-
+  | 
+  [% borrower.B_streettype %]
+  |-
+  | 
+  [% borrower.B_zipcode %]
+  |-
+  | 
+  [% borrower.borrowernotes %]
+  |-
+  | 
+  [% borrower.borrowernumber %]
+  |-
+  | 
+  [% borrower.branchcode %]
+  |-
+  | 
+  [% borrower.cardnumber %]
+  |-
+  | 
+  [% borrower.categorycode %]
+  |-
+  | 
+  [% borrower.checkprevcheckout %]
+  |-
+  | 
+  [% borrower.city %]
+  |-
+  | 
+  [% borrower.contactfirstname %]
+  |-
+  | 
+  [% borrower.contactname %]
+  |-
+  | 
+  [% borrower.contactnote %]
+  |-
+  | 
+  [% borrower.contacttitle %]
+  |-
+  | 
+  [% borrower.country %]
+  |-
+  | 
+  [% borrower.date_renewed %]
+  |-
+  | 
+  [% borrower.dateenrolled %]
+  |-
+  | 
+  [% borrower.dateexpiry %]
+  |-
+  | 
+  [% borrower.dateofbirth %]
+  |-
+  | 
+  [% borrower.debarred %]
+  |-
+  | 
+  [% borrower.debarredcomment %]
+  |-
+  | 
+  [% borrower.email %]
+  |-
+  | 
+  [% borrower.emailpro %]
+  |-
+  | 
+  [% borrower.fax %]
+  |-
+  | 
+  [% borrower.firstname %]
+  |-
+  | 
+  [% borrower.flags %]
+  |-
+  | 
+  [% borrower.gonenoaddress %]
+  |-
+  | 
+  [% borrower.initials %]
+  |-
+  | 
+  [% borrower.lang %]
+  |-
+  | 
+  [% borrower.lastseen %]
+  |-
+  | 
+  [% borrower.login_attempts %]
+  |-
+  | 
+  [% borrower.lost %]
+  |-
+  | 
+  [% borrower.middle_name %]
+  |-
+  | 
+  [% borrower.mobile %]
+  |-
+  | 
+  [% borrower.opacnote %]
+  |-
+  | 
+  [% borrower.othernames %]
+  |-
+  | 
+  [% borrower.overdrive_auth_token %]
+  |-
+  | 
+  [% borrower.password %]
+  |-
+  | 
+  [% borrower.password_expiration_date %]
+  |-
+  | 
+  [% borrower.phone %]
+  |-
+  | 
+  [% borrower.phonepro %]
+  |-
+  | 
+  [% borrower.primary_contact_method %]
+  |-
+  | 
+  [% borrower.privacy %]
+  |-
+  | 
+  [% borrower.privacy_guarantor_checkouts %]
+  |-
+  | 
+  [% borrower.privacy_guarantor_fines %]
+  |-
+  | 
+  [% borrower.pronouns %]
+  |-
+  | 
+  [% borrower.relationship %]
+  |-
+  | 
+  [% borrower.secret %]
+  |-
+  | 
+  [% borrower.sex %]
+  |-
+  | 
+  [% borrower.sms_provider_id %]
+  |-
+  | 
+  [% borrower.smsalertnumber %]
+  |-
+  | 
+  [% borrower.sort1 %]
+  |-
+  | 
+  [% borrower.sort2 %]
+  |-
+  | 
+  [% borrower.state %]
+  |-
+  | 
+  [% borrower.streetnumber %]
+  |-
+  | 
+  [% borrower.streettype %]
+  |-
+  | 
+  [% borrower.surname %]
+  |-
+  | 
+  [% borrower.title %]
+  |-
+  | 
+  [% borrower.updated_on %]
+  |-
+  | 
+  [% borrower.userid %]
+  |-
+  | 
+  [% borrower.zipcode %]
+  |}
+  {| class="wikitable mw-collapsible mw-collapsed" style="width:100%; margin:0;"
+  !  branch
+  |-
+  | 
+  [% branch.branchaddress1 %]
+  |-
+  | 
+  [% branch.branchaddress2 %]
+  |-
+  | 
+  [% branch.branchaddress3 %]
+  |-
+  | 
+  [% branch.branchcity %]
+  |-
+  | 
+  [% branch.branchcode %]
+  |-
+  | 
+  [% branch.branchcountry %]
+  |-
+  | 
+  [% branch.branchemail %]
+  |-
+  | 
+  [% branch.branchfax %]
+  |-
+  | 
+  [% branch.branchillemail %]
+  |-
+  | 
+  [% branch.branchip %]
+  |-
+  | 
+  [% branch.branchname %]
+  |-
+  | 
+  [% branch.branchnotes %]
+  |-
+  | 
+  [% branch.branchphone %]
+  |-
+  | 
+  [% branch.branchreplyto %]
+  |-
+  | 
+  [% branch.branchreturnpath %]
+  |-
+  | 
+  [% branch.branchstate %]
+  |-
+  | 
+  [% branch.branchurl %]
+  |-
+  | 
+  [% branch.branchzip %]
+  |-
+  | 
+  [% branch.geolocation %]
+  |-
+  | 
+  [% branch.issuing %]
+  |-
+  | 
+  [% branch.marcorgcode %]
+  |-
+  | 
+  [% branch.pickup_location %]
+  |-
+  | 
+  [% branch.public %]
+  |}
+  {| class="wikitable mw-collapsible mw-collapsed" style="width:100%; margin:0;"
+  !  overdues
+  |-
+  | 
+  [% overdues.auto_renew_error %]
+  |-
+  | 
+  [% overdues.auto_renew %]
+  |-
+  | 
+  [% overdues.borrowernumber %]
+  |-
+  | 
+  [% overdues.branchcode %]
+  |-
+  | 
+  [% overdues.date_due %]
+  |-
+  | 
+  [% overdues.issue_id %]
+  |-
+  | 
+  [% overdues.issuedate %]
+  |-
+  | 
+  [% overdues.issuer_id %]
+  |-
+  | 
+  [% overdues.itemnumber %]
+  |-
+  | 
+  [% overdues.lastreneweddate %]
+  |-
+  | 
+  [% overdues.note %]
+  |-
+  | 
+  [% overdues.notedate %]
+  |-
+  | 
+  [% overdues.noteseen %]
+  |-
+  | 
+  [% overdues.onsite_checkout %]
+  |-
+  | 
+  [% overdues.renewals_count %]
+  |-
+  | 
+  [% overdues.returndate %]
+  |-
+  | 
+  [% overdues.timestamp %]
+  |-
+  | 
+  [% overdues.unseen_renewals %]
+  |}
+  |
+  {| class="wikitable mw-collapsible mw-collapsed" style="width:100%; margin:0;"
+  ! Indirect
+  ! Borrower fields
+  |-
+  |
+  Gets the name for borrower.categorycode instead of just the code
+  Requires [% USE Categories %]|-
+  | 
+  [% Categories.GetName( borrower.categorycode ) %]
+  |-
+  |
+  Gets the name for borrower.branchcode instead of just the code
+  Requires [% USE Branches %]|-
+  | 
+  [% Branches.GetName( borrower.branchcode ) %]
+  |-
+  |
+  Datetime example 1:
+  Datetime fields (such as borrower.lastseen) will display 
+  in YYYY-MM-DD HH:MM:SS format by default
+  | 
+  [% borrower.lastseen %]
+  |-
+  |
+  Datetime example 2:
+  If you add "| $KohaDates" after a Datetime field,
+  Koha will render the date without the time in the format 
+  specified in system preference '''''dateformat'''''
+  Requires [% USE KohaDates %]
+  | 
+  [% borrower.lastseen | $KohaDates %]
+  |-
+  |
+  Datetime example 3:
+  If you add "| $KohaDates with_hours => 1" after a Datetime field,
+  Koha will render the date with hours:minutes:seconds in 
+  the format specified in system preference '''''dateformat'''''
+  [% USE KohaDates %]
+  | 
+  [% borrower.lastseen | $KohaDates with_hours => 1 %]
+  |-
+  |
+  Date example A:
+  Date fields (such as borrower.dateexpiry) will display 
+  in YYYY-MM-DD format by default
+  | 
+  [% borrower.dateexpiry %]
+  |-
+  |
+  Date example B:
+  If you add "| $KohaDates" after a Date field,
+  Koha will render the date in the format specified in 
+  system preference '''''dateformat'''''
+  [% USE KohaDates %]
+  | 
+  [% borrower.dateexpiry | $KohaDates %]
+  |-
+  |
+  Date example C:
+  If you add "| $KohaDates with_hours => 1" after a Date field,
+  Koha will render the date in the format specified in 
+  system preference '''''dateformat''''' and
+  it will add "00:00:00" because date fields don't specify a time
+  [% USE KohaDates %]
+  | 
+  [% borrower.dateexpiry | $KohaDates with_hours => 1 %]
+  |-
+  |}
+|}
+{| class="wikitable mw-collapsible mw-collapsed" style="width:100%; margin:0;"
+  !  borrower_branch
+  |-
+  | 
+  Gets branch data for the borrower's home branch
+  Requires [% USE Branches %]
+  | 
+    [% FOREACH borrower_branch IN Branches.all() %]
+    [% IF borrower_branch.branchcode == borrower.branchcode %]
+        [% borrower_branch.branchaddress1 %]
+        [% borrower_branch.branchaddress2 %]
+        [% borrower_branch.branchaddress3 %]
+        [% borrower_branch.branchcity %]
+        [% borrower_branch.branchcode %]
+        [% borrower_branch.branchcountry %]
+        [% borrower_branch.branchemail %]
+        [% borrower_branch.branchfax %]
+        [% borrower_branch.branchillemail %]
+        [% borrower_branch.branchip %]
+        [% borrower_branch.branchname %]
+        [% borrower_branch.branchnotes %]
+        [% borrower_branch.branchphone %]
+        [% borrower_branch.branchreplyto %]
+        [% borrower_branch.branchreturnpath %]
+        [% borrower_branch.branchstate %]
+        [% borrower_branch.branchurl %]
+        [% borrower_branch.branchzip %]
+        [% borrower_branch.geolocation %]
+        [% borrower_branch.issuing %]
+        [% borrower_branch.marcorgcode %]
+        [% borrower_branch.pickup_location %]
+        [% borrower_branch.public %]
+    [% END %]
+    [% END %]
+  |}
+|
