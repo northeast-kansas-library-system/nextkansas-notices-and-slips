@@ -1,7 +1,10 @@
-[% USE Categories %]
+[% USE AuthorisedValues %]
 [% USE Branches %]
+[% USE Categories %]
 [% USE ExtendedAttributeTypes %]
-[% USE Dumper Indent=2 %]
+[% USE ItemTypes %]
+
+[% USE Dumper Indent=1 %]
 
 <div style="margin: .5in;">
 
@@ -147,16 +150,7 @@
       <li>&#91;% borrower.dateexpiry | $KohaDates %] == [% borrower.dateexpiry | $KohaDates %]</li>
     </ul>
     <br>
-
-    <h2>Get information about the borrower's home library</h2>
-
-    <p>Use this code to get any information you need about a borrower's home branch:</p>
-    
-
-
-
-
-    <br><br>-----<br>
+    <br>-----<br>
   [% END %]
 
   [% IF borrowers %] <h2>Dump borrowers:</h2><pre>[% Dumper.dump_html(borrowers.unblessed) %]</pre><br>[% END %]
@@ -190,9 +184,9 @@
 
     [% FOREACH overdue IN overdues %]
 
-        [% SET biblioitem = overdue.item.biblio.biblioitem %]
+      [% SET biblio = overdue.item.biblio %]
 
-      [% IF biblio %] <h2>Dump biblio from overdues:</h2><pre>[% Dumper.dump_html(biblio.unblessed) %]</pre><br>[% END %]
+      [% IF biblio %]<h2>Dump biblio from overdues:</h2><pre>[% Dumper.dump_html(biblio.unblessed) %]</pre><br>[% END %]
 
     [% END %]
 
@@ -260,7 +254,7 @@
 
       [% SET biblioitem = overdue.item.biblio.biblioitem %]
 
-      [% IF biblioitem %]<h2>Dump biblioitem:</h2><pre>[% Dumper.dump_html(biblioitem.unblessed) %]</pre><br>[% END %]
+      [% IF biblioitem %]<h2>Dump biblioitem from overdues:</h2><pre>[% Dumper.dump_html(biblioitem.unblessed) %]</pre><br>[% END %]
 
     [% END %]
 
@@ -351,7 +345,499 @@
         <li><strong>&#91;% biblioitem.volumedesc %]</strong> ==  [% biblioitem.volumedesc %]</li>
       </ul>
     [% END %]
+
+    <br>
+    <h2>Transform record level location from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE AuthorisedValues %]</li>
+      <li>
+        Code: &#91;% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]
+        <ul>
+          <li>My system has the record level shelving location (942$e) mapped to biblioitems.agerestriction</li>
+          <li>If your library uses a different mapping, you'll need to adjust this code for your library</li>
+        </ul>
+      </li>
+      <li>&#91;% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %] == [% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Transform record level item type from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE ItemTypes %]</li>
+      <li>
+        Code: &#91;% ItemTypes.GetDescription(biblioitem.itemtype) %]
+        <ul>
+          <li>My system has the record level item type (942$c) mapped to biblioitems.itemtype</li>
+          <li>If your library uses a different mapping, you'll need to adjust this code for your library</li>
+        </ul>
+      </li>
+      <li>&#91;% ItemTypes.GetDescription(biblioitem.itemtype) %] == [% ItemTypes.GetDescription(biblioitem.itemtype) %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Transform record level collection code from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE AuthorisedValues %]</li>
+      <li>
+        Code: &#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %]
+        <ul>
+          <li>My system has the record level collection code (942$h) mapped to biblioitems.cn_class</li>
+          <li>If your library uses a different mapping, you'll need to adjust this code for your library</li>
+        </ul>
+      </li>
+      <li>&#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %] == [% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %]</li>
+    </ul>
+    <br>
+
+    <p>----------</p>
+
+    <p>You can connect overdues to items.</p>
+
+    [% FOREACH overdue IN overdues %]
+
+      [% SET item = overdue.item %]
+
+      [% IF item %] <h2>Dump item from overdues:</h2><pre>[% Dumper.dump_html(item.unblessed) %]</pre><br>[% END %]
+
+    [% END %]
+
+    <p>Connecting like this allows you to use this code to get any information you need from the items table for an overdue item:</p>
+
+    <pre>
+    &#91;% FOREACH overdue IN overdues %]
+
+      &#91;% SET item = overdue.item %]
+
+        &#91;% item.barcode %]
+        &#91;% item.biblioitemnumber %]
+        &#91;% item.biblionumber %]
+        &#91;% item.booksellerid %]
+        &#91;% item.ccode %]
+        &#91;% item.cn_sort %]
+        &#91;% item.cn_source %]
+        &#91;% item.coded_location_qualifier %]
+        &#91;% item.copynumber %]
+        &#91;% item.damaged %]
+        &#91;% item.damaged_on %]
+        &#91;% item.dateaccessioned %]
+        &#91;% item.datelastborrowed %]
+        &#91;% item.datelastseen %]
+        &#91;% item.deleted_on %]
+        &#91;% item.enumchron %]
+        &#91;% item.exclude_from_local_holds_priority %]
+        &#91;% item.holdingbranch %]
+        &#91;% item.homebranch %]
+        &#91;% item.issues %]
+        &#91;% item.itemcallnumber %]
+        &#91;% item.itemlost %]
+        &#91;% item.itemlost_on %]
+        &#91;% item.itemnotes %]
+        &#91;% item.itemnotes_nonpublic %]
+        &#91;% item.itemnumber %]
+        &#91;% item.itype %]
+        &#91;% item.location %]
+        &#91;% item.materials %]
+        &#91;% item.more_subfields_xml %]
+        &#91;% item.new_status %]
+        &#91;% item.notforloan %]
+        &#91;% item.onloan %]
+        &#91;% item.permanent_location %]
+        &#91;% item.price %]
+        &#91;% item.renewals %]
+        &#91;% item.replacementprice %]
+        &#91;% item.replacementpricedate %]
+        &#91;% item.reserves %]
+        &#91;% item.restricted %]
+        &#91;% item.stack %]
+        &#91;% item.stocknumber %]
+        &#91;% item.timestamp %]
+        &#91;% item.uri %]
+        &#91;% item.withdrawn %]
+        &#91;% item.withdrawn_on %]
+    
+    &#91;% END %]
+    </pre>
+
+    <p>For example:</p>
+
+    [% FOREACH overdue IN overdues %]
+
+      [% SET item = overdue.item %]
+
+        <ul>
+
+          <li><strong>&#91;% item.barcode %]</strong> ==  [% item.barcode %]</li>
+          <li><strong>&#91;% item.biblioitemnumber %]</strong> ==  [% item.biblioitemnumber %]</li>
+          <li><strong>&#91;% item.biblionumber %]</strong> ==  [% item.biblionumber %]</li>
+          <li><strong>&#91;% item.booksellerid %]</strong> ==  [% item.booksellerid %]</li>
+          <li><strong>&#91;% item.ccode %]</strong> ==  [% item.ccode %]</li>
+          <li><strong>&#91;% item.cn_sort %]</strong> ==  [% item.cn_sort %]</li>
+          <li><strong>&#91;% item.cn_source %]</strong> ==  [% item.cn_source %]</li>
+          <li><strong>&#91;% item.coded_location_qualifier %]</strong> ==  [% item.coded_location_qualifier %]</li>
+          <li><strong>&#91;% item.copynumber %]</strong> ==  [% item.copynumber %]</li>
+          <li><strong>&#91;% item.damaged %]</strong> ==  [% item.damaged %]</li>
+          <li><strong>&#91;% item.damaged_on %]</strong> ==  [% item.damaged_on %]</li>
+          <li><strong>&#91;% item.dateaccessioned %]</strong> ==  [% item.dateaccessioned %]</li>
+          <li><strong>&#91;% item.datelastborrowed %]</strong> ==  [% item.datelastborrowed %]</li>
+          <li><strong>&#91;% item.datelastseen %]</strong> ==  [% item.datelastseen %]</li>
+          <li><strong>&#91;% item.deleted_on %]</strong> ==  [% item.deleted_on %]</li>
+          <li><strong>&#91;% item.enumchron %]</strong> ==  [% item.enumchron %]</li>
+          <li><strong>&#91;% item.exclude_from_local_holds_priority %]</strong> ==  [% item.exclude_from_local_holds_priority %]</li>
+          <li><strong>&#91;% item.holdingbranch %]</strong> ==  [% item.holdingbranch %]</li>
+          <li><strong>&#91;% item.homebranch %]</strong> ==  [% item.homebranch %]</li>
+          <li><strong>&#91;% item.issues %]</strong> ==  [% item.issues %]</li>
+          <li><strong>&#91;% item.itemcallnumber %]</strong> ==  [% item.itemcallnumber %]</li>
+          <li><strong>&#91;% item.itemlost %]</strong> ==  [% item.itemlost %]</li>
+          <li><strong>&#91;% item.itemlost_on %]</strong> ==  [% item.itemlost_on %]</li>
+          <li><strong>&#91;% item.itemnotes %]</strong> ==  [% item.itemnotes %]</li>
+          <li><strong>&#91;% item.itemnotes_nonpublic %]</strong> ==  [% item.itemnotes_nonpublic %]</li>
+          <li><strong>&#91;% item.itemnumber %]</strong> ==  [% item.itemnumber %]</li>
+          <li><strong>&#91;% item.itype %]</strong> ==  [% item.itype %]</li>
+          <li><strong>&#91;% item.location %]</strong> ==  [% item.location %]</li>
+          <li><strong>&#91;% item.materials %]</strong> ==  [% item.materials %]</li>
+          <li><strong>&#91;% item.more_subfields_xml %]</strong> ==  [% item.more_subfields_xml %]</li>
+          <li><strong>&#91;% item.new_status %]</strong> ==  [% item.new_status %]</li>
+          <li><strong>&#91;% item.notforloan %]</strong> ==  [% item.notforloan %]</li>
+          <li><strong>&#91;% item.onloan %]</strong> ==  [% item.onloan %]</li>
+          <li><strong>&#91;% item.permanent_location %]</strong> ==  [% item.permanent_location %]</li>
+          <li><strong>&#91;% item.price %]</strong> ==  [% item.price %]</li>
+          <li><strong>&#91;% item.renewals %]</strong> ==  [% item.renewals %]</li>
+          <li><strong>&#91;% item.replacementprice %]</strong> ==  [% item.replacementprice %]</li>
+          <li><strong>&#91;% item.replacementpricedate %]</strong> ==  [% item.replacementpricedate %]</li>
+          <li><strong>&#91;% item.reserves %]</strong> ==  [% item.reserves %]</li>
+          <li><strong>&#91;% item.restricted %]</strong> ==  [% item.restricted %]</li>
+          <li><strong>&#91;% item.stack %]</strong> ==  [% item.stack %]</li>
+          <li><strong>&#91;% item.stocknumber %]</strong> ==  [% item.stocknumber %]</li>
+          <li><strong>&#91;% item.timestamp %]</strong> ==  [% item.timestamp %]</li>
+          <li><strong>&#91;% item.uri %]</strong> ==  [% item.uri %]</li>
+          <li><strong>&#91;% item.withdrawn %]</strong> ==  [% item.withdrawn %]</li>
+          <li><strong>&#91;% item.withdrawn_on %]</strong> ==  [% item.withdrawn_on %]</li>
+
+        </ul>
+
+    [% END %]
+
+    <br>
+    <h2>Transform item level permanent location from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE AuthorisedValues %]</li>
+      <li>
+        Code: &#91;% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %]
+      </li>
+      <li>&#91;% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %] == [% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Transform item level location from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE AuthorisedValues %]</li>
+      <li>
+        Code: &#91;% AuthorisedValues.GetByCode( 'LOC', item.location ) %]
+      </li>
+      <li>&#91;% AuthorisedValues.GetByCode( 'LOC', item.location ) %] == [% AuthorisedValues.GetByCode( 'LOC', item.location ) %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Transform item level item type from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE ItemTypes %]</li>
+      <li>
+        Code: &#91;% ItemTypes.GetDescription(item.itype) %]
+      </li>
+      <li>&#91;% ItemTypes.GetDescription(item.itype) %] == [% ItemTypes.GetDescription(item.itype) %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Transform item level collection code from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE AuthorisedValues %]</li>
+      <li>
+        Code: &#91;% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]
+      </li>
+      <li>&#91;% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %] == [% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]</li>
+    </ul>
+    <br>
+
+    <br>
+    <h2>Shortcut to get the item's home branch by name instead of code</h2>
+    <ul>
+      <li>Requires &#91;% USE Branches %]</li>
+      <li>Code: &#91;% Branches.GetName( item.homebranch ) %]</li>
+      <li>Result: &#91;% Branches.GetName( item.homebranch ) %] == [% Branches.GetName( item.homebranch ) %]</li>
+    </ul>
+    <br>
+
+    <br>
+    <h2>Shortcut to get the item's holding branch by name instead of code</h2>
+    <ul>
+      <li>Requires &#91;% USE Branches %]</li>
+      <li>Code: &#91;% Branches.GetName( item.holdingbranch ) %]</li>
+      <li>Result: &#91;% Branches.GetName( item.holdingbranch ) %] == [% Branches.GetName( item.holdingbranch ) %]</li>
+    </ul>
+    <br>
+
+    <p>----------</p>
+
+    <p>You can connect overdues to branch locations - owning branch, holding branch, checkout branch</p>
+
+    <h2>Item owning branch:</h2>
+
+    <pre>
+
+    &#91;% FOREACH overdue IN overdues %]
+
+      &#91;% FOREACH odue_item_owned_by IN Branches.all() %]
+
+        &#91;% IF odue_item_owned_by.branchcode == item.homebranch %]
+
+          &#91;% odue_item_owned_by.branchaddress1 %]
+          &#91;% odue_item_owned_by.branchaddress2 %]
+          &#91;% odue_item_owned_by.branchaddress3 %]
+          &#91;% odue_item_owned_by.branchcity %]
+          &#91;% odue_item_owned_by.branchcode %]
+          &#91;% odue_item_owned_by.branchcountry %]
+          &#91;% odue_item_owned_by.branchemail %]
+          &#91;% odue_item_owned_by.branchfax %]
+          &#91;% odue_item_owned_by.branchillemail %]
+          &#91;% odue_item_owned_by.branchip %]
+          &#91;% odue_item_owned_by.branchname %]
+          &#91;% odue_item_owned_by.branchnotes %]
+          &#91;% odue_item_owned_by.branchphone %]
+          &#91;% odue_item_owned_by.branchreplyto %]
+          &#91;% odue_item_owned_by.branchreturnpath %]
+          &#91;% odue_item_owned_by.branchstate %]
+          &#91;% odue_item_owned_by.branchurl %]
+          &#91;% odue_item_owned_by.branchzip %]
+          &#91;% odue_item_owned_by.geolocation %]
+          &#91;% odue_item_owned_by.issuing %]
+          &#91;% odue_item_owned_by.marcorgcode %]
+          &#91;% odue_item_owned_by.pickup_location %]
+          &#91;% odue_item_owned_by.public %]
+
+        &#91;% END %]
+
+      &#91;% END %] 
+
+    &#91;% END %]
+
+    </pre>
+
+    <p>Item owning branch example:</p>
+
+    [% FOREACH overdue IN overdues %]
+    
+      [% FOREACH odue_item_owned_by IN Branches.all() %]
+        
+        [% IF odue_item_owned_by.branchcode == item.homebranch %]
+
+        <ul>
+
+          <li><strong>&#91;% odue_item_owned_by.branchaddress1 %]</strong> ==  [% odue_item_owned_by.branchaddress1 %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchaddress2 %]</strong> ==  [% odue_item_owned_by.branchaddress2 %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchaddress3 %]</strong> ==  [% odue_item_owned_by.branchaddress3 %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchcity %]</strong> ==  [% odue_item_owned_by.branchcity %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchcode %]</strong> ==  [% odue_item_owned_by.branchcode %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchcountry %]</strong> ==  [% odue_item_owned_by.branchcountry %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchemail %]</strong> ==  [% odue_item_owned_by.branchemail %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchfax %]</strong> ==  [% odue_item_owned_by.branchfax %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchillemail %]</strong> ==  [% odue_item_owned_by.branchillemail %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchip %]</strong> ==  [% odue_item_owned_by.branchip %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchname %]</strong> ==  [% odue_item_owned_by.branchname %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchnotes %]</strong> ==  [% odue_item_owned_by.branchnotes %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchphone %]</strong> ==  [% odue_item_owned_by.branchphone %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchreplyto %]</strong> ==  [% odue_item_owned_by.branchreplyto %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchreturnpath %]</strong> ==  [% odue_item_owned_by.branchreturnpath %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchstate %]</strong> ==  [% odue_item_owned_by.branchstate %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchurl %]</strong> ==  [% odue_item_owned_by.branchurl %]</li>
+          <li><strong>&#91;% odue_item_owned_by.branchzip %]</strong> ==  [% odue_item_owned_by.branchzip %]</li>
+          <li><strong>&#91;% odue_item_owned_by.geolocation %]</strong> ==  [% odue_item_owned_by.geolocation %]</li>
+          <li><strong>&#91;% odue_item_owned_by.issuing %]</strong> ==  [% odue_item_owned_by.issuing %]</li>
+          <li><strong>&#91;% odue_item_owned_by.marcorgcode %]</strong> ==  [% odue_item_owned_by.marcorgcode %]</li>
+          <li><strong>&#91;% odue_item_owned_by.pickup_location %]</strong> ==  [% odue_item_owned_by.pickup_location %]</li>
+          <li><strong>&#91;% odue_item_owned_by.public %]</strong> ==  [% odue_item_owned_by.public %]</li>
+        
+        </ul>
+
+        [% END %]
+
+      [% END %] 
+
+    [% END %]
+
+    <p>-----</p>
+
+    <h2>Item holding branch:</h2>
+
+    <pre>
+
+    &#91;% FOREACH overdue IN overdues %]
+
+      &#91;% FOREACH odue_item_held_by IN Branches.all() %]
+
+        &#91;% IF odue_item_held_by.branchcode == item.holdingbranch %]
+
+          &#91;% odue_item_held_by.branchaddress1 %]
+          &#91;% odue_item_held_by.branchaddress2 %]
+          &#91;% odue_item_held_by.branchaddress3 %]
+          &#91;% odue_item_held_by.branchcity %]
+          &#91;% odue_item_held_by.branchcode %]
+          &#91;% odue_item_held_by.branchcountry %]
+          &#91;% odue_item_held_by.branchemail %]
+          &#91;% odue_item_held_by.branchfax %]
+          &#91;% odue_item_held_by.branchillemail %]
+          &#91;% odue_item_held_by.branchip %]
+          &#91;% odue_item_held_by.branchname %]
+          &#91;% odue_item_held_by.branchnotes %]
+          &#91;% odue_item_held_by.branchphone %]
+          &#91;% odue_item_held_by.branchreplyto %]
+          &#91;% odue_item_held_by.branchreturnpath %]
+          &#91;% odue_item_held_by.branchstate %]
+          &#91;% odue_item_held_by.branchurl %]
+          &#91;% odue_item_held_by.branchzip %]
+          &#91;% odue_item_held_by.geolocation %]
+          &#91;% odue_item_held_by.issuing %]
+          &#91;% odue_item_held_by.marcorgcode %]
+          &#91;% odue_item_held_by.pickup_location %]
+          &#91;% odue_item_held_by.public %]
+
+      &#91;% END %]
+
+    &#91;% END %]
+    
+    </pre>
+
+    <p>Item holding branch example:</p>
+
+    [% FOREACH overdue IN overdues %]
+    
+      [% FOREACH odue_item_held_by IN Branches.all() %]
+        
+        [% IF odue_item_held_by.branchcode == item.holdingbranch %]
+
+        <ul>
+
+          <li><strong>&#91;% odue_item_held_by.branchaddress1 %]</strong> ==  [% odue_item_held_by.branchaddress1 %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchaddress2 %]</strong> ==  [% odue_item_held_by.branchaddress2 %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchaddress3 %]</strong> ==  [% odue_item_held_by.branchaddress3 %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchcity %]</strong> ==  [% odue_item_held_by.branchcity %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchcode %]</strong> ==  [% odue_item_held_by.branchcode %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchcountry %]</strong> ==  [% odue_item_held_by.branchcountry %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchemail %]</strong> ==  [% odue_item_held_by.branchemail %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchfax %]</strong> ==  [% odue_item_held_by.branchfax %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchillemail %]</strong> ==  [% odue_item_held_by.branchillemail %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchip %]</strong> ==  [% odue_item_held_by.branchip %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchname %]</strong> ==  [% odue_item_held_by.branchname %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchnotes %]</strong> ==  [% odue_item_held_by.branchnotes %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchphone %]</strong> ==  [% odue_item_held_by.branchphone %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchreplyto %]</strong> ==  [% odue_item_held_by.branchreplyto %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchreturnpath %]</strong> ==  [% odue_item_held_by.branchreturnpath %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchstate %]</strong> ==  [% odue_item_held_by.branchstate %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchurl %]</strong> ==  [% odue_item_held_by.branchurl %]</li>
+          <li><strong>&#91;% odue_item_held_by.branchzip %]</strong> ==  [% odue_item_held_by.branchzip %]</li>
+          <li><strong>&#91;% odue_item_held_by.geolocation %]</strong> ==  [% odue_item_held_by.geolocation %]</li>
+          <li><strong>&#91;% odue_item_held_by.issuing %]</strong> ==  [% odue_item_held_by.issuing %]</li>
+          <li><strong>&#91;% odue_item_held_by.marcorgcode %]</strong> ==  [% odue_item_held_by.marcorgcode %]</li>
+          <li><strong>&#91;% odue_item_held_by.pickup_location %]</strong> ==  [% odue_item_held_by.pickup_location %]</li>
+          <li><strong>&#91;% odue_item_held_by.public %]</strong> ==  [% odue_item_held_by.public %]</li>
+        
+        </ul>
+
+        [% END %]
+
+      [% END %] 
+
+    [% END %]
+
+    <p>-----</p>
+
+    <h2>Item check-out branch:</h2>
+
+    <pre>
+
+      &#91;% FOREACH overdue IN overdues %]
+
+        &#91;% FOREACH odue_checked_out_at IN Branches.all() %]
+    
+          &#91;% IF odue_checked_out_at.branchcode == overdue.branchcode %]
+    
+            &#91;% odue_checked_out_at.branchaddress1 %]
+            &#91;% odue_checked_out_at.branchaddress2 %]
+            &#91;% odue_checked_out_at.branchaddress3 %]
+            &#91;% odue_checked_out_at.branchcity %]
+            &#91;% odue_checked_out_at.branchcode %]
+            &#91;% odue_checked_out_at.branchcountry %]
+            &#91;% odue_checked_out_at.branchemail %]
+            &#91;% odue_checked_out_at.branchfax %]
+            &#91;% odue_checked_out_at.branchillemail %]
+            &#91;% odue_checked_out_at.branchip %]
+            &#91;% odue_checked_out_at.branchname %]
+            &#91;% odue_checked_out_at.branchnotes %]
+            &#91;% odue_checked_out_at.branchphone %]
+            &#91;% odue_checked_out_at.branchreplyto %]
+            &#91;% odue_checked_out_at.branchreturnpath %]
+            &#91;% odue_checked_out_at.branchstate %]
+            &#91;% odue_checked_out_at.branchurl %]
+            &#91;% odue_checked_out_at.branchzip %]
+            &#91;% odue_checked_out_at.geolocation %]
+            &#91;% odue_checked_out_at.issuing %]
+            &#91;% odue_checked_out_at.marcorgcode %]
+            &#91;% odue_checked_out_at.pickup_location %]
+            &#91;% odue_checked_out_at.public %]
+    
+          &#91;% END %]
+    
+        &#91;% END %]
+
+      &#91;% END %]
   
+    </pre>
+
+    <p>Item check-out branch example:</p>
+
+    [% FOREACH overdue IN overdues %]
+    
+      [% FOREACH odue_checked_out_at IN Branches.all() %]
+
+        [% IF odue_checked_out_at.branchcode == overdue.branchcode %]
+
+        <ul>
+
+          <li><strong>&#91;% odue_checked_out_at.branchaddress1 %]</strong> ==  [% odue_checked_out_at.branchaddress1 %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchaddress2 %]</strong> ==  [% odue_checked_out_at.branchaddress2 %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchaddress3 %]</strong> ==  [% odue_checked_out_at.branchaddress3 %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchcity %]</strong> ==  [% odue_checked_out_at.branchcity %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchcode %]</strong> ==  [% odue_checked_out_at.branchcode %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchcountry %]</strong> ==  [% odue_checked_out_at.branchcountry %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchemail %]</strong> ==  [% odue_checked_out_at.branchemail %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchfax %]</strong> ==  [% odue_checked_out_at.branchfax %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchillemail %]</strong> ==  [% odue_checked_out_at.branchillemail %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchip %]</strong> ==  [% odue_checked_out_at.branchip %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchname %]</strong> ==  [% odue_checked_out_at.branchname %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchnotes %]</strong> ==  [% odue_checked_out_at.branchnotes %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchphone %]</strong> ==  [% odue_checked_out_at.branchphone %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchreplyto %]</strong> ==  [% odue_checked_out_at.branchreplyto %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchreturnpath %]</strong> ==  [% odue_checked_out_at.branchreturnpath %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchstate %]</strong> ==  [% odue_checked_out_at.branchstate %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchurl %]</strong> ==  [% odue_checked_out_at.branchurl %]</li>
+          <li><strong>&#91;% odue_checked_out_at.branchzip %]</strong> ==  [% odue_checked_out_at.branchzip %]</li>
+          <li><strong>&#91;% odue_checked_out_at.geolocation %]</strong> ==  [% odue_checked_out_at.geolocation %]</li>
+          <li><strong>&#91;% odue_checked_out_at.issuing %]</strong> ==  [% odue_checked_out_at.issuing %]</li>
+          <li><strong>&#91;% odue_checked_out_at.marcorgcode %]</strong> ==  [% odue_checked_out_at.marcorgcode %]</li>
+          <li><strong>&#91;% odue_checked_out_at.pickup_location %]</strong> ==  [% odue_checked_out_at.pickup_location %]</li>
+          <li><strong>&#91;% odue_checked_out_at.public %]</strong> ==  [% odue_checked_out_at.public %]</li>
+
+        </ul>
+
+        [% END %]
+
+      [% END %]
+
+    [% END %]
+
+    <p>-----</p>
+    
+
+      
 
 
 
