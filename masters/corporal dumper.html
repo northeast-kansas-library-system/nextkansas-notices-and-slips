@@ -1,0 +1,399 @@
+[% USE Categories %]
+[% USE Branches %]
+[% USE ExtendedAttributeTypes %]
+[% USE Dumper Indent=2 %]
+
+<div style="margin: .5in;">
+
+  <h1>OVERDUES_SLIP</h1>
+
+  [% IF additional_content %] <h2>Dump additional_content:</h2><pre>[% Dumper.dump_html(additional_content.unblessed) %]</pre><br>[% END %]
+  [% IF additional_contents %] <h2>Dump additional_contents:</h2><pre>[% Dumper.dump_html(additional_contents.unblessed) %]</pre><br>[% END %]
+  [% IF article_request %] <h2>Dump article_request:</h2><pre>[% Dumper.dump_html(article_request.unblessed) %]</pre><br>[% END %]
+  [% IF article_requests %] <h2>Dump article_requests:</h2><pre>[% Dumper.dump_html(article_requests.unblessed) %]</pre><br>[% END %]
+  [% IF basket %] <h2>Dump basket:</h2><pre>[% Dumper.dump_html(basket.unblessed) %]</pre><br>[% END %]
+  [% IF baskets %] <h2>Dump baskets:</h2><pre>[% Dumper.dump_html(baskets.unblessed) %]</pre><br>[% END %]
+  [% IF biblio %] <h2>biblio:</h2><pre>[% Dumper.dump_html(biblio.unblessed) %]</pre><br>[% END %]
+  [% IF biblioitem %] <h2>Dump biblioitem:</h2><pre>[% Dumper.dump_html(biblioitem.unblessed) %]</pre><br>[% END %]
+  [% IF biblioitems %] <h2>Dump biblioitems:</h2><pre>[% Dumper.dump_html(biblioitems.unblessed) %]</pre><br>[% END %]
+  [% IF biblios %] <h2>Dump biblios:</h2><pre>[% Dumper.dump_html(biblios.unblessed) %]</pre><br>[% END %]
+  [% IF bookseller %] <h2>Dump bookseller:</h2><pre>[% Dumper.dump_html(bookseller.unblessed) %]</pre><br>[% END %]
+  [% IF booksellers %] <h2>Dump booksellers:</h2><pre>[% Dumper.dump_html(booksellers.unblessed) %]</pre><br>[% END %]
+
+  [% IF borrower %] <h2>Dump borrower:</h2><pre>[% Dumper.dump_html(borrower.unblessed) %]</pre><br>
+
+    <p>----------</p>
+
+    <p>You can connect borrower to the borrower's home branch with this code:</p>
+    
+    <pre>
+      &#91;% FOREACH borrower_branch IN Branches.all() %]
+  
+            &#91;% IF borrower_branch.branchcode == borrower.branchcode %]
+            
+              &#91;% borrower_branch.branchaddress1 %]
+              &#91;% borrower_branch.branchaddress2 %]
+              &#91;% borrower_branch.branchaddress3 %]
+              &#91;% borrower_branch.branchcity %]
+              &#91;% borrower_branch.branchcode %]
+              &#91;% borrower_branch.branchcountry %]
+              &#91;% borrower_branch.branchemail %]
+              &#91;% borrower_branch.branchfax %]
+              &#91;% borrower_branch.branchillemail %]
+              &#91;% borrower_branch.branchip %]
+              &#91;% borrower_branch.branchname %]
+              &#91;% borrower_branch.branchnotes %]
+              &#91;% borrower_branch.branchphone %]
+              &#91;% borrower_branch.branchreplyto %]
+              &#91;% borrower_branch.branchreturnpath %]
+              &#91;% borrower_branch.branchstate %]
+              &#91;% borrower_branch.branchurl %]
+              &#91;% borrower_branch.branchzip %]
+              &#91;% borrower_branch.geolocation %]
+              &#91;% borrower_branch.issuing %]
+              &#91;% borrower_branch.marcorgcode %]
+              &#91;% borrower_branch.pickup_location %]
+              &#91;% borrower_branch.public %]
+              
+            &#91;% END %]
+            
+      &#91;% END %]
+    </pre>
+
+    <p>For example:</p>
+
+    [% FOREACH borrower_branch IN Branches.all() %]
+
+      [% IF borrower_branch.branchcode == borrower.branchcode %]
+
+        <ul>
+        
+          <li><strong>&#91;% borrower_branch.branchaddress1 %]</strong> ==  [% borrower_branch.branchaddress1 %]</li>
+          <li><strong>&#91;% borrower_branch.branchaddress2 %]</strong> ==  [% borrower_branch.branchaddress2 %]</li>
+          <li><strong>&#91;% borrower_branch.branchaddress3 %]</strong> ==  [% borrower_branch.branchaddress3 %]</li>
+          <li><strong>&#91;% borrower_branch.branchcity %]</strong> ==  [% borrower_branch.branchcity %]</li>
+          <li><strong>&#91;% borrower_branch.branchcode %]</strong> ==  [% borrower_branch.branchcode %]</li>
+          <li><strong>&#91;% borrower_branch.branchcountry %]</strong> ==  [% borrower_branch.branchcountry %]</li>
+          <li><strong>&#91;% borrower_branch.branchemail %]</strong> ==  [% borrower_branch.branchemail %]</li>
+          <li><strong>&#91;% borrower_branch.branchfax %]</strong> ==  [% borrower_branch.branchfax %]</li>
+          <li><strong>&#91;% borrower_branch.branchillemail %]</strong> ==  [% borrower_branch.branchillemail %]</li>
+          <li><strong>&#91;% borrower_branch.branchip %]</strong> ==  [% borrower_branch.branchip %]</li>
+          <li><strong>&#91;% borrower_branch.branchname %]</strong> ==  [% borrower_branch.branchname %]</li>
+          <li><strong>&#91;% borrower_branch.branchnotes %]</strong> ==  [% borrower_branch.branchnotes %]</li>
+          <li><strong>&#91;% borrower_branch.branchphone %]</strong> ==  [% borrower_branch.branchphone %]</li>
+          <li><strong>&#91;% borrower_branch.branchreplyto %]</strong> ==  [% borrower_branch.branchreplyto %]</li>
+          <li><strong>&#91;% borrower_branch.branchreturnpath %]</strong> ==  [% borrower_branch.branchreturnpath %]</li>
+          <li><strong>&#91;% borrower_branch.branchstate %]</strong> ==  [% borrower_branch.branchstate %]</li>
+          <li><strong>&#91;% borrower_branch.branchurl %]</strong> ==  [% borrower_branch.branchurl %]</li>
+          <li><strong>&#91;% borrower_branch.branchzip %]</strong> ==  [% borrower_branch.branchzip %]</li>
+          <li><strong>&#91;% borrower_branch.geolocation %]</strong> ==  [% borrower_branch.geolocation %]</li>
+          <li><strong>&#91;% borrower_branch.issuing %]</strong> ==  [% borrower_branch.issuing %]</li>
+          <li><strong>&#91;% borrower_branch.marcorgcode %]</strong> ==  [% borrower_branch.marcorgcode %]</li>
+          <li><strong>&#91;% borrower_branch.pickup_location %]</strong> ==  [% borrower_branch.pickup_location %]</li>
+          <li><strong>&#91;% borrower_branch.public %]</strong> ==  [% borrower_branch.public %]</li>
+        
+        </ul>
+        
+      [% END %]
+      
+    [% END %]
+    
+    <p>----------</p>
+
+
+    <h2>Shortcut to get the borrower's home branch by name instead of code</h2>
+    <ul>
+      <li>Requires &#91;% USE Branches %]</li>
+      <li>Code: &#91;% Branches.GetName( borrower.branchcode ) %]</li>
+      <li>Result: &#91;% Branches.GetName( borrower.branchcode ) %] == [% Branches.GetName( borrower.branchcode ) %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Shortcut to get the borrower's home branch URL</h2>
+    <ul>
+      <li>Requires &#91;% USE Branches %]</li>
+      <li>Code: &#91;% Branches.GetURL( borrower.branchcode ) %]</li>
+      <li>Result: &#91;% Branches.GetURL( borrower.branchcode ) %] == [% Branches.GetURL( borrower.branchcode ) %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Shortcut to get the name of the borrower category instead of using borrower.categorycode</h2>
+    <ul>
+      <li>Requires &#91;% USE Categories %]</li>
+      <li>Code: &#91;% Categories.GetName( borrower.categorycode ) %]</li>
+      <li>Result: &#91;% Categories.GetName( borrower.categorycode ) %] == [% Categories.GetName( borrower.categorycode ) %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Transform borrower dates - datetime fields</h2>
+    <ul>
+      <li>Datetime fields (such as borrower.lastseen) will display in YYYY-MM-DD HH:MM:SS format by default</li>
+      <li>&#91;% borrower.lastseen %] == [% borrower.lastseen %]</li>
+      -----<br>
+      <li>If you add "| $KohaDates" after a Datetime variable, the date will render in the format specified in system preference _dateformat_.</li>
+      <li>&#91;% borrower.lastseen | $KohaDates %] == [% borrower.lastseen | $KohaDates %]</li>
+      -----<br>
+      <li>If you add "| $KohaDates with_hours => 1" after a Datetime variable, the date will render in the format specified in system preference _dateformat_ with hours:minutes:seconds added at the end</li>
+      <li>&#91;% borrower.lastseen | $KohaDates with_hours => 1 %] == [% borrower.lastseen | $KohaDates with_hours => 1 %]</li>
+    </ul>
+    <br>
+    <br>
+    <h2>Transform borrower dates - date fields</h2>
+    <ul>
+      <li>Date fields (such as borrower.dateexpiry) will display in YYYY-MM-DD format by default</li>
+      <li>&#91;% borrower.dateexpiry %] == [% borrower.dateexpiry %]</li>
+      -----<br>
+      <li>If you add "| $KohaDates" after a Datetime variable, the date will render in the format specified in system preference _dateformat_.</li>
+      <li>&#91;% borrower.dateexpiry | $KohaDates %] == [% borrower.dateexpiry | $KohaDates %]</li>
+    </ul>
+    <br>
+
+    <h2>Get information about the borrower's home library</h2>
+
+    <p>Use this code to get any information you need about a borrower's home branch:</p>
+    
+
+
+
+
+    <br><br>-----<br>
+  [% END %]
+
+  [% IF borrowers %] <h2>Dump borrowers:</h2><pre>[% Dumper.dump_html(borrowers.unblessed) %]</pre><br>[% END %]
+  [% IF branch %] <h2>Dump branch:</h2><pre>[% Dumper.dump_html(branch.unblessed) %]</pre><br>[% END %]
+  [% IF branches %] <h2>Dump branches:</h2><pre>[% Dumper.dump_html(branches.unblessed) %]</pre><br>[% END %]
+  [% IF checkout %] <h2>Dump checkout:</h2><pre>[% Dumper.dump_html(checkout.unblessed) %]</pre><br>[% END %]
+  [% IF checkouts %] <h2>Dump checkouts:</h2><pre>[% Dumper.dump_html(checkouts.unblessed) %]</pre><br>[% END %]
+  [% IF credit %] <h2>Dump credit:</h2><pre>[% Dumper.dump_html(credit.unblessed) %]</pre><br>[% END %]
+  [% IF credits %] <h2>Dump credits:</h2><pre>[% Dumper.dump_html(credits.unblessed) %]</pre><br>[% END %]
+  [% IF debit %] <h2>Dump debit:</h2><pre>[% Dumper.dump_html(debit.unblessed) %]</pre><br>[% END %]
+  [% IF debits %] <h2>Dump debits:</h2><pre>[% Dumper.dump_html(debits.unblessed) %]</pre><br>[% END %]
+  [% IF hold %] <h2>Dump hold:</h2><pre>[% Dumper.dump_html(hold.unblessed) %]</pre><br>[% END %]
+  [% IF holds %] <h2>Dump holds:</h2><pre>[% Dumper.dump_html(holds.unblessed) %]</pre><br>[% END %]
+  [% IF illrequest %] <h2>Dump illrequest:</h2><pre>[% Dumper.dump_html(illrequest.unblessed) %]</pre><br>[% END %]
+  [% IF illrequests %] <h2>Dump illrequests:</h2><pre>[% Dumper.dump_html(illrequests.unblessed) %]</pre><br>[% END %]
+  [% IF item %] <h2>Dump item:</h2><pre>[% Dumper.dump_html(item.unblessed) %]</pre><br>[% END %]
+  [% IF items %] <h2>Dump items:</h2><pre>[% Dumper.dump_html(items.unblessed) %]</pre><br>[% END %]
+  [% IF news %] <h2>Dump news:</h2><pre>[% Dumper.dump_html(news.unblessed) %]</pre><br>[% END %]
+  [% IF old_checkout %] <h2>Dump old_checkout:</h2><pre>[% Dumper.dump_html(old_checkout.unblessed) %]</pre><br>[% END %]
+  [% IF old_checkouts %] <h2>Dump old_checkouts:</h2><pre>[% Dumper.dump_html(old_checkouts.unblessed) %]</pre><br>[% END %]
+  [% IF order %] <h2>Dump order:</h2><pre>[% Dumper.dump_html(order.unblessed) %]</pre><br>[% END %]
+  [% IF orders %] <h2>Dump orders:</h2><pre>[% Dumper.dump_html(orders.unblessed) %]</pre><br>[% END %]
+  [% IF overdue %] <h2>Dump overdue:</h2><pre>[% Dumper.dump_html(overdue.unblessed) %]</pre><br>[% END %]
+
+  [% IF overdues %] 
+    <h2>Dump overdues:</h2><pre>[% Dumper.dump_html(overdues.unblessed) %]</pre><br>
+
+    <p>----------</p>
+
+    <p>You can connect overdues to biblios.  </p>
+
+    [% FOREACH overdue IN overdues %]
+
+        [% SET biblioitem = overdue.item.biblio.biblioitem %]
+
+      [% IF biblio %] <h2>Dump biblio from overdues:</h2><pre>[% Dumper.dump_html(biblio.unblessed) %]</pre><br>[% END %]
+
+    [% END %]
+
+    <p>Connecting like this allows you to use this code to get any information you need from the bibliographic record of an overdue item:</p>
+
+    <pre>
+    &#91;% FOREACH overdue IN overdues %]
+
+      &#91;% SET biblio = overdue.item.biblio %]
+
+        &#91;% biblio.abstract %]
+        &#91;% biblio.author %]
+        &#91;% biblio.biblionumber %]
+        &#91;% biblio.copyrightdate %]
+        &#91;% biblio.datecreated %]
+        &#91;% biblio.frameworkcode %]
+        &#91;% biblio.medium %]
+        &#91;% biblio.notes %]
+        &#91;% biblio.part_name %]
+        &#91;% biblio.part_number %]
+        &#91;% biblio.serial %]
+        &#91;% biblio.seriestitle %]
+        &#91;% biblio.subtitle %]
+        &#91;% biblio.timestamp %]
+        &#91;% biblio.title %]
+        &#91;% biblio.unititle %]
+
+    &#91;% END %]
+    </pre>
+
+    <p>For example:</p>
+
+    [% FOREACH overdue IN overdues %]
+
+      [% SET biblio = overdue.item.biblio %]
+
+      <ul>
+
+        <li><strong>&#91;% biblio.abstract %]</strong> == [% biblio.abstract %]</li>
+        <li><strong>&#91;% biblio.author %]</strong> == [% biblio.author %]</li>
+        <li><strong>&#91;% biblio.biblionumber %]</strong> == [% biblio.biblionumber %]</li>
+        <li><strong>&#91;% biblio.copyrightdate %]</strong> == [% biblio.copyrightdate %]</li>
+        <li><strong>&#91;% biblio.datecreated %]</strong> == [% biblio.datecreated %]</li>
+        <li><strong>&#91;% biblio.frameworkcode %]</strong> == [% biblio.frameworkcode %]</li>
+        <li><strong>&#91;% biblio.medium %]</strong> == [% biblio.medium %]</li>
+        <li><strong>&#91;% biblio.notes %]</strong> == [% biblio.notes %]</li>
+        <li><strong>&#91;% biblio.part_name %]</strong> == [% biblio.part_name %]</li>
+        <li><strong>&#91;% biblio.part_number %]</strong> == [% biblio.part_number %]</li>
+        <li><strong>&#91;% biblio.serial %]</strong> == [% biblio.serial %]</li>
+        <li><strong>&#91;% biblio.seriestitle %]</strong> == [% biblio.seriestitle %]</li>
+        <li><strong>&#91;% biblio.subtitle %]</strong> == [% biblio.subtitle %]</li>
+        <li><strong>&#91;% biblio.timestamp %]</strong> == [% biblio.timestamp %]</li>
+        <li><strong>&#91;% biblio.title %]</strong> == [% biblio.title %]</li>
+        <li><strong>&#91;% biblio.unititle %]</strong> == [% biblio.unititle %]</li>
+        
+      </ul>
+
+    [% END %]
+
+    <p>----------</p>
+
+    <p>You can connect overdues to biblioitems.</p>
+
+    [% FOREACH overdue IN overdues %]
+
+      [% SET biblioitem = overdue.item.biblio.biblioitem %]
+
+      [% IF biblioitem %]<h2>Dump biblioitem:</h2><pre>[% Dumper.dump_html(biblioitem.unblessed) %]</pre><br>[% END %]
+
+    [% END %]
+
+    <p>Connecting like this allows you to use this code to get any information you need from the biblioitems table for an overdue item:</p>
+
+    <pre>
+
+    &#91;% FOREACH overdue IN overdues %]
+
+      &#91;% SET biblioitem = overdue.item.biblio.biblioitem %]
+
+      &#91;% biblioitem.agerestriction %]
+      &#91;% biblioitem.biblioitemnumber %]
+      &#91;% biblioitem.biblionumber %]
+      &#91;% biblioitem.cn_class %]
+      &#91;% biblioitem.cn_item %]
+      &#91;% biblioitem.cn_sort %]
+      &#91;% biblioitem.cn_source %]
+      &#91;% biblioitem.cn_suffix %]
+      &#91;% biblioitem.collectionissn %]
+      &#91;% biblioitem.collectiontitle %]
+      &#91;% biblioitem.collectionvolume %]
+      &#91;% biblioitem.ean %]
+      &#91;% biblioitem.editionresponsibility %]
+      &#91;% biblioitem.editionstatement %]
+      &#91;% biblioitem.illus %]
+      &#91;% biblioitem.isbn %]
+      &#91;% biblioitem.issn %]
+      &#91;% biblioitem.itemtype %]
+      &#91;% biblioitem.lccn %]
+      &#91;% biblioitem.notes %]
+      &#91;% biblioitem.number %]
+      &#91;% biblioitem.pages %]
+      &#91;% biblioitem.place %]
+      &#91;% biblioitem.publicationyear %]
+      &#91;% biblioitem.publishercode %]
+      &#91;% biblioitem.size %]
+      &#91;% biblioitem.timestamp %]
+      &#91;% biblioitem.totalissues %]
+      &#91;% biblioitem.url %]
+      &#91;% biblioitem.volume %]
+      &#91;% biblioitem.volumedate %]
+      &#91;% biblioitem.volumedesc %]
+
+    &#91;% END %]
+
+    </pre>
+
+
+    <p>For example:</p>
+
+    [% FOREACH overdue IN overdues %]
+
+      [% SET biblioitem = overdue.item.biblio.biblioitem %]
+
+      <ul>
+        <li><strong>&#91;% biblioitem.agerestriction %]</strong> ==  [% biblioitem.agerestriction %]</li>
+        <li><strong>&#91;% biblioitem.biblioitemnumber %]</strong> ==  [% biblioitem.biblioitemnumber %]</li>
+        <li><strong>&#91;% biblioitem.biblionumber %]</strong> ==  [% biblioitem.biblionumber %]</li>
+        <li><strong>&#91;% biblioitem.cn_class %]</strong> ==  [% biblioitem.cn_class %]</li>
+        <li><strong>&#91;% biblioitem.cn_item %]</strong> ==  [% biblioitem.cn_item %]</li>
+        <li><strong>&#91;% biblioitem.cn_sort %]</strong> ==  [% biblioitem.cn_sort %]</li>
+        <li><strong>&#91;% biblioitem.cn_source %]</strong> ==  [% biblioitem.cn_source %]</li>
+        <li><strong>&#91;% biblioitem.cn_suffix %]</strong> ==  [% biblioitem.cn_suffix %]</li>
+        <li><strong>&#91;% biblioitem.collectionissn %]</strong> ==  [% biblioitem.collectionissn %]</li>
+        <li><strong>&#91;% biblioitem.collectiontitle %]</strong> ==  [% biblioitem.collectiontitle %]</li>
+        <li><strong>&#91;% biblioitem.collectionvolume %]</strong> ==  [% biblioitem.collectionvolume %]</li>
+        <li><strong>&#91;% biblioitem.ean %]</strong> ==  [% biblioitem.ean %]</li>
+        <li><strong>&#91;% biblioitem.editionresponsibility %]</strong> ==  [% biblioitem.editionresponsibility %]</li>
+        <li><strong>&#91;% biblioitem.editionstatement %]</strong> ==  [% biblioitem.editionstatement %]</li>
+        <li><strong>&#91;% biblioitem.illus %]</strong> ==  [% biblioitem.illus %]</li>
+        <li><strong>&#91;% biblioitem.isbn %]</strong> ==  [% biblioitem.isbn %]</li>
+        <li><strong>&#91;% biblioitem.issn %]</strong> ==  [% biblioitem.issn %]</li>
+        <li><strong>&#91;% biblioitem.itemtype %]</strong> ==  [% biblioitem.itemtype %]</li>
+        <li><strong>&#91;% biblioitem.lccn %]</strong> ==  [% biblioitem.lccn %]</li>
+        <li><strong>&#91;% biblioitem.notes %]</strong> ==  [% biblioitem.notes %]</li>
+        <li><strong>&#91;% biblioitem.number %]</strong> ==  [% biblioitem.number %]</li>
+        <li><strong>&#91;% biblioitem.pages %]</strong> ==  [% biblioitem.pages %]</li>
+        <li><strong>&#91;% biblioitem.place %]</strong> ==  [% biblioitem.place %]</li>
+        <li><strong>&#91;% biblioitem.publicationyear %]</strong> ==  [% biblioitem.publicationyear %]</li>
+        <li><strong>&#91;% biblioitem.publishercode %]</strong> ==  [% biblioitem.publishercode %]</li>
+        <li><strong>&#91;% biblioitem.size %]</strong> ==  [% biblioitem.size %]</li>
+        <li><strong>&#91;% biblioitem.timestamp %]</strong> ==  [% biblioitem.timestamp %]</li>
+        <li><strong>&#91;% biblioitem.totalissues %]</strong> ==  [% biblioitem.totalissues %]</li>
+        <li><strong>&#91;% biblioitem.url %]</strong> ==  [% biblioitem.url %]</li>
+        <li><strong>&#91;% biblioitem.volume %]</strong> ==  [% biblioitem.volume %]</li>
+        <li><strong>&#91;% biblioitem.volumedate %]</strong> ==  [% biblioitem.volumedate %]</li>
+        <li><strong>&#91;% biblioitem.volumedesc %]</strong> ==  [% biblioitem.volumedesc %]</li>
+      </ul>
+    [% END %]
+  
+
+
+
+
+
+
+
+
+
+
+
+  [% END %]
+
+
+  [% IF patron_modification %] <h2>Dump patron_modification:</h2><pre>[% Dumper.dump_html(patron_modification.unblessed) %]</pre><br>[% END %]
+  [% IF patron_modifications %] <h2>Dump patron_modifications:</h2><pre>[% Dumper.dump_html(patron_modifications.unblessed) %]</pre><br>[% END %]
+  [% IF problemreport %] <h2>Dump problemreport:</h2><pre>[% Dumper.dump_html(problemreport.unblessed) %]</pre><br>[% END %]
+  [% IF problemreports %] <h2>Dump problemreports:</h2><pre>[% Dumper.dump_html(problemreports.unblessed) %]</pre><br>[% END %]
+  [% IF serial %] <h2>Dump serial:</h2><pre>[% Dumper.dump_html(serial.unblessed) %]</pre><br>[% END %]
+  [% IF serials %] <h2>Dump serials:</h2><pre>[% Dumper.dump_html(serials.unblessed) %]</pre><br>[% END %]
+  [% IF subscirption %] <h2>Dump subscirption:</h2><pre>[% Dumper.dump_html(subscirption.unblessed) %]</pre><br>[% END %]
+  [% IF subscriptions %] <h2>Dump subscriptions:</h2><pre>[% Dumper.dump_html(subscriptions.unblessed) %]</pre><br>[% END %]
+  [% IF suggestion %] <h2>Dump suggestion:</h2><pre>[% Dumper.dump_html(suggestion.unblessed) %]</pre><br>[% END %]
+  [% IF suggestions %] <h2>Dump suggestions:</h2><pre>[% Dumper.dump_html(suggestions.unblessed) %]</pre><br>[% END %]
+  [% IF ticket %] <h2>Dump ticket:</h2><pre>[% Dumper.dump_html(ticket.unblessed) %]</pre><br>[% END %]
+  [% IF ticket_update %] <h2>Dump ticket_update:</h2><pre>[% Dumper.dump_html(ticket_update.unblessed) %]</pre><br>[% END %]
+  [% IF ticket_updates %] <h2>Dump ticket_updates:</h2><pre>[% Dumper.dump_html(ticket_updates.unblessed) %]</pre><br>[% END %]
+  [% IF tickets %] <h2>Dump tickets:</h2><pre>[% Dumper.dump_html(tickets.unblessed) %]</pre><br>[% END %]
+  [% IF train_item %] <h2>Dump train_item:</h2><pre>[% Dumper.dump_html(train_item.unblessed) %]</pre><br>[% END %]
+  [% IF train_items %] <h2>Dump train_items:</h2><pre>[% Dumper.dump_html(train_items.unblessed) %]</pre><br>[% END %]
+
+  <br>
+
+  <h1>Available in all templates</h1>
+  <h2>Logged in branch information</h2>
+  <ul>
+    <li>Requires &#91;% USE Branches %]</li>
+    <li>&#91;% Branches.GetLoggedInBranchcode %] == [% Branches.GetLoggedInBranchcode %]</li>
+    -----<br>
+    <li>Requires &#91;% USE Branches %]</li>
+    <li>&#91;% Branches.GetLoggedInBranchname %] == [% Branches.GetLoggedInBranchname %]</li>
+  </ul>
+  <br>
+
+</div>
