@@ -1,0 +1,264 @@
+[% USE Dumper Indent=2 %]
+
+<div style="margin: .5in;">
+
+[% IF article_request || article_requests %]
+article_requests:<br><br>
+singular: article_request<br>
+<pre>[% Dumper.dump_html(article_request.unblessed) %]</pre>
+plural: article_requests<br>
+<pre>[% Dumper.dump_html(article_requests.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF basket || baskets %]
+aqbasket:<br><br>
+singular: basket<br>
+<pre>[% Dumper.dump_html(basket.unblessed) %]</pre>
+plural: baskets<br>
+<pre>[% Dumper.dump_html(baskets.unblessed) %]</pre>
+aqbooksellers:<br>
+<br>
+[% END %]
+
+
+[% IF bookseller || booksellers %]
+aqbooksellers:<br><br>
+singular: bookseller<br>
+<pre>[% Dumper.dump_html(bookseller.unblessed) %]</pre>
+plural: booksellers<br>
+<pre>[% Dumper.dump_html(booksellers.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF biblio || biblios %]
+biblio:<br><br>
+singular: biblio<br>
+<pre>[% Dumper.dump_html(biblio.unblessed) %]</pre>
+plural: biblios<br>
+<pre>[% Dumper.dump_html(biblios.unblessed) %]</pre>
+[% END %]
+
+
+[% IF biblioitem || biblioitems %]
+biblioitems:<br><br>
+singular: biblioitem<br>
+<pre>[% Dumper.dump_html(biblioitem.unblessed) %]</pre>
+plural: biblioitems<br>
+<pre>[% Dumper.dump_html(biblioitems.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF borrower || borrowers %]
+borrowers:<br><br>
+singular: borrower<br>
+<pre>[% Dumper.dump_html(borrower.unblessed) %]</pre>
+plural: borrowers<br>
+<pre>[% Dumper.dump_html(borrowers.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF branch || branches %]
+branches:<br><br>
+singular: branch<br>
+<pre>[% Dumper.dump_html(branch.unblessed) %]</pre>
+plural: branches<br>
+<pre>[% Dumper.dump_html(branches.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF credit || credits %]
+credits:<br><br>
+singular: credit<br>
+<pre>[% Dumper.dump_html(credit.unblessed) %]</pre>
+plural: credits<br>
+<pre>[% Dumper.dump_html(credits.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF debit || debits %]
+debits:<br><br>
+singular: debit<br>
+<pre>[% Dumper.dump_html(debit.unblessed) %]</pre>
+plural: debits<br>
+<pre>[% Dumper.dump_html(debits.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF item || items %]
+items:<br><br>
+singular: item<br>
+<pre>[% Dumper.dump_html(item.unblessed) %]</pre>
+plural: items<br>
+<pre>[% Dumper.dump_html(items.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF additional_content || additional_contents %]
+additional_contents:<br><br>
+singular: additional_content<br>
+<pre>[% Dumper.dump_html(additional_content.unblessed) %]</pre>
+plural: additional_contents<br>
+<pre>[% Dumper.dump_html(additional_contents.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF news || news %]
+opac_news:<br><br>
+singular: news<br>
+<pre>[% Dumper.dump_html(news.unblessed) %]</pre>
+plural: news<br>
+<pre>[% Dumper.dump_html(news.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF order || orders %]
+aqorders:<br><br>
+singular: order<br>
+<pre>[% Dumper.dump_html(order.unblessed) %]</pre>
+plural: orders<br>
+<pre>[% Dumper.dump_html(orders.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF hold || holds %]
+reserves:<br><br>
+singular: hold<br>
+<pre>[% Dumper.dump_html(hold.unblessed) %]</pre>
+plural: holds<br>
+<pre>[% Dumper.dump_html(holds.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF serial || serials %]
+serial:<br><br>
+singular: serial<br>
+<pre>[% Dumper.dump_html(serial.unblessed) %]</pre>
+plural: serials<br>
+<pre>[% Dumper.dump_html(serials.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF subscription || subscriptions %]
+subscription:<br><br>
+singular: subscription<br>
+<pre>[% Dumper.dump_html(subscription.unblessed) %]</pre>
+plural: subscriptions<br>
+<pre>[% Dumper.dump_html(subscriptions.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF suggestion || suggestions %]
+suggestions:<br><br>
+singular: suggestion<br>
+<pre>[% Dumper.dump_html(suggestion.unblessed) %]</pre>
+plural: suggestions<br>
+<pre>[% Dumper.dump_html(suggestions.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF ticket || tickets %]
+tickets:<br><br>
+singular: ticket<br>
+<pre>[% Dumper.dump_html(ticket.unblessed) %]</pre>
+plural: tickets<br>
+<pre>[% Dumper.dump_html(tickets.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF ticket_update || ticket_updates %]
+ticket_updates:<br><br>
+singular: ticket_update<br>
+<pre>[% Dumper.dump_html(ticket_update.unblessed) %]</pre>
+plural: ticket_updates<br>
+<pre>[% Dumper.dump_html(ticket_updates.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF checkout || checkouts %]
+issues:<br><br>
+singular: checkout<br>
+<pre>[% Dumper.dump_html(checkout.unblessed) %]</pre>
+plural: checkouts<br>
+<pre>[% Dumper.dump_html(checkouts.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF old_checkout || old_checkouts %]
+old_issues:<br><br>
+singular: old_checkout<br>
+<pre>[% Dumper.dump_html(old_checkout.unblessed) %]</pre>
+plural: old_checkouts<br>
+<pre>[% Dumper.dump_html(old_checkouts.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF overdue || overdues %]
+overdues:<br><br>
+singular: overdue<br>
+<pre>[% Dumper.dump_html(overdue.unblessed) %]</pre>
+plural: overdues<br>
+<pre>[% Dumper.dump_html(overdues.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF patron_modification || patron_modifications %]
+borrower_modifications:<br><br>
+singular: patron_modification<br>
+<pre>[% Dumper.dump_html(patron_modification.unblessed) %]</pre>
+plural: patron_modifications<br>
+<pre>[% Dumper.dump_html(patron_modifications.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF illrequest || illrequests %]
+illrequests:<br><br>
+singular: illrequest<br>
+<pre>[% Dumper.dump_html(illrequest.unblessed) %]</pre>
+plural: illrequests<br>
+<pre>[% Dumper.dump_html(illrequests.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF train_item || train_items %]
+preservation_train_items:<br><br>
+singular: train_item<br>
+<pre>[% Dumper.dump_html(train_item.unblessed) %]</pre>
+plural: train_items<br>
+<pre>[% Dumper.dump_html(train_items.unblessed) %]</pre>
+<br>
+[% END %]
+
+
+[% IF problemreport || problemreports %]
+problem_reports:<br><br>
+singular: problemreport<br>
+<pre>[% Dumper.dump_html(problemreport.unblessed) %]</pre>
+plural: problemreports<br>
+<pre>[% Dumper.dump_html(problemreports.unblessed) %]</pre>
+<br>
+[% END %]
+
+</div>

@@ -13,13 +13,20 @@
 <div>
 
   <h1>! Dump variables !</h1><br /><br />
+[% IF additional_text %]
+  <p>additional_text:</h2><br /><pre>[% Dumper.dump(additional_text.unblessed) %]</pre><br /><br />
+[% END %]
 
-  <p>additional_text:</h2><br /><br /><pre>[% Dumper.dump(additional_text.unblessed) %]</pre><br /><br />
-  <p>article_request:</h2><br /><br /><pre>[% Dumper.dump(article_request.unblessed) %]</pre><br /><br />
+[% IF additional_text %]
+  <p>article_request:</h2><br /><pre>[% Dumper.dump(article_request.unblessed) %]</pre><br /><br />
+[% END %]
+
+
   <p>basket:</h2><br /><br /><pre>[% Dumper.dump(basket.unblessed) %]</pre><br /><br />
   <p>biblio:</h2><br /><br /><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br /><br />
   <p>biblioitem:</h2><br /><br /><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br /><br />
   <p>borrower_modification:</h2><br /><br /><pre>[% Dumper.dump(borrower_modification.unblessed) %]</pre><br /><br />
+  <p>borrower:</h2><br /><br /><pre>[% Dumper.dump(borrower.unblessed) %]</pre><br /><br />
   <p>borrowers:</h2><br /><br /><pre>[% Dumper.dump(borrowers.unblessed) %]</pre><br /><br />
   <p>branch:</h2><br /><br /><pre>[% Dumper.dump(branch.unblessed) %]</pre><br /><br />
   <p>branches:</h2><br /><br /><pre>[% Dumper.dump(branches.unblessed) %]</pre><br /><br />
