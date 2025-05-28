@@ -1,0 +1,29 @@
+==== CODE : Name : Type ====
+
+* '''Developer:''' Your name here
+
+* '''Status:''' [ Complete | Partial | In progress | etc. ]
+
+* '''Uses template toolkit:''' [ True | False]
+
+* '''Koha module: ''' [ Acquisition | Catalog | Circulation | Claim Acquisition | Holds | Interlibrary loans | Order Acquisition | Patrons | Point of sale | Preservation | Serials (new issue) | Suggestions ]
+* '''Code: ''' foo
+* '''Name: ''' foo
+
+* '''Type:''' [ Email | Phone (i-tiva) | Phone | Print | SMS ]
+** '''HTML message: ''' [ True | False ]
+** '''Message subject ''' foo
+
+* '''Purpose:''' foo
+
+* '''How to test:''' '' - Optional - ''
+
+* '''Notes:''' '' - Optional - ''
+
+<syntaxhighlight>
+foo
+</syntaxhighlight>
+
+'' - Optional - '' [[:File:-filename-|How it looks when rendered]]
+
+----

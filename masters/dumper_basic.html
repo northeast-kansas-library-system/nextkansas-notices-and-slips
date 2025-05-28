@@ -28,7 +28,9 @@
   <p>credit:</h2><br /><br /><pre>[% Dumper.dump(credit.unblessed) %]</pre><br /><br />
   <p>debit:</h2><br /><br /><pre>[% Dumper.dump(debit.unblessed) %]</pre><br /><br />
   <p>format:</h2><br /><br /><pre>[% Dumper.dump(format.unblessed) %]</pre><br /><br />
+  ----
   <p>hold:</h2><br /><br /><pre>[% Dumper.dump(hold.unblessed) %]</pre><br /><br />
+  ----
   <p>ill_bib_author:</h2><br /><br /><pre>[% Dumper.dump(ill_bib_author.unblessed) %]</pre><br /><br />
   <p>ill_bib_title:</h2><br /><br /><pre>[% Dumper.dump(ill_bib_title.unblessed) %]</pre><br /><br />
   <p>ill_full_metadata:</h2><br /><br /><pre>[% Dumper.dump(ill_full_metadata.unblessed) %]</pre><br /><br />
@@ -53,8 +55,10 @@
 
 <h1>! Dump set variables !</h1><br /><br />
 
+  <h2>biblios:</h2><br /><br /><pre>[% Dumper.dump(biblios.unblessed) %]</pre><br /><br />
   <h2>change:</h2><br /><br /><pre>[% Dumper.dump(change.unblessed) %]</pre><br /><br />
   <h2>checkouts:</h2><br /><br /><pre>[% Dumper.dump(checkouts.unblessed) %]</pre><br /><br />
+  <h2>holds:</h2><br /><br /><pre>[% Dumper.dump(holds.unblessed) %]</pre><br /><br />
   <h2>news:</h2><br /><br /><pre>[% Dumper.dump(news.unblessed) %]</pre><br /><br />
   <h2>offsets:</h2><br /><br /><pre>[% Dumper.dump(offsets.unblessed) %]</pre><br /><br />
   <h2>old_checkouts:</h2><br /><br /><pre>[% Dumper.dump(old_checkouts.unblessed) %]</pre><br /><br />
@@ -373,6 +377,34 @@
     <h2>SET biblio = overdue.item.biblio:</h2><br /><br /><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br /><br />
 
   [% END %]
+
+</div>
+
+<div>
+
+  <h1>! Get item data from &#91;% hold %] !</h1><br /><br />
+
+  <p>Hold has not yet been fully converted to Template Toolkit.  In order for HOLDDGST to group data for holds you need to use the Koha syntax "&mdash;&mdash;&mdash;&mdash;" to start and end the group of &#91;% hold %] variables you want to insert.</p>
+
+  <p>For example, the code below displays the titles of all of the holds currently available as a group:</p>
+
+  &lt;ul>
+    &mdash;&mdash;&mdash;&mdash;
+      &lt;[% hold.biblio.title %]&lt;/li>
+    &mdash;
+  &lt;/ul>
+
+  <p>So to use &#91;% hold %] in HOLDDGST you need to do:</p>
+
+  <pre>
+
+    &mdash;&mdash;&mdash;&mdash;
+
+    
+
+    &mdash;&mdash;&mdash;&mdash;
+
+  </pre>
 
 </div>
 
