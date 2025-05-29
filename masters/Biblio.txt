@@ -1,0 +1,65 @@
+Biblio
+
+Available fields:
+
+<pre>
+
+[% biblio.abstract %]
+[% biblio.author %]
+[% biblio.biblionumber %]
+[% biblio.copyrightdate %]
+[% biblio.datecreated %]
+[% biblio.frameworkcode %]
+[% biblio.medium %]
+[% biblio.notes %]
+[% biblio.part_name %]
+[% biblio.part_number %]
+[% biblio.serial %]
+[% biblio.seriestitle %]
+[% biblio.subtitle %]
+[% biblio.timestamp %]
+[% biblio.title %]
+[% biblio.unititle %]
+
+</pre>
+
+To link items to biblioitem
+
+[% SET biblioitem = biblio.biblioitem %]
+
+<pre>
+
+[% biblioitem.agerestriction %]
+[% biblioitem.biblioitemnumber %]
+[% biblioitem.biblionumber %]
+[% biblioitem.cn_class %]
+[% biblioitem.cn_item %]
+[% biblioitem.cn_sort %]
+[% biblioitem.cn_source %]
+[% biblioitem.cn_suffix %]
+[% biblioitem.collectionissn %]
+[% biblioitem.collectiontitle %]
+[% biblioitem.collectionvolume %]
+[% biblioitem.ean %]
+[% biblioitem.editionresponsibility %]
+[% biblioitem.editionstatement %]
+[% biblioitem.illus %]
+[% biblioitem.isbn %]
+[% biblioitem.issn %]
+[% biblioitem.itemtype %]
+[% biblioitem.lccn %]
+[% biblioitem.notes %]
+[% biblioitem.number %]
+[% biblioitem.pages %]
+[% biblioitem.place %]
+[% biblioitem.publicationyear %]
+[% biblioitem.publishercode %]
+[% biblioitem.size %]
+[% biblioitem.timestamp %]
+[% biblioitem.totalissues %]
+[% biblioitem.url %]
+[% biblioitem.volume %]
+[% biblioitem.volumedate %]
+[% biblioitem.volumedesc %]
+
+</pre>

@@ -1,13 +1,13 @@
-[% USE Dumper Indent=2 %]
+[% USE Dumper( Indent=1 ) %]
 
 <div style="margin: .5in;">
 
 [% IF article_request || article_requests %]
 article_requests:<br><br>
 singular: article_request<br>
-<pre>[% Dumper.dump_html(article_request.unblessed) %]</pre>
+<pre>[% Dumper.dump(article_request.unblessed) %]</pre>
 plural: article_requests<br>
-<pre>[% Dumper.dump_html(article_requests.unblessed) %]</pre>
+<pre>[% Dumper.dump(article_requests.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -15,9 +15,9 @@ plural: article_requests<br>
 [% IF basket || baskets %]
 aqbasket:<br><br>
 singular: basket<br>
-<pre>[% Dumper.dump_html(basket.unblessed) %]</pre>
+<pre>[% Dumper.dump(basket.unblessed) %]</pre>
 plural: baskets<br>
-<pre>[% Dumper.dump_html(baskets.unblessed) %]</pre>
+<pre>[% Dumper.dump(baskets.unblessed) %]</pre>
 aqbooksellers:<br>
 <br>
 [% END %]
@@ -26,9 +26,9 @@ aqbooksellers:<br>
 [% IF bookseller || booksellers %]
 aqbooksellers:<br><br>
 singular: bookseller<br>
-<pre>[% Dumper.dump_html(bookseller.unblessed) %]</pre>
+<pre>[% Dumper.dump(bookseller.unblessed) %]</pre>
 plural: booksellers<br>
-<pre>[% Dumper.dump_html(booksellers.unblessed) %]</pre>
+<pre>[% Dumper.dump(booksellers.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -36,18 +36,18 @@ plural: booksellers<br>
 [% IF biblio || biblios %]
 biblio:<br><br>
 singular: biblio<br>
-<pre>[% Dumper.dump_html(biblio.unblessed) %]</pre>
+<pre>[% Dumper.dump(biblio.unblessed) %]</pre>
 plural: biblios<br>
-<pre>[% Dumper.dump_html(biblios.unblessed) %]</pre>
+<pre>[% Dumper.dump(biblios.unblessed) %]</pre>
 [% END %]
 
 
 [% IF biblioitem || biblioitems %]
 biblioitems:<br><br>
 singular: biblioitem<br>
-<pre>[% Dumper.dump_html(biblioitem.unblessed) %]</pre>
+<pre>[% Dumper.dump(biblioitem.unblessed) %]</pre>
 plural: biblioitems<br>
-<pre>[% Dumper.dump_html(biblioitems.unblessed) %]</pre>
+<pre>[% Dumper.dump(biblioitems.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -55,9 +55,9 @@ plural: biblioitems<br>
 [% IF borrower || borrowers %]
 borrowers:<br><br>
 singular: borrower<br>
-<pre>[% Dumper.dump_html(borrower.unblessed) %]</pre>
+<pre>[% Dumper.dump(borrower.unblessed) %]</pre>
 plural: borrowers<br>
-<pre>[% Dumper.dump_html(borrowers.unblessed) %]</pre>
+<pre>[% Dumper.dump(borrowers.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -65,9 +65,9 @@ plural: borrowers<br>
 [% IF branch || branches %]
 branches:<br><br>
 singular: branch<br>
-<pre>[% Dumper.dump_html(branch.unblessed) %]</pre>
+<pre>[% Dumper.dump(branch.unblessed) %]</pre>
 plural: branches<br>
-<pre>[% Dumper.dump_html(branches.unblessed) %]</pre>
+<pre>[% Dumper.dump(branches.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -75,9 +75,9 @@ plural: branches<br>
 [% IF credit || credits %]
 credits:<br><br>
 singular: credit<br>
-<pre>[% Dumper.dump_html(credit.unblessed) %]</pre>
+<pre>[% Dumper.dump(credit.unblessed) %]</pre>
 plural: credits<br>
-<pre>[% Dumper.dump_html(credits.unblessed) %]</pre>
+<pre>[% Dumper.dump(credits.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -85,9 +85,9 @@ plural: credits<br>
 [% IF debit || debits %]
 debits:<br><br>
 singular: debit<br>
-<pre>[% Dumper.dump_html(debit.unblessed) %]</pre>
+<pre>[% Dumper.dump(debit.unblessed) %]</pre>
 plural: debits<br>
-<pre>[% Dumper.dump_html(debits.unblessed) %]</pre>
+<pre>[% Dumper.dump(debits.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -95,9 +95,9 @@ plural: debits<br>
 [% IF item || items %]
 items:<br><br>
 singular: item<br>
-<pre>[% Dumper.dump_html(item.unblessed) %]</pre>
+<pre>[% Dumper.dump(item.unblessed) %]</pre>
 plural: items<br>
-<pre>[% Dumper.dump_html(items.unblessed) %]</pre>
+<pre>[% Dumper.dump(items.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -105,9 +105,9 @@ plural: items<br>
 [% IF additional_content || additional_contents %]
 additional_contents:<br><br>
 singular: additional_content<br>
-<pre>[% Dumper.dump_html(additional_content.unblessed) %]</pre>
+<pre>[% Dumper.dump(additional_content.unblessed) %]</pre>
 plural: additional_contents<br>
-<pre>[% Dumper.dump_html(additional_contents.unblessed) %]</pre>
+<pre>[% Dumper.dump(additional_contents.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -115,9 +115,9 @@ plural: additional_contents<br>
 [% IF news || news %]
 opac_news:<br><br>
 singular: news<br>
-<pre>[% Dumper.dump_html(news.unblessed) %]</pre>
+<pre>[% Dumper.dump(news.unblessed) %]</pre>
 plural: news<br>
-<pre>[% Dumper.dump_html(news.unblessed) %]</pre>
+<pre>[% Dumper.dump(news.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -125,9 +125,9 @@ plural: news<br>
 [% IF order || orders %]
 aqorders:<br><br>
 singular: order<br>
-<pre>[% Dumper.dump_html(order.unblessed) %]</pre>
+<pre>[% Dumper.dump(order.unblessed) %]</pre>
 plural: orders<br>
-<pre>[% Dumper.dump_html(orders.unblessed) %]</pre>
+<pre>[% Dumper.dump(orders.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -135,9 +135,9 @@ plural: orders<br>
 [% IF hold || holds %]
 reserves:<br><br>
 singular: hold<br>
-<pre>[% Dumper.dump_html(hold.unblessed) %]</pre>
+<pre>[% Dumper.dump(hold.unblessed) %]</pre>
 plural: holds<br>
-<pre>[% Dumper.dump_html(holds.unblessed) %]</pre>
+<pre>[% Dumper.dump(holds.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -145,9 +145,9 @@ plural: holds<br>
 [% IF serial || serials %]
 serial:<br><br>
 singular: serial<br>
-<pre>[% Dumper.dump_html(serial.unblessed) %]</pre>
+<pre>[% Dumper.dump(serial.unblessed) %]</pre>
 plural: serials<br>
-<pre>[% Dumper.dump_html(serials.unblessed) %]</pre>
+<pre>[% Dumper.dump(serials.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -155,9 +155,9 @@ plural: serials<br>
 [% IF subscription || subscriptions %]
 subscription:<br><br>
 singular: subscription<br>
-<pre>[% Dumper.dump_html(subscription.unblessed) %]</pre>
+<pre>[% Dumper.dump(subscription.unblessed) %]</pre>
 plural: subscriptions<br>
-<pre>[% Dumper.dump_html(subscriptions.unblessed) %]</pre>
+<pre>[% Dumper.dump(subscriptions.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -165,9 +165,9 @@ plural: subscriptions<br>
 [% IF suggestion || suggestions %]
 suggestions:<br><br>
 singular: suggestion<br>
-<pre>[% Dumper.dump_html(suggestion.unblessed) %]</pre>
+<pre>[% Dumper.dump(suggestion.unblessed) %]</pre>
 plural: suggestions<br>
-<pre>[% Dumper.dump_html(suggestions.unblessed) %]</pre>
+<pre>[% Dumper.dump(suggestions.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -175,9 +175,9 @@ plural: suggestions<br>
 [% IF ticket || tickets %]
 tickets:<br><br>
 singular: ticket<br>
-<pre>[% Dumper.dump_html(ticket.unblessed) %]</pre>
+<pre>[% Dumper.dump(ticket.unblessed) %]</pre>
 plural: tickets<br>
-<pre>[% Dumper.dump_html(tickets.unblessed) %]</pre>
+<pre>[% Dumper.dump(tickets.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -185,9 +185,9 @@ plural: tickets<br>
 [% IF ticket_update || ticket_updates %]
 ticket_updates:<br><br>
 singular: ticket_update<br>
-<pre>[% Dumper.dump_html(ticket_update.unblessed) %]</pre>
+<pre>[% Dumper.dump(ticket_update.unblessed) %]</pre>
 plural: ticket_updates<br>
-<pre>[% Dumper.dump_html(ticket_updates.unblessed) %]</pre>
+<pre>[% Dumper.dump(ticket_updates.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -195,9 +195,9 @@ plural: ticket_updates<br>
 [% IF checkout || checkouts %]
 issues:<br><br>
 singular: checkout<br>
-<pre>[% Dumper.dump_html(checkout.unblessed) %]</pre>
+<pre>[% Dumper.dump(checkout.unblessed) %]</pre>
 plural: checkouts<br>
-<pre>[% Dumper.dump_html(checkouts.unblessed) %]</pre>
+<pre>[% Dumper.dump(checkouts.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -205,9 +205,9 @@ plural: checkouts<br>
 [% IF old_checkout || old_checkouts %]
 old_issues:<br><br>
 singular: old_checkout<br>
-<pre>[% Dumper.dump_html(old_checkout.unblessed) %]</pre>
+<pre>[% Dumper.dump(old_checkout.unblessed) %]</pre>
 plural: old_checkouts<br>
-<pre>[% Dumper.dump_html(old_checkouts.unblessed) %]</pre>
+<pre>[% Dumper.dump(old_checkouts.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -215,9 +215,9 @@ plural: old_checkouts<br>
 [% IF overdue || overdues %]
 overdues:<br><br>
 singular: overdue<br>
-<pre>[% Dumper.dump_html(overdue.unblessed) %]</pre>
+<pre>[% Dumper.dump(overdue.unblessed) %]</pre>
 plural: overdues<br>
-<pre>[% Dumper.dump_html(overdues.unblessed) %]</pre>
+<pre>[% Dumper.dump(overdues.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -225,9 +225,9 @@ plural: overdues<br>
 [% IF patron_modification || patron_modifications %]
 borrower_modifications:<br><br>
 singular: patron_modification<br>
-<pre>[% Dumper.dump_html(patron_modification.unblessed) %]</pre>
+<pre>[% Dumper.dump(patron_modification.unblessed) %]</pre>
 plural: patron_modifications<br>
-<pre>[% Dumper.dump_html(patron_modifications.unblessed) %]</pre>
+<pre>[% Dumper.dump(patron_modifications.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -235,9 +235,9 @@ plural: patron_modifications<br>
 [% IF illrequest || illrequests %]
 illrequests:<br><br>
 singular: illrequest<br>
-<pre>[% Dumper.dump_html(illrequest.unblessed) %]</pre>
+<pre>[% Dumper.dump(illrequest.unblessed) %]</pre>
 plural: illrequests<br>
-<pre>[% Dumper.dump_html(illrequests.unblessed) %]</pre>
+<pre>[% Dumper.dump(illrequests.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -245,9 +245,9 @@ plural: illrequests<br>
 [% IF train_item || train_items %]
 preservation_train_items:<br><br>
 singular: train_item<br>
-<pre>[% Dumper.dump_html(train_item.unblessed) %]</pre>
+<pre>[% Dumper.dump(train_item.unblessed) %]</pre>
 plural: train_items<br>
-<pre>[% Dumper.dump_html(train_items.unblessed) %]</pre>
+<pre>[% Dumper.dump(train_items.unblessed) %]</pre>
 <br>
 [% END %]
 
@@ -255,9 +255,9 @@ plural: train_items<br>
 [% IF problemreport || problemreports %]
 problem_reports:<br><br>
 singular: problemreport<br>
-<pre>[% Dumper.dump_html(problemreport.unblessed) %]</pre>
+<pre>[% Dumper.dump(problemreport.unblessed) %]</pre>
 plural: problemreports<br>
-<pre>[% Dumper.dump_html(problemreports.unblessed) %]</pre>
+<pre>[% Dumper.dump(problemreports.unblessed) %]</pre>
 <br>
 [% END %]
 

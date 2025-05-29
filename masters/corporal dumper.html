@@ -4,26 +4,88 @@
 [% USE ExtendedAttributeTypes %]
 [% USE ItemTypes %]
 
-[% USE Dumper Indent=1 %]
+[% USE Dumper (indent=1) %]
 
-<div style="margin: .5in;">
+<div style="margin: .5in; font-family: 'Lucida Console', 'Courier New', monospace; font-size: 1.3em; background-color: #c7cdd3">
 
-  <h1>OVERDUES_SLIP</h1>
+  <h1>TRANSFERSLIP</h1>
 
-  [% IF additional_content %] <h2>Dump additional_content:</h2><pre>[% Dumper.dump_html(additional_content.unblessed) %]</pre><br>[% END %]
-  [% IF additional_contents %] <h2>Dump additional_contents:</h2><pre>[% Dumper.dump_html(additional_contents.unblessed) %]</pre><br>[% END %]
-  [% IF article_request %] <h2>Dump article_request:</h2><pre>[% Dumper.dump_html(article_request.unblessed) %]</pre><br>[% END %]
-  [% IF article_requests %] <h2>Dump article_requests:</h2><pre>[% Dumper.dump_html(article_requests.unblessed) %]</pre><br>[% END %]
-  [% IF basket %] <h2>Dump basket:</h2><pre>[% Dumper.dump_html(basket.unblessed) %]</pre><br>[% END %]
-  [% IF baskets %] <h2>Dump baskets:</h2><pre>[% Dumper.dump_html(baskets.unblessed) %]</pre><br>[% END %]
-  [% IF biblio %] <h2>biblio:</h2><pre>[% Dumper.dump_html(biblio.unblessed) %]</pre><br>[% END %]
-  [% IF biblioitem %] <h2>Dump biblioitem:</h2><pre>[% Dumper.dump_html(biblioitem.unblessed) %]</pre><br>[% END %]
-  [% IF biblioitems %] <h2>Dump biblioitems:</h2><pre>[% Dumper.dump_html(biblioitems.unblessed) %]</pre><br>[% END %]
-  [% IF biblios %] <h2>Dump biblios:</h2><pre>[% Dumper.dump_html(biblios.unblessed) %]</pre><br>[% END %]
-  [% IF bookseller %] <h2>Dump bookseller:</h2><pre>[% Dumper.dump_html(bookseller.unblessed) %]</pre><br>[% END %]
-  [% IF booksellers %] <h2>Dump booksellers:</h2><pre>[% Dumper.dump_html(booksellers.unblessed) %]</pre><br>[% END %]
+  [% IF additional_content %]
+    <hr><h2>Dump additional_content:</h2><pre>[% Dumper.dump(additional_content.unblessed) %]</pre><br>
+  [% END %]
 
-  [% IF borrower %] <h2>Dump borrower:</h2><pre>[% Dumper.dump_html(borrower.unblessed) %]</pre><br>
+  [% IF additional_contents %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump additional_contents:</h2><pre>[% Dumper.dump(additional_contents.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF article_request %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump article_request:</h2><pre>[% Dumper.dump(article_request.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF article_requests %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump article_requests:</h2><pre>[% Dumper.dump(article_requests.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF basket %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump basket:</h2><pre>[% Dumper.dump(basket.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF baskets %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump baskets:</h2><pre>[% Dumper.dump(baskets.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF biblio %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>biblio:</h2><pre>[% Dumper.dump(biblio.unblessed).replace("' => ", " XZKLYNGN => ").replace("XZKL", "%").replace("YNGN", "]").replace("  '", "  [% biblio.") %]</pre><br>
+
+  [% END %]
+
+  [% IF biblioitem %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump biblioitem:</h2><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF biblioitems %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump biblioitems:</h2><pre>[% Dumper.dump(biblioitems.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF biblios %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump biblios:</h2><pre>[% Dumper.dump(biblios.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF bookseller %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump bookseller:</h2><pre>[% Dumper.dump(bookseller.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF booksellers %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump booksellers:</h2><pre>[% Dumper.dump(booksellers.unblessed) %]</pre><br>
+  [% END %]
+
+
+  [% IF borrower %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump borrower:</h2><pre>[% Dumper.dump(borrower.unblessed) %]</pre><br>
 
     <p>----------</p>
 
@@ -153,30 +215,135 @@
     <br>-----<br>
   [% END %]
 
-  [% IF borrowers %] <h2>Dump borrowers:</h2><pre>[% Dumper.dump_html(borrowers.unblessed) %]</pre><br>[% END %]
-  [% IF branch %] <h2>Dump branch:</h2><pre>[% Dumper.dump_html(branch.unblessed) %]</pre><br>[% END %]
-  [% IF branches %] <h2>Dump branches:</h2><pre>[% Dumper.dump_html(branches.unblessed) %]</pre><br>[% END %]
-  [% IF checkout %] <h2>Dump checkout:</h2><pre>[% Dumper.dump_html(checkout.unblessed) %]</pre><br>[% END %]
-  [% IF checkouts %] <h2>Dump checkouts:</h2><pre>[% Dumper.dump_html(checkouts.unblessed) %]</pre><br>[% END %]
-  [% IF credit %] <h2>Dump credit:</h2><pre>[% Dumper.dump_html(credit.unblessed) %]</pre><br>[% END %]
-  [% IF credits %] <h2>Dump credits:</h2><pre>[% Dumper.dump_html(credits.unblessed) %]</pre><br>[% END %]
-  [% IF debit %] <h2>Dump debit:</h2><pre>[% Dumper.dump_html(debit.unblessed) %]</pre><br>[% END %]
-  [% IF debits %] <h2>Dump debits:</h2><pre>[% Dumper.dump_html(debits.unblessed) %]</pre><br>[% END %]
-  [% IF hold %] <h2>Dump hold:</h2><pre>[% Dumper.dump_html(hold.unblessed) %]</pre><br>[% END %]
-  [% IF holds %] <h2>Dump holds:</h2><pre>[% Dumper.dump_html(holds.unblessed) %]</pre><br>[% END %]
-  [% IF illrequest %] <h2>Dump illrequest:</h2><pre>[% Dumper.dump_html(illrequest.unblessed) %]</pre><br>[% END %]
-  [% IF illrequests %] <h2>Dump illrequests:</h2><pre>[% Dumper.dump_html(illrequests.unblessed) %]</pre><br>[% END %]
-  [% IF item %] <h2>Dump item:</h2><pre>[% Dumper.dump_html(item.unblessed) %]</pre><br>[% END %]
-  [% IF items %] <h2>Dump items:</h2><pre>[% Dumper.dump_html(items.unblessed) %]</pre><br>[% END %]
-  [% IF news %] <h2>Dump news:</h2><pre>[% Dumper.dump_html(news.unblessed) %]</pre><br>[% END %]
-  [% IF old_checkout %] <h2>Dump old_checkout:</h2><pre>[% Dumper.dump_html(old_checkout.unblessed) %]</pre><br>[% END %]
-  [% IF old_checkouts %] <h2>Dump old_checkouts:</h2><pre>[% Dumper.dump_html(old_checkouts.unblessed) %]</pre><br>[% END %]
-  [% IF order %] <h2>Dump order:</h2><pre>[% Dumper.dump_html(order.unblessed) %]</pre><br>[% END %]
-  [% IF orders %] <h2>Dump orders:</h2><pre>[% Dumper.dump_html(orders.unblessed) %]</pre><br>[% END %]
-  [% IF overdue %] <h2>Dump overdue:</h2><pre>[% Dumper.dump_html(overdue.unblessed) %]</pre><br>[% END %]
+  [% IF borrowers %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump borrowers:</h2><pre>[% Dumper.dump(borrowers.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF branch %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump branch:</h2><pre>[% Dumper.dump(branch.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF branches %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump branches:</h2><pre>[% Dumper.dump(branches.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF checkout %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump checkout:</h2><pre>[% Dumper.dump(checkout.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF checkouts %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump checkouts:</h2><pre>[% Dumper.dump(checkouts.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF credit %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump credit:</h2><pre>[% Dumper.dump(credit.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF credits %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump credits:</h2><pre>[% Dumper.dump(credits.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF debit %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump debit:</h2><pre>[% Dumper.dump(debit.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF debits %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump debits:</h2><pre>[% Dumper.dump(debits.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF hold %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump hold:</h2><pre>[% Dumper.dump(hold.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF holds %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump holds:</h2><pre>[% Dumper.dump(holds.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF illrequest %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump illrequest:</h2><pre>[% Dumper.dump(illrequest.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF illrequests %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump illrequests:</h2><pre>[% Dumper.dump(illrequests.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF item %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump item:</h2><pre>[% Dumper.dump(item.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF items %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump items:</h2><pre>[% Dumper.dump(items.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF news %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump news:</h2><pre>[% Dumper.dump(news.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF old_checkout %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump old_checkout:</h2><pre>[% Dumper.dump(old_checkout.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF old_checkouts %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump old_checkouts:</h2><pre>[% Dumper.dump(old_checkouts.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF order %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump order:</h2><pre>[% Dumper.dump(order.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF orders %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump orders:</h2><pre>[% Dumper.dump(orders.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF overdue %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump overdue:</h2><pre>[% Dumper.dump(overdue.unblessed) %]</pre><br>
+  [% END %]
+
 
   [% IF overdues %] 
-    <h2>Dump overdues:</h2><pre>[% Dumper.dump_html(overdues.unblessed) %]</pre><br>
+    <h2>Dump overdues:</h2><pre>[% Dumper.dump(overdues.unblessed) %]</pre><br>
 
     <p>----------</p>
 
@@ -186,7 +353,11 @@
 
       [% SET biblio = overdue.item.biblio %]
 
-      [% IF biblio %]<h2>Dump biblio from overdues:</h2><pre>[% Dumper.dump_html(biblio.unblessed) %]</pre><br>[% END %]
+      [% IF biblio %]    
+    <p>----------</p>
+    <h2>Dump biblio from overdues:</h2><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br>
+  [% END %]
+
 
     [% END %]
 
@@ -254,7 +425,11 @@
 
       [% SET biblioitem = overdue.item.biblio.biblioitem %]
 
-      [% IF biblioitem %]<h2>Dump biblioitem from overdues:</h2><pre>[% Dumper.dump_html(biblioitem.unblessed) %]</pre><br>[% END %]
+      [% IF biblioitem %]    
+    <p>----------</p>
+    <h2>Dump biblioitem from overdues:</h2><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br>
+  [% END %]
+
 
     [% END %]
 
@@ -347,45 +522,71 @@
     [% END %]
 
     <br>
-    <h2>Transform record level location from code to description</h2>
+    <h2>Shortcut to transform record level location from code to description</h2>
     <ul>
       <li>Requires &#91;% USE AuthorisedValues %]</li>
-      <li>
-        Code: &#91;% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]
+      <li>Code:<br><br>
+        <pre>
+        &#91;% FOREACH overdue IN overdues %]
+          &#91;% SET biblioitem = overdue.item.biblio.biblioitem %]
+            &#91;% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]
+        &#91;% END %]
+        </pre>
         <ul>
           <li>My system has the record level shelving location (942$e) mapped to biblioitems.agerestriction</li>
           <li>If your library uses a different mapping, you'll need to adjust this code for your library</li>
         </ul>
       </li>
-      <li>&#91;% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %] == [% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]</li>
+      [% FOREACH overdue IN overdues %]
+        [% SET biblioitem = overdue.item.biblio.biblioitem %]
+          <li>Example: &#91;% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %] == [% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]</li>
+      [% END %]
     </ul>
     <br>
+
     <br>
-    <h2>Transform record level item type from code to description</h2>
+    <h2>Shortcut to transform record level item type from code to description</h2>
     <ul>
       <li>Requires &#91;% USE ItemTypes %]</li>
-      <li>
-        Code: &#91;% ItemTypes.GetDescription(biblioitem.itemtype) %]
+      <li>Code:<br><br>
+        <pre>
+        &#91;% FOREACH overdue IN overdues %]
+          &#91;% SET biblioitem = overdue.item.biblio.biblioitem %]
+            &#91;% ItemTypes.GetDescription(biblioitem.itemtype) %]
+        &#91;% END %]
+        </pre>
         <ul>
           <li>My system has the record level item type (942$c) mapped to biblioitems.itemtype</li>
           <li>If your library uses a different mapping, you'll need to adjust this code for your library</li>
         </ul>
       </li>
-      <li>&#91;% ItemTypes.GetDescription(biblioitem.itemtype) %] == [% ItemTypes.GetDescription(biblioitem.itemtype) %]</li>
+      [% FOREACH overdue IN overdues %]
+        [% SET biblioitem = overdue.item.biblio.biblioitem %]
+          <li>Example: &#91;% ItemTypes.GetDescription(biblioitem.itemtype) %] == [% ItemTypes.GetDescription(biblioitem.itemtype) %]</li>
+      [% END %]
     </ul>
     <br>
+
     <br>
-    <h2>Transform record level collection code from code to description</h2>
+    <h2>Shortcut to transform record level collection code from code to description</h2>
     <ul>
       <li>Requires &#91;% USE AuthorisedValues %]</li>
-      <li>
-        Code: &#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %]
+      <li>Code:<br><br>
+        <pre>
+          &#91;% FOREACH overdue IN overdues %]
+            &#91;% SET biblioitem = overdue.item.biblio.biblioitem %]
+              &#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %]
+          &#91;% END %]
+        </pre>
         <ul>
           <li>My system has the record level collection code (942$h) mapped to biblioitems.cn_class</li>
           <li>If your library uses a different mapping, you'll need to adjust this code for your library</li>
         </ul>
       </li>
-      <li>&#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %] == [% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %]</li>
+      [% FOREACH overdue IN overdues %]
+        [% SET biblioitem = overdue.item.biblio.biblioitem %]
+          <li>&#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %] == [% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %]</li>
+      [% END %]
     </ul>
     <br>
 
@@ -397,7 +598,11 @@
 
       [% SET item = overdue.item %]
 
-      [% IF item %] <h2>Dump item from overdues:</h2><pre>[% Dumper.dump_html(item.unblessed) %]</pre><br>[% END %]
+      [% IF item %]    
+    <p>----------</p>
+    <h2>Dump item from overdues:</h2><pre>[% Dumper.dump(item.unblessed) %]</pre><br>
+  [% END %]
+
 
     [% END %]
 
@@ -518,43 +723,78 @@
     [% END %]
 
     <br>
-    <h2>Transform item level permanent location from code to description</h2>
+    <h2>Shortcut to transform item level permanent location from code to description</h2>
     <ul>
       <li>Requires &#91;% USE AuthorisedValues %]</li>
-      <li>
-        Code: &#91;% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %]
+      <li>Code:<br><br>
+        <pre>
+          &#91;% FOREACH overdue IN overdues %]
+            &#91;% SET item = overdue.item %]
+              &#91;% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %]
+          &#91;% END %]
+        </pre>
       </li>
-      <li>&#91;% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %] == [% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %]</li>
+      [% FOREACH overdue IN overdues %]
+        [% SET item = overdue.item %]
+          <li>Example: &#91;% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %] == [% AuthorisedValues.GetByCode( 'LOC', item.permanent_location ) %]</li>
+      [% END %]
     </ul>
     <br>
+
     <br>
-    <h2>Transform item level location from code to description</h2>
+    <h2>Shortcut to transform item level location from code to description</h2>
     <ul>
       <li>Requires &#91;% USE AuthorisedValues %]</li>
-      <li>
-        Code: &#91;% AuthorisedValues.GetByCode( 'LOC', item.location ) %]
+      <li>Code:<br><br>
+        <pre>
+          &#91;% FOREACH overdue IN overdues %]
+            &#91;% SET item = overdue.item %]
+              &#91;% AuthorisedValues.GetByCode( 'LOC', item.location ) %]
+          &#91;% END %]
+        </pre>
       </li>
-      <li>&#91;% AuthorisedValues.GetByCode( 'LOC', item.location ) %] == [% AuthorisedValues.GetByCode( 'LOC', item.location ) %]</li>
+      [% FOREACH overdue IN overdues %]
+        [% SET item = overdue.item %]
+          <li>&#91;% AuthorisedValues.GetByCode( 'LOC', item.location ) %] == [% AuthorisedValues.GetByCode( 'LOC', item.location ) %]</li>
+      [% END %]
     </ul>
     <br>
+
     <br>
-    <h2>Transform item level item type from code to description</h2>
+    <h2>Shortcut to transform item level item type from code to description</h2>
     <ul>
       <li>Requires &#91;% USE ItemTypes %]</li>
-      <li>
-        Code: &#91;% ItemTypes.GetDescription(item.itype) %]
-      </li>
-      <li>&#91;% ItemTypes.GetDescription(item.itype) %] == [% ItemTypes.GetDescription(item.itype) %]</li>
+      <li>Code:<br><br>
+        <pre>
+          &#91;% FOREACH overdue IN overdues %]
+            &#91;% SET item = overdue.item %]
+              &#91;% ItemTypes.GetDescription(item.itype) %]
+          &#91;% END %]
+        </pre>
+      </li>      
+      [% FOREACH overdue IN overdues %]
+        [% SET item = overdue.item %]
+          <li>&#91;% ItemTypes.GetDescription(item.itype) %] == [% ItemTypes.GetDescription(item.itype) %]</li>
+      [% END %]
     </ul>
     <br>
+
     <br>
-    <h2>Transform item level collection code from code to description</h2>
+    <h2>Shortcut to transform item level collection code from code to description</h2>
     <ul>
       <li>Requires &#91;% USE AuthorisedValues %]</li>
-      <li>
-        Code: &#91;% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]
-      </li>
-      <li>&#91;% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %] == [% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]</li>
+      <li>Code:<br><br>
+        <pre>
+          &#91;% FOREACH overdue IN overdues %]
+            &#91;% SET item = overdue.item %]
+              &#91;% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]
+          &#91;% END %]
+        </pre>
+      </li>      
+      [% FOREACH overdue IN overdues %]
+        [% SET item = overdue.item %]
+          <li>&#91;% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %] == [% AuthorisedValues.GetByCode( 'CCODE', item.ccode ) %]</li>
+      [% END %]
     </ul>
     <br>
 
@@ -562,8 +802,18 @@
     <h2>Shortcut to get the item's home branch by name instead of code</h2>
     <ul>
       <li>Requires &#91;% USE Branches %]</li>
-      <li>Code: &#91;% Branches.GetName( item.homebranch ) %]</li>
-      <li>Result: &#91;% Branches.GetName( item.homebranch ) %] == [% Branches.GetName( item.homebranch ) %]</li>
+      <li>Code:<br><br>
+        <pre>
+          &#91;% FOREACH overdue IN overdues %]
+            &#91;% SET item = overdue.item %]
+              &#91;% Branches.GetName( item.homebranch ) %]
+          &#91;% END %]
+        </pre>
+      </li>      
+      [% FOREACH overdue IN overdues %]
+        [% SET item = overdue.item %]
+          <li>Example: &#91;% Branches.GetName( item.homebranch ) %] == [% Branches.GetName( item.homebranch ) %]</li>
+      [% END %]
     </ul>
     <br>
 
@@ -571,8 +821,18 @@
     <h2>Shortcut to get the item's holding branch by name instead of code</h2>
     <ul>
       <li>Requires &#91;% USE Branches %]</li>
-      <li>Code: &#91;% Branches.GetName( item.holdingbranch ) %]</li>
-      <li>Result: &#91;% Branches.GetName( item.holdingbranch ) %] == [% Branches.GetName( item.holdingbranch ) %]</li>
+      <li>Code:<br><br>
+        <pre>
+          &#91;% FOREACH overdue IN overdues %]
+            &#91;% SET item = overdue.item %]
+              &#91;% Branches.GetName( item.holdingbranch ) %]
+          &#91;% END %]
+        </pre>
+      </li>      
+      [% FOREACH overdue IN overdues %]
+        [% SET item = overdue.item %]
+          <li>Result: &#91;% Branches.GetName( item.holdingbranch ) %] == [% Branches.GetName( item.holdingbranch ) %]</li>
+      [% END %]
     </ul>
     <br>
 
@@ -852,22 +1112,102 @@
   [% END %]
 
 
-  [% IF patron_modification %] <h2>Dump patron_modification:</h2><pre>[% Dumper.dump_html(patron_modification.unblessed) %]</pre><br>[% END %]
-  [% IF patron_modifications %] <h2>Dump patron_modifications:</h2><pre>[% Dumper.dump_html(patron_modifications.unblessed) %]</pre><br>[% END %]
-  [% IF problemreport %] <h2>Dump problemreport:</h2><pre>[% Dumper.dump_html(problemreport.unblessed) %]</pre><br>[% END %]
-  [% IF problemreports %] <h2>Dump problemreports:</h2><pre>[% Dumper.dump_html(problemreports.unblessed) %]</pre><br>[% END %]
-  [% IF serial %] <h2>Dump serial:</h2><pre>[% Dumper.dump_html(serial.unblessed) %]</pre><br>[% END %]
-  [% IF serials %] <h2>Dump serials:</h2><pre>[% Dumper.dump_html(serials.unblessed) %]</pre><br>[% END %]
-  [% IF subscirption %] <h2>Dump subscirption:</h2><pre>[% Dumper.dump_html(subscirption.unblessed) %]</pre><br>[% END %]
-  [% IF subscriptions %] <h2>Dump subscriptions:</h2><pre>[% Dumper.dump_html(subscriptions.unblessed) %]</pre><br>[% END %]
-  [% IF suggestion %] <h2>Dump suggestion:</h2><pre>[% Dumper.dump_html(suggestion.unblessed) %]</pre><br>[% END %]
-  [% IF suggestions %] <h2>Dump suggestions:</h2><pre>[% Dumper.dump_html(suggestions.unblessed) %]</pre><br>[% END %]
-  [% IF ticket %] <h2>Dump ticket:</h2><pre>[% Dumper.dump_html(ticket.unblessed) %]</pre><br>[% END %]
-  [% IF ticket_update %] <h2>Dump ticket_update:</h2><pre>[% Dumper.dump_html(ticket_update.unblessed) %]</pre><br>[% END %]
-  [% IF ticket_updates %] <h2>Dump ticket_updates:</h2><pre>[% Dumper.dump_html(ticket_updates.unblessed) %]</pre><br>[% END %]
-  [% IF tickets %] <h2>Dump tickets:</h2><pre>[% Dumper.dump_html(tickets.unblessed) %]</pre><br>[% END %]
-  [% IF train_item %] <h2>Dump train_item:</h2><pre>[% Dumper.dump_html(train_item.unblessed) %]</pre><br>[% END %]
-  [% IF train_items %] <h2>Dump train_items:</h2><pre>[% Dumper.dump_html(train_items.unblessed) %]</pre><br>[% END %]
+  [% IF patron_modification %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump patron_modification:</h2><pre>[% Dumper.dump(patron_modification.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF patron_modifications %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump patron_modifications:</h2><pre>[% Dumper.dump(patron_modifications.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF problemreport %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump problemreport:</h2><pre>[% Dumper.dump(problemreport.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF problemreports %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump problemreports:</h2><pre>[% Dumper.dump(problemreports.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF serial %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump serial:</h2><pre>[% Dumper.dump(serial.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF serials %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump serials:</h2><pre>[% Dumper.dump(serials.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF subscirption %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump subscirption:</h2><pre>[% Dumper.dump(subscirption.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF subscriptions %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump subscriptions:</h2><pre>[% Dumper.dump(subscriptions.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF suggestion %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump suggestion:</h2><pre>[% Dumper.dump(suggestion.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF suggestions %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump suggestions:</h2><pre>[% Dumper.dump(suggestions.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF ticket %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump ticket:</h2><pre>[% Dumper.dump(ticket.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF ticket_update %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump ticket_update:</h2><pre>[% Dumper.dump(ticket_update.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF ticket_updates %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump ticket_updates:</h2><pre>[% Dumper.dump(ticket_updates.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF tickets %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump tickets:</h2><pre>[% Dumper.dump(tickets.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF train_item %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump train_item:</h2><pre>[% Dumper.dump(train_item.unblessed) %]</pre><br>
+  [% END %]
+
+  [% IF train_items %]    
+    <p>------------------------------------------------------------</p>
+    <p>------------------------------------------------------------</p>
+    <h2>Dump train_items:</h2><pre>[% Dumper.dump(train_items.unblessed) %]</pre><br>
+  [% END %]
+
 
   <br>
 
