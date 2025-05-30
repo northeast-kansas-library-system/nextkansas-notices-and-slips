@@ -1,8 +1,10 @@
 [% USE AuthorisedValues %]
 [% USE Branches %]
 [% USE Categories %]
+[% USE date %]
 [% USE ExtendedAttributeTypes %]
 [% USE ItemTypes %]
+[% USE KohaDates %]
 
 [% USE Dumper (indent=1) %]
 
@@ -48,6 +50,13 @@
     <p>------------------------------------------------------------</p>
     <p>------------------------------------------------------------</p>
     <h2>biblio:</h2><pre>[% Dumper.dump(biblio.unblessed).replace("' => ", " XZKLYNGN => ").replace("XZKL", "%").replace("YNGN", "]").replace("  '", "  [% biblio.") %]</pre><br>
+
+  [% END %]
+
+  [% IF biblio %]    
+  <p>------------------------------------------------------------</p>
+  <p>------------------------------------------------------------</p>
+  <h2>biblio:</h2><pre>[% Dumper.dump(biblio.unblessed) %]</pre><br>
 
   [% END %]
 
@@ -1221,5 +1230,20 @@
     <li>&#91;% Branches.GetLoggedInBranchname %] == [% Branches.GetLoggedInBranchname %]</li>
   </ul>
   <br>
+  <h2>Today's date</h2>
+  <ul>
+    <li>&#91;% today %] gives you today's date with hours and minutes in ISO format - YYYY-MM-DD HH:MM </li>
+    <li>&#91;% today %] == [% today %]</li>
+    -----<br>
+    <li>&#91;% today | $KohaDates %] gives you today's date in the format set in the Koha system preference "dateformat"</li>
+    <li>&#91;% today | $KohaDates %] == [% today | $KohaDates %]</li>
+    -----<br>
+    <li>&#91;% today | $KohaDates with_hours => 1 %] gives you today's date in the format set in the Koha system preference "dateformat" and includes hours and minutes</li>
+    <li>&#91;% today | $KohaDates with_hours => 1 %] == [% today | $KohaDates with_hours => 1 %]</li>
+    -----<br>
+    <li>You can also use &#91;% date.format(date.now, "%Y/%m/%d %I:%M %p") %] using the data formatting parameters found at <a href="https://www.w3schools.com/sql/func_mysql_date_format.asp" target="_blank">https://www.w3schools.com/sql/func_mysql_date_format.asp</a></li>
+    <li>Requires &#91;% USE date %]</li>
+    <li>&#91;% date.format(date.now, "%Y/%m/%d %I:%M %p") %] == [% date.format(date.now, "%Y/%m/%d %I:%M %p") %]</li>
+  </ul>
 
 </div>
