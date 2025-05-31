@@ -1,4 +1,4 @@
-[% USE AuthorisedValues %]
+* [% USE AuthorisedValues %]
 [% USE Branches %]
 [% USE Categories %]
 [% USE ExtendedAttributeTypes %]
@@ -49,12 +49,14 @@
     <p>------------------------------------------------------------</p>
     <h2>biblio:</h2><pre>[% Dumper.dump(biblio.unblessed).replace("' => ", " XZKLYNGN => ").replace("XZKL", "%").replace("YNGN", "]").replace("  '", "  [% biblio.") %]</pre><br>
 
+    [% SET biblioitem = biblio.biblioitem %]
+
   [% END %]
 
   [% IF biblioitem %]    
     <p>------------------------------------------------------------</p>
     <p>------------------------------------------------------------</p>
-    <h2>Dump biblioitem:</h2><pre>[% Dumper.dump(biblioitem.unblessed) %]</pre><br>
+    <h2>Dump biblioitem:</h2><pre>[% Dumper.dump(biblioitem.unblessed).replace("' => ", " XZKLYNGN => ").replace("XZKL", "%").replace("YNGN", "]").replace("  '", "  [% biblio.") %]</pre><br>
   [% END %]
 
   [% IF biblioitems %]    

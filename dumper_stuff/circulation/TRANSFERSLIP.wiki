@@ -1,0 +1,43 @@
+<!-- TRANSFERSLIP -->
+
+== TRANSFERSLIP ==
+
+=== Available in all templates ===
+
+Logged in branch information
+
+    Requires [% USE Branches %]
+    [% Branches.GetLoggedInBranchcode %] == DIGITAL
+    -----
+    Requires [% USE Branches %]
+    [% Branches.GetLoggedInBranchname %] == Digital Content
+
+
+Available object variables
+
+* biblio
+* branch
+* item 
+
+
+
+Available directly from biblio:
+
+** [% biblio.abstract %]
+** [% biblio.author %]
+** [% biblio.biblionumber %]
+** [% biblio.copyrightdate %]
+** [% biblio.datecreated %]
+** [% biblio.frameworkcode %]
+** [% biblio.medium %]
+** [% biblio.notes %]
+** [% biblio.part_name %]
+** [% biblio.part_number %]
+** [% biblio.serial %]
+** [% biblio.seriestitle %]
+** [% biblio.subtitle %]
+** [% biblio.timestamp %]
+** [% biblio.title %]
+** [% biblio.unititle %]
+
+

@@ -1,0 +1,145 @@
+=== biblio ===
+
+==== Available directly from biblio ====
+
+<syntaxhighlight>
+
+[% biblio.abstract %]
+[% biblio.author %]
+[% biblio.biblionumber %]
+[% biblio.copyrightdate %]
+[% biblio.datecreated %]
+[% biblio.frameworkcode %]
+[% biblio.medium %]
+[% biblio.notes %]
+[% biblio.part_name %]
+[% biblio.part_number %]
+[% biblio.serial %]
+[% biblio.seriestitle %]
+[% biblio.subtitle %]
+[% biblio.timestamp %]
+[% biblio.title %]
+[% biblio.unititle %]
+
+</syntaxhighlight>
+
+==== Available indirectly from biblio ====
+
+===== biblioitem variables =====
+
+To access biblioitem data use
+
+<syntaxhighlight>
+
+[% SET biblioitem = biblio.biblioitem %]
+
+</syntaxhighlight>
+
+Then you can use access these variables
+
+<syntaxhighlight>
+
+[% biblio.agerestriction %]
+[% biblio.biblioitemnumber %]
+[% biblio.biblionumber %]
+[% biblio.cn_class %]
+[% biblio.cn_item %]
+[% biblio.cn_sort %]
+[% biblio.cn_source %]
+[% biblio.cn_suffix %]
+[% biblio.collectionissn %]
+[% biblio.collectiontitle %]
+[% biblio.collectionvolume %]
+[% biblio.ean %]
+[% biblio.editionresponsibility %]
+[% biblio.editionstatement %]
+[% biblio.illus %]
+[% biblio.isbn %]
+[% biblio.issn %]
+[% biblio.itemtype %]
+[% biblio.lccn %]
+[% biblio.notes %]
+[% biblio.number %]
+[% biblio.pages %]
+[% biblio.place %]
+[% biblio.publicationyear %]
+[% biblio.publishercode %]
+[% biblio.size %]
+[% biblio.timestamp %]
+[% biblio.totalissues %]
+[% biblio.url %]
+[% biblio.volume %]
+[% biblio.volumedate %]
+[% biblio.volumedesc %]
+
+</syntaxhighlight>
+
+===== biblioitem shortcuts =====
+
+Some coded data in biblioitem can be expanded using some shortcuts
+
+Shortcut to transform record level location from code to description
+
+Requires [% USE AuthorisedValues %]
+
+<syntaxhighlight>
+[% SET biblioitem = overdue.item.biblio.biblioitem %]
+[% AuthorisedValues.GetByCode( 'LOC', biblioitem.agerestriction ) %]
+</syntaxhighlight>
+
+: Note: My system has the record level shelving location (942$e) mapped to biblioitems.agerestriction.
+: If your library uses a different mapping, you'll need to adjust this code for your library
+
+
+
+* Shortcut to transform record level item type from code to description
+** Requires [% USE ItemTypes %]
+<syntaxhighlight>
+[% SET biblioitem = overdue.item.biblio.biblioitem %]
+[% ItemTypes.GetDescription(biblioitem.itemtype) %]
+
+    <br>
+    <h2>Shortcut to transform record level item type from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE ItemTypes %]</li>
+      <li>Code:<br><br>
+        <pre>
+        &#91;% FOREACH overdue IN overdues %]
+          &#91;% SET biblioitem = overdue.item.biblio.biblioitem %]
+            &#91;% ItemTypes.GetDescription(biblioitem.itemtype) %]
+        &#91;% END %]
+        </pre>
+        <ul>
+          <li>My system has the record level item type (942$c) mapped to biblioitems.itemtype</li>
+          <li>If your library uses a different mapping, you'll need to adjust this code for your library</li>
+        </ul>
+      </li>
+      [% FOREACH overdue IN overdues %]
+        [% SET biblioitem = overdue.item.biblio.biblioitem %]
+          <li>Example: &#91;% ItemTypes.GetDescription(biblioitem.itemtype) %] == [% ItemTypes.GetDescription(biblioitem.itemtype) %]</li>
+      [% END %]
+    </ul>
+    <br>
+
+    <br>
+    <h2>Shortcut to transform record level collection code from code to description</h2>
+    <ul>
+      <li>Requires &#91;% USE AuthorisedValues %]</li>
+      <li>Code:<br><br>
+        <pre>
+          &#91;% FOREACH overdue IN overdues %]
+            &#91;% SET biblioitem = overdue.item.biblio.biblioitem %]
+              &#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %]
+          &#91;% END %]
+        </pre>
+        <ul>
+          <li>My system has the record level collection code (942$h) mapped to biblioitems.cn_class</li>
+          <li>If your library uses a different mapping, you'll need to adjust this code for your library</li>
+        </ul>
+      </li>
+      [% FOREACH overdue IN overdues %]
+        [% SET biblioitem = overdue.item.biblio.biblioitem %]
+          <li>&#91;% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %] == [% AuthorisedValues.GetByCode( 'CCODE', biblioitem.cn_class ) %]</li>
+      [% END %]
+    </ul>
+    <br>
